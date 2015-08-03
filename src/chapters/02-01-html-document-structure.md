@@ -83,21 +83,18 @@ Anta t.ex. att vi vill lägga in ett antal radbrytningar i en paragraf. Anta att
     
     <p>
       Oavsett  
-    
       hur många       mellanslag, eller  
     
       radbrytningar   vi lägger in,  
-    
       så har det ingen effekt.
     </p>  
     
 
 Trots alla radbrytningar och mellanslag blir ändå resultatet följande...
 
-Oavsett
-hur många mellanslag, eller
-radbrytningar vi lägger in,
-så har det ingen effekt.
+<figure>
+Oavsett hur många mellanslag, eller radbrytningar vi lägger in, så har det ingen effekt.
+</figure>
 
 Såsom exemplets text förtäljer har traditionella radbrytningar ingen effekt i ett HTML-dokument. Detta är ett gott exempel för att illustrera att webbläsaren läser dokumentet som en enda lång sträng av text. Så länge vi inte använder HTML-element för att denotera åtskilda delar av dokumentet, så kommer webbläsaren att hantera dokumentet som en enda lång massa av text.
 
@@ -113,7 +110,9 @@ För att t.ex. skapa länkar använder vi elementet `<a>`. För att sedan denote
 
 Resultat
 
+<figure>
 [Klicka på mig][4]
+</figure>
 
 Attribut kommer i två former där den vanligaste är nyckel-värde-par (key-value-pairs). Vi specificerar en nyckel och tilldelar den ett värde. Enligt syntaxen `nyckel="värde"`. Där ordet "nyckel" alltså ersätts med en nyckel som är tillåten för ett givet element. Och ordet "värde" ersätts med ett värde som är tillåtet för den givna nyckeln.
 
@@ -148,7 +147,10 @@ Följande HTML...
 
 ...renderar följande resultat...
 
+<figure>
 Detta syns
+<!-- Detta syns inte -->
+</figure>
 
 Men kommentaren i ovan exempel kommer alltså fortfarande att synas i källkoden. Så om användaren skulle högerklicka och välja "View Source" ("Visa källkod", eller dyl.), alternativt inspektera texten med webbläsarens [Webbutvecklarverktyg][5] så kommer denne att kunna se kommentaren. Prova själv!
 
@@ -169,17 +171,16 @@ Men för att återgå till ämnet. Det finns några saker ett HTML-dokument allt
 
 Låt oss försöka visualisera samma dokument som ovan i en hierarkisk struktur av "lådor i lådor". En låda "i" en låda representerar alltså en barn-förälderrelation, medan en låda "bredvid" en annan låde representerar en syskonrelation.
 
-<html\>
+     ------------------------
+    |         <html>         |
+    |   -----------------    |
+    |   |     <head>     |   |
+    |    ----------------    |
+    |    ----------------    |
+    |   |     <body>     |   |
+    |    ----------------    |
+     ------------------------
 
-<head\>
-
-<title\>
-
-Stora hundhemsidan
-
-<body\>
-
-\[empty\]
 
 Jämför ovan bilder av "boxar i boxar" med den faktiska HTML-koden i bilden högre upp. Försök förstå varför vi har ritat bilden på det sätt vi har ritat den. Notera att `DOCTYPE`-deklarationen inte är med i ovan exempel.
 
@@ -231,30 +232,40 @@ Ok, så hur indenterar man då? Låt oss börja med några exempel.
 
 Korrekt indentering
 
-    <p>
-        <span>Detta är ok!</span>
-    </p>
+```
+<p>
+    <span>Detta är ok!</span>
+</p>
+```
 
-    <p>
-        <span>
-            Också ok!
-        </span>
-    </p>
+```
+<p>
+    <span>
+        Också ok!
+    </span>
+</p>
+```
 
-    <p><span>Också ok men svårläsligt!</span></p>
+```
+<p><span>Också ok men svårläsligt!</span></p>
+```
 
 Inkorrekt indentering
 
-    <p>
-    <span>Strunta _inte_ i indenteringen!</span>
-    </p>
+```
+<p>
+<span>Strunta _inte_ i indenteringen!</span>
+</p>
+```
 
+```
+<p>
+    Indentera barn...
+</p>
     <p>
-        Indentera barn...
+        ...men inte syskon!
     </p>
-        <p>
-            ...men inte syskon!
-        </p>
+```
 
 Ett enkelt sätt att veta när man ska indentera --- alltså flytta en rad inåt, är följande minnesregel. Om vi öppnar ett element, ska allt som efterföljer indenteras, ända tills vi stängt elementet.
 > 
@@ -299,15 +310,13 @@ Ett exempel på HEAD
 
 Låt oss diskutera ovan kod rad för rad. RadFörklaring
 
-3Den titel som visas högst upp i en sidans "tab" i en webbläsare.
-
-4Säger åt webbläsaren att ladda in en [Stylesheet][8]-fil, som finns på platsen definerad av `href="sökväg-till-filen-här"`.
-
-5Säger åt webbläsaren att ladda in en [JavaScript][9]-fil, som finns på platsen definerad av `src="sökväg-till-filen-här"`.
-
-6Berättar för webbläsaren vilken "[character encoding][10]" sidan är skriven i, så att tecken som åäö kan visas korrekt.
-
-7Definerar ett par [keywords][11] för sidan. Denna information används av bl.a. sökmotorer för att "förstå" sidans innehåll.
+| Rad | Förklaring |
+|:-:|:---|
+| 3 | Den titel som visas högst upp i en sidans "tab" i en webbläsare.
+| 4 | Säger åt webbläsaren att ladda in en [Stylesheet][8]-fil, som finns på platsen definerad av `href="sökväg-till-filen-här"`.
+| 5 | Säger åt webbläsaren att ladda in en [JavaScript][9]-fil, som finns på platsen definerad av `src="sökväg-till-filen-här"`.
+| 6 | Berättar för webbläsaren vilken "[character encoding][10]" sidan är skriven i, så att tecken som åäö kan visas korrekt.
+| 7 | Definerar ett par [keywords][11] för sidan. Denna information används av bl.a. sökmotorer för att "förstå" sidans innehåll.
 
 #### Body (Sidans faktiska innehåll)
 

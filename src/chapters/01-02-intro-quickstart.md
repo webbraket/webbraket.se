@@ -76,7 +76,9 @@ Vi använder alltså märkesspråk för att delimitera olika sektioner i en flö
 
 Om vi kör ovan genom en webbläsare så kommer webbläsaren att rendera följande resultat:
 
+<figure>
 Endast ett ord i denna text, nämnligen **detta** kommer att visas i fetstil.
+</figure>
 
 Notera alltså hur användandet av notationen `<b>...</b>` används för att delimitera en del av texten som är av extra semantisk vikt och bör visas upp i fetstil. Detta är vad som i HTML kallas för ett `element`. Ett element som byggs upp genom kombinationen av en start-tag (`<b>`) och en slut-tag (`</b>`).
 
