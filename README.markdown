@@ -4,62 +4,67 @@ Detta projekt kräver att `node`, `npm` och `gulp` alla finns tillgängliga i din 
 ## Getting started
 
 __1. Installera Git__
+
 Om du inte redan har git, läs mer på [git-scm.com](https://git-scm.com).
 
+
 __2. Installera Node__
+
 Om du inte redan har `node`, läs mer på [nodejs.org](https://nodejs.org/).
 
+
 __3. Installera Gulp__
-Om du inte har `gulp` tillgängligt i din PATH, behöver du installera det, genom `npm`. Alltså...
 
-`$ npm install -g gulp`
+Om du inte har `gulp` tillgängligt i din PATH, behöver du installera det, genom `npm`. Alltså `$ npm install -g gulp`. Dokumentation för `gulp` hittar du på deras webbplats [gulp](http://gulpjs.com/).
 
-Dokumentation för `gulp` hittar du på deras webbplats [gulp](http://gulpjs.com/).
 
 __4. Klona repo:t__
+
 `$ git clone git@github.com:webbraket/webbraket.se.git`
 
+
 __5. Öppna mappen__
+
 `$ cd webbraket.se`
 
-__6. Hämta projektets dependencies__
-Använd `npm` för att installera projektets övriga dependencies. Alltså...
 
-`$ npm install`
+__6. Hämta projektets dependencies__
+
+Använd `npm` för att installera projektets övriga dependencies. Alltså `$ npm install`.
+
 
 __7. Kör tasks__
+
 Nu är det bara att köra tasks genom gulp (läs mer nedan). Have a beer and celebrate!
+
 
 ## Tasks
 När alla dependencies är installerade är det bara att börja köra tasks. Du kan kolla i `gulpfile.js` för att närmare undersöka vilka tasks som finns och vad de gör. Men grundläggande tasks finns beskrivna här:
 
-__`$ gulp`__
-Alias för `gulp watch:development`
-
-__`$ gulp watch:development`__
-Startar en statisk webbserver på `http://localhost:8080` som automatiskt laddas om vid filförändringar i `src`. Bygger filer för `development` till mappen `build`.
-
-__`$ gulp watch:production`__
-Som ovan fast för `production`.
-
-__`$ gulp build:development`__
-Bygger till mappen `build` utan att minifiera.
-
-__`$ gulp build:production`__
-Bygger till mappen `build` med minifiering.
 
 
-__`$ gulp compile`__
-Kompilerar allt i mappen `src` och placerar resultatet i `dist`. Notera att även filen `index.html` genereras. Detta eftersom `Github Pages` (som används för publicering) kräver en index-fil i roten av projektet. Läs mer om `Github Pages` [här](http://pages.github.com/).
 
-__`$gulp server`__
-Startar en server som serverar webbsidan på `localhost:4000`.
 
-__`$ gulp watch`__
-Startar en server, en livereload-server och lyssnar sedan på filförändringar. Vid förändring i `src`-mappen kompileras projektet om och webbläsaren livereload:ar. Servern hittas under `localhost:4000`.
+```bash
+$ gulp
+# Alias för `gulp watch:development`
 
-__`$ gulp publish`__
-Publicera till Github Pages.
+$ gulp watch:development
+# Webbserver på http://localhost:8080, bygger till 'build', livereload.
+
+$ gulp watch:production
+# Som ovan fast för `production`.
+
+$ gulp build:development
+# Bygger till mappen `build` utan att minifiera.
+
+$ gulp build:production
+# Bygger till mappen `build` med minifiering.
+
+$ gulp publish
+# Publicerar till Github Pages (dvs live).
+```
+
 
 
 
