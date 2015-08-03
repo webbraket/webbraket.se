@@ -6,7 +6,9 @@ Det, för HTML, kanske mest representativa elementet måste ju vara länken. En 
 
 Vilket skulle rendera följande resultat:
 
+<figure>
 [Klicka på mig][0]
+</figure>
 
 Notera alltså användandet av attributet `href` i ovan exempel. Attributets namn är en förkortning av "hyper reference". Det kan vara bra att fundera över vad de olika förkortningarna du kommer i kontakt med faktiskt éxpanderar till. Då blir det lättare att komma ihåg/på vad attributen faktiskt gör.
 
@@ -72,15 +74,14 @@ En webbläsare behöver alltså ha en absolut sökväg i URL-formatet. Men när 
 
 När vi refererar till en resurs inom vår egen domän så använder vi ett format som närmast liknar det \*nix-system använder. Förnim dig det vi tidigare diskuterat! Alltså slash för att denotera nästa mapp, punkt-punkt för att vandra en mapp upp i hierarkin, och en initial slash för att denotera roten.
 
-Detta blir antagligen enklare genom att diskutera ett par exempel. Anta att vi befinner oss på följande sida: `http://example.com/pages/links.html`. Nedan följer ett par exempel på hur webbläsaren kommer att översätta våra adresser, om vi specificerar de inom (t.ex.) en `<a>`-tagg.HyperlänkTypWebbläsarens tolkning...
+Detta blir antagligen enklare genom att diskutera ett par exempel. Anta att vi befinner oss på följande sida: `http://example.com/pages/links.html`. Nedan följer ett par exempel på hur webbläsaren kommer att översätta våra adresser, om vi specificerar de inom (t.ex.) en `<a>`-tagg.
 
-images.htmlRelativhttp://example.com/pages/images.html
-
-../images.htmlRelativhttp://example.com/images.html
-
-/images.htmlAbsoluthttp://example.com/images.html
-
-/images/album.htmlAbsoluthttp://example.com/images/album.html
+| Hyperlänk          | Typ     | Webbläsarens tolkning... |
+|--------------------|:-------:|--------------------------|
+| images.html        | Relativ | http://example.com/pages/images.html
+| ../images.html     | Relativ | http://example.com/images.html
+| /images.html       | Absolut | http://example.com/images.html
+| /images/album.html | Absolut | http://example.com/images/album.html
 
 Ovan gäller alltså om vi antar att användaren befinner sig på sidan `http://example.com/pages/links.html`
 

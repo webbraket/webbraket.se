@@ -13,9 +13,11 @@ Ett exempel på användande av paragrafer följer nedan.
 
 Resultat
 
+<figure>
 En paragraf denoterar alltså ett stycke text.
 
 Varje ny paragraf börjar, om inte annat anges, på en ny rad.
+</figure>
 
 De flesta dokument består ju inte bara av paragrafer utan även av rubriker. Vi skapar rubriker i HTML genom att använda oss av `<hX>`, där X ersätts med en siffra ifrån `1-6`. Alltså:
     
@@ -38,7 +40,9 @@ Låt oss nu diskutera de vanligaste textformatteringselementen. Fetstil och kurs
 
 Resultat
 
+<figure>
 All text **inom ett b-element** eller ett **strong-element** renderas i fetstil.
+</figure>
 
 Om vi istället skulle vilja ha kursiv text, även kallad _italics_, så kan vi välja att använda något utav elementen `<i>` (italics) eller `<em>` (emphasis).
     
@@ -48,7 +52,9 @@ Om vi istället skulle vilja ha kursiv text, även kallad _italics_, så kan vi 
 
 Resultat
 
+<figure>
 All text _inom ett i-element_ eller ett _em-element_ renderas som kursiv text.
+</figure>
 
 Men varför finns det två sätt att denotera fetstil text och två sätt att denotera kursiv text? Du kommer lättare förstå skillnaden mellan de olika elementen när vi börjar diskutera semantisk signifikans. Men som kort svar så denoterar alltså t.ex. `i` mer presentation snarare än semantik, och `em` mer semantik snarare än presentation. Föreställ dig en blind person. Den visuella effekten av kursiv text är inte av signifikans för den blinde. Men idéen _extra emfas_ är signifikant. Att det sedan råkar sig så att visualiseringen av extra emfas sker genom samma visuella effekt som kursivitet är alltså i någon bemärkelse ett sammanträffande.
 
@@ -72,9 +78,14 @@ Exempel på onumrerad lista
 
 Resultat
 
-* Katt
-* Hund
-* Sköldpadda
+<figure>
+  <ul>
+    <li>Katt</li>
+    <li>Hund</li>
+    <li>Sköldpadda</li>
+  </ul>
+</figure>
+
 
 Lagom intuitivt så är alltså skillnaden mellan en numrerad och en onumrerad lista att den numrerade listan använder nummer istället för symboler framför varje element i listan.
 
@@ -86,11 +97,16 @@ Exempel på numrerad lista
       <li>Sköldpadda</li>
     </ol>
 
+
 Resultat
 
-1. Katt
-2. Hund
-3. Sköldpadda
+<figure>
+  <ol>
+    <li>Katt</li>
+    <li>Hund</li>
+    <li>Sköldpadda</li>
+  </ol>
+</figure>
 
 Självklart är vi inte bundna till att använda just dessa typer av symboler och/eller nummer framför varje listelement. Istället för att använda vanliga siffror skulle vi t.ex. kunna använda romerska siffror. Alltså `I, II, III, IV` o.s.v. Detta kommer vi att exemplifiera när vi börjar tala om css.
 
@@ -133,11 +149,22 @@ Exempel på tabell
 
 Resultat
 
-DjurStorlek
-
-Golden RetrieverL
-
-Norks SkogskattS
+<figure>
+  <table>
+    <tr>
+      <th>Djur</th>
+      <th>Storlek</th>
+    </tr>
+    <tr>
+      <td>Golden Retriever</td> 
+      <td>Stor</td> 
+    </tr>
+    <tr>
+      <td>Norsk Skogskatt</td> 
+      <td>Liten</td> 
+    </tr>
+  </table>
+</figure>
 
 Var inte rädd för att använda tabeller! Men kom alltså ihåg att tabeller endast ska användas för data som är rimlig att presentera i tabeller.
 
@@ -149,12 +176,15 @@ Kommer snart...
 
 Dags att bli visuella och diskutera hur vi får in bilder i våra HTML-dokument. Som vanligt när det kommer till HTML är det egentligen ganska enkelt. Genom att använda `<img>`-taggen tillsammans med attributet `src` kan vi infoga bilder i våra dokument. Låt oss se till ett exempel.
     
-    <img src="http://placekitten.com/g/60/60">
+    <img src="http://placekitten.com/g/80/80">
 
 Resultat
 
-![En mästerkatt utan stövlar](http://placekitten.com/g/60/60)
-> 
+<figure>
+![En mästerkatt utan stövlar](http://placekitten.com/g/80/80)
+</figure>
+
+
 > Prova gärna att klistra in adressen som bilden ovan pekar mot i webbläsaren och kolla vad som finns under adressen. 
 
 Notera alltså att att adressen ovan (som antytt) pekar mot en URL som renderar en bild. (Tjänsten [placekitten][1] erbjuder helt enkelt bilder i olika storlekar under alla sina URL:er.) Således kan vi alltså ersätta den adressen med en bild som finns lokalt på vår dator, på vår egen server eller någon annanstans på internet. Attributet `src` förväntar sig helt enkelt en adress till en bild.
@@ -168,7 +198,7 @@ Exempel på användning av alt-attributet
     <img src="http://placekitten.com/g/60/60" alt="En mästerkatt utan stövlar">
 
 Om vi nu försöker nå ovan bild genom någon form av läsare som inte kan rendera bilder så kommer vi istället få texten _En mästerkatt utan stövlar_. I annat fall kommer bilden att visas som vanligt och texten inte synas. Tänk på att attributet `alt` krävs för att en `<img>`-tagg ska vara [valid][3].
-> 
+
 > Attributen `alt` och `src` krävs båda för att en `<img>`-tagg ska vara valid.
 
 #### Bildtexter
@@ -178,7 +208,7 @@ Om vi vill lägga till en bildtext till vår bild kommer de nya html5-elementen 
 Dessa är _semantiska_ attribut snarare än _visuella_. Med andra ord. Visst har `<p>`-taggen en semantisk innebörd --- en paragraf representerar ju semantiskt ett stycke text, och således rimligen en tanke. Men i HTML så resulterar ju även en paragraf i någonting visuellt skillt ifrån plain-text och därmed 
 
 Elementen `figure` och `figcaption` är båda _semantiska_ element snarare än direkt _visuella_. Med andra ord, om vi skulle välja att bara skriva ut vår bild följd av ett helt vanligt paragraf-element som innehåller vår bildtext, så skulle det visuella resultatet bli ungefär likadant som om vi använde figure och figcaption. Poängen med att dock istället använda figure och figcaption är att vi [berikar dokumentet med semantik][4]. Plus att vi har ett enhetligt sätt att angripa bildtexter ifrån våra stilmallar (css).
-> 
+
 > `<figure>` och `<figcaption>` är båda element med semantisk mening.
 
 Exempel på figurannotation med figcaption
@@ -192,7 +222,9 @@ Exempel på figurannotation med figcaption
 
 Resultat
 
+<figure>
 ![En mästerkatt utan stövlar](http://placekitten.com/g/130/130)En mästerkatt utan stövlar.
+</figure>
 
 [0]: http://www.w3schools.com/html/tryit.asp?filename=tryhtml_headers
 [1]: http://placekitten.com

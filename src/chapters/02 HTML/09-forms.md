@@ -4,13 +4,25 @@ För att användare ska kunna interagera med våra webbsidor har vi flera tillg�
 
 Låt oss, innan vi går vidare se till ett exempel för hur ett formulär skulle kunna se ut.
 
-Exempelformulär
-
-E-post
-
-Lösenord
-
-Kom ihåg mig?
+<figure>
+    <form action="#" method="GET">
+        <div>
+            <label for="field-email">E-post</label>
+            <input type="text" id="field-email" name="email" placeholder="Din e-post" required="required">
+        </div>
+        <div>
+            <label for="field-current-name">Lösenord</label>
+            <input type="password" id="field-current-name" name="password" placeholder="Ditt lösenord" required="required">
+        </div>
+        <div class="form-group">
+            <input id="field-gender-man" type="checkbox" name="remember">
+            <label for="field-gender-man">Kom ihåg mig?</label>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Skicka!" class="btn btn-default">
+        </div>
+    </form>
+</figure>
 
 Vanliga scenarion där vi använder formulär är t.ex. användarregistrering, inloggning, kontaktformulär, undersökningar, chat, forum, kommentarsfält, sökfält, etc. Listan är lång. Tänk på sidor som du vanligen brukar besöka. Varje gång du skriver in någon form av fritext på sidan, kryssar i en checkbox, radioknapp eller dyl. så interagerar du nästan alltid med ett formulär. Tänk 
 
@@ -47,11 +59,15 @@ Så om vi med andra ord skriver...
 
 Så renderar webbläsaren följande resultat...
 
+<figure>
+    <input type="text" placeholder="Vänligen skriv förnamn här...">
+</figure>
+
 Som du kanske märkte är alltså `placeholder` ett annat attribut vi kan använda på `input`-element. Detta attribut anger vi för att helt enkelt specificiera en platshållare för kontrollen. Undersök hur detta fungerar genom att skriva någonting i exempelfältet ovan. En platshållartext är helt enkelt en text som visas när kontrollen är "tom". Det vill säga både innan användaren har skrivit någonting i textfältet, men även så fort som användaren rensar nuvarande text i fältet. Notera att detta attribut _inte_ stöds av alla äldre webbläsare.
 
-Notera!
-
+<div class="box-info">
 Tänk på att `input`-elementet endast består av en tagg. Vi behöver alltså inte (och bör inte) ange en stängningstagg. I Tidigare versioner av standarden för HTML var det möjligt att ange en sluttagg. Således kommer detta inte att orsaka något fel i de flesta webbläsare. Men om vi följer standarden HTML5 så finns det ingen anledning att ange en stängningstagg.
+</div>
 
 Om vi behöver ge användaren en möjlighet att skriva mer än endast en rad text så passar elementet `textarea` utmärkt. Detta element består, till skillnad ifrån `input`, utav ett taggpar. Med andra ord en öppningstagg och en stängningstagg. Allt däremellan är text som kommer att visas i textfältet. Låt oss se till ett exempel.
     
@@ -60,6 +76,11 @@ Om vi behöver ge användaren en möjlighet att skriva mer än endast en rad tex
     </textarea>
 
 Resultat
+
+<figure>
+    <textarea placeholder="Textarea stödjer placeholders">Denna text renderas i textarean
+    </textarea>
+</figure>
 
 #### Labels
 
@@ -78,7 +99,10 @@ Så låt oss associera en etikett med den fritextkontroll vi såg i tidigare exe
 
 Resultat
 
-Förnamn
+<figure>
+    <label for="firstname">Förnamn</label>
+    <input type="text" placeholder="Vänligen skriv förnamn här..." id="firstname">
+</figure>
 
 #### Radio buttons
 
@@ -91,9 +115,12 @@ Radioknappar ger oss möjligheten att låta användaren välja ett och endast et
 
 Resultat
 
-Ja
-
-Nej
+<figure>
+    <label for="alt-yes">Ja</label>
+    <input type="radio" id="alt-yes" name="yes-or-no" value="yes">
+    <label for="alt-no">Nej</label>
+    <input type="radio" id="alt-no" name="yes-or-no" value="no">
+</figure>
 
 Prova knapparna! Både genom att klicka på själva radioknapparna, men även genom att klicka på dess etiketter.
 
@@ -121,15 +148,33 @@ Låt oss se till ett exempel.
 
 Resultat
 
-Ja eller nej?
-
-Ja
-
-NejVilken frukt?
-
-Äpple
-
-Banan
+<figure>
+    <label>Ja eller nej?</label>
+     
+    <div>
+        <label for="4307904643-alt-yes">Ja</label>
+        <input type="radio" name="yes-or-no" id="4307904643-alt-yes">
+    </div>
+     
+    <div>
+        <label for="4307904643-alt-no">Nej</label>
+        <input type="radio" name="yes-or-no" id="4307904643-alt-no">
+    </div>
+     
+    <div>
+        <label>Vilken frukt?</label>
+         
+     </div>
+    <div>
+        <label for="4307904643-alt-apple">Äpple</label>
+        <input type="radio" name="fruit" id="4307904643-alt-apple">
+    </div>
+     
+    <div>
+        <label for="4307904643-alt-banana">Banan</label>
+        <input type="radio" name="fruit" id="4307904643-alt-banana">
+    </div>
+</figure>
 
 #### Checkboxes
 
@@ -144,11 +189,14 @@ Checkboxes använder vi till skillnad ifrån radio buttons när vi vill ge anvä
 
 Resultat
 
-Äpple
-
-Banan
-
-Vindruvor
+<figure>
+    <input type="checkbox" name="fruit" value="apple" id="alt-apple">
+    <label for="alt-apple">Apple</label>
+    <input type="checkbox" name="fruit" value="banana" id="alt-banana">
+    <label for="alt-banana">Banan</label>
+    <input type="checkbox" name="fruit" value="grapes" id="alt-grapes">
+    <label for="alt-grapes">Vindruvor</label>
+</figure>
 
 Attributet `value` specificerar alltså vilket värde som kommer att associeras med respektive nyckel (alltså checkboxgruppen "fruit"). Vi återkommer till detta när vi pratar om vad som händer när man skickar ett formulär.
 
@@ -165,7 +213,14 @@ Ibland har vi så många alternativ vi vill erbjuda en användare, att det skull
 
 Resultat
 
-Vad vill du äta till frukost?
+<figure>
+    <select name="fruit">
+      <option value="banana">Banan</option>
+      <option value="apple">Äpple</option>
+      <option value="grapes">Vindruvor</option>
+      <option value="orange">Apelsin</option>
+    </select>
+</figure>
 
 Återigen så använder vi alltså attributet `value` för att denotera vad som kommer att skickas om användaren har valt just det valet (`option`).
 
@@ -179,7 +234,15 @@ Att implementationen av denna `select`-kontroll skiljer sig ifrån webbläsare t
 
 Resultat
 
-Vad vill du äta till frukost?
+<figure>
+    <select name="fruit" multiple>
+      <option value="banana">Banan</option>
+      <option value="apple">Äpple</option>
+      <option value="grapes">Vindruvor</option>
+      <option value="orange">Apelsin</option>
+    </select>
+</figure>
+
 
 #### Submit
 
@@ -190,6 +253,10 @@ Easy as pancakes! Låt oss se till ett exempel.
     <input type="submit" value="Skicka!">
 
 Resultat
+
+<figure>
+    <input type="submit" value="Skicka!">
+</figure>
 
 ### Att skicka formuläret
 
@@ -226,9 +293,9 @@ Sedan märker vi även att varje nyckel-värde-par avdelas med hjälp av ett och
     
     key1=value1&key2=value2&key3=value3...
 
-Varning!
-
-Viss formulärdata (såsom t.ex. login) bör **inte** skickas i `GET`. Du kommer att få förklaringar till varför när vi pratar om den andra metoden --- `POST`.
+<div class="box-warning">
+Viss formulärdata (såsom t.ex. login) bör **inte** skickas i `GET`. Du kommer att få förklaringar till varför när vi pratar om den andra metoden &mdash; `POST`.
+</div>
 
 ### URL Encoding
 
@@ -282,13 +349,35 @@ Låt oss, innan vi snurrar ihop detta kapitels säck, kolla in ett komplett form
 
 Resultat
 
-Ditt namnVad vill du äta till frukost?
+<figure>
+    <form action="#" method="GET">
+        <div>
+          <label for="field-name">Ditt namn</label>
+          <input type="text" id="field-name" name="name" placeholder="Ditt namn" required>
+      </div>
 
-Pannkakor
+      <label>Vad vill du äta till frukost?</label>
 
-Äggröra
+      <div>
+          <div>
+              <label for="field-pancakes">Pannkakor</label>
+              <input type="radio" id="field-pancakes" name="breakfast" value="pancakes">
+          </div>
 
-Toast
+          <div>
+              <label for="field-scrambled">Äggröra</label>
+              <input type="radio" id="field-scrambled" name="breakfast" value="scrambled">
+          </div>
+
+          <div>
+              <label for="field-toast">Övrigt</label>
+              <input type="radio" id="field-toast" name="breakfast" value="toast">
+          </div>
+
+          <input type="submit" value="Skicka!">
+      </div>
+  </form>
+</figure>
 
 Prova att skicka formuläret och notera dels vad attributet `required` orsakar, samt vad som händer i webbläsarens adressfält.
 
