@@ -1,8 +1,8 @@
-**/*.textClipping
+.DS_Store
 node_modules
 .npm-debug.log
 tmp
 TODO.txt
 dist
 index.html
-.DS_Store
+build
