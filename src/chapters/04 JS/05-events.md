@@ -23,19 +23,23 @@ Exempel på asynkron exekvering i JavaScript
 
 Resultat
 
+<figure>
 a
 
 c
 
 b
+</figure>
 
 Hur kan det komma sig att vi fick outputen i ovan ordning? Detta har alltså att göra med den asynkrona event modellen i JavaScript. Den funktion som körs av `setTimeout` körs inte förrän väntetiden på `1000 ms` har passerat. Men, eftersom JavaScript har asynkrona event, så registreras denna funktion som ett event. Således kommer programmet fortsätta att exekvera. När tiden sedan gått ut, och event-loopen är "ledig" så exekveras den givna funktionen.
 
 Om `setTimeout` hade varit en synkron metod hade exekveringen avstannat ("fryst") vid anropet till `setTimeout`, och inte fortsatt förrän väntetiden passerat.
 
-Kuriosa
+<div class="box-info">
+Kuriosa. Även om vi hade satt timeout-tiden ovan till 0ms så hade vi fått samma output. Varför? Jo, för att även om väntetiden för `setTimeout` är 0 så registrerar den funktionen till event-loopen utan att exekvera den på en gång. Således kan den givna funktionen inte exekveras förrän nästa lediga "tick" i event-loopen.
 
-Även om vi hade satt timeout-tiden ovan till 0ms så hade vi fått samma output. Varför? Jo, för att även om väntetiden för `setTimeout` är 0 så registrerar den funktionen till event-loopen utan att exekvera den på en gång. Således kan den givna funktionen inte exekveras förrän nästa lediga "tick" i event-loopen.
+Varför är detta då viktigt? Jo, detta gäller alltså även för när vi registrerar event-lyssnare.
+</div>
 
 Varför är detta då viktigt? Jo, detta gäller alltså även för när vi registrerar event-lyssnare.
 
@@ -47,13 +51,13 @@ Exempel på asynkron exekvering i JavaScript
 
 HTML
 
-    <p id="eventlistener-example-1">
+    <p id="welcome">
       hello
     </p>
 
 JavaScript
 
-    var tag = document.getElementById('eventlistener-example-1');
+    var tag = document.getElementById('welcome');
     tag.addEventListener("click", function(){
       if(tag.innerHTML == "hello")
         tag.innerHTML = "world";
@@ -63,7 +67,9 @@ JavaScript
 
 Resultat (prova att klicka på texten!)
 
-hello
+<figure class="example">
+  <iframe src="examples/js-async"></iframe>
+</figure>
 
 #### Webbläsarstöd
 
@@ -77,9 +83,9 @@ Exempel på användning av addEventListener
 
 HTML
 
-    <p id="eventlistener-example-2">
-      hello
-    </p>
+    <p id="text1">hello</p>
+    <p id="text2">world</p>
+    <p id="text3">world</p>
 
 JavaScript
 
@@ -90,17 +96,17 @@ JavaScript
         element.target.innerHTML = "hello";
     }
      
-    document.getElementById('eventlistener-example-2-1').addEventListener('click', onClick);
-    document.getElementById('eventlistener-example-2-2').addEventListener('click', onClick);
+    document.getElementById('text1').addEventListener('click', onClick);
+    document.getElementById('text2').addEventListener('click', onClick);
+    document.getElementById('text3').addEventListener('click', onClick);
 
 Resultat (prova att klicka på olika texterna!)
 
-hello
-
-world
+<figure class="example">
+  <iframe src="examples/js-event-handlers"></iframe>
+</figure>
 
 Styrkan i ovan exempel är ju alltså att vi nu kan återanvända vår eventhandler och attacha den till flera olika events. En annan lärdom vi kan dra av ovan exempel är att eventhandlers anropas med argument. Detta kan vi använda för att upptäcka vilket element som faktiskt har avfyrat eventet.
 
 [0]: http://en.wikipedia.org/wiki/Event-driven_programming
-[1]: p Varför är detta då viktigt? Jo, detta gäller alltså även för när vi registrerar event-lyssnare.
 [2]: http://stackoverflow.com/questions/6927637/addeventlistener-in-internet-explorer

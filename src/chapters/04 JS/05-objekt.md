@@ -9,15 +9,12 @@ Om du programmerat i ett tidigare språk så kan du jämföra JavaScript-objekt 
 Låt oss analysera de tre nyckelorden vi identifierat i ovan stycke.
 
 **Objekt**
-> 
 > En datatyp som innehåller en kollektion av nycklar som pekar på värden (nyckel-värde-par)
 
 **Nyckel**
-> 
 > En unik identifierare, såsom "namn", eller "nummer".
 
 **Värde**
-> 
 > Ett värde kan vara av vilken annan datatyp som helst. Ett värde kan således vara 1 såväl som 32 såväl som "Kapten Haddock" såväl som ett annat objekt.
 
 Innan vi snurrar vidare är det nog bäst att vi börjar undersöka syntaxen vi använder för att skapa objekt och således diskutera ett exempel.
@@ -44,7 +41,7 @@ Vi kan nu alltså använda _punkt-notation_ för att nå de värden som gömmer 
     haddock['beard'];        // => "black as the night"
     haddock['vegetables'];   // => undefined
 
-Överkurs
+### Överkurs
 
 Om vi jämför de två olika sätten att nå ett objekts värden märker vi snabbt att vi i det första exemplet skriver nyckelns namn rakt av, medan vi i det andra exemplet skriver nyckeln i formen av en sträng. Det betyder att vi skulle kunna byta ut denna _sträng_ emot ett _uttryck_. Alltså en variabel, eller t.o.m. en funktion! Låt oss prova:
     

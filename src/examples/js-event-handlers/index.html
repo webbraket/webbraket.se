@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Exempel</title>
+</head>
+<body>
+  <p id="text1">hello</p>
+  <p id="text2">world</p>
+  <p id="text3">world</p>
+
+  <script>
+    var onClick = function(element){
+      if(element.target.innerHTML == "hello")
+        element.target.innerHTML = "world";
+      else
+        element.target.innerHTML = "hello";
+    }
+
+    document.getElementById('text1').addEventListener('click', onClick);
+    document.getElementById('text2').addEventListener('click', onClick);
+    document.getElementById('text3').addEventListener('click', onClick);
+  </script>
+</body>
+</html>

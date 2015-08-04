@@ -49,29 +49,24 @@ Nedan följer en kort videointroduktion till variabler i JavaScript.
 
 Videointroduktion till variabler i JavaScript
 
+<figure>
+<iframe width="100%" height="375" src="//www.youtube.com/embed/J_XO0AzXE6Q?rel=0&vq=hd1080" frameborder="0" allowfullscreen></iframe>
+</figure>
+
 ### Datatyper
 
 Vad kan vi lagra? Kort sagt: vad som helst som faller under JavaScripts tre [datatypskategorier][1]: primära datatyper, komposit-datatyper, eller speciella datatyper. Dessa är som följer:DatatypFörklaringExempel (separerade med ;)
 
-Primary datatypes
 
-`number`Siffror`0;   12;   -432;   11.4;   -32.4;`
-
-`string`Text`"Ekonomikum 1A";`
-
-`boolean`Sant eller falskt`true;   false;`
-
-Composite datatypes
-
-`array`Listor innehållandes andra datatyper`[1, 3, 2];   ["Hello", 123];`
-
-`object`Nycklar som pekar på värden`{ title:"Dr", name:"Snuggles" }`
-
-Special datatypes
-
-`null`Värdet för ingenting`null;`
-
-`undefined`Värdet för avsaknaden av ett värde`undefined;`
+| Datatyp     | Kategori  | Förklaring                               | Exempel (separerade med ;)
+|-------------|-----------|:-----------------------------------------|:---------------------------
+| `number`    | Primary   | Siffror                                  | `0;   12;   -432;   11.4;   -32.4;`
+| `string`    | Primary   | Text                                     | `"Ekonomikum 1A";`
+| `boolean`   | Primary   | Sant eller falskt                        | `true;   false;`
+| `array`     | Composite | Listor innehållandes andra datatyper     | `[1, 3, 2];   ["Hello", 123];`
+| `object`    | Composite | Nycklar som pekar på värden              | `{ title:"Dr", name:"Snuggles" }`
+| `null`      | Special   | Värdet för ingenting                     | `null;`
+| `undefined` | Special   | Värdet för avsaknaden av ett värde       | `undefined;`
 
 ### Likhetstecknet
 
@@ -84,7 +79,7 @@ Ekvivalens i matematik
     (1 + 1)  =  (2)
 
 De två uttrycken, isolerade av paranteser, är ekvivalenta och vänstra ledet kan således ersättas med det högra. Detta gäller inte i programmering.
-> 
+
 > Likhetstecknet i matematik implicerar ekvivalens medan likhetstecknet i programmering implicerar tilldelning.
 
 Men om ekvivalens inte gäller i programmering, vad gäller då istället? Jo, tilldelning. Med matematisk ekvivalens menar vi att evalueringen (resultatet av att beräkna) av det vänstra ledet är exakt samma sak som evalueringen av det högra ledet. Med tilldelning däremot, menar vi att evalueringen (resultatet av beräkningen) av det högra ledet _representeras_ av det vänstra ledet.

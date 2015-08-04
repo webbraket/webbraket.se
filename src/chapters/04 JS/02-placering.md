@@ -33,7 +33,9 @@ JavaScript i `<HEAD>`-taggen
 
 Resultat
 
+<figure>
 Evil rabbits...
+</figure>
 
 För att illustrera att detta är någonting som verkligen skapas av JavaScript, så tar vi och _kommenterar ut_ rad 6 såsom nedan. Att kommentera ut en rad gör att den ignoreras av webbläsaren och således inte exekveras.
     
@@ -43,7 +45,9 @@ För att illustrera att detta är någonting som verkligen skapas av JavaScript,
 
 Resultat
 
+<figure>
 Denna text kommer inte att synas eftersom JavaScriptet skriver över den.
+</figure>
 
 ### onClick
 
@@ -54,16 +58,20 @@ Låt oss se till ett exempel, som använder sig av samma kod.
 Anonym funktion vid onClick
 
     <!DOCTYPE html>
-    <button>
+    <html>
       <head>
         <title>Exempel</title> 
       </head>
       <body>
-        <a onClick="document.write('Evil rabbits...');">Engage descrution!</a>
+        <a onClick="document.write('Evil rabbits...');">Click to destruct!</a>
       </body>
     </html>
 
 Resultat
+
+<figure class="exempel">
+  <iframe src="examples/js-onclick"></iframe>
+</figure>
 
 I ovan exempel finns det tre viktiga skillnader att notera i relation till det första exemplet. Först och främst. Vår JavaScript ligger nu inte längre inom `<HEAD>`-taggen utan inom `<BODY>`. Det betyder alltså att vi har specificerat vårt skript bland vårt content och inte vårt meta-content. Eftersom skript inte är content så borde det här ringa en varningssignal om att vi sysslar med en dålig "practice", men det återkommer vi till senare.
 
@@ -71,9 +79,13 @@ Den andra viktiga skillnaden vi bör inse är att vi inte längre kör vårt Jav
 
 Anonym funktion vid onClick
 
-    <a onClick="alert('Hello...'); alert('...you!');">Welcome me!</a>
+    <a onClick="alert('Hello...'); alert('...you!');">Click for welcome message!</a>
 
 Resultat
+
+<figure class="exempel">
+  <iframe src="examples/js-onclick-2"></iframe>
+</figure>
 
 > Glöm nu allt du lärt dig om att skriva inline-javascript i `onClick` och glöm nästan allt du lärt dig om att skriva JavaScript direkt i `<head>` --- det finns bättre sätt!
 
@@ -103,11 +115,14 @@ main.js
 
 Resultat
 
+<figure>
 Oh noes evil rabbits...
+</figure>
 
 Notera alltså rad 5 i ovan exempel. Det är just rad 5 som berättar för webbläsaren vart JavaScript-filen finns. Vi anger .js-filens plats med en relativ sökväg genom att bara skriva `filnamnet.js` rakt upp och ned. Så webbläsaren kommer alltså leta efter en fil vid namn `filnamnet.js` i _samma mapp_ som index.html ligger.
 
-Överkurs
+
+### Överkurs
 
 Kanske har du märkt att många webbutvecklare laddar in sina JavaScript-filer i `<body>` och inte i `<head>`. Detta har med performance och göra, och är egentligen en superb idé! Låt oss prata om varför.
 
@@ -121,21 +136,24 @@ Faktum är att det t.o.m. är [tillåtet enligt specifikation][4] att placera `<
 
 Ladda in JavaScript-filer i slutet av `<body>`
 
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Exempel</title> 
-      </head>
-      <body>
-        <p>Först lägger vi allt vårt content</p>
-        <p>Och sen sist, laddar vi in js:</p>
-        <script src="main.js"></script>
-      </body>
-    </html>
+```markup
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exempel</title> 
+  </head>
+  <body>
+    <p>Först lägger vi allt vårt content</p>
+    <p>Och sen sist, laddar vi in js:</p>
+    <script src="main.js"></script>
+  </body>
+</html>
+```
 
 Således används alltså denna teknik för att ge användaren en känsla av att sidan har laddat klart snabbare än den egentligen gör. Om vi lägger våra javascript-filer i `<head>` kommer webbläsaren alltså att "blocka" sidan och inte printa ut någonting visuellt förrän _hela_ javascript-filen har laddats ned. Men om vi lägger referensen till vår javascript fil i slutet av `<body>` kommer webbläsaren att rendera hela `<body>`:n innan den börjar blocka och ladda in javascript-filen.
 
 Såsom mycket annat i världen så är detta inte svart eller vitt, utan det finns många fall där vi faktiskt bör ladda in JavaScript i `<head>`. Du kan läsa mer om detta bl.a. [här][5].
+
 
 [0]: http://en.wikipedia.org/wiki/Separation_of_concerns
 [1]: http://en.wikipedia.org/wiki/Bottleneck

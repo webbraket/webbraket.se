@@ -63,6 +63,7 @@ JavaScript
 
 Resultat
 
+<figure>
 Ett
 
 Två
@@ -70,6 +71,7 @@ Två
 C
 
 Två
+</figure>
 
 Ok, nu kanske det krävs en liten förklaring. Om vi som i första exemplet hämtar med id då vet vi att vi endast får ett objekt tillbaka. I andra exemplet ovan ber vi om objekten med hjälp av tagnamnet och därför returneras dessa i en array. Med andra ord: när vi hämtar ett element genom ett ID kan vi alltid vara hundra på att det bara finns ett (eftersom ett ID endast får förekomma en gång i ett HTML-dokument). Men när vi söker element via tagnamn så kan vi omöjligen veta hur många instanser det finns av just den taggen. Således har man valt att låta `getElementsByTagName` returnera en array. Således är det även därför vi ovan använder bracket-notationen (`[x]`) för att arbeta med resultatet.
 > 

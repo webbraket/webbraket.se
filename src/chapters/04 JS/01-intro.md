@@ -18,12 +18,11 @@ Låt oss se till hur vi skulle kunna lösa samma sak genom JavaScript.
 
 Exempel på en confirmation dialog genom JS
 
-[Delete my account][0]
+<figure class="example">
+  <iframe src="examples/js-dialog"></iframe>
+</figure>
 
 När du provat ovan exempel, finns det en till viktig sak att inse. Interaktiveten i ovan exempel sker "isolerat" i den lilla exempelrutan. Resten av sidan påverkas inte. Slutsatsen vi drar är alltså att vi kan använda JavaScript till att uppnå en nivå av interaktivet vi omöjligen kan uppnå med endast HTML och CSS utan att använda flera sidor.
-> 
+
 > Med JavaScript kan vi låta användaren interaktivt interagera med sidan utan att den behöver "laddas om".
 
-
-
-[0]: #
