@@ -135,8 +135,6 @@ Så kommer vi således alltså endast "träffa" de två första `<p>`-elementen 
 
 Resultat
 
-En första paragraf
-
-En andra paragraf
-
-En inre paragraf
+<figure class="example">
+  <iframe src="examples/css-selectors"></iframe>
+</figure>

@@ -21,54 +21,56 @@ Ett exempel på hur en regel kaskadar igenom ifrån föräldern till barnen
 
 Resultat
 
-First paragraph
+<figure class="example">
+  <iframe src="examples/css-cascade"></iframe>
+</figure>
 
-Second paragraph
-> 
 > Mer specifika regler skriver över mindre specifika regler oavsett i vilken ordning de dyker upp i css-filerna.
 
 Att mer specifika regler skriver över mindre specifika regler innebär att vi kan utnyttja kaskadet till vår fördel. Genom att således definiera generella regler på en "hög" nivå och sedan skriva över med de specika ändringar som vi vill göra.
 
 Ett exempel på hur en mer specifik regel _skriver över_ en mindre specifik (kaskadad) regel
 
-    <body>
-      <p>First paragraph</p>
-      <div>
-        <p>Second paragraph</p>
-      <div>
-    </body>
+```markup
+<body>
+  <p>First paragraph</p>
+  <div>
+    <p>Second paragraph</p>
+  <div>
+</body>
+```
 
-    body { color: green; }
-    div p { color: blue; }
+```csss
+body { color: green; }
+div p { color: blue; }
+```
 
-Resultat
-
-First paragraph
-
-Second paragraph
+<figure class="example">
+  <iframe src="examples/css-specificity"></iframe>
+</figure>
 
 Låt oss se till ett till exempel där vi använder ett elements ID för att kunna skriva över stilarna specifikt. Notera hur den andra paragrafen fortsätter att vara **fetstilad** eftersom den "ärver" den regeln av sin förälder. Alltså, egenskapen kaskadar ned ifrån föräldern till barnet.
 
 Ett exempel på hur en mer specifik regel _skriver över_ en mindre specifik (kaskadad) regel
 
-    <p>First paragraph</p>
-    <p id="selected">Second paragraph</p>
-    <p>Third paragraph</p>
+```markup
+<p>First paragraph</p>
+<p id="selected">Second paragraph</p>
+<p>Third paragraph</p>
+```
 
-    p {
-      color: red;
-      font-weight: bold;
-    }
-    #selected {
-      color: orange;
-    }
+```css
+p {
+  color: red;
+  font-weight: bold;
+}
+#selected {
+  color: orange;
+}
+```
 
-Resultat
-
-First paragraph
-
-Second paragraph
-
-Third paragraph
+<figure class="example">
+  <iframe src="examples/css-specificity-2"></iframe>
+</figure>
 
 [0]: http://sv.wikipedia.org/wiki/Kaskad

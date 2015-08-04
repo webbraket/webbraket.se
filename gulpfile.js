@@ -13,12 +13,13 @@ var gulp    = require('gulp'),
 
 
 gulp.task('default', ['watch:development']);
-gulp.task('build:development', ['chapters', 'js:development', 'css:development', 'img', 'root']);
-gulp.task('build:production',  ['chapters', 'js:production', 'css:production', 'img', 'root']);
+gulp.task('build:development', ['chapters', 'js:development', 'css:development', 'img', 'root', 'examples']);
+gulp.task('build:production',  ['chapters', 'js:production', 'css:production', 'img', 'root', 'examples']);
 
 gulp.task('watch:development', ['server'], function(){
   gulp.watch('src/chapters/**/*',   ['chapters']);
   gulp.watch('src/templates**/*',   ['chapters']);
+  gulp.watch('src/examples/**/*',   ['examples']);
   gulp.watch('src/assets/js/**/*',  ['js:development']);
   gulp.watch('src/assets/css/**/*', ['css:development']);
   gulp.watch('src/assets/img/**/*', ['img']);
@@ -27,6 +28,7 @@ gulp.task('watch:development', ['server'], function(){
 gulp.task('watch:production', ['server'], function(){
   gulp.watch('src/chapters/**/*',   ['chapters']);
   gulp.watch('src/templates**/*',   ['chapters']);
+  gulp.watch('src/examples/**/*',   ['examples']);
   gulp.watch('src/assets/js/**/*',  ['js:production']);
   gulp.watch('src/assets/css/**/*', ['css:production']);
   gulp.watch('src/assets/img/**/*', ['img']);
@@ -104,6 +106,12 @@ gulp.task('root', function(){
 gulp.task('img', function(){
   return gulp.src('src/assets/img/**/*.*')
     .pipe(gulp.dest('build'))
+    .pipe(connect.reload());
+});
+
+gulp.task('examples', function(){
+  return gulp.src('src/examples/**/*.*')
+    .pipe(gulp.dest('build/examples'))
     .pipe(connect.reload());
 });
 

@@ -34,7 +34,9 @@ main.css
 
 Resultat
 
-As Gregor Samsa awoke one morning from uneasy dreams \[..\]
+<figure class="example">
+  <iframe src="examples/css-selectors-simple/"></iframe>
+</figure>
 
 Hur ska vi nu tänka kring det här? De viktigaste sakerna att poängtera är:
 
@@ -91,12 +93,8 @@ main.css
 
 Resultat
 
-As Gregor Samsa awoke one morning
-
-from uneasy dreams
-
-he found himself transformed in his bed
-
-into a monstrous vermin.
+<figure class="example">
+  <iframe src="examples/css-selectors-many/"></iframe>
+</figure>
 
 [0]: http://en.wikipedia.org/wiki/Bracket#Curly_brackets_or_braces_.7B_.7D
