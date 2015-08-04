@@ -4,6 +4,10 @@ De flesta webbsidor vi idag besöker bygger inte bara på teknikerna `html`, `ja
 
 Introduktionsvideo om php och server-side-språk
 
+<figure>
+<iframe width="100%" height="375" src="//www.youtube.com/embed/Z-R87-1kFq4?rel=0&vq=hd1080" frameborder="0" allowfullscreen></iframe>
+</figure>
+
 Vad är då ett server-side-språk? Tänk så här. När vår webbläsare ber om en sida så skickar den ett `request` till en `server` som svarar med ett `response`. Detta `response` innehåller ju alltså den `html` vår webbläsare kommer att rendera. Om vi **inte** har ett server-side-språk så kommer denna `html`-fil alltid att vara densamma. I detta fall skulle vi kunna säga att den `webbserver` som hanterar vår webbläsares `request` agerar som en statisk filserver. Den serverar oss helt enkelt filer. Vi ber om en fil. Och vi får den tillbaka. Denna typ av webbsida är vad som generellt kallas för [statiska webbsidor][0].
 
 Med server-side-språk så kan vi helt enkelt skapa [dynamiska webbsidor][1]. Den huvudsakliga skillnaden ligger alltså just i termerna dynamisk vs. statisk. En statisk webbserver kan ses som en filserver, medan en dynamisk webbserver snarare kan ses som en applikationsserver. Jämför t.ex. din egen hårddisk med en webbshop på nätet. Om du öppnar en `.html`-fil ifrån din hårddisk kommer den alltid se likadan ut. Inte förrän du förrändrar filen kommer webbsidan att se annorlunda ut. Webbshopen på nätet däremot kanske har en varukorg. Varende gång du besöker varukorgen kan det hända att du (t.ex.) hamnar på `url`:en `www.example.com/checkout.php`. Trots att det alltid är samma sida vi öppnar så innehåller inte alltid den renderade sidan samma sak. Om jag öppnar sidan med min användare visas min shoppingvagn, och om du öppnar den visas din. Men filen ser fortfarande exakt likadan ut i båda fallen.

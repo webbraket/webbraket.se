@@ -24,15 +24,9 @@ Låt oss börja med att repetera hur ett vanligt `html`-formulär ser ut. Beakta
       <input type="submit" value="Skicka!">
     </form>
 
-Resultat
-
-Ditt namnVad vill du äta till frukost?
-
-Pannkakor
-
-Äggröra
-
-Toast
+<figure class="example">
+<iframe src="examples/php-forms"></iframe>
+</figure>
 
 Vi bad dig att framförallt notera användandet av nyckel-värde-paren `action="process.php"` och `method="GET"`. Kanske har du redan ett hum. Men låt oss prata om det. Vad betyder dessa två egentligen? Varför behöver vi ange dessa attribut? Och vad kan vi ge de för värden? Låt oss ta de en efter en.
 
@@ -95,13 +89,15 @@ Som du kanske har misstänkt betyder detta alltså att när vi gör anrop via `G
 
 ### Läsa POST och GET i PHP
 
-Låt oss nu istället prata om hur vi i `php` kan läsa den data som kan skickas genom ett request. När en `php`-fil körs (i kontexten av en webbapplikation) så körs den rimligen av en webbserver (t.ex. [Apache][13]). En webbserver kan ju, som vi långt tidigare klargjort, ta emot `request`:s. Och som vi nu klargjort kan ju `request`:s (bl.a.) vara av typen `POST` eller `GET`. Och i båda fallen kan de innehålla data ifrån den som skickat `request`:et. Och eftersom det är en just en webbserver som delegerar neråt till `php` så är det så fantastiskt att de flesta webbservrar låter anropet till server-side-språket få veta vad den har fått för request. Det betyder alltså att om vi använder _Apache_ och `php` så kommer vi i vår kod åt en hel del information om det anrop som faktiskt orsakat att vi kör den kod vi just nu kör. Låt oss se till några exempel.[$\_REQUEST][14]En _superglobal_ _associativ array_ som innehåller alla requestvariabler oavsett om de kommer ifrån _GET_, _POST_ eller _Cookies_.
+Låt oss nu istället prata om hur vi i `php` kan läsa den data som kan skickas genom ett request. När en `php`-fil körs (i kontexten av en webbapplikation) så körs den rimligen av en webbserver (t.ex. [Apache][13]). En webbserver kan ju, som vi långt tidigare klargjort, ta emot `request`:s. Och som vi nu klargjort kan ju `request`:s (bl.a.) vara av typen `POST` eller `GET`. Och i båda fallen kan de innehålla data ifrån den som skickat `request`:et. Och eftersom det är en just en webbserver som delegerar neråt till `php` så är det så fantastiskt att de flesta webbservrar låter anropet till server-side-språket få veta vad den har fått för request. Det betyder alltså att om vi använder _Apache_ och `php` så kommer vi i vår kod åt en hel del information om det anrop som faktiskt orsakat att vi kör den kod vi just nu kör. Låt oss se till några exempel.
 
-[$\_GET][15]En _superglobal_ _associativ array_ som innehåller alla requestvariabler som återfinns i den nuvarande _url_:en.
 
-[$\_SERVER][16]En _superglobal_ _associativ array_ som innehåller en mängd matnyttig information. Bland annat vilken requesttyp nuvarande _request_ är av, nuvarande _querystring_ eller vilken _port_ skriptet körs på, o.s.v.
-
-[getallheaders()][17]En metod som returnerar en _array_ innehållandes alla _http headers_ för det nuvarande _http request_:et.
+|                      |     |
+|----------------------|-----|
+| [$\_REQUEST][14]     | En _superglobal_ _associativ array_ som innehåller alla requestvariabler oavsett om de kommer ifrån _GET_, _POST_ eller _Cookies_.
+| [$\_GET][15]         | En _superglobal_ _associativ array_ som innehåller alla requestvariabler som återfinns i den nuvarande _url_:en.
+| [$\_SERVER][16]      | En _superglobal_ _associativ array_ som innehåller en mängd matnyttig information. Bland annat vilken requesttyp nuvarande _request_ är av, nuvarande _querystring_ eller vilken _port_ skriptet körs på, o.s.v.
+| [getallheaders()][17]| En metod som returnerar en _array_ innehållandes alla _http headers_ för det nuvarande _http request_:et.
 
 Notera att det är fullt möjligt att skicka `GET`- och `POST`-data samtidigt eftersom vi kan göra ett `POST`-request till en url i vilken vi manuellt adderar urlkodade nyckel-värde-par. Anta alltså t.ex. att vi skulle efterfråga url:en `http://example.com/?shape=triangle`. Om vi t.ex. skulle ange den _url_:en som värde till `action`-attributet i ett formulär, och sedan ange att formulärets `method` skulle vara `POST`. Då kommer formulärets data ju alltså skickas i ett `POST`-request, men eftersom _url_:en vi angav redan innehöll data formaterad som i ett `GET`-request så kommer vi även ha skickat med den datan.
 
@@ -123,7 +119,9 @@ Att läsa värden ifrån $\_GET
 
 Resultat
 
+<figure>
 Dear Johnny, I'll certainly make you some pancakes.
+</figure>
 
 ### Att själv konstruera ett GET request
 
@@ -137,7 +135,9 @@ Vi skulle t.ex. kunna skicka data med en helt vanlig länk.
 
 Vilket skulle ge:
 
-[Johnny likes pancakes][18]
+<figure>
+<a href="http://example.com/?name=Johnny&breakfast=pancakes">Johnny likes pancakes</a>
+</figure>
 
 Vi skulle förstås även kunna använda `php` för att göra precis samma sak men istället byta ut de konkreta värdena emot variabler.
     
@@ -197,4 +197,3 @@ Om du inte redan märkt det, så är alltså syntaxen för att bygga upp en quer
 [15]: http://www.php.net/manual/en/reserved.variables.get.php
 [16]: http://www.php.net/manual/en/reserved.variables.server.php
 [17]: http://www.php.net/manual/en/function.getallheaders.php
-[18]: http://example.com/?name=Johnny&breakfast=pancakes

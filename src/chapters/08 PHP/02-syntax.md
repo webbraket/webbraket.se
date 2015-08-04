@@ -14,7 +14,9 @@ Skriva till skärmen i php
 
 Resultat
 
+<figure>
 Hello woldizzle
+</figure>
 
 Självklart kan vi ju inte bara ge `echo` strängar. Vi kan ge den vilket uttryck som helst som evaluerar till en sträng, eller implicit kan omvandlas till en sträng. Det senare är sant för nedan uyttryck:
     
@@ -38,7 +40,9 @@ Blanda `php` och `html`
 
 Resultat
 
-Mixing **languages**
+<figure>
+Mixing <b>languages</b>
+</figure>
 
 Vi kan förstås även vända på steken och låta `php` själv `echo`:a ut `html`. Som så:
     
@@ -130,23 +134,19 @@ Switch case i `php`
         echo "Good night... sleep well."
     }
 
-När vi använder `if-else` konstruktionen så behöver vi ju förstås göra jämförelser. En `if`-sats förväntar sig ett boolskt värde. Och eftersom alla värden kan ersättas med uttryck så kan vi ju (precis som i nästan alla programmeringsspråk) ge ett uttryck istället för ett värde. Detta uttryck skulle kunna vara en jämförelse emellan två ting. Och om vi ska göra jämförelser så behöver vi förstås som vanligt jämförelseoperatorer. Även i `php` hittar vi då de vanligaste jämförelseoperatorer.OperatorNamnFörklaring
+När vi använder `if-else` konstruktionen så behöver vi ju förstås göra jämförelser. En `if`-sats förväntar sig ett boolskt värde. Och eftersom alla värden kan ersättas med uttryck så kan vi ju (precis som i nästan alla programmeringsspråk) ge ett uttryck istället för ett värde. Detta uttryck skulle kunna vara en jämförelse emellan två ting. Och om vi ska göra jämförelser så behöver vi förstås som vanligt jämförelseoperatorer. Även i `php` hittar vi då de vanligaste jämförelseoperatorer.
 
-`==`EqualitySant om $A och $B är exakt ekvivalenta.
-
-`===`IdenticalSant om $A och $B är exakt ekvivalenta, och de är av samma datatyp. 
-
-`!=` eller `<>`Not equalSant om $A och $B inte är lika.
-
-`!==`Not identicalSant om $A och $B inte är lika, eller om de inte är av samma datatyp.
-
-`<`Less thanSant om $A är lägre än $B.
-
-`>`Greater thanSant om $A är högre än $B.
-
-`<=`Less than or equalSant om $A är lägre än eller lika låg som $B.
-
-`>=`Greater than or equalSant om $A är högre eller lika hög som än $B.
+| Operator        | Namn                 | Förklaring
+|-----------------|----------------------|-----------
+|`==`             |Equality              | Sant om $A och $B är exakt ekvivalenta.
+|`===`            |Identical             | Sant om $A och $B är exakt ekvivalenta, och de är av samma datatyp. 
+|`!=`             |Not                   | Sant om $A och $B inte är lika.
+|`<>`             |                      | Som ovan.
+|`!==`            |Not identical         | Sant om $A och $B inte är lika, eller om de inte är av samma datatyp.
+|`<`              |Less than             | Sant om $A är lägre än $B.
+|`>`              |Greater than          | Sant om $A är högre än $B.
+|`<=`             |Less than or equal    | Sant om $A är lägre än eller lika låg som $B.
+|`>=`             |Greater than or equal | Sant om $A är högre eller lika hög som än $B.
 
 ### Iteration
 
@@ -164,7 +164,9 @@ Ok, låt oss nu prata om iteration. Vi börjar med att kika på den gamla gode `
 
 Result
 
+<figure>
 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+</figure>
 
 Men om det hade varit det ovanstående problemet vi ville lösa så hade vi förstås lika väl kunnat använda en gammal hederlig `for`-loop.
 
@@ -174,7 +176,9 @@ Men om det hade varit det ovanstående problemet vi ville lösa så hade vi för
 
 Result
 
+<figure>
 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+</figure>
 
 Och när vi ändå talar om `for`-loopen, så har ju även `php` en implementation av den välanvända `foreach`-loopen. Anta att vi har en kollektion av något slag, och att vi sedan vill iterera över hela kollektionen. Låt oss kika på ett exempel där kollektionen består av en array.
 
@@ -188,9 +192,11 @@ Och när vi ändå talar om `for`-loopen, så har ju även `php` en implementati
 
 Result
 
+<figure>
 red  
 green  
 blue
+</figure>
 
 Om du har använt en `foreach`-loop i något annat språk så märker du säkert att implementationen i `php` känns lite "baklänges". I de flesta språk är loopen konstruerad så att syntaxen säger: `foreach(item in collection)`. Men i `php` så säger syntaxen: `foreach(collection as item)`. Men håll tungan rätt i mun, och tänk baklänges så ska nog allt gå sin väg! :)
 
@@ -216,8 +222,10 @@ Funktioner i `php`
 
 Result
 
+<figure>
 John has 7 points  
 Jane has 13 points
+</figure>
 
 Om du studerar ovan exempel lite närmare så märker du att vad vi nämnde innan om dynamiska språk onekligen är sant. Den första metoden tar berättar inte att den ska returnera någonting, på något annat sätt än att den helt enkelt returnerar det den vill returnera. Inte heller berättar den att den vill returnera en siffra.
 

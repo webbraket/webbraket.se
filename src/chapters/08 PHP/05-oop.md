@@ -57,9 +57,11 @@ Att deklarera en klass med konstruktor, och sedan instantiera klassen.
 
 Resultat
 
+<figure>
 Hello, my name is Whiskey.
 
 Hello, my name is Socks.
+</figure>
 
 ### Klass- och instansmedlemmar
 
@@ -93,11 +95,11 @@ Notera alltså att skillnaden emellan att deklarera en statisk (klass-) variabel
 
 Vi kommer att implementera det exempel som diskuterats ovan i helhet, i detta kapitel. Men vi måste ta det steg för steg för att verkligen förstå alla delar. Låt oss först diskutera det som kallas `access modifiers`. Detta handlar alltså om huruvida en medlem är `public`, `private` eller `protected`. Som du kanske märkte så markerade vi i ovan exempel att de två variablerna var `private`. På samma sätt som en medlem måste markeras som statisk eller inte, måste en medlem också ha en `access modifier`. Denna avgör "vilka" som kommer att få komma åt medlemen. Den "modify":ar alltså "access" --- för att prata svengelska :)KeywordFörklaring
 
-`public`Alla som har tillgång till klassen/instansen har tillgång till medlemmen.
-
-`private`Endast klassen/instansen själv har tillgång till medlemmen.
-
-`protected`Endast klassen/instansen själv, samt klasser/instanser i samma arvskedja, har tillgång till medlemmen.
+|            |        
+|------------|---------
+|`public`    | Alla som har tillgång till klassen/instansen har tillgång till medlemmen.
+|`private`   | Endast klassen/instansen själv har tillgång till medlemmen.
+|`protected` | Endast klassen/instansen själv, samt klasser/instanser i samma arvskedja, har tillgång till medlemmen.
 
 #### Klass- och instansmetoder
 
@@ -201,13 +203,12 @@ Exempel på användande av klass- och instansmedlemmar
 
 Resultat
 
-Hi, I am Whiskers.
-
-There's 1 animal(s) in the world.
-
-Hi, I am Frolic.
-
-There's 2 animal(s) in the world.
+<figure>
+<p>Hi, I am Whiskers.</p>
+<p>There's 1 animal(s) in the world.</p>
+<p>Hi, I am Frolic.</p>
+<p>There's 2 animal(s) in the world.</p>
+</figure>
 
 ### Överkurs
 
@@ -217,7 +218,8 @@ Kommer snart...
 
 Kommer snart...
 
-#### Automatisk inladdning av klassfiler[Kommer snart...][5]
+#### Automatisk inladdning av klassfiler
+[Kommer snart...][5]
 
 [0]: http://michaelkimsal.com/blog/php-is-not-object-oriented/
 [1]: http://stackoverflow.com/questions/4699519/is-php-object-oriented
