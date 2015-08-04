@@ -106,3 +106,13 @@ $ git merge development --no-ff
 $ gulp publish
 ```
 
+## Style guide
+#### Block quotes
+```markup
+<!-- Med attribution och verk -->
+<figure>
+  <blockquote>Where our universe lies in the space of all possible universes.</blockquote>
+  <figcaption>Stephen Wolfram, <cite>A New Kind Of Science</cite></figcaption>
+</figure>
+```
+Läs mer om varför vi använder denna stil för blockquotes [här](http://alistapart.com/blog/post/more-thoughts-about-blockquotes-than-are-strictly-required).

@@ -5,10 +5,16 @@ Kanske har du redan märkt att när man skapar html-dokument som innehåller tec
 För att göra en lång historia kort så var det alltså så att man i datorernas tidiga dagar representerade tecken som [ASCII][0]-koder. T.ex. så representerades `A` genom `65` och `a` genom `97`.
 
 ASCII-tabellen använde sig av 7 bitar, vilket resulterade i 128 olika tecken (eftersom `2^7=128`), varvid vissa var "unprintable" kontroll-tecken. Som du säkert kan tänka dig upptäckte man snabbt att detta var fullt otillräckligt för att lagra all världens olika tecken. Vi har ju förstås inte bara åäö att arbeta med, utan även kinesiska, grekiska, arabiska o.s.v.
-> 
-> There is no such thing as plain text.
-> 
-> &mdash; [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)][1]
+
+
+<figure>
+  There is no such thing as plain text.
+  <figcaption>
+    <cite>
+      [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)][1]
+    </cite>
+  </figcaption>
+</figure>
 
 Ovan citat understryker faktumet att datorer egentligen är väldigt korkade och bara gör det vi säger åt dem. Utan att berätta för en dokumentläsare på vilket sätt vi sparat ett visst tecken så har den ingen chans att veta vad det är för tecken, hur det ska visas, eller ens vart tecknet slutar.
 
