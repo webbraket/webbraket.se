@@ -20,11 +20,9 @@ jQuery
 
 Resultat
 
-Oh no no no...
-
-Please do not click me, oh no no, please...
-
-I don't want to fade, please...
+<figure class="example">
+<iframe src="examples/jquery-event-listeners"></iframe>
+</figure>
 
 Om du försöker bygga ovan exempel med ren JavaScript kommer du snabbt märka varför det gör livet så hiskelens mycket enklare att arbeta med ett JavaScript-bibliotek såsom jQuery.
 
@@ -68,6 +66,8 @@ Detta kommer nu alltså att ge oss följande...
 
 Resultat (testa att klicka på paragrafen)
 
-Hello world
+<figure class="example">
+<iframe src="examples/jquery-events-this"></iframe>
+</figure>
 
 Detta går självklart även att göra med helt vanlig JavaScript, såsom du förhoppningsvis kommer ihåg ifrån JavaScript-kapitlet. Att det är enklare att göra i jQuery är ju förstås ett plus! Men det viktiga att komma ihåg är här alltså att detta gör det möjligt för oss att skriva mycket mer generella `event handlers` (alltså metoden som körs när ett event avfyras). Om vi t.ex. har tre knappar som alla gör väldigt liknande saker, så finns det alltså ingen anledning att binda separata event-hanterare (`event handler`) för varje knapp. Istället generaliserar vi koden i event-hanteraren och binder alla events till samma hanterare. Sött som sylt!

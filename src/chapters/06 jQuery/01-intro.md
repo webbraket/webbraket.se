@@ -70,11 +70,9 @@ main.js
 
 Om du inte själv har valt att implementera den fantastiska jQuery-koden ovan så kan du få en sneak-peak på vilken underbar värld som väntar genom att prova exemplet nedan!
 
-Resultat (prova!)
-
-All your base!
-
-Reset (you will need it I promise)
+<figure class="example">
+  <iframe src="examples/jquery-kittens"></iframe>
+</figure>
 
 Svårare än så är det inte! Så, när du använder jQuery behöver du helt enkelt komma ihåg tre saker.
 

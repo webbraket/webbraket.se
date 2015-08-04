@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Exempel</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+</head>
+<body>
+  <div>Oh no no no...</div>
+  <div>Please do not click me, oh no no, please...</div>
+  <div>I don't want to fade, please...</div>
+
+  <script>
+    $('div').click(function(){
+      $(this).fadeOut();
+    });
+  </script>
+</body>
+</html>

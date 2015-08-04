@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Exempel</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+</head>
+<body>
+  <p>Hello world</p>
+  
+  <script>
+    var onClick = function(){
+      var sender = $(this);
+      alert(sender.text());
+    }
+
+    $('p').click(onClick);
+  </script>
+</body>
+</html>
