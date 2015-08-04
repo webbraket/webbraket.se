@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Exempel</title>
+</head>
+<body>
+  <p id="welcome">hello</p>
+  <script>
+    var tag = document.getElementById('welcome');
+    tag.addEventListener("click", function(){
+      if(tag.innerHTML == "hello")
+        tag.innerHTML = "world";
+      else
+        tag.innerHTML = "hello";
+    });
+  </script>
+</body>
+</html>

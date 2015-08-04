@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Exempel</title>
+  <style>
+    div{
+      display: block;
+    }
+    div{
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <form action="process.php" method="GET">
+
+    <div>
+      <label for="field-name">Ditt namn</label>
+      <input type="text" id="field-name" name="name" placeholder="Ditt namn" required>
+    </div>
+
+    <div>
+      <label>Vad vill du äta till frukost?</label>
+    </div>
+
+    <div>
+      <label for="field-pancakes">Pannkakor</label>
+      <input type="radio" id="field-pancakes" name="breakfast" value="pancakes">
+    </div>
+
+    <div>
+      <label for="field-scrambled">Äggröra</label>
+      <input type="radio" id="field-scrambled" name="breakfast" value="scrambled">
+    </div>
+
+    <div>
+      <label for="field-toast">Övrigt</label>
+      <input type="radio" id="field-toast" name="breakfast" value="toast">
+    </div>
+
+    <div>
+      <input type="submit" value="Skicka!">
+    </div>
+  </form>
+</body>
+</html>
