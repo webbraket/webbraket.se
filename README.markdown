@@ -62,7 +62,7 @@ $ gulp build:production
 # Bygger till mappen `build` med minifiering.
 
 $ gulp publish
-# Publicerar till Github Pages (dvs live).
+# Publicerar till Github Pages (dvs live). Publicera alltid ifrån master-branch.
 ```
 
 
@@ -107,12 +107,28 @@ $ gulp publish
 ```
 
 ## Style guide
-#### Block quotes
+Använd [Markdown](http://daringfireball.net/projects/markdown/)-syntax i största möjliga mån och undvik ad-hoc-HTML. Eftersom Markdown är väldigt limiterat kommer vi ju tyvärr inte undan. Försök isåfall hålla dig till följande undantag. Om du introducerar nya undantag, vänligen skriv om de här i README:n.
+
+#### Block quotes with attribution
+Läs mer om varför vi använder denna stil för blockquotes [här](http://alistapart.com/blog/post/more-thoughts-about-blockquotes-than-are-strictly-required).
 ```markup
-<!-- Med attribution och verk -->
 <figure>
   <blockquote>Where our universe lies in the space of all possible universes.</blockquote>
   <figcaption>Stephen Wolfram, <cite>A New Kind Of Science</cite></figcaption>
 </figure>
 ```
-Läs mer om varför vi använder denna stil för blockquotes [här](http://alistapart.com/blog/post/more-thoughts-about-blockquotes-than-are-strictly-required).
+
+#### Code examples (iframe)
+```markup
+<figure class="example">
+  <iframe src="examples/example-name"></iframe>
+</figure>
+```
+
+#### Boxes
+För att skapa den där klassiska lärobokskänslan :) Info-boxen används för by-the-way information, och warning-boxen används för se-upp-notiser.
+```markup
+<div class="box-info"> ... </div>
+<div class="box-warning"> ... </div>
+```
+
