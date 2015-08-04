@@ -171,7 +171,9 @@ Låt oss använda en `for`-loop för att inkludera samma fil tre gånger. Om vi 
 
 Resultat
 
+<figure>
 hello hello hello
+</figure>
 
 Men om vi kör samma `for`-loop men istället använder oss av `require_once` så får vi följande resultat:
     
@@ -179,7 +181,9 @@ Men om vi kör samma `for`-loop men istället använder oss av `require_once` s�
 
 Resultat
 
+<figure>
 hello 
+</figure>
 
 ### Strategier för att bädda in `html`
 
@@ -205,13 +209,12 @@ Om vi hela tiden `echo`/`print`:ar ut `html` blir det lätt att få sig en uppfa
 
 Resultat
 
-Hello, John (070 123 45 67)
-
-Missed call (1).
-
-Missed call (2).
-
-Missed call (3).
+<figure>
+<p>Hello, John (070 123 45 67)</p>
+<p>Missed call (1).</p>
+<p>Missed call (2).</p>
+<p>Missed call (3).</p>
+</figure>
 
 Således är det ofta bättre att försöka hålla de filer som arbetar med `html` fokuserade på just det --- `html`. Och istället se det som att `php` kommer in i små korta svängar --- antingen för att kontrollera programflödet eller hålla variabel data. Låt oss se hur det skulle kunna se ut.
     
@@ -230,48 +233,110 @@ Denna andra strategi har den mycket positiva effekten att vi även kan indentera
 
 Som du kanske märkte använde vi i ovan en alternativ syntax för konstruktionen `for`. Låt oss kalla dessa för "kolon-varianter". Det finns några grundläggande konstruktioner i `php` som har just sådana här kolon-motsvarigheter. Varför de som skapade språket valt att implementera dessa kan vi inte svara på --- men det kan vara rimligt att anta att även de insåg att det snabbt blir problematiskt när vi försöker blanda `php` och något annat språk.
 
-Med hjälp av dessa kolon-varianter kan vi istället skriva våra dokument som om de var skrivna i just det språket vi vill nå som output. I vårat fall alltså `html`. Sedan kan vi strategiskt placera ett antal `php`-kommandon som kontrollerar applikationsflödet. Låt oss se till några exempel på konstruktioner som har kolon-motsvarigheter.KonstruktionKolon-motsvarighet
+Med hjälp av dessa kolon-varianter kan vi istället skriva våra dokument som om de var skrivna i just det språket vi vill nå som output. I vårat fall alltså `html`. Sedan kan vi strategiskt placera ett antal `php`-kommandon som kontrollerar applikationsflödet. Låt oss se till några exempel på konstruktioner som har kolon-motsvarigheter.
 
-    for(..){
-      ..
-    }
+<table>
+  <tr>
+    <th>Konstruktion</th>
+    <th>Kolon-motsvarighet</th>
+  </tr>
+  <tr>
+    <td>
+      <pre>
+        <code>
+for(..){
+  ..
+}
+        </code>
+      </pre>
+    </td>
+    <td>
+      <pre>
+        <code>
+for(..):
+  ..
+endfor;
+        </code>
+    </td>
+  </tr>
 
-    for(..):
-      ..
-    endfor;
+  <tr>
+    <td>
+      <pre>
+        <code>
+foreach(..){
+  ..
+}
+        </code>
+      </pre>
+    </td>
+    <td>
+      <pre>
+        <code>
+foreach(..):
+  ..
+endforeach;
+        </code>
+      </pre>
+    </td>
+  </tr>
 
-    foreach(..){
-      ..
-    }
+  <tr>
+    <td>
+      <pre>
+        <code>
+while(..){
+  ..
+}
+        </code>
+      </pre>
+    </td>
+    <td>
+      <pre>
+        <code>
+while(..):
+  ..
+endwhile;
+        </code>
+      </pre>
+    </td>
+  </tr>
 
-    foreach(..):
-      ..
-    endforeach;
+  <tr>
+    <td>
+      <pre>
+        <code>
+if(..){
+  ..
+}else if(..){
+  ..
+}else{
+  ..
+}
+        </code>
+      </pre>
+    </td>
+    <td>
+      <pre>
+        <code>
+if(..):
+  ..
+elseif(..):
+  ..
+else:
+  ..
+endif;
+        </code>
+      </pre>
+    </td>
+  </tr>
 
-    while(..){
-      ..
-    }
+</table>
 
-    while(..):
-      ..
-    endwhile;
 
-    if(..){
-      ..
-    }else if(..){
-      ..
-    }else{
-      ..
-    }
+    
 
-    if(..):
-      ..
-    elseif(..):
-      ..
-    else:
-      ..
-    endif;
-
+    
 Dessa "kolon-motsvarigheter" är alltså mycket användbara när vi vill blanda `html` och `php` eftersom vi kan "bryta upp" våra `php`-block. Beakta följande exempel.
 
 Exempel på varför vi behöver kolon-motsvarigheterna i `php`
@@ -290,9 +355,10 @@ Men det är förstås inte lika tydligt som att använda kolon-motsvarigheterna 
 
 Fundera t.ex. över hur förvirrande det skulle vara att försöka avgöra vilken "stängande måsvinge" som hör till vilken "öppnande" när vi börjar hantera komplexare fall såsom det nedan...
     
+    <!-- TODO: This example is probably broken -->
     <? if(someCondition){ ?>
       <p>Then display 
-      <? for($i=0; $i
+      <? for($i=0; $i<10; $i++){="" ?>="" this="" <?="" if($i%2="=0){" text<="" p>="" }="" for($i="0;" $i<10;="" many="" times="" ?><="" code="">
 
 Nu säger vi förstås inte att alla måste prioritera att använda "kolon-versionerna". Inte heller säger vi att det i alla fallet är det bästa sättet att designa sina `php`-filer. Men om du inte har en annan medveten strategi du tror på, så skulle vi rösta för att du följer ovan.
 
