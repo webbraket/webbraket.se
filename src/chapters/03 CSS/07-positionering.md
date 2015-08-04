@@ -22,10 +22,18 @@ Låt oss se till några exempel.
 
 Exempel på statisk positionering för två `<div>`:ar efter varandra.
 
+<figure class="example">
+  <iframe src="examples/css-positioning-static"></iframe>
+</figure>
+
 Exempel på statisk positionering för en `<div>` i en `<div>`
 
+<figure class="example">
+  <iframe src="examples/css-positioning-static-nested"></iframe>
+</figure>
+
 ### Fixed
-> 
+
 > Fixerade element tar inte upp plats
 
 Med fixerad positionering säger vi åt ett element att ignorera sin "normala" plats i dokumentflödet och istället placera sig på en position i relation till webbläsarfönstret.
@@ -33,7 +41,7 @@ Med fixerad positionering säger vi åt ett element att ignorera sin "normala" p
 Med andra ord så är alltså (den tänkta koordinaten) `{0,0}` högst upp till vänster i webbläsaren. Detta förutsatt att vi sätter föregående värden för egenskaperna `left` och `top` vilket då i ett kordinatsystem skulle motsvaras av `x` och `y`. Således kan vi sluta oss till att origo är högst upp till vänster i webbläsaren.
 
 Vad som gör positionering i css intressant är att vi även kan vända steken och istället sätta värden för egenskaperna `right` och `bottom`. Vi hanterar då fortfarande `x` och `y` i bemärkelsen horisontellt och vertikalt men vi har nu flyttat origo ner till högra hörnet. Plus att vårt koordinatsystem nu fungerar "baklänges". Ett högre värde för right innebär att vi flyttar vårt element längre åt vänster. Sätt detta i relation till att ett högre värde för left flyttar vårt element längre åt höger.
-> 
+
 > Tänk på positioneringsteknikerna `fixed`, `absolute` och `relative` som positionering genom i ett koordinatsystem.
 
 Medan ovan kommentarer gäller för alla `position`-värden utom `static`, gäller följande endast för `position`-värdet `relative`.
@@ -48,7 +56,11 @@ Följande exempel använder sig av nedan css
       left: 30px;
     }
 
-Bilden i detta exempel har fixed positionering
+Den blåa boxen i detta exempel har fixed positionering.
+
+<figure class="example">
+  <iframe src="examples/css-positioning-fixed"></iframe>
+</figure>
 
 ### Absolute
 
@@ -73,7 +85,15 @@ Följande exempel använder sig av nedan css
 
 Exempel på absolut positionering för två `<div>`:ar
 
+<figure class="example">
+  <iframe src="examples/css-positioning-absolute"></iframe>
+</figure>
+
 Exempel på absolut positionering för en `<div>` i en absolut positionerad `<div>`
+
+<figure class="example">
+  <iframe src="examples/css-positioning-absolute-nested"></iframe>
+</figure>
 
 ### Relative
 
@@ -96,7 +116,15 @@ Följande exempel använder sig av nedan css
 
 Exempel på relativ positionering för två `<div>`:ar
 
+<figure class="example">
+  <iframe src="examples/css-positioning-relative"></iframe>
+</figure>
+
 Exempel på relativ positionering för en `<div>` i en relativt positionerad `<div>`
+
+<figure class="example">
+  <iframe src="examples/css-positioning-relative-nested"></iframe>
+</figure>
 
 ### Video om centrering
 
@@ -106,6 +134,10 @@ I videon är målet att centrera en `<div>` horisontellt och vertikalt på sidan
 
 En video om horisontell & vertikal centrering med css
 
+<figure>
+<iframe width="100%" height="375" src="http://www.youtube.com/embed/GqCj_sHxzGE?rel=0&vq=hd1080" frameborder="0" allowfullscreen></iframe>
+<figcaption>Introduktionsvideo om html, css och javascript.</figcaption>
+</figure>
 
 
 [0]: http://en.wikipedia.org/wiki/HTML_element#Block_elements
