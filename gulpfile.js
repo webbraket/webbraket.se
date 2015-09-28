@@ -16,7 +16,7 @@ gulp.task('default', ['watch:development']);
 gulp.task('build:development', ['chapters', 'js:development', 'css:development', 'img', 'root', 'examples']);
 gulp.task('build:production',  ['chapters', 'js:production', 'css:production', 'img', 'root', 'examples']);
 
-gulp.task('watch:development', ['server'], function(){
+gulp.task('watch:development', ['build:development', 'server'], function(){
   gulp.watch('src/chapters/**/*',   ['chapters']);
   gulp.watch('src/templates**/*',   ['chapters']);
   gulp.watch('src/examples/**/*',   ['examples']);
@@ -25,7 +25,7 @@ gulp.task('watch:development', ['server'], function(){
   gulp.watch('src/assets/img/**/*', ['img']);
 });
 
-gulp.task('watch:production', ['server'], function(){
+gulp.task('watch:production', ['build:production', 'server'], function(){
   gulp.watch('src/chapters/**/*',   ['chapters']);
   gulp.watch('src/templates**/*',   ['chapters']);
   gulp.watch('src/examples/**/*',   ['examples']);
