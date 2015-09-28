@@ -1,0 +1,39 @@
+body{
+  box-sizing:  border-box;
+  width:       100%;
+  max-width:   700px;
+  padding:     20px;
+  margin:      0 auto;
+  line-height: 1.4em;
+  word-wrap:   break-word;
+}
+
+img,
+figure,
+pre{
+  max-width:   100%;
+}
+
+figure,
+pre{
+  overflow-x:  scroll;
+}
+
+pre{
+  background:  #efefef;
+  padding:     12px;
+}
+
+figure{
+  border:      1px dashed #efefef;
+}
+
+figure iframe{
+  max-height: 500px;
+}
+
+
+h1{
+  border-top:  1px dashed #dedede;
+  padding-top: 30px;
+}

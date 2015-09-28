@@ -1,0 +1,3 @@
+# JavaScript
+
+Den största limitationen med HTML och CSS skulle kunna beskrivas med ett att de är ett ord --- statiska. De båda språken klarar av en viss nivå av interaktivitet, men i huvudsak behöver vi någonting mycket mer dynamiskt för att kunna uppnå seriös interaktivitet. Ridån faller.. och in kommer JavaScript!

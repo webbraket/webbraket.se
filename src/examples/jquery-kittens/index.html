@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Exempel</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+</head>
+<body>
+  <a href="#">Looks like any other link</a>
+
+  <script>
+    $(function(){
+      var randomNum = function(){
+        return Math.floor(Math.random()*101);
+      }
+
+      $('a').click(function(e){
+        e.preventDefault();
+        var size = 75 + randomNum(),
+        x = randomNum() + '%',
+        y = randomNum() + '%',
+
+        $img = $('<img/>');
+        $img.attr('src', 'http://placekitten.com/'+size+'/'+size);
+        $img.css({
+          'position': 'fixed',
+          'left'    : x,
+          'top'     : y
+        });
+
+        $('body').append($img);
+      });
+    });
+  </script>
+</body>
+</html>
