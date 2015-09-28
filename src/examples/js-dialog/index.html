@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Exempel</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <style>
+    .deleted{
+      color: red;
+    }
+    .hidden{
+      display: none;
+    }
+  </style>
+  <script>
+    $(function(){
+      $('.delete').click(function(){
+        $('.deleted').toggleClass('hidden', false);
+        $('.undeleted').toggleClass('hidden', true);
+        return false;
+      });
+
+      $('.undelete').click(function(){
+        $('.deleted').toggleClass('hidden', true);
+        $('.undeleted').toggleClass('hidden', false);
+        return false;
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="undeleted">
+    <a href="#" class="delete">Delete my account</a>
+  </div>
+  <div class="deleted hidden">
+    <p>La résistance est futile......</p>
+    <p>ALL YOUR BASE ARE BELONG TO US.</p>
+    <p>Your account is sleeping with the fishes..</p>
+    <p><a href="#" class="undelete">Oh noes, click to turn back time!</a></p>
+  </div>
+</body>
+</html>
