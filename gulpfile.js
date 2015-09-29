@@ -62,28 +62,24 @@ gulp.task('toc', function() {
     .pipe(concat('toc.json'))
     .pipe(insert.transform(function(contents) {
       var $ = cheerio.load(contents);
-      var h1s = $('h1');
-      var toc = h1s.toArray().map(function(h1) {
-        var $h1 = $('#' + h1.attribs.id);
+      var toc = $('h1').map(function(i, h1) {
         return {
-          id:   h1.attribs.id,
-          name: $h1.text(),
-          children: $h1.nextUntil('h1', 'h2').toArray().map(function(h2) {
-            var $h2 = $('#' + h2.attribs.id);
+          id:   $(h1).attr('id'),
+          name: $(h1).text(),
+          children: $(this).nextUntil('h1', 'h2').map(function(i, h2) {
             return {
-              id:   h2.attribs.id,
-              name: $h2.text(),
-              children: $h2.nextUntil('h2', 'h3').toArray().map(function(h3) {
-                var $h3 = $('#' + h3.attribs.id);
+              id:   $(this).attr('id'),
+              name: $(this).text(),
+              children: $(this).nextUntil('h2', 'h3').map(function(i, h3) {
                 return {
-                  id:   h3.attribs.id,
-                  name: $h3.text()
+                  id:   $(this).attr('id'),
+                  name: $(this).text()
                 };
-              })
+              }).get()
             }
-          })
+          }).get()
         }
-      });
+      }).get();
       return JSON.stringify(toc);
     }))
     .pipe(gulp.dest('tmp'));
