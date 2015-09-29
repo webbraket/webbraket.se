@@ -9,7 +9,9 @@ var gulp    = require('gulp'),
     connect = require('gulp-connect'),
     uglify  = require('gulp-uglify'),
     ghpages = require('gh-pages'),
-    del     = require('del');
+    cheerio = require('cheerio'),
+    del     = require('del'),
+    fs      = require('fs');
 
 
 gulp.task('default', ['watch:development']);
@@ -54,12 +56,50 @@ gulp.task('clean', function(cb) {
   del(['build'], cb);
 });
 
-gulp.task('chapters', function(){
+gulp.task('toc', function() {
+  return gulp.src('src/chapters/**/*.md')
+    .pipe(marked())
+    .pipe(concat('toc.json'))
+    .pipe(insert.transform(function(contents) {
+      var $ = cheerio.load(contents);
+      var h1s = $('h1');
+      var toc = h1s.toArray().map(function(h1) {
+        var $h1 = $('#' + h1.attribs.id);
+        return {
+          id:   h1.attribs.id,
+          name: $h1.text(),
+          children: $h1.nextUntil('h1', 'h2').toArray().map(function(h2) {
+            var $h2 = $('#' + h2.attribs.id);
+            return {
+              id:   h2.attribs.id,
+              name: $h2.text(),
+              children: $h2.nextUntil('h2', 'h3').toArray().map(function(h3) {
+                var $h3 = $('#' + h3.attribs.id);
+                return {
+                  id:   h3.attribs.id,
+                  name: $h3.text()
+                };
+              })
+            }
+          })
+        }
+      });
+      return JSON.stringify(toc);
+    }))
+    .pipe(gulp.dest('tmp'));
+});
+
+gulp.task('chapters', ['toc'], function(){
   return gulp.src('src/chapters/**/*.md')
     .pipe(marked())
     .pipe(concat('index.html'))
     .pipe(insert.transform(function(contents){
-      return jade.renderFile('src/templates/index.jade', { body : contents })
+      var tocString = fs.readFileSync('tmp/toc.json', { encoding: 'utf-8' });
+      var toc = JSON.parse(tocString);
+      return jade.renderFile('src/templates/index.jade', {
+        body : contents,
+        toc  : toc
+      });
     }))
     .pipe(rename({ extname: '.html' }))
     .pipe(gulp.dest('build'))
