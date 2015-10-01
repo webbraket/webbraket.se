@@ -1,8 +1,8 @@
-__Webbraket vill bli sveriges största utbildningsresurs för webbutveckling. Det bästa sättet att nå det målet, tror vi, är att arbeta tillsammans.__
+__Webbraket har ambitioner om att bli sveriges största utbildningsresurs för webbutveckling. Det bästa sättet att nå det målet tror vi är att arbeta tillsammans.__
 
-Detta är ett projekt för studenter, drivet av studenter. Detta initiativ drivs av en grupp studenter vid Uppsala Universitet, men hjälp mottas självklart gladeligen ifrån alla håll och kanter. Om du hittar något som verkar galet så blir vi mer än glada om du skickar en *pull request*.
+Detta är ett projekt för studenter, drivet av studenter. Detta initiativ drivs av en grupp studenter vid Uppsala Universitet men hjälp mottas självklart gladeligen ifrån alla håll och kanter. Om du hittar något som verkar galet så blir vi mer än glada om du skickar en *pull request*.
 
-Att bidra till Webbraket är inte bara nyttigt för din egen utveckling och ditt CV, utan hjälper även hundratals nya studenter som varje år befattar sig med denna resurs. Om du vill bidra mer permanent, och bli en del av ett team, läs vidare nedan.
+Att bidra till Webbraket är inte bara nyttigt för din egen utveckling och ditt CV, utan hjälper även hundratals nya studenter som varje år befattar sig med denna resurs. Om du vill bidra mer regelbundet och bli en del av ett team så läs vidare nedan.
 
 
 1. [How to contribute](#how-to-contribute)
@@ -34,16 +34,16 @@ Att bidra till Webbraket är inte bara nyttigt för din egen utveckling och ditt C
 
 
 # How to contribute
-Webbraket drivs av dig och mig. Hittat något som inte verkar stämma? Eller bara vill hjälpa till? Skicka mer än gärna en pull-request. Vänligen följ våra [riktlinjer](#pull-requests), men var inte orolig för om det blir fel. Vi hjälps åt :)
+Webbraket drivs av dig och mig. Hittat något som inte verkar stämma? Eller bara vill hjälpa till? Skicka mer än gärna en pull-request. Vänligen följ våra [riktlinjer](#pull-requests) men var inte orolig för att göra fel. Vi hjälps åt :)
 
-Om du undrar mer om någonting som står i denna readme eller känner att du behöver lära dig mer så finns det mycket matnyttig information i vår [wiki]. Kolla först där, och om du inte hittar vad du letar efter, tveka inte, utan [kontakta någon av oss](#kontakt).
+Om du undrar mer om någonting som står i denna readme eller känner att du behöver lära dig mer så finns det mycket matnyttig information i vår [wiki]. Kolla först där och om du inte hittar vad du letar efter, tveka inte, utan [kontakta någon av oss](#kontakt).
 
 ## Pull requests
-Starta en ny topic-branch ifrån `development`. Vänligen följ våra [namngivningskonventioner](#branches) för branches. Du behöver inte squash:a dina commits innan du skickar en PR. Ifall ändringar har skett i `development` sen du började arbeta på din branch så får du pluspoäng ifall du rebase:ar.
+Starta en ny topic-branch ifrån `development`. Vänligen följ våra [namngivningskonventioner](#branches) för branches. Du behöver inte squash:a dina commits innan du skickar en PR. Ifall ändringar har skett i `development` efter att du började arbeta på din branch så får du pluspoäng ifall du rebase:ar.
 
 Vi merge:ar alltid med `--no-ff` p.g.a. [denna artikel](http://nvie.com/posts/a-successful-git-branching-model/).
 
-Vi code-review:ar alla pull-requests för att vi ska kunna hjälpa varandra att utvecklas och bli bättre utvecklare. Kom ihåg att hålla god ton och vara trevliga emot varandra :)
+Vi code-review:ar alla pull-requests för att vi ska kunna hjälpa varandra att utvecklas och bli bättre utvecklare. Kom ihåg att hålla god ton och vara trevliga mot varandra :)
 
 ## Branches
 Vi följer i stort sett [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) men istället för separata release branches så återanvänder vi branchen `development`.
@@ -75,7 +75,7 @@ Notera att även dessa konventioner gäller för text-uppdateringar. Om du uppdater
 
 
 ### Issues
-Hittat en bugg? Vi använder [issues](repo-issues), så om du upptäcker något som verkar vara galet, vill föreslå en ändring, eller någonting helt nytt, [skapa gärna en ny issue](repo-issue-new). Om du kan, så får du förstås gärna fixa problemet själv, och stället skicka en [pull request](#pull-requests).
+Hittat en bugg? Vi använder [issues](repo-issues), så om du upptäcker något som verkar vara galet, vill föreslå en ändring, eller någonting helt nytt, [skapa gärna en ny issue](repo-issue-new). Om du kan så får du förstås gärna fixa problemet själv och då istället skicka en [pull request](#pull-requests).
 
 
 
@@ -115,7 +115,7 @@ För att skapa den där klassiska lärobokskänslan :) Info-boxen används för by-the
 
 
 # Quickstart
-Här följer en extremt koncis quickstart för att ge en överblick över vad som krävs för att komma igång med projektet. Men livet är ju sällan så här enkelt :) Så, kom ihåg att konsultera [wiki] för mer information, och/eller [kontakta](#kontakt) oss om det är någonting du undrar.
+Här följer en extremt koncis quickstart för att ge en överblick över vad som krävs för att komma igång med projektet. Men livet är ju sällan så här enkelt :) Så kom ihåg att om du undrar något så konsultera [wiki] för mer information och/eller [kontakta](#kontakt) oss.
 
 [git]: https://git-scm.com
 [node]: https://nodejs.org
@@ -136,7 +136,7 @@ Här följer en extremt koncis quickstart för att ge en överblick över vad som krä
 Källkod finns i mappen `src`. Genererad build finns i mappen `build` (om mappen inte finns så skapas den första gången du bygger projektet genom `gulp`).
 
 ## Tasks
-När alla dependencies är installerade är det bara att börja köra tasks. Du kan kolla i `gulpfile.js` för att närmare undersöka vilka tasks som finns och vad de gör. Men grundläggande tasks finns beskrivna här:
+När alla dependencies är installerade är det bara att börja köra tasks. Du kan kolla i `gulpfile.js` för att närmare undersöka vilka tasks som finns och vad de gör. De mest grundläggande tasks:en finns beskrivna här:
 
 ```bash
 $ gulp
@@ -181,7 +181,7 @@ $ git push --set-upstream origin new/cat-stories
 
 
 # Om projektet
-Vi är ett projekt som drivs av ett gäng glada studenter, adjunkter och forskare under institutionen för Informatik och Media vid Uppsala Universitet.
+Vi är ett projekt som drivs av ett gäng glada studenter, adjunkter och forskare under Institutionen för informatik och media vid Uppsala universitet.
 
 
 ## Core contributors
@@ -200,11 +200,11 @@ Arbetar med webbraketens content. Text, kodexempel, bilder, struktur etc.
 Arbetar med strategisk positionering. Närvaro i social media, kontakt med universitet och näringsliv, etc.
 
 **Styrelse**
-Detta är ett fåtal personer som är anställda vid Uppsala Universitet, med full commit access. Denna grupp har rätt att utöva veto i alla frågor. Detta veto ska ej användas men finns av säkerhetsskäl då Informatik och Media vid Uppsala Universitet stödjer detta projekt.
+Detta är ett fåtal personer som är anställda vid Uppsala universitet och som har full commit access. Denna grupp har rätt att utöva veto i alla frågor. Detta veto ska ej behöva utövas men finns av säkerhetsskäl då Institutionen för informatik och media vid Uppsala universitet stödjer detta projekt.
 
 
 
-# Uppsatser och Forskning
+# Uppsatser och forskning
 Om du ska skriva en kandidat-, masteruppsats eller är forskare så är du varmt välkommen att kontakta oss. Vi är en självorganiserad grupp av studenter som producerar öppen källkod, så det finns utrymme för många intressanta möjligheter för forskningsarbeten. Vänligen [kontakta](#kontakt) i första hand någon i gruppen Styrelsen.
 
 
@@ -252,7 +252,7 @@ Nedan följer kort information om Webbraketens styrelse.
 # Disclaimer
 Detta projekt är för nuvarande ej vinstdrivet och kostnader täcks av individer i projektet. Slutprodukten kommer alltid vara gratis för slutkonsumenten.
 
-Webbraket representerar inte Uppsala Universitets åsikter i någon fråga. Projektet drivs ej av Uppsala Universitet, utan av studenter antagna på systemvetenskapliga program vid Uppsala Universitet och Campus Gotland. Styrelsen består av anställda på Uppsala Universitet. Projektet är startat av lärare vid Uppsala Universitet och används som utbildningsmaterial i utvalda kurser, men bör ses som extern resurs utifrån Uppsala Universitets perspektiv.
+Webbraket representerar inte Uppsala universitets åsikter i någon fråga. Projektet drivs ej av Uppsala universitet, utan av studenter antagna på systemvetenskapliga program vid Uppsala universitet och Campus Gotland. Styrelsen består av anställda på Uppsala universitet. Projektet är startat av lärare vid Uppsala universitet och används som utbildningsmaterial i utvalda kurser men bör ses som extern resurs utifrån Uppsala universitets perspektiv.
 
 # License
 TODO
