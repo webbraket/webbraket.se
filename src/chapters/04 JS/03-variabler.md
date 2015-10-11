@@ -5,7 +5,7 @@ Eftersom JavaScript, som namnet antyder, är ett skriptspråk har vi tillgång t
 ### Vad är variabler?
 
 Variabler kan ses som en arbiträr box, av arbiträr storlek, där vi kan placera ett stycke, och endast ett stycke, arbiträr data. Tänk på det en stund. Låt oss formulera om samma sak. En variabel är en pekare mot en arbiträr plats i minnet, av arbiträr storlek, som innehåller arbiträr data. Det är lite närmare sanningen men fortfarande en metafor.
-> 
+
 > Variabler kan ses som en arbiträr box, av arbiträr storlek, där vi kan placera ett och endast ett stycke arbiträr data.
 
 Så hur deklarerar vi då en variabel? Låt oss se till ett exempel.
@@ -32,12 +32,12 @@ Deklarering och tilldelning
 Notera alltså att ovan exempel illustrerar att det är fullt möjligt att först deklarera en variabel och sedan tilldela den ett värde, i två steg. Detta kommer sig av den enkla anledningen att tilldelning och deklaration är två olika saker.
 
 **Deklaration**
-> 
+
 > Att säga att någonting _existerar_
 > (`var foo;`)
 
 **Tilldelning**
-> 
+
 > Att säga vad någonting _innehåller_
 > (`foo = "bar";`)
 
@@ -96,7 +96,7 @@ Tilldelning i programmering
     var d = a + b + c;    // d => 10
 
 Läs ovan, rad för rad, och fundera över varför det resultat som sparas i variabeln blir det som visas i kommentaren till höger.
-> 
+
 > När vi pratar om programmering är det lättare att tänka att vi "räknar ut värden och lägger resultaten i boxar".
 
 

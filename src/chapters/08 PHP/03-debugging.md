@@ -67,7 +67,7 @@ Ofta räcker det till och med med att skriva ut vad som helst till skärmen. Ibl
 När vi väl hittat felet är det bara att försöka söka rätt på en lösning. Om du inte spontant vet vad lösningen är så är internet ofta det bästa vapnet vi har. Försök att generalisera ditt problem lite utanför din specifika domän och ge dig ut i internetdjungeln. Alternativt, försök vara superspecifik. Om du t.ex. har en felkod --- sök efter felkoden. När vi väl får en förklaring till vad felet betyder kan det hända att det blir uppenbart hur vi ska fixa det.
 
 Det absolut viktigaste när vi väl har åtgärdat felet är förstås att **lära oss av våra misstag**. Fundera över det klassiska idiomet:
-> 
+
 > Fool me once, shame on you. Fool me twice, shame on me.
 
 Många gånger har vi inte resurser nog att faktiskt förstå varför ett fel inträffade. Om vi väl lyckats lösa det behöver vi istället tuta på. Men låt oss bara säga att om vi inte förstår varför ett fel inträffade så spelar det absolut ingen roll att vi har löst det. Det kommer att hända igen.

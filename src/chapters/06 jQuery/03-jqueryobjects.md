@@ -32,7 +32,7 @@ Med jQuery
     $('p').remove();
 
 Förhoppningsvis ser du nu styrkan! jQuery försökt att ta hand om den del vanligt återkommande problem och således försökt erbjuda oss utvecklare lite mindre huvudvärk. Nu kanske du redan fått huvudvärk flera gånger och känner den komma igen av att du behöver lära dig någonting nytt --- men lugn! När du väl fått kläm på syntaxen kommer jQuery hjälpa dig ofantligt, och förhoppningsvis kommer du vara arg på att vi försökte lära dig JavaScript först.
-> 
+
 > Förutom att jQuery gör det lättare för oss att utföra omständiga DOM-operationer gör den också att vi får mer webbläsarkompatibel kod, eftersom jQuery bygger på mycket "best practices".
 
 ### Vad är det?
@@ -46,7 +46,7 @@ Ta bort alla <p\>-element med jQuery
     $('p').remove();
 
 Det viktigaste vi måste förstå med ovan exempel, är att jQuery opererar på kollektioner av element och inte på enstaka element. Nu är det ju förstås så att det är fullt möjligt att vår kollektion endast innehåller ett element, men det är ändock en kollektion. För att dra en parallell så kan du tänka på hur JavaScript-metoden `document.getElementsByTagName()` fungerar. Namnet på metoden är pluraliserad eftersom även den returnerar en kollektion av `HTMLElement`. Detta alltså till skillnad ifrån `document.getElementById` som i alla fall returnerar max ett `HTMLElement`.
-> 
+
 > jQuery opererar på kollektioner av element.
 
 Men vad betyder då detta i praktiken? Jo, det betyder alltså att jQuery inte bryr sig om huruvida vi hittade ett eller flera element, när vi i ovan exempel anropar metoden `.remove()` så tar den alltså bort alla element i hela den kollektion den hade hittat. Låt oss se till ytterligare ett exempel för att illustrera detta:
@@ -73,15 +73,15 @@ Låt oss nu prata om vi hämtar element-kollektioner m.h.a. jQuery. Att hämta e
 Utan att snöa ner oss i svårare selektorer så kommer du förhoppningsvis ihåg de enklaste. De vanligaste css-selektorerna är:
 
 **` x`**
-> 
+
 > Element av typ x
 
 **`#x`**
-> 
+
 > Element med id x
 
 **`.x`**
-> 
+
 > Element med klassen x
 
 > Om du behöver läsa på om css-selektorer, läs mer i css-kapitlet!

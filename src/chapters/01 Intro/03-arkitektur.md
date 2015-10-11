@@ -63,7 +63,7 @@ Kommer snart...
 ### Klient-server-arkitektur
 
 Innan vi kan gå djupare in på varför vi **inte** kan utföra komplex logik i html så behöver vi lära oss lite om ansvarsområden för [klienter och servrar][0]. Vi har tidigare i detta kapitel uttryckt oss i bemärkelsen att en "server serverar en fil". Om vi är ännu mer explicita skulle vi kunna säga att en server severar en fil som en klient konsumerar.
-> 
+
 > En server _servererar_ resurser som _konsumeras_ av klienter. 
 
 Vad i hela friden menar vi med det? Vem är servern? Vem är klienten? Vad är en resurs? Detta är förstås generella termer som kan anta många skepnader. Men i de flesta av fall är din webbläsare klienten. Klienten är den som konsumerar. Klienten är den som blir serverad en HTML-sida. Klienten ansvarar själv för att rendera sidan. Såsom vi tidigare diskuterat. Webbläsaren (klienten) är ett program som är expert HTML-konventionen. Så när webbläsaren tar emot ett dokument som följer konventionen HTML så kan den utan problem rendera den visuella representationen av det dokumentet. Oavsett om du använder din webbläsare för att öppna www.google.com eller en HTML-fil på din egen dator så är webbläsaren en klient.
@@ -81,7 +81,7 @@ Många tänker på mörka dundrande hallar fyllda med korridorer av monstermaski
 ### Request-response
 
 Internet bygger på en modell som vi kan kalla för request-response-modellen. Ett "request" är en förfrågan, och ett "response" är ett svar. Vi vet ju nu att en servers uppgift är att servera klient med resurser. Men mer specifikt så serverar en server ett (passande) response till en klient, när denne klient skickar ett request. Vi säger passande eftersom reponse:et förstås beror på vilket request vi har skickat.
-> 
+
 > En server serverar ett response till den klient som skickar ett request.
 
 Det här låter kanske komplext men är egentligen väldigt enkelt. Låt oss se till det lite närmare. Aktörerna i denna klient-server-historia är alltså följande:

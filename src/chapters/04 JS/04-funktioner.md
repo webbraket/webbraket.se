@@ -43,7 +43,7 @@ Låt oss uttrycka samma sak i matematik för att skapa ytterligare förståelse 
     F(F(1,F(1,1), 4) = 7
 
 Notera alltså att vi kan skicka resultatet av en funktion som parameter (input) till en annan funktion. Precis som i matematik så måste den innersta beräkningen utföras först innan vi kan utföra den yttre.
-> 
+
 > Precis som i matematik behöver det innersta uttrycket räknas ut först innan vi kan fortsätta "utåt".
 
 ### Olika sätt att deklarera funktioner

@@ -5,7 +5,7 @@
 Innan vi ser till ett exempel behöver vi kort diskutera vad HTML är för någonting. Låt oss utföra en tankelek. Ponera att du, på datorn, skrivit ett dokument i _Microsoft Word_, _Pages_, _Open Office_ eller dylik ordbehandlare. Fundera kort över vad detta dokument består av. Vad innehåller det? Text? Jo, onekligen. Men mer exakt än så då? De flesta dokument innehåller någon kombination av rubriker, underrubriker och paragrafer. Men gräver vi djupare än så så hittar vi saker som citat, listor, understrykningar, fetstilsmarkeringar, kursivitet o.s.v.
 
 För att förstå hur HTML fungerar behöver vi egentligen bara förstå att vår ordbehandlare omöjligen kan komma ihåg vilka delar vi anser vara rubriker eller fetstilsmarkeringar om den inte någonstans sparar den informationen när vi först berättar det. Låt oss uttrycka oss på generellare form. Nästan alla dokument --- ovavsett typ --- består inte bara av text. De består av text som är tätt bunden till semantik. Varje del av texten spelar någon roll i helheten som inte nödvändigtvis behöver vara samma roll som någon annan del av samma text. En term som ofta används för att referera till detta förhållande mellan text och meta-information är [semantik][1]. Vi kommer framöver på många sätt prata om begreppet semantisk signifikans för att diskutera vad saker har för signifikans i en kontext.
-> 
+
 > Dokument består inte bara av rå text, utan rå text tätt med olika semantik.
 
 En paragraf är inte en paragraf om inte den som läser paragrafen kan urskilja och förstå att det är en paragraf den läser. Det är detta vi talar om när vi talar om semantisk signifikans. Utöver att vi som människor läser texten som paragrafen består av så "läser vi in" faktumet att det är ett avgränsatt område text --- i.e. en paragraf.
@@ -37,7 +37,7 @@ Vi har nu alltså klargjort att HTML bygger på en metfor om att alla dokument g
     <p>Paragraftexten här...</p>
 
 Ovan illustrerar alltså användandet av `p`-elementet, eller paragraf-elementet. Låt oss bena ut vad syntaxen är. Kom ihåg att ordet syntax handlar om _hur_ vi uttrycker någonting i ett visst språk. I fallet av HTML så är de tre första tecknena i ovan exempel, samt de fyra sista del av syntaxen i HTML. Övrigt är rå text.
-> 
+
 > HTML-element byggs upp av taggar.
 
 HTML-element består helt enkelt av någonting som vi referar till som taggar (tags). Element är alltså en komposition av taggar. Ett element kan komma i två former. Element kan alltså bestå av antingen...
@@ -63,7 +63,7 @@ För att kunna bygga hierarkiska trädstrukturer så behöver vi förstå att HT
 * Ett annat element
 
 När vi säger text så menar vi förstås även avsaknaden av text. Den tomma strängen. Så är det även tillåtet att ett element, som förväntar sig ett barn eller text, inte innehåller någonting. Med andra ord skulle elementet öppnas (starttagg) och sedan stängas på en gång (sluttagg).
-> 
+
 > Ett element kan antingen innehålla ett annat element eller text.
 
 Det är när vi börjar förstå att element kan innehålla andra element som vi verkligen börjar närma oss idéen om hierarkisk informationsrepresentation. Vi kan nu alltså börja uttrycka saker såsom:
@@ -101,7 +101,7 @@ Såsom exemplets text förtäljer har traditionella radbrytningar ingen effekt i
 ### Attribut
 
 Ett elements öppnande tag kan även innehålla attribut med värden. Attribut är i simpla termer egenskaper för ett givet element. Om vi t.ex. har en hyperlänk (`<a>`) kan vi använda oss av attributet `href` (hyper reference) för att denotera vart hyperlänken ska peka någonstans.
-> 
+
 > Attribut är egenskaper för en instans av ett element.
 
 För att t.ex. skapa länkar använder vi elementet `<a>`. För att sedan denotera vart länken ska peka ger vi attributet `href` ett värde. Detta värde tar formen av en URL. Beakta nedan exempel och fundera över användandet av attributet `href`.
@@ -117,7 +117,7 @@ Resultat
 Attribut kommer i två former där den vanligaste är nyckel-värde-par (key-value-pairs). Vi specificerar en nyckel och tilldelar den ett värde. Enligt syntaxen `nyckel="värde"`. Där ordet "nyckel" alltså ersätts med en nyckel som är tillåten för ett givet element. Och ordet "värde" ersätts med ett värde som är tillåtet för den givna nyckeln.
 
 Alla attribut (nycklar) är inte tillåtna på alla element. Alla värden är inte heller tillåtna på alla nycklar. Anledningen till detta är helt enkelt att attribut denoterar saker som ofta är specifika för just en given typ av element. I exemplet ovan använder vi t.ex. attributet `href` --- "hyper reference". En hyperreferens är logisk vid användandet av en länk eftersom en länk måste ha en målplats. En länk är inte en länk om den inte har någonstans att länka. Om vi däremot diskuterar en paragraf (`<p>`) så blir användandet av en hyperreferens helt meningslös. En paragraf är en paragraf av text, inte en länk. En paragraf ska inte hyperreferera någonstans. Det är inte logiskt.
-> 
+
 > Olika element tillåter olika attribut.
 
 Nu kanske du tänker att en paragraf ju måste gå att göra klickbar. Och det är helt sant. Men inte genom att klistra på ett hyperreferens-attribut på paragraf-taggen. Istället kan vi omsluta en del av paragrafens text i ett `<a>`-element. Kom ihåg --- vi kan nästla element i element!
@@ -195,7 +195,7 @@ När vi ändå är i farten med att försöka visualisera dokumenthierarkier. L�
         [empty]
 
 Detta med indentering leder oss även in på en meningsfull vana html-utvecklare respekterar.
-> 
+
 > Om en tag är ett barn till tag:en ovan, indentera ett steg.
 
 Notera alltså hur `title` är indenterad i relation till `head`, men hur `body`_inte _är indenterad i relation till `head.`
@@ -203,7 +203,7 @@ Notera alltså hur `title` är indenterad i relation till `head`, men hur `body`
 Återigen. Vi har inte bara slängt ihop ovan text lite hursomhelst. Utan det indenterade dokumentet är en representativ omskrivning av det tidigare diskuterade HTML-dokumentet. Återigen. Jämför denna indenterade version med den faktiska HTML-koden. Föräldra-barnrelationer defineras alltså nu genom indentering in. Syskonrelationer kan vi identifiera genom att hitta element som befinner sig på samma horisontella nivå under en och samma förälder.
 
 Detta leder oss in på en viktig poäng som du kanske redan förstått. När vi öppnar ett element måste vi stänga det innan vi stänger dess förälder.
-> 
+
 > Alla barnelement behöver stängas innan vi stänger föräldern.
 
 Icke-välformatterad HTML
@@ -268,7 +268,7 @@ Inkorrekt indentering
 ```
 
 Ett enkelt sätt att veta när man ska indentera --- alltså flytta en rad inåt, är följande minnesregel. Om vi öppnar ett element, ska allt som efterföljer indenteras, ända tills vi stängt elementet.
-> 
+
 > Alla barn till ett element ska indenteras ett "steg".
 
 Öppningstaggar och stängningstaggar ska alltså vara indenterade in till samma nivå. Om vi indenterar korrekt kommer det vara busenkelt att snabbt identifiera vilka element som är barn till vilka element. Vilka element som är syskon. Vart ett element stängs. Och så vidare, och så vidare.

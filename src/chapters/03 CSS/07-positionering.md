@@ -11,7 +11,7 @@ Om vi inte anger någonting annat så är alla element statiskt placerade. Det �
 Om du inte anger någonting annat, kommer element att positioneras statiskt. Alltså följa sin naturliga plats i dokumentet.
 
 Det är viktigt att uppmärksamma att ett statiskt element på de (tänk dig en sida som ett koordinatsystem) koordinaterna `{0,0}`, omöjliggör att ett statiskt placerat syskon också placeras på `{0,0}`. Med andra ord tar statiskt placerade element upp plats och således kan syskon inte ligga på varandra utan placeras istället under (om de är [block-level element][0]) eller bredvid (om de är [inline-level element][1]) varandra.
-> 
+
 > Statiska element tar upp plats
 
 Att ett statiskt element inte kan placeras på ett annat element gäller förstås bara element som är syskon. Ett elements barn placeras förstås naturligt "innuti" förälderelementet.
