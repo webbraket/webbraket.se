@@ -121,7 +121,7 @@ När vi kommer in på diskussionen om semantisk signifikans så kommer du förho
 När vi diskuterar tabeller så finns det egentligen fyra element som vi behöver lära oss. För att skapa en tabell börjar vi alltid med elementet `<table>`. Detta element enkapsulerar hela tabellen. Alla dess rader, kolumner och data.
 
 Innanför elementet `table` kan vi sedan placera ett valfritt antal element av typen `<tr>` (_table row_). Detta element skapar nya tabellrader. När vi skapar tabeller i HTML behöver vi alltså specificera kolumnerna i raderna och inte tvärtom. Syntaxen hade ju förstås likaväl kunnat fungera tvärtom men nu är fallet inte så.
-> 
+
 > I tabeller specificerar vi först raderna --- sedan kolumnerna. Aldrig tvärtom.
 
 Innanför elementet `tr` kan vi sedan placera ett valfritt antal element av typen `<td>` (_table data_. För att underlätta den mentala modellen kan du alltså tänka att elementet `td` skapar kolumner. Om vi använder `tr` för att skapa rader i tabellen så använder vi `td` för att skapa kolumner i en rad.

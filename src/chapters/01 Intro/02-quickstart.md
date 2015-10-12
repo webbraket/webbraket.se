@@ -51,7 +51,7 @@ En fil är bara en mängd arbiträr men strukturerad data. Program följer olika
 Så hur vet operativsystemet vilken konvention den ska applicera? Tänk tillbaka på tidigare diskussion om att ett programs enda uppgift är att transformera input till output. Om ett program är specialiserat på att transformera en viss typ av input till en viss typ av output --- då är det en utmärkt kandidat för att vara en explicit konvention. Innehållet i en fil är alltså input (texten) och ett given program är alltså transformationsprocessen (konventionen).
 
 Låt oss formulera det i andra ord. En fil innehåller egentligen bara strukturerad råtext (egentligen: data). När denna fil med strukturerad råtext sedan öppnas med det program den var ämnad att öppnas i, kommer denna till synes mumbo jumbo av text helt plötsligt spela sin roll.
-> 
+
 > Prova själv genom att öppna t.ex. en .jpeg-fil i en vanlig texteditor (såsom Notepad eller TextEdit).
 
 Egentligen kan vi slänga på vilken filändelse (alltså t.ex. .tex, .doc, .pdf, .jpg, etc.) på vilken fil som helst. Den spelar ingen roll för själva innehållet i filen. Så länge vi öppnar filen med det avsedda programmet (och så länge det avsedda programmet tillåter oss att forcera det att öppna filer med "fel" filändelse) så kommer allt fungera precis som vanligt.

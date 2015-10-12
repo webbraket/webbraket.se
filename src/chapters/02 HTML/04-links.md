@@ -41,7 +41,7 @@ Om vi i ett \*nix-baserat system vill nå en annan enhet, på samma sätt som vi
     /Volumes/MyOtherDisk
 
 För att sammanfatta absoluta och relativa sökvägar så vill vi understryka att det egentligen alltså är mycket enkelt. En relativ sökväg utgår ifrån den mapp där den som använder sökvägen befinner sig. En absolut sökväg utgår ifrån "roten" av den nuvarande enheten.
-> 
+
 > En relativ sökväg utgår ifrån nuvarande mapp. En absolut sökväg utgår ifrån någontings rot.
 
 Förhoppningsvis blir du lite förvirrad av att ovan uttrycker sig i termer av "någontings rot". Det finns olika typer av absoluta sökvägar när vi börjar tala om nätverk, och det är dessa vi ska se närmare på strax.
@@ -53,13 +53,13 @@ För att kunna diskutera sökvägar på internet behöver vi skapa oss en först
 Som du nu vet baseras webbsidor på standarden HTML. När vi med andra ord ber webbläsaren hämta en webbsida så anropar den en server som ger oss ett response som innehåller ett HTML-dokument. Vi har kort diskuterat request-response-modellen. Men vi har inte diskuterat de protokoll som möjliggör det. TCP, IP och HTTP bl.a. För att hålla oss fokuserade kommer vi inte att gräva i dessa. Men för att kunna intelligent angripa idéen om URL:er måste vi skapa oss en viss förståelse för protokollet HTTP.
 
 Men först, vad är ett protokoll? Kom ihåg att vi sa att en klient skickar ett request och en server svarar med ett response. Ett protokoll är helt enkelt en överenskommelse kring hur klienten och servern ska tala med varandra. När vi skickar saker över nätet så skickar vi de i fragmenterade paket och för att routrar, ISP:er och servrar ska veta vart våra paket är på väg, behöver vi protokoll. Här kommer TCP/IP in i bilden. För att servern ska kunna förstå vårt request och för att webbläsaren ska kunna förstå serverns response behöver vi protokollet HTTP (HyperText Transfer Protocol). Protokoll kan alltså liknas vid ett överenskommet språk emellan två parter.
-> 
+
 > För att två parter ska kunna kommunicera krävs ett överenskommet språk --- ett protokoll.
 
 Du har säkert kommit i kontakt med både protokollet `http` och den säkrare varianten `https`. Varje gång du skriver in en adress i webbläsaren så anger vi `http://`. Om vi inte gör det själva är webbläsarna idag tillräckligt smarta för att slänga in det protokollet åt oss.
 
 Nu när vi vet vad ett protokoll är --- vad är då en URL (Uniform Resource Locator)? En URL är helt enkelt en webbadress. Den pekar på en plats på internet där en webbresurs bör finnas.
-> 
+
 > En URL är en webbadress till en resurs på internet.
 
 När vi skriver in en webbadress i vår webbläsare så skriver vi alltså in en URL. Som tidigare nämnt så hjälper de flesta moderna webbläsare oss att skriva korrekta URL:er. En URL måste nämligen bl.a. innehålla ett protokoll. Var sig det är HTTP, HTTPS, FTP, SFTP o.s.v.
@@ -69,7 +69,7 @@ När vi skriver in en webbadress i vår webbläsare så skriver vi alltså in en
 Låt oss nu prata om sökvägar/webbadresser i HTML. Som tidigare nämnt så hanterar webbläsaren endast adresser i URL-format. Oavsett om det är en adress som pekar internt inom samma sida eller externt ut till en annan sida så behöver de vara i URL-format.
 
 En webbläsare behöver alltså ha en absolut sökväg i URL-formatet. Men när vi specificerar hyperlänkar i vår HTML. T.ex. genom att använda `<a>`-taggen, så behöver vi faktiskt inte alltid ange kompletta URL:er enligt URL-formatet. De fall då vi inte behöver göra det är alltså när vi refererar till resurser inom vår egen sida (domän). Om vi däremot vill referera till en resurs utanför vår domän så behöver vi ange en komplett adress i URL-formatet.
-> 
+
 > I HTML behöver vi inte ange protokoll när vi refererar till en URL inom samma domän.
 
 När vi refererar till en resurs inom vår egen domän så använder vi ett format som närmast liknar det \*nix-system använder. Förnim dig det vi tidigare diskuterat! Alltså slash för att denotera nästa mapp, punkt-punkt för att vandra en mapp upp i hierarkin, och en initial slash för att denotera roten.
@@ -102,7 +102,7 @@ Inte riktigt vad vi menade förstås. Det korrekta sättet att skapa ovan URL ä
 ### Ankare
 
 En typ av länkar vi ännu inte pratat om är ankare. Ankare är ett sätt att länka till en specifik del av en sida. Föreställ dig en lång sida. Alltså en sida med mycket content där du kan scrolla långt. Ankare hjälper dig då att skapa länkar **inom samma sida**.
-> 
+
 > Ett ankare kan appliceras i slutet av vilken URL som helst.
 
 Ett ankare börjar med fyrkants-tecknet (hashtag) (`#`) och sedan vilken sträng som helst.
@@ -134,7 +134,7 @@ Om vi hade specificerat en URL såsom ovan, hade vi skickat användaren till ind
 Det finns en sak vi ännu inte pratat om vad gäller ankare. Nu vet vi hur man skapar en länk **till** ett ankare. Men vi har inte pratat om hur man skapar ett ankare som man kan skickas till på en sida. Tidigare så använde vi exemplet `#my_anchor`, men vart hamnar användaren när den klickar på ankaret? Vart är "målet" för detta ankare specificerat?
 
 Egentligen är det ganska enkelt. En länk till ett ankare specificeras där vi kan ange en URL, och ett mål för ett ankare specificeras i vilket element som helst, under attributet ID.
-> 
+
 > Ankare pekar på egenskapen `id` i element.
 
 Låt oss se till ett exempel.
