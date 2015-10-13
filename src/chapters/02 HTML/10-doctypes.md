@@ -38,7 +38,7 @@ Och i kontexten av ett HTML-dokument skulle det se ut som följande...
     </html>
 
 Om du inte har en medveten anledning till att använda någonting annat än HTML5, så hävdar vi att det inte finns någon anledning att göra det. Med andra ord, så skulle vi uppmana dig till att antingen hålla dig till HTML5 eller läsa på mer om doctypes om du vill använda någon annan.
-> 
+
 > Håll dig till HTML5, alltså `<DOCTYPE html>`, så länge du inte har en annan medveten anledning.
 
 #### Äldre doctypes

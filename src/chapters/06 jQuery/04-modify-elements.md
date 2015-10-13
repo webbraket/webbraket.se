@@ -33,13 +33,13 @@ Vilket förändrar vår html så att vi nu har...
 Notera alltså att vi "blev av" med `<span>`-elementet. Samt att **båda** `<p>`-elementens inre html rensades.
 
 Men vänta nu, vad hände nu? Om du var uppmärksam så märkte du att när vi använde metoden `html()` för att **läsa** ifrån en element-kollektion så fick vi endast värdet ifrån det första elementet i kollektionen. Men när vi däremot använda `html()`-funktionen för att **skriva** så opererade vi på alla element i objekt-kollektionen. Vad händer nu egentligen?
-> 
+
 > Alla metoder på jQuery-objektet arbetar _inte alltid_ på alla element i kollektionen.
 
 ### Vilka metoder opererar över hela kollektionen?
 
 Oavsett vilket jQuery-metod vi använder är det alltså alltid viktigt att vara medveten om huruvida den arbetar på hela kollektionen eller ett specifikt element. En tumregel vi kan använda är att många av metoderna **läser ifrån det första** elementet i kollektionen och **skriver till alla** i kollektionen. Anropar vi alltså `html()` för att **läsa** kommer vi bara att få all inre html för det första elementet, medan om vi använder metoden till att skriva `html('something')` kommer vi förändra `innerHTML` för alla element i kollektionen.
-> 
+
 > En bra tumregel är att många jQuery-metoder läser ifrån första elementet i en objekt-kollektion, och skriver till alla.
 
 ### text()
