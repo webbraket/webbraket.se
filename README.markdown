@@ -1,4 +1,4 @@
-__Webbraket har ambitioner om att bli sveriges största utbildningsresurs för webbutveckling. Det bästa sättet att nå det målet tror vi är att arbeta tillsammans.__
+__Webbraket vill bli sveriges största utbildningsresurs för webbutveckling. Det bästa sättet att nå det målet tror vi är att arbeta tillsammans.__
 
 Detta är ett projekt för studenter, drivet av studenter. Detta initiativ drivs av en grupp studenter vid Uppsala Universitet men hjälp mottas självklart gladeligen ifrån alla håll och kanter. Om du hittar något som verkar galet så blir vi mer än glada om du skickar en *pull request*.
 
