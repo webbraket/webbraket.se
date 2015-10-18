@@ -40,7 +40,7 @@ Låt oss uttrycka oss tydligare. När vi har en statisk webbsida så är det all
 * Samma resurser serveras alltid till webbläsaren när webbläsaren begär samma URL
 * Servern som serverar filerna gör det utan att något program modifierar filerna innan de serveras.
 
-Ett exempel på en statisk webbsida är denna. Alltså htmlhunden.se. De dynamiska delarna (såsom t.ex. innehållsförteckningen) av denna bok har redan genererats i förväg. När din webbläsare ber om att få den sida du är på just nu --- så kommer servern alltid att servera samma HTML. Nämligen den du just nu ser på.
+Ett exempel på en statisk webbsida är denna. Alltså webbraket.se. De dynamiska delarna (såsom t.ex. innehållsförteckningen) av denna bok har redan genererats i förväg. När din webbläsare ber om att få den sida du är på just nu --- så kommer servern alltid att servera samma HTML. Nämligen den du just nu ser på.
 
 ### Dynamiska webbsidor
 
