@@ -1,6 +1,6 @@
 ## Internet, klienter och servrar
 
-Den huvudsakliga frågan vi ska försöka besvara i detta kapitel är --- hur fungerar en webbsida? Alltså, hur kan det komma sig att när vi knattrar in www.google.com i en webbläsare och trycker enter, så kommer en interaktiv webbsida tillbaka.
+Den huvudsakliga frågan vi ska försöka besvara i detta kapitel är &mdash; hur fungerar en webbsida? Alltså, hur kan det komma sig att när vi knattrar in www.google.com i en webbläsare och trycker enter, så kommer en interaktiv webbsida tillbaka.
 
 För att kunna svara på den frågan behöver vi bena ut ett par olika begrepp och lära oss lite mer om den arkitktur som vårt kära internet bygger på. Vi behöver bl.a. prata om klienter, servrar, nätverk, requests och responses. 
 
@@ -22,7 +22,7 @@ När vi talar om språk för webbutveckling talar vi oftast antingen om server-s
 
 Notera att ovan paragraf inte använder facktermer utan bör istället betraktas som en tolkning.
 
-Innan vi kan gå över till att diskutera statiska, dynamiska och skillnaden emellan de --- låt oss återigen påminna oss själva om hur språket HTML ser ut.
+Innan vi kan gå över till att diskutera statiska, dynamiska och skillnaden emellan de &mdash; låt oss återigen påminna oss själva om hur språket HTML ser ut.
     
     Ett ord i <b>fetstil</b> och ett <u>understruket</u>.
 
@@ -40,11 +40,11 @@ Låt oss uttrycka oss tydligare. När vi har en statisk webbsida så är det all
 * Samma resurser serveras alltid till webbläsaren när webbläsaren begär samma URL
 * Servern som serverar filerna gör det utan att något program modifierar filerna innan de serveras.
 
-Ett exempel på en statisk webbsida är denna. Alltså htmlhunden.se. De dynamiska delarna (såsom t.ex. innehållsförteckningen) av denna bok har redan genererats i förväg. När din webbläsare ber om att få den sida du är på just nu --- så kommer servern alltid att servera samma HTML. Nämligen den du just nu ser på.
+Ett exempel på en statisk webbsida är denna. Alltså htmlhunden.se. De dynamiska delarna (såsom t.ex. innehållsförteckningen) av denna bok har redan genererats i förväg. När din webbläsare ber om att få den sida du är på just nu &mdash; så kommer servern alltid att servera samma HTML. Nämligen den du just nu ser på.
 
 ### Dynamiska webbsidor
 
-Om statiska webbsidor innebär webbsidor där den server som serverar webbsidan alltid serverar samma filer vid sina URL:er --- vad är då en dynamisk webbsida? Som du kanske redan gissat, kan servrar som serverar dynamiska webbsidor servera olika HTML olika gånger trots att vi begär samma URL. Det finns alltså inga garantier för att vår webbläsare kommer att motta samma resurser när vi laddar om sidan.
+Om statiska webbsidor innebär webbsidor där den server som serverar webbsidan alltid serverar samma filer vid sina URL:er &mdash; vad är då en dynamisk webbsida? Som du kanske redan gissat, kan servrar som serverar dynamiska webbsidor servera olika HTML olika gånger trots att vi begär samma URL. Det finns alltså inga garantier för att vår webbläsare kommer att motta samma resurser när vi laddar om sidan.
 
 Vi behöver skapa dynamiska webbapplikationer när vi behöver...
 
@@ -117,6 +117,6 @@ Vi omformulerar ovan paragraf. Ett server-side-språks huvudsakliga uppgift är 
 
 Exempel på server-side-språk är t.ex. PHP, Ruby, Python, ASP.NET etc.
 
-Så om server-side-språket "genererar" HTML-filer --- varför måste vi då lära oss att skriva det själva? Enkelt svarat --- eftersom det är vi som skriver server-side-koden, och därmed även vi som definierar hur HTML-sidorna ska genereras. Det finns alltså inte någon magisk HTML-generator utan någonstans måste vi definera exakt hur HTML-sidorna ska genereras beroende på de request vi får in. Vi återkommer alltså till den gamla tanken mdash; eftersom datorer är korkade, så måste vi berätta för dem exakt vad vi vill ha.
+Så om server-side-språket "genererar" HTML-filer &mdash; varför måste vi då lära oss att skriva det själva? Enkelt svarat &mdash; eftersom det är vi som skriver server-side-koden, och därmed även vi som definierar hur HTML-sidorna ska genereras. Det finns alltså inte någon magisk HTML-generator utan någonstans måste vi definera exakt hur HTML-sidorna ska genereras beroende på de request vi får in. Vi återkommer alltså till den gamla tanken mdash; eftersom datorer är korkade, så måste vi berätta för dem exakt vad vi vill ha.
 
 [0]: http://sv.wikipedia.org/wiki/Klient%E2%80%93server

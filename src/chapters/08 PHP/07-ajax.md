@@ -73,7 +73,7 @@ Sidan som efterfrågas
       echo "$name is a $breed";
     ?>
 
-Om vi har ovan server-side-sida, och kör klientkoden --- så kommer callbacket som avfyras att öppna en `alert`-ruta. I den rutan kommer det att stå:
+Om vi har ovan server-side-sida, och kör klientkoden &mdash; så kommer callbacket som avfyras att öppna en `alert`-ruta. I den rutan kommer det att stå:
     
     Tarzan is a manape  
 
@@ -81,7 +81,7 @@ Om vi har ovan server-side-sida, och kör klientkoden --- så kommer callbacket 
 
 Denna metod är mycket lik `get()`. Men den är till för att snabbare kunna lösa ett vanligt problem. Eftersom det är mycket vanligt att asynkront göra ett request till en annan sida och sedan visa body:t av det response vi får tillbaka i ett element så gör denna metod just dessa två saker. Vi kan alltså se metoden `load()` som en kombination av `get()` och `html()`. Låt oss exemplifiera.
 
-Göra ett asynkront request och ersätta innehållet i ett element med det response som kommer tillbaka --- load()
+Göra ett asynkront request och ersätta innehållet i ett element med det response som kommer tillbaka &mdash; load()
 
 Anta att vi uttrycker följande med hjälp av `load()`...
     

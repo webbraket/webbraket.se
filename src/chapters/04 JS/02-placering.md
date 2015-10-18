@@ -51,7 +51,7 @@ Denna text kommer inte att synas eftersom JavaScriptet skriver över den.
 
 ### onClick
 
-Ett annat ställe vi kan placera vår JavaScript-kod på är i onClick-attributet. Som namnet `onClick` antyder kommer då koden att exekveras just då --- "on click". Alltså när användaren klickar på elementet i fråga.
+Ett annat ställe vi kan placera vår JavaScript-kod på är i onClick-attributet. Som namnet `onClick` antyder kommer då koden att exekveras just då &mdash; "on click". Alltså när användaren klickar på elementet i fråga.
 
 Låt oss se till ett exempel, som använder sig av samma kod.
 
@@ -87,13 +87,13 @@ Resultat
   <iframe src="examples/js-onclick-2"></iframe>
 </figure>
 
-> Glöm nu allt du lärt dig om att skriva inline-javascript i `onClick` och glöm nästan allt du lärt dig om att skriva JavaScript direkt i `<head>` --- det finns bättre sätt!
+> Glöm nu allt du lärt dig om att skriva inline-javascript i `onClick` och glöm nästan allt du lärt dig om att skriva JavaScript direkt i `<head>` &mdash; det finns bättre sätt!
 
 Som vanligt är detta bättre sätt baserat på idéen om "[separation of concerns][0]" och innebär att vi flyttar vår JavaScript till en separat fil. Och det är detta vi kommer göra i nästa stycke.
 
 ### JS i separat fil
 
-Om du inte har en medveten anledning till varför du inte ska göra det så är det bästa sättet att hantera JavsScript --- i en separat fil. På precis samma sätt som vi arbetar med CSS så skapar vi en ny fil som vi döper till `ett-schysst-filnamn.js`. Notera alltså ändelsen `.js`. Sedan gör vi på precis (nästan) samma sätt som när vi har en extern CSS-fil. Alltså, vi lägger in ett element i `<head>` som pekar på vår JavaScript-fil. Som så:
+Om du inte har en medveten anledning till varför du inte ska göra det så är det bästa sättet att hantera JavsScript &mdash; i en separat fil. På precis samma sätt som vi arbetar med CSS så skapar vi en ny fil som vi döper till `ett-schysst-filnamn.js`. Notera alltså ändelsen `.js`. Sedan gör vi på precis (nästan) samma sätt som när vi har en extern CSS-fil. Alltså, vi lägger in ett element i `<head>` som pekar på vår JavaScript-fil. Som så:
 
 Ladda in en extern javascript-fil
 

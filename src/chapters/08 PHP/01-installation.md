@@ -6,7 +6,7 @@ Anledningen till att vi har valt just `php` är att det är ett språk som är [
 
 ### LAMP, MAMP & WAMP
 
-En tidigare (och faktiskt fortfarande) populär akronym var termen [LAMP][6]. Eller --- LAMP-stacken som den ofta refereras till som. Denna akronym står (bl.a.) för [Linux][7], [Apache][8], [MySQL][9], och [PHP][10]. Vi säger "bl.a." eftersom det finns versioner av denna stack där `php` t.ex. byts ut emot `perl` o.s.v. Denna stack har blivit mycket populär för webbutveckling.
+En tidigare (och faktiskt fortfarande) populär akronym var termen [LAMP][6]. Eller &mdash; LAMP-stacken som den ofta refereras till som. Denna akronym står (bl.a.) för [Linux][7], [Apache][8], [MySQL][9], och [PHP][10]. Vi säger "bl.a." eftersom det finns versioner av denna stack där `php` t.ex. byts ut emot `perl` o.s.v. Denna stack har blivit mycket populär för webbutveckling.
 
 `Apache` används som webbserver, `php` som server-side-språk, `MySQL` som databas, och slutligen `Linux` som operativsystem där alla nämnda körs.
 

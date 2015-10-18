@@ -53,7 +53,7 @@ Vi kan förstås även vända på steken och låta `php` själv `echo`:a ut `htm
 
 Det finns även en kortnotation som motsvarar notationen `<?php .. ?>`. Den notationen saknar ordet "php" och ser helt enkelt ut som så: `<? .. ?>`. Dock [avråder php-manualen ifrån att använda den korta syntaxen][3] då den är beronde av en konfigurationsinställning för att fungera. Närmare bestämt så måste [short\_open\_tag][4] vara påslaget i konfigurationsfilen [php.ini][5].
 
-Notera att vi i denna guide ibland använder kortnotationen för att spara plats. Och i många exempel skriver vi inte ens ut start och sluttaggarna för `php` --- återigen, för att spara plats.
+Notera att vi i denna guide ibland använder kortnotationen för att spara plats. Och i många exempel skriver vi inte ens ut start och sluttaggarna för `php` &mdash; återigen, för att spara plats.
 
 Om du har en fil som _uteslutande_ innehåller `php`, så är det helt ok att öppna med `<?php` i början av filen och sedan strunta att stänga den längst ned. Konstigt nog så är inte det bara någonting som är ok men [även någonting som rekommenderas av manualen][3].
 

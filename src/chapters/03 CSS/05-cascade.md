@@ -1,6 +1,6 @@
 ## Cascading
 
-Tänk på namnet --- _Cascading Stylesheets_ --- stilmallar som "kaskadar". Vad menas egentligen med att de "kaskadar" och hur kan vi använda det till vår fördel?
+Tänk på namnet &mdash; _Cascading Stylesheets_ &mdash; stilmallar som "kaskadar". Vad menas egentligen med att de "kaskadar" och hur kan vi använda det till vår fördel?
 
 Just ordet "[kaskad][0]" åsyftar idén om att någonting "faller" ned ifrån en nivå till en annan och så vidare i etapper. I relation till just CSS så handlar detta om att (de flesta) CSS-regler som appliceras på en förälder även gäller för alla förälderns barn.
 

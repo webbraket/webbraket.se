@@ -2,13 +2,13 @@
 
 När vi pratar om semantisk signifikans så pratar vi om vad någonting (t.ex.) ett stycke text har för kontextuell betydelse. Lite som att läsa emellan raderna. Vi har i tidigare kapitel flera gånger nämnt termerna semantik och semantisk signifikans. Nu är det dags att faktiskt bena ut vad det handlar om.
 
-Intågandet av den "levande standarden" [HTML5][0] --- kan anses som en stark drivkraft i diskussionen om semantik och webben. Med HTML5 deprekerade man ett antal element som bl.a. var allt för fokuserade på _presentation_. Istället introducerade man ett par intressanta och nyttiga element som fokuserade på _semantik_.
+Intågandet av den "levande standarden" [HTML5][0] &mdash; kan anses som en stark drivkraft i diskussionen om semantik och webben. Med HTML5 deprekerade man ett antal element som bl.a. var allt för fokuserade på _presentation_. Istället introducerade man ett par intressanta och nyttiga element som fokuserade på _semantik_.
 
 Men vad pratar vi egentligen om när vi pratar om semantik? Och vad menar vi egentligen när vi säger att de var _för_ fokuserade på presentation? Är inte det just presentation som är poängen med HTML? Att presentera information för en användare.
 
 ### Content är inte presentation
 
-Idéen om att [separera presentation ifrån content][1] handlar i essens att det går att skilja på presentation (representation) av content ifrån faktiskt contentet. Med andra ord --- att representationen av information inte är detsamma som informationen i sig. Låt oss omformulera oss --- att uttrycka en tanke är inte samma sak som essansen av tanken. Den talade tanken är inte samma sak som tanken. And down the rabbit hole it goes...
+Idéen om att [separera presentation ifrån content][1] handlar i essens att det går att skilja på presentation (representation) av content ifrån faktiskt contentet. Med andra ord &mdash; att representationen av information inte är detsamma som informationen i sig. Låt oss omformulera oss &mdash; att uttrycka en tanke är inte samma sak som essansen av tanken. Den talade tanken är inte samma sak som tanken. And down the rabbit hole it goes...
 
 Vi sniffar nu lite i gränslandet till filosofi. Vad är kunskap? Är det skillnad på kunskap och kommunicerad kunskap? Om vi kan lagra kunskap som är separerad ifrån representation borde vi inte då kunna skapa maskiner som är lika smarta som vi? Vi närmar oss kunskapsrepresentation. Vi närmar oss artificiell intelligens.
 
@@ -36,7 +36,7 @@ Detta är alltså varför det är viktigt att vi har element såsom t.ex. `<em>`
 
 ### Bortom accessibility 
 
-Låt oss bara understryka att den som tror att idéen om att separera content ifrån presentation endast är en tillgänglighetsfråga (accessibility) --- är naiv. Vi diskuterar den blinde användaren för att ha ett exempel att utgå ifrån men både problemet och fördelarna gömmer sig mycket djupare än så. Vi är på väg mot en webb där [information är fri ifrån presentation][3]. Där en multitud av maskiner kan läsa informationen på olika sätt. Allt ifrån TV-apparater till [glasögon][4].
+Låt oss bara understryka att den som tror att idéen om att separera content ifrån presentation endast är en tillgänglighetsfråga (accessibility) &mdash; är naiv. Vi diskuterar den blinde användaren för att ha ett exempel att utgå ifrån men både problemet och fördelarna gömmer sig mycket djupare än så. Vi är på väg mot en webb där [information är fri ifrån presentation][3]. Där en multitud av maskiner kan läsa informationen på olika sätt. Allt ifrån TV-apparater till [glasögon][4].
 
 Kommer snart...
 

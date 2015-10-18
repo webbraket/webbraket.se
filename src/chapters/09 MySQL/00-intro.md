@@ -2,7 +2,7 @@
 
 Dags att snacka databaser! Vad vore väl en interaktiv applikation om vi inte kunde spara någon information? Vad vore en webbshop om vi inte kunde ta emot ordrar, eller lagra produkter. Vad vore webben utan data?
 
-Som du kanske märkt så är det en del grundidéer och -idiom som konstant återkommer. En av dessa mycket, mycket viktiga idiom är den tidigare diskuterade --- [separation of concerns][0]. Även gällande databaser kan vi börja diskutera "separation of concerns". Idéen om databaser bygger ju nämligen på att en applikation och den data en applikation använder, inte är samma sak. Sjävklart egentligen. Men bara för att något är självklart betyder det inte att det alltid har varit enkelt.
+Som du kanske märkt så är det en del grundidéer och -idiom som konstant återkommer. En av dessa mycket, mycket viktiga idiom är den tidigare diskuterade &mdash; [separation of concerns][0]. Även gällande databaser kan vi börja diskutera "separation of concerns". Idéen om databaser bygger ju nämligen på att en applikation och den data en applikation använder, inte är samma sak. Sjävklart egentligen. Men bara för att något är självklart betyder det inte att det alltid har varit enkelt.
 
 Låt oss tänka på det. Data och applikationer är inte samma sak. Eller kanske kan vi uttrycka oss i termer av att data och processer inte är samma sak. Om vi ser applikationer som formaliserade processer. Steg för steg. Så är alltså inte data och processer inte samma sak. Jag tror inte vi behöver understryka detta mera utan förhoppningsvis finner du det förhållandevis naturligt.
 
