@@ -46,7 +46,7 @@ Vi merge:ar alltid med `--no-ff` p.g.a. [denna artikel](http://nvie.com/posts/a-
 Vi code-review:ar alla pull-requests för att vi ska kunna hjälpa varandra att utvecklas och bli bättre utvecklare. Kom ihåg att hålla god ton och vara trevliga mot varandra :)
 
 ## Branches
-Vi fäljer i stort sett [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) men istället för separata release branches så återanvänder vi branchen `development`.
+Vi följer i stort sett [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) men istället för separata release branches så återanvänder vi branchen `development`.
 
 ### `master`
 
@@ -75,13 +75,13 @@ Notera att även dessa konventioner gäller för text-uppdateringar. Om du uppda
 
 
 ### Issues
-Hittat en bugg? Vi använder [issues](repo-issues), så om du upptäcker något som verkar vara galet, vill föreslå en ändring, eller någonting helt nytt, [skapa görna en ny issue](repo-issue-new). Om du kan så får du förstås gärna fixa problemet själv och då istället skicka en [pull request](#pull-requests).
+Hittat en bugg? Vi använder [issues](repo-issues), så om du upptäcker något som verkar vara galet, vill föreslå en ändring, eller någonting helt nytt, [skapa gärna en ny issue](repo-issue-new). Om du kan så får du förstås gärna fixa problemet själv och då istället skicka en [pull request](#pull-requests).
 
 
 
 
 ## Dependencies
-Detta projekt kräver att `node`, `npm` och `gulp` alla finns tillgängliga i din PATH. övriga dependencies installeras genom `npm` och finns alltså specificerade i `package.json`.
+Detta projekt kräver att `node`, `npm` och `gulp` alla finns tillgängliga i din PATH. Övriga dependencies installeras genom `npm` och finns alltså specificerade i `package.json`.
 
 
 
@@ -125,7 +125,7 @@ Här följer en extremt koncis quickstart för att ge en överblick över vad so
 1. Installera [node].
 1. Installera [gulp] globalt genom `npm intall -g gulp`.
 1. Klona repo:t: `$ git clone git@github.com:webbraket/webbraket.se.git`.
-1. öppna mappen: `$ cd webbraket.se`.
+1. Öppna mappen: `$ cd webbraket.se`.
 1. Hämta dependecies: `$ npm install`.
 1. Starta servern: `$ gulp`.
 1. Gå till `http://localhost:8080`.
