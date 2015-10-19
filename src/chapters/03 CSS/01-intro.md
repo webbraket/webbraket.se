@@ -1,6 +1,6 @@
 ## Kom igång med CSS
 
-CSS --- (Cascading StyleSheets) är stilmallar i praktiken används till att formge dokument. Formge färg, teckensnitt, positionering, justering, backgrunder, scroll, o.s.v. En enda CSS-mall kan styra tusentals dokument och det är då enkelt att ändra formateringen genom att det bara i CSS-mallen.
+CSS &mdash; (Cascading StyleSheets) är stilmallar i praktiken används till att formge dokument. Formge färg, teckensnitt, positionering, justering, backgrunder, scroll, o.s.v. En enda CSS-mall kan styra tusentals dokument och det är då enkelt att ändra formateringen genom att det bara i CSS-mallen.
 
 CSS har tagit HTML ett steg längre och möjliggjort formateringar och effekter som inte fanns i HTML standarden. En av fördelarna med CSS är att flera mallar kan användas och de har då företräde inbördes så att en "huvudmall" med de övergripande formateringarna kan ersättas på en lägre nivå av en "lokal mall" som då gäller före huvudmallen. Det är detta som åsyftas när man säger att css är `cascading`.
 

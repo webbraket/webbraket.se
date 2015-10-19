@@ -1,6 +1,6 @@
 ## Kom igång med JavaScript
 
-Om du börjar jobba med HTML och CSS kommer du snabbt upptäcka att de båda teknikerna har sina limitationer. Limitationen skulle enkelt kunna beskrivas som avsaknaden av ett ord --- interaktivitet!
+Om du börjar jobba med HTML och CSS kommer du snabbt upptäcka att de båda teknikerna har sina limitationer. Limitationen skulle enkelt kunna beskrivas som avsaknaden av ett ord &mdash; interaktivitet!
 
 ### Problemet
 

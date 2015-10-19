@@ -106,13 +106,13 @@ Om vi även skulle introducera objektorienterad programmering så skulle vi kunn
 
 I detta sista exempel får vi även en "win" genom att det nu blir omöjligt att exekvera den metod vi skrivit som kör queries emot databasen, utan att vi först upprättat en koppling till databasen. Hur? Jo eftersom vår `query`-metod nu är en instansmetod på `Database`-objektet. Och eftersom klassens konstruktor upprättar en koppling till databasen, och eftersom det är omöjligt att instantiera objektet utan att konstruktorn körs så kan vi helt enkelt vara säkra på att det redan finns en databaskoppling när vi anropar `query`-metoden.
 
-Så här kan vi fortsätta och fortsätta. Vi kan nästan alltid refaktorera vidare kod. Det är t.ex. lite lustigt att vi har hårdkodat databasens "användaruppgifter" direkt i databasklassens konstruktur. Försök alltid att hitta nackdelar med din egen kod, och sök efter refaktoreringar så kommer du med tiden skriva bättre och bättre kod. Och om du är mer intresserad så kan du läsa böcker om refaktorering såsom t.ex. [Refactoring --- av Martin Fowler][3].
+Så här kan vi fortsätta och fortsätta. Vi kan nästan alltid refaktorera vidare kod. Det är t.ex. lite lustigt att vi har hårdkodat databasens "användaruppgifter" direkt i databasklassens konstruktur. Försök alltid att hitta nackdelar med din egen kod, och sök efter refaktoreringar så kommer du med tiden skriva bättre och bättre kod. Och om du är mer intresserad så kan du läsa böcker om refaktorering såsom t.ex. [Refactoring &mdash; av Martin Fowler][3].
 
-Det kan tyckas konstigt att ovan exempel skulle vara någonting smart. Vi gick ifrån mindre kod och färre filer till mer kod och fler filer. Men faktum är att _rader kod_ är ett mycket dåligt mått på en kodbas komplexitet. Eller som Bill Gates uttryckte det --- ["Measuring software productivity by lines of code is like measuring progress on an airplane by how much it weighs"][4].
+Det kan tyckas konstigt att ovan exempel skulle vara någonting smart. Vi gick ifrån mindre kod och färre filer till mer kod och fler filer. Men faktum är att _rader kod_ är ett mycket dåligt mått på en kodbas komplexitet. Eller som Bill Gates uttryckte det &mdash; ["Measuring software productivity by lines of code is like measuring progress on an airplane by how much it weighs"][4].
 
 Låt oss istället, i relation till ovan exempel, kontemplera hur redo vi är på att reagera på inkommande förändringskrav. Om vi nu t.ex. skulle vilja döpa om databasen behöver vi bara göra det på en plats, oavsett hur många filer vi har som kopplar till databasen. Om vi skulle vilja förändra felhanteringen om en query misslyckas behöver vi bara göra det på ett ställe. Eller felhanteringen för om själva databaskopplingen misslyckas.
 
-Om vi skulle hamna i en situation då vi skulle vilja byta databas, till någonting annat än `mysql` så är vi _mer_ beredda än tidigare --- men vi har fortfarande en lång väg att gå. För att hantera den typen av scenarion måste vi gå längre. Ett mycket vanligt tillvägagångssätt är att skriva egna eller använda sig av befintliga ORM:er ([Object Relational Mapping][5]). En ORM är helt enkelt kod som skapar ett abstraktionslager emellan databasen och vår kod. Så när vi vill ställa frågor (queries) till databasen gör vi det helt i vårt programspråk och aldrig i vårt databasspråk. Det betyder att om vi i framtiden vill byta databas, behöver vi bara förändra vår ORM och inte all vår applikationskod. 
+Om vi skulle hamna i en situation då vi skulle vilja byta databas, till någonting annat än `mysql` så är vi _mer_ beredda än tidigare &mdash; men vi har fortfarande en lång väg att gå. För att hantera den typen av scenarion måste vi gå längre. Ett mycket vanligt tillvägagångssätt är att skriva egna eller använda sig av befintliga ORM:er ([Object Relational Mapping][5]). En ORM är helt enkelt kod som skapar ett abstraktionslager emellan databasen och vår kod. Så när vi vill ställa frågor (queries) till databasen gör vi det helt i vårt programspråk och aldrig i vårt databasspråk. Det betyder att om vi i framtiden vill byta databas, behöver vi bara förändra vår ORM och inte all vår applikationskod. 
 
 #### Inkludera filer med `include`
 
@@ -132,7 +132,7 @@ Om den fil vi försöker inkludera av någon anledning inte går att hitta, komm
     Warning: include(non_existent_file.php): failed to open stream: No such file or directory in /www/syntax.php on line 5
     Warning: include(): Failed opening 'non_existent_file.php' for inclusion (include_path='.:') in /www/syntax.php on line 5
 
-Det viktiga att förstå är att en varning **inte** avbryter exekveringen. Med andra ord --- om en fil inte hittas kommer först en varning att spottas ut på sidan med sedan kommer resten av filen ändå exekveras precis som vanligt. Detta betyder att just konstruktionen `include` faktiskt [inte lämpar sig för applikationskritiska inkluderingar][6]. Såsom databaskopplingen ovan, eller autentisering av användare. Låt oss nu diskutera några andra alternativ...
+Det viktiga att förstå är att en varning **inte** avbryter exekveringen. Med andra ord &mdash; om en fil inte hittas kommer först en varning att spottas ut på sidan med sedan kommer resten av filen ändå exekveras precis som vanligt. Detta betyder att just konstruktionen `include` faktiskt [inte lämpar sig för applikationskritiska inkluderingar][6]. Såsom databaskopplingen ovan, eller autentisering av användare. Låt oss nu diskutera några andra alternativ...
 
 #### Inkludera filer med `require`
 
@@ -191,7 +191,7 @@ Eftersom vi pratar om att använda `php` till att skapa webbsidor så behöver v
 
 Låt oss först prata om varför det är viktigt att separera olika "concerns". Kom ihåg tidigare diskussion om att vi behöver sikta på en hög nivå av beredskap inför förändring. Vår applikation behöver vara lätt att förändra. Så när (ps: vi väljer medvetet ordet _när_ och inte _om_) vi väl behöver utföra en förändring löper vi inte risken att behöva koda om hela systemet ifrån grunden. Föreställ dig t.ex. att vi utvecklar en webbshop. Anta att vi har listat shoppens produkterna på listform. Anta nu att vi får in ett nytt krav på att även kunna presentera produkterna som ett rutnät. Jahapp tänker vi, och börjar kika på koden. Om vår databaskod då är beblandad med vår presentationskod så kommer förändringen bli mycket dyrare än om de är ordentligt separerade.
 
-Utan att gräva ned oss i det här för mycket så kan vi säga att det finns en uppsjö av [design patterns][10] --- alltså dokumenterade kodstruktureringsstrategier --- som syftar just till att angripa denna typ av problem. Men det får vi diskutera på djupet en annan gång. Vad vi vill belysa i detta kapitel är hur det går att identifiera två vanliga strategier utvecklare använder för att "blanda" `html` och `php`. Antingen så...
+Utan att gräva ned oss i det här för mycket så kan vi säga att det finns en uppsjö av [design patterns][10] &mdash; alltså dokumenterade kodstruktureringsstrategier &mdash; som syftar just till att angripa denna typ av problem. Men det får vi diskutera på djupet en annan gång. Vad vi vill belysa i detta kapitel är hur det går att identifiera två vanliga strategier utvecklare använder för att "blanda" `html` och `php`. Antingen så...
 
 * skriver vi `php` och `echo`:ar `html`,
 * eller så skriver vi `html` och lägger in små block av `php`
@@ -216,7 +216,7 @@ Resultat
 <p>Missed call (3).</p>
 </figure>
 
-Således är det ofta bättre att försöka hålla de filer som arbetar med `html` fokuserade på just det --- `html`. Och istället se det som att `php` kommer in i små korta svängar --- antingen för att kontrollera programflödet eller hålla variabel data. Låt oss se hur det skulle kunna se ut.
+Således är det ofta bättre att försöka hålla de filer som arbetar med `html` fokuserade på just det &mdash; `html`. Och istället se det som att `php` kommer in i små korta svängar &mdash; antingen för att kontrollera programflödet eller hålla variabel data. Låt oss se hur det skulle kunna se ut.
     
     <?
       $name   = "John";
@@ -231,7 +231,7 @@ Denna andra strategi har den mycket positiva effekten att vi även kan indentera
 
 #### Kolon-varianter
 
-Som du kanske märkte använde vi i ovan en alternativ syntax för konstruktionen `for`. Låt oss kalla dessa för "kolon-varianter". Det finns några grundläggande konstruktioner i `php` som har just sådana här kolon-motsvarigheter. Varför de som skapade språket valt att implementera dessa kan vi inte svara på --- men det kan vara rimligt att anta att även de insåg att det snabbt blir problematiskt när vi försöker blanda `php` och något annat språk.
+Som du kanske märkte använde vi i ovan en alternativ syntax för konstruktionen `for`. Låt oss kalla dessa för "kolon-varianter". Det finns några grundläggande konstruktioner i `php` som har just sådana här kolon-motsvarigheter. Varför de som skapade språket valt att implementera dessa kan vi inte svara på &mdash; men det kan vara rimligt att anta att även de insåg att det snabbt blir problematiskt när vi försöker blanda `php` och något annat språk.
 
 Med hjälp av dessa kolon-varianter kan vi istället skriva våra dokument som om de var skrivna i just det språket vi vill nå som output. I vårat fall alltså `html`. Sedan kan vi strategiskt placera ett antal `php`-kommandon som kontrollerar applikationsflödet. Låt oss se till några exempel på konstruktioner som har kolon-motsvarigheter.
 
@@ -368,7 +368,7 @@ Det finns som sagt en uppsjö av design patterns som hjälper oss att strukturer
 
 Det är för tidigt att gräva in oss i design patterns nu. Men för att du ska ha något att luta dig på när du designar dina applikationer skulle vi vilja föreslå följande strategi:
 
-Se till att de sidor som agerar "entry-points" (i.e. den fil som du pekar webbläsaren till) är så absolut enkla som möjligt. Låt de filerna istället inkludera andra filer. Och delegera komplext arbete till de inkluderade filerna. Säg att du t.ex. har fått en mängd data, som motsvarar en blogpost, och ska spara den i en databas. Istället för att processa och spara datat direkt i "entry-point"-filen --- inkludera en annan fil som du t.ex. kallar `process_post.php`. Låt den filen deklarera en metod som t.ex. heter `process_post($post_data)`. Om den metoden istället utför allt det komplexa processnings, och sparningsarbetet så kommer "entry-point"-filen helt enkelt bara behöva anropa den metoden med relevant data som argument. Detta är alltså samma strategi som vi använde för att illustrera `include` i första exemplet i detta kapitel.
+Se till att de sidor som agerar "entry-points" (i.e. den fil som du pekar webbläsaren till) är så absolut enkla som möjligt. Låt de filerna istället inkludera andra filer. Och delegera komplext arbete till de inkluderade filerna. Säg att du t.ex. har fått en mängd data, som motsvarar en blogpost, och ska spara den i en databas. Istället för att processa och spara datat direkt i "entry-point"-filen &mdash; inkludera en annan fil som du t.ex. kallar `process_post.php`. Låt den filen deklarera en metod som t.ex. heter `process_post($post_data)`. Om den metoden istället utför allt det komplexa processnings, och sparningsarbetet så kommer "entry-point"-filen helt enkelt bara behöva anropa den metoden med relevant data som argument. Detta är alltså samma strategi som vi använde för att illustrera `include` i första exemplet i detta kapitel.
 
 Om du vill ha ännu mer struktur men ändå inte är redo för komplexare patterns, skulle vi rekommendera att du kikar lite på [Front Controller Pattern][12].
 

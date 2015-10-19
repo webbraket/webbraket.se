@@ -67,7 +67,7 @@ Hello, my name is Socks.
 
 Precis som i vilket annat språk med klasser som helst så kan vi definera både klass- och instansmedlemmar för en given klass. När vi pratar om "medlemmar" så pratar vi alltså både om metoder och variabler. Så när vi pratar om klass- och instalsmedlemmar så pratar vi alltså både om (1) klass- och instansvariabler, samt (2) klass- och instansmetoder.
 
-Låt oss börja med att repetera vad skillnaden mellan en klass- och instansmedlem är. En klassmedlem är vad som brukar kallas för en statisk medlem. En klassmedlem tillhör klassen medan en instansmedlem tillhör instansen. Låt oss omformulera. En klassmedlem tillhör alla instansmedlemmar samtidigt, medan en instansmedlem är unik per instans. Detta betyder alltså att om vi deklarerar en klassvariabel --- så existerar det endast en enda av den variabeln (tänk: minnesplats). Men om vi deklarerar en instansvariabel så kommer det existera exakt lika många variabler (tänk återigen: minnesplatser) som vi skapar instanser av den klassen.
+Låt oss börja med att repetera vad skillnaden mellan en klass- och instansmedlem är. En klassmedlem är vad som brukar kallas för en statisk medlem. En klassmedlem tillhör klassen medan en instansmedlem tillhör instansen. Låt oss omformulera. En klassmedlem tillhör alla instansmedlemmar samtidigt, medan en instansmedlem är unik per instans. Detta betyder alltså att om vi deklarerar en klassvariabel &mdash; så existerar det endast en enda av den variabeln (tänk: minnesplats). Men om vi deklarerar en instansvariabel så kommer det existera exakt lika många variabler (tänk återigen: minnesplatser) som vi skapar instanser av den klassen.
 
 #### Klass- och instansvariabler
 
@@ -93,7 +93,7 @@ Notera alltså att skillnaden emellan att deklarera en statisk (klass-) variabel
 
 #### Access modifiers
 
-Vi kommer att implementera det exempel som diskuterats ovan i helhet, i detta kapitel. Men vi måste ta det steg för steg för att verkligen förstå alla delar. Låt oss först diskutera det som kallas `access modifiers`. Detta handlar alltså om huruvida en medlem är `public`, `private` eller `protected`. Som du kanske märkte så markerade vi i ovan exempel att de två variablerna var `private`. På samma sätt som en medlem måste markeras som statisk eller inte, måste en medlem också ha en `access modifier`. Denna avgör "vilka" som kommer att få komma åt medlemen. Den "modify":ar alltså "access" --- för att prata svengelska :)KeywordFörklaring
+Vi kommer att implementera det exempel som diskuterats ovan i helhet, i detta kapitel. Men vi måste ta det steg för steg för att verkligen förstå alla delar. Låt oss först diskutera det som kallas `access modifiers`. Detta handlar alltså om huruvida en medlem är `public`, `private` eller `protected`. Som du kanske märkte så markerade vi i ovan exempel att de två variablerna var `private`. På samma sätt som en medlem måste markeras som statisk eller inte, måste en medlem också ha en `access modifier`. Denna avgör "vilka" som kommer att få komma åt medlemen. Den "modify":ar alltså "access" &mdash; för att prata svengelska :)KeywordFörklaring
 
 |            |        
 |------------|---------

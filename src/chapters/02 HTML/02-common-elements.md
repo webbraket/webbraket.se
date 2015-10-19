@@ -60,9 +60,9 @@ Men varför finns det två sätt att denotera fetstil text och två sätt att de
 
 ### Listor
 
-För att skapa punktlistor i HTML behöver vi kombinera två olika element. Ett element som denoterar vilken typ av lista vi vill skapa. Innuti detta element behöver vi upprepat använda ett annat element --- en gång per punkt i vår punktlista.
+För att skapa punktlistor i HTML behöver vi kombinera två olika element. Ett element som denoterar vilken typ av lista vi vill skapa. Innuti detta element behöver vi upprepat använda ett annat element &mdash; en gång per punkt i vår punktlista.
 
-Vi nämnde alltså att det första elementet denoterar vilken typ av lista vi vill skapa. Det finns, i HTML, alltså två typer av listor --- numrerade listor och onumrerade listor. Numrerade listor denoteras genom elementet `<ol>` (_ordered lists_) och onumrerade listor genom elementet `<ul>` (_unordered lists_).
+Vi nämnde alltså att det första elementet denoterar vilken typ av lista vi vill skapa. Det finns, i HTML, alltså två typer av listor &mdash; numrerade listor och onumrerade listor. Numrerade listor denoteras genom elementet `<ol>` (_ordered lists_) och onumrerade listor genom elementet `<ul>` (_unordered lists_).
 
 Som nämnt behöver vi sedan denotera varje element (punkt) i listan för sig. Detta gör vi helt enkelt genom att använda elementet `<li`
 
@@ -116,13 +116,13 @@ I de tidigare dagarna av HTML använde kreativa webbutvecklare ofta tabeller fö
 
 Idag används tabeller nästan uteslutande för att representera tabulär data. Såsom elementet rimligen var tänkt att användas ifrån början.
 
-När vi kommer in på diskussionen om semantisk signifikans så kommer du förhoppningsvis förstå varför det är både viktigt och naturligt att inte använda tabeller till annat än representation av tabulär data. Men återigen handlar det om distiktionen mellan hur saker ser ut och vad de faktiskt innebär. Användandet av tabeller implicierar att ett stycke data kan behandlas tabulärt. Så om vi använder tabeller för att visuellt strukturera vår sida --- så implicerar vi att vår sida är en enda stor tabell av strukturerad data. Vilket oftast inte är sant.
+När vi kommer in på diskussionen om semantisk signifikans så kommer du förhoppningsvis förstå varför det är både viktigt och naturligt att inte använda tabeller till annat än representation av tabulär data. Men återigen handlar det om distiktionen mellan hur saker ser ut och vad de faktiskt innebär. Användandet av tabeller implicierar att ett stycke data kan behandlas tabulärt. Så om vi använder tabeller för att visuellt strukturera vår sida &mdash; så implicerar vi att vår sida är en enda stor tabell av strukturerad data. Vilket oftast inte är sant.
 
 När vi diskuterar tabeller så finns det egentligen fyra element som vi behöver lära oss. För att skapa en tabell börjar vi alltid med elementet `<table>`. Detta element enkapsulerar hela tabellen. Alla dess rader, kolumner och data.
 
 Innanför elementet `table` kan vi sedan placera ett valfritt antal element av typen `<tr>` (_table row_). Detta element skapar nya tabellrader. När vi skapar tabeller i HTML behöver vi alltså specificera kolumnerna i raderna och inte tvärtom. Syntaxen hade ju förstås likaväl kunnat fungera tvärtom men nu är fallet inte så.
 
-> I tabeller specificerar vi först raderna --- sedan kolumnerna. Aldrig tvärtom.
+> I tabeller specificerar vi först raderna &mdash; sedan kolumnerna. Aldrig tvärtom.
 
 Innanför elementet `tr` kan vi sedan placera ett valfritt antal element av typen `<td>` (_table data_. För att underlätta den mentala modellen kan du alltså tänka att elementet `td` skapar kolumner. Om vi använder `tr` för att skapa rader i tabellen så använder vi `td` för att skapa kolumner i en rad.
 
@@ -205,7 +205,7 @@ Om vi nu försöker nå ovan bild genom någon form av läsare som inte kan rend
 
 Om vi vill lägga till en bildtext till vår bild kommer de nya html5-elementen `<figure>` och `<figcaption>` väl till pass.
 
-Dessa är _semantiska_ attribut snarare än _visuella_. Med andra ord. Visst har `<p>`-taggen en semantisk innebörd --- en paragraf representerar ju semantiskt ett stycke text, och således rimligen en tanke. Men i HTML så resulterar ju även en paragraf i någonting visuellt skillt ifrån plain-text och därmed 
+Dessa är _semantiska_ attribut snarare än _visuella_. Med andra ord. Visst har `<p>`-taggen en semantisk innebörd &mdash; en paragraf representerar ju semantiskt ett stycke text, och således rimligen en tanke. Men i HTML så resulterar ju även en paragraf i någonting visuellt skillt ifrån plain-text och därmed 
 
 Elementen `figure` och `figcaption` är båda _semantiska_ element snarare än direkt _visuella_. Med andra ord, om vi skulle välja att bara skriva ut vår bild följd av ett helt vanligt paragraf-element som innehåller vår bildtext, så skulle det visuella resultatet bli ungefär likadant som om vi använde figure och figcaption. Poängen med att dock istället använda figure och figcaption är att vi [berikar dokumentet med semantik][4]. Plus att vi har ett enhetligt sätt att angripa bildtexter ifrån våra stilmallar (css).
 

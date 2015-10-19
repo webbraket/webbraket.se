@@ -28,13 +28,13 @@ Vanliga scenarion där vi använder formulär är t.ex. användarregistrering, i
 
 ### Att spara data
 
-Viktigt att förstå är att vi med endast HTML inte kan göra särskilt mycket med formulär. Vi kan presentera de för användaren, men vi kan inte på några sätt "processa" den data som användaren matar in. För att bearbeta den data som användarna matar in i formulär behöver vi ett script- eller programmeringspråk. Med andra ord t.ex. `JavaScript`, `PHP`, `Ruby`, `ASP.NET`, eller dyl. För att persistent spara data som kan delas emellan flera datorer behöver vi någon form av [databas][0]. Om vi vill spara data på klientens dator och det inte spelar någon roll ifall andra kan komma åt datan eller ej --- så räcker det med JavaScript och HTML5 (genom [persistant storage][1]). Men det viktiga är alltså att förstå att vi med hjälp av endast HTML inte kan spara eller processa datan användare matar in i våra formulär. Men vi kommer prata mer om att processa/spara data ifrån formulär när vi pratar om script- och programmeringsspråk.
+Viktigt att förstå är att vi med endast HTML inte kan göra särskilt mycket med formulär. Vi kan presentera de för användaren, men vi kan inte på några sätt "processa" den data som användaren matar in. För att bearbeta den data som användarna matar in i formulär behöver vi ett script- eller programmeringspråk. Med andra ord t.ex. `JavaScript`, `PHP`, `Ruby`, `ASP.NET`, eller dyl. För att persistent spara data som kan delas emellan flera datorer behöver vi någon form av [databas][0]. Om vi vill spara data på klientens dator och det inte spelar någon roll ifall andra kan komma åt datan eller ej &mdash; så räcker det med JavaScript och HTML5 (genom [persistant storage][1]). Men det viktiga är alltså att förstå att vi med hjälp av endast HTML inte kan spara eller processa datan användare matar in i våra formulär. Men vi kommer prata mer om att processa/spara data ifrån formulär när vi pratar om script- och programmeringsspråk.
 
 ### Att skapa formulär
 
 Låt oss skapa formulär. Vi tar det del för del och steg för steg.
 
-Vi börjar helt enkelt med att använda `<form>`-element. På samma sätt som `table` enkapsulerar allt innehåll av en tabell --- så enkapsulerar `form` allt innehåll av ett formulär. Vi skapar alltså "skalet" för ett formulär som så...
+Vi börjar helt enkelt med att använda `<form>`-element. På samma sätt som `table` enkapsulerar allt innehåll av en tabell &mdash; så enkapsulerar `form` allt innehåll av ett formulär. Vi skapar alltså "skalet" för ett formulär som så...
     
     <form method="POST" action="process-data.php">
        ...
@@ -126,7 +126,7 @@ Prova knapparna! Både genom att klicka på själva radioknapparna, men även ge
 
 Fundera på vad de olika attributen i ovan exempel faktiskt gör. Vi har inte pratat om attributet `name` tidigare. Attributet går att använda på alla formkontroller och är ett sätt att tilldela ett namn på en viss kontroll. Detta namn är av relevans när det kommer till att processa data i formuläret. Vi kommer som sagt inte riktigt att prata om detta än men du bör ändock veta om att det är vad attributet är till för.
 
-De två radioknapparna i ovan exempel har ju alltså samma värde för attributet `name`. Detta innebär att de tillhör samma grupp. Vi sa ju tidigare att radioknappar gör att användaren kan välja ett och endast ett val. Men om vi har flera set av radioknappar på en och samma sida --- hur ska då webbläsaren veta vilka radioknappar som inte får vara valda samtidigt. Jo, genom grupper. Så vi kan alltså omformulera oss som så: En och endast en radioknapp får vara vald per grupp. Och en grupp definierar vi ju alltså genom att ge flera radioknappar samma värde för attributet `name`.
+De två radioknapparna i ovan exempel har ju alltså samma värde för attributet `name`. Detta innebär att de tillhör samma grupp. Vi sa ju tidigare att radioknappar gör att användaren kan välja ett och endast ett val. Men om vi har flera set av radioknappar på en och samma sida &mdash; hur ska då webbläsaren veta vilka radioknappar som inte får vara valda samtidigt. Jo, genom grupper. Så vi kan alltså omformulera oss som så: En och endast en radioknapp får vara vald per grupp. Och en grupp definierar vi ju alltså genom att ge flera radioknappar samma värde för attributet `name`.
 
 Låt oss se till ett exempel.
     
@@ -315,7 +315,7 @@ Den mer formella tumregeln är att requests som riskerar att ha [sidoeffekter][5
 
 `GET` å andra sidan bör vi alltså huvudsakligen använda när vi på något sätt vill hämta data. Exempel på detta kan t.ex. vara [paginering][6]. Med paginering menar vi alltså när en stor mängd content delas upp på flera sidor. Det är då vanligt förekommande att man använder sig av `GET`-tekniken för i request:et skicka med vilket sidnummer vi vill se.
 
-Ett annat lämpligt scenario för GET är t.ex. sökningar och filtrering. Föreställ dig en webbshop med en sökruta. När vi söker efter en produkt så förändrar vi ju självklart inte några produkter på webbshop:ens server. Vi använder då GET för att berätta för servern vilken/vilka term/-er vi har sökt --- så att servern kan svara med rätt response.
+Ett annat lämpligt scenario för GET är t.ex. sökningar och filtrering. Föreställ dig en webbshop med en sökruta. När vi söker efter en produkt så förändrar vi ju självklart inte några produkter på webbshop:ens server. Vi använder då GET för att berätta för servern vilken/vilka term/-er vi har sökt &mdash; så att servern kan svara med rätt response.
 
 Den kanske mest uppenbara skillnaden emellan `GET` och `POST` är förstås _hur_ formulärdatan skickas. Med förstnämnda tekniken skickas formulärdatat i URL:en själv. Således är formulärdatat uppenbart synligt för användaren. Genom att däremot använda sistnämnda tekniken (POST) så skickas formulärdatan som en HTTP-header. Således är datan inte synlig i URL och inte uppenbart synlig för användaren.
 

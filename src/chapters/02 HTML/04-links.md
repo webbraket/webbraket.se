@@ -54,11 +54,11 @@ Som du nu vet baseras webbsidor på standarden HTML. När vi med andra ord ber w
 
 Men först, vad är ett protokoll? Kom ihåg att vi sa att en klient skickar ett request och en server svarar med ett response. Ett protokoll är helt enkelt en överenskommelse kring hur klienten och servern ska tala med varandra. När vi skickar saker över nätet så skickar vi de i fragmenterade paket och för att routrar, ISP:er och servrar ska veta vart våra paket är på väg, behöver vi protokoll. Här kommer TCP/IP in i bilden. För att servern ska kunna förstå vårt request och för att webbläsaren ska kunna förstå serverns response behöver vi protokollet HTTP (HyperText Transfer Protocol). Protokoll kan alltså liknas vid ett överenskommet språk emellan två parter.
 
-> För att två parter ska kunna kommunicera krävs ett överenskommet språk --- ett protokoll.
+> För att två parter ska kunna kommunicera krävs ett överenskommet språk &mdash; ett protokoll.
 
 Du har säkert kommit i kontakt med både protokollet `http` och den säkrare varianten `https`. Varje gång du skriver in en adress i webbläsaren så anger vi `http://`. Om vi inte gör det själva är webbläsarna idag tillräckligt smarta för att slänga in det protokollet åt oss.
 
-Nu när vi vet vad ett protokoll är --- vad är då en URL (Uniform Resource Locator)? En URL är helt enkelt en webbadress. Den pekar på en plats på internet där en webbresurs bör finnas.
+Nu när vi vet vad ett protokoll är &mdash; vad är då en URL (Uniform Resource Locator)? En URL är helt enkelt en webbadress. Den pekar på en plats på internet där en webbresurs bör finnas.
 
 > En URL är en webbadress till en resurs på internet.
 
@@ -113,7 +113,7 @@ Vi applicerar alltså ett ankare i slutet av en vanlig URL.
     
     http://example.com/index.html#my_anchor 
 
-Vi kan alltså använda oss av ankare för att ge användaren en möjlighet att navigera inom samma sida. När vi klickar på en länk med ett ankare så kommer alltså webbläsaren inte bara att ladda den sida vi angett --- utan även scrolla ned till ankarets målposition. Vi kan med andra ord se ankare som en form av "bokmärken" för långa sidor.
+Vi kan alltså använda oss av ankare för att ge användaren en möjlighet att navigera inom samma sida. När vi klickar på en länk med ett ankare så kommer alltså webbläsaren inte bara att ladda den sida vi angett &mdash; utan även scrolla ned till ankarets målposition. Vi kan med andra ord se ankare som en form av "bokmärken" för långa sidor.
 
 Ankaren har även fler, mer avancerade tillämpningsområdet men det kommer vi in på mycket senare. 
 

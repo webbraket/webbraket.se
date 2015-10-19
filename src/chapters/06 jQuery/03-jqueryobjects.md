@@ -31,7 +31,7 @@ Med jQuery
 
     $('p').remove();
 
-Förhoppningsvis ser du nu styrkan! jQuery försökt att ta hand om den del vanligt återkommande problem och således försökt erbjuda oss utvecklare lite mindre huvudvärk. Nu kanske du redan fått huvudvärk flera gånger och känner den komma igen av att du behöver lära dig någonting nytt --- men lugn! När du väl fått kläm på syntaxen kommer jQuery hjälpa dig ofantligt, och förhoppningsvis kommer du vara arg på att vi försökte lära dig JavaScript först.
+Förhoppningsvis ser du nu styrkan! jQuery försökt att ta hand om den del vanligt återkommande problem och således försökt erbjuda oss utvecklare lite mindre huvudvärk. Nu kanske du redan fått huvudvärk flera gånger och känner den komma igen av att du behöver lära dig någonting nytt &mdash; men lugn! När du väl fått kläm på syntaxen kommer jQuery hjälpa dig ofantligt, och förhoppningsvis kommer du vara arg på att vi försökte lära dig JavaScript först.
 
 > Förutom att jQuery gör det lättare för oss att utföra omständiga DOM-operationer gör den också att vi får mer webbläsarkompatibel kod, eftersom jQuery bygger på mycket "best practices".
 
@@ -39,7 +39,7 @@ Förhoppningsvis ser du nu styrkan! jQuery försökt att ta hand om den del vanl
 
 jQuery-objektet fungerar helt enkelt så att vi "wrappar" (omsluter/dekorerar) ett helt vanligt `HTMLElement` med jQuery. När vi har gjort det har vi helt plötsligt ett objekt som dels innehåller en referens till detta helt vanliga `HTMLElement` men även en massa smidiga hjälpmetoder som hjälper oss att interagera med detta `HTMLElement`.
 
-jQuery-objekt kan göra mycket fler saker än att hämta och manipulera element men nu ska vi fokusera på att det kan göra just det sistnämnda --- alltså hämta element, och sedan manipulera dem. Låt oss se till det tidigare diskuterade exempelet som tog bort alla `<p>`-element ur ett dokument.
+jQuery-objekt kan göra mycket fler saker än att hämta och manipulera element men nu ska vi fokusera på att det kan göra just det sistnämnda &mdash; alltså hämta element, och sedan manipulera dem. Låt oss se till det tidigare diskuterade exempelet som tog bort alla `<p>`-element ur ett dokument.
 
 Ta bort alla <p\>-element med jQuery
 
