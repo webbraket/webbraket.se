@@ -9,7 +9,9 @@ var gulp    = require('gulp'),
     connect = require('gulp-connect'),
     uglify  = require('gulp-uglify'),
     ghpages = require('gh-pages'),
-    del     = require('del');
+    cheerio = require('cheerio'),
+    del     = require('del'),
+    fs      = require('fs');
 
 
 gulp.task('default', ['watch:development']);
@@ -54,12 +56,46 @@ gulp.task('clean', function(cb) {
   del(['build'], cb);
 });
 
-gulp.task('chapters', function(){
+gulp.task('toc', function() {
+  return gulp.src('src/chapters/**/*.md')
+    .pipe(marked())
+    .pipe(concat('toc.json'))
+    .pipe(insert.transform(function(contents) {
+      var $ = cheerio.load(contents);
+      var toc = $('h1').map(function(i, h1) {
+        return {
+          id:   $(h1).attr('id'),
+          name: $(h1).text(),
+          children: $(this).nextUntil('h1', 'h2').map(function(i, h2) {
+            return {
+              id:   $(this).attr('id'),
+              name: $(this).text(),
+              children: $(this).nextUntil('h2', 'h3').map(function(i, h3) {
+                return {
+                  id:   $(this).attr('id'),
+                  name: $(this).text()
+                };
+              }).get()
+            }
+          }).get()
+        }
+      }).get();
+      return JSON.stringify(toc);
+    }))
+    .pipe(gulp.dest('tmp'));
+});
+
+gulp.task('chapters', ['toc'], function(){
   return gulp.src('src/chapters/**/*.md')
     .pipe(marked())
     .pipe(concat('index.html'))
     .pipe(insert.transform(function(contents){
-      return jade.renderFile('src/templates/index.jade', { body : contents })
+      var tocString = fs.readFileSync('tmp/toc.json', { encoding: 'utf-8' });
+      var toc = JSON.parse(tocString);
+      return jade.renderFile('src/templates/index.jade', {
+        body : contents,
+        toc  : toc
+      });
     }))
     .pipe(rename({ extname: '.html' }))
     .pipe(gulp.dest('build'))

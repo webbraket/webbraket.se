@@ -5,6 +5,17 @@ html(lang="sv")
     title WebbRaket
     link(rel="stylesheet", href="css/main.css")
   body
+    h1 Innehållsförteckning
+    ol
+      each h1 in toc
+        li
+          a(href="##{h1.id}")= h1.name
+          ol
+            each h2 in h1.children
+              li
+                a(href="##{h2.id}")= h2.name
+
+
     != body
     script(src="js/main.js")
 
