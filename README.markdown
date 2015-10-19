@@ -64,14 +64,17 @@ Denna branch är vår "production server" och förändringar i den reflekteras o
 Topic branches används för allt arbete. Vi följer nedan namngivningskonvention.
 
 - `new/zzz` Nya features där zzz är ett kort namn på featuren.
-- `fix/111` Bug-fix där 111 antingen är ett namn eller [issue][repo-issues]-numret.
+- `fix/i111` Bug-fix där 111 antingen är ett namn eller [issue][repo-issues]-numret.
 - `big/zzz` Branch som förväntas leva längre (såsom e.g. ramverksmigrering).
 - `test/zzz` Används om du introducerar tester.
 
 Notera att även dessa konventioner gäller för text-uppdateringar. Om du uppdaterar text är det en `fix` och om du skriver ny text är det en `new`.
 
+Notera att issue-nummer prefixas med ett `i`. Detta gör vi för att undvika risker associerade med "bare numbers" i branch-namn. Läs mer [här][branch-naming].
+
 [repo-issues]: http://github.com/webbraket/webbraket.se/issues
 [repo-issue-new]: https://github.com/webbraket/webbraket.se/issues/new
+[branch-naming]: http://stackoverflow.com/questions/273695/git-branch-naming-best-practices
 
 
 ### Issues
