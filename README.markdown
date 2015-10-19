@@ -16,6 +16,11 @@ Att bidra till Webbraket är inte bara nyttigt för din egen utveckling och ditt
     1. [Tasks](#tasks)
     1. [Publicering](#publicering)
     1. [Workflow](#workflow)
+1. [Project Management](#project-management)
+    1. [Slack](#slack)
+    1. [Weekly video](#weekly-video)
+    1. [Kalender](#kalender)
+    1. [Meetups](#meetups)
 1. [Om projektet](#om-projektet)
     1. [Core contributors](#core-contributors)
     1. [Uppsatser och forskning](#uppsatser-och-forskning)
@@ -180,6 +185,49 @@ $ git push --set-upstream origin new/cat-stories
 
 
 
+
+
+
+
+# Project Management
+Vi strävar efter att arbeta så friktionsfritt, demokratiskt och transparent som möjligt. Idéer på hur vi kan bli bättre är alltid välkomna.
+
+Vi arbetar för nuvarande på fyra plan. Vi arbetar med Slack, GitHub:s pull requests/issues, Video calls och med fysiska möten. Projektöverskridande diskussioner sker på Slack, feature/bug-relaterade diskussioner sker på GitHub, och när dessa tekniska plattformar inte räcker till så diskuterar vi frågor vid Video calls eller vid fysiska möten.
+
+## Slack
+Vi använder [Slack](http://webbraket.slack.com) för projektöverskridande diskussioner. D.v.s. all kommunikation som inte är relaterad till specifika [pull requests](https://github.com/webbraket/webbraket.se/pulls) eller [issues](https://github.com/webbraket/webbraket.se/issues). Det är förstås rimligt att använda Slack för att diskutera nya features etc. för att kunna nå koncensus. Men vi ber dig att så fort som möjligt försöka flytta diskussionen till GitHub, eftersom det möjliggör transparens och det blir lättare för utomstående att ge sig in i diskussionen.
+
+Endast core contributors har för nuvarande tillgång till Slack. Detta eftersom det nästan uteslutande är praktiska diskussioner som förs på Slack. Strategiska diskusioner förflyttas så fort som möjligt till öppna fora såsom GitHub. Om du är en del av core contributors men inte har tillgång till Slack. Vänligen [kontakta](#kontakt) någon i styrelsen.
+
+## Weekly video
+Varje vecka kör vi ett video-call. För att stärka känslan av gemenskap, men även för att undvika att alla diskussioner ska behöva föras i kommentarsfält. Vi värdesätter demokrati och öppenhet och dessa möten är därför en utmärkt plats att lyfta vad än en har på hjärtat. Moderator för dessa möten är någon i styrelsen.
+
+Dessa möten sker på en regelbunden basis, men listas även i vår gemensamma kalender.
+
+Varje möte börjar som en SCRUM-inspirerad standup. D.v.s. vi tar ett "varv" där alla svarar på de tre frågorna:
+1. Vad har jag gjort sen senast?
+1. Vad ska jag göra framöver?
+1. Vad har jag stött på för problem?
+
+Efter att alla fått svara på de tre frågorna övergår vi till att diskutera övriga agendapunkter som ofta är av en mer strategisk och/eller planerande karaktär.
+
+För att främja transparens kommer dessa möten (med start 2016) att filmas och publiceras på YouTube. För nuvarande filmas mötena ej.
+
+## Kalender
+Länkar till vår gemensamma kalender hittar du nedan. Om du vill ha write-access till kalendern vänligen kontakta [Christopher](#kontakt).
+
+- [HTML](https://www.google.com/calendar/b/1/embed?src=okhravi.se_8f3r0gabui2fo30q8pi9tqrr3c@group.calendar.google.com&ctz=Europe/Stockholm)
+- [iCal](https://www.google.com/calendar/ical/okhravi.se_8f3r0gabui2fo30q8pi9tqrr3c%40group.calendar.google.com/public/basic.ics)
+- [XML](https://www.google.com/calendar/feeds/okhravi.se_8f3r0gabui2fo30q8pi9tqrr3c%40group.calendar.google.com/public/basic)
+
+## Meetups
+Ibland kör vi informella och formella fysiska meetups för att främja gemenskapen och för att diskutera viktiga frågor. Dessa möten visas i ovan publika kalender och annonseras/diskuteras först på Slack.
+
+
+
+
+
+
 # Om projektet
 Vi är ett projekt som drivs av ett gäng glada studenter, adjunkter och forskare under Institutionen för informatik och media vid Uppsala universitet.
 
@@ -247,7 +295,6 @@ Nedan följer kort information om Webbraketens styrelse.
 - Christopher Okhravi <christopher.okhravi@im.uu.se> (ordförande)
 - Madelen Hermelin <madelen.hermelin@im.uu.se>
 - John Larsson <john.larsson@im.uu.se>
-
 
 # Disclaimer
 Detta projekt är för nuvarande ej vinstdrivet och kostnader täcks av individer i projektet. Slutprodukten kommer alltid vara gratis för slutkonsumenten.
