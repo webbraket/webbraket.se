@@ -1,8 +1,8 @@
-__Webbraket vill bli sveriges största utbildningsresurs för webbutveckling. Det bästa sättet att nå det målet tror vi är att arbeta tillsammans.__
+__Webbraket vill bli sveriges stÃ¶rsta utbildningsresurs fÃ¶r webbutveckling. Det bÃ¤sta sÃ¤ttet att nÃ¥ det mÃ¥let tror vi Ã¤r att arbeta tillsammans.__
 
-Detta är ett projekt för studenter, drivet av studenter. Detta initiativ drivs av en grupp studenter vid Uppsala Universitet men hjälp mottas självklart gladeligen ifrån alla håll och kanter. Om du hittar något som verkar galet så blir vi mer än glada om du skickar en *pull request*.
+Detta Ã¤r ett projekt fÃ¶r studenter, drivet av studenter. Detta initiativ drivs av en grupp studenter vid Uppsala Universitet men hjÃ¤lp mottas sjÃ¤lvklart gladeligen ifrÃ¥n alla hÃ¥ll och kanter. Om du hittar nÃ¥got som verkar galet sÃ¥ blir vi mer Ã¤n glada om du skickar en *pull request*.
 
-Att bidra till Webbraket är inte bara nyttigt för din egen utveckling och ditt CV, utan hjälper även hundratals nya studenter som varje år befattar sig med denna resurs. Om du vill bidra mer regelbundet och bli en del av ett team så läs vidare nedan.
+Att bidra till Webbraket Ã¤r inte bara nyttigt fÃ¶r din egen utveckling och ditt CV, utan hjÃ¤lper Ã¤ven hundratals nya studenter som varje Ã¥r befattar sig med denna resurs. Om du vill bidra mer regelbundet och bli en del av ett team sÃ¥ lÃ¤s vidare nedan.
 
 
 1. [How to contribute](#how-to-contribute)
@@ -34,62 +34,65 @@ Att bidra till Webbraket är inte bara nyttigt för din egen utveckling och ditt C
 
 
 # How to contribute
-Webbraket drivs av dig och mig. Hittat något som inte verkar stämma? Eller bara vill hjälpa till? Skicka mer än gärna en pull-request. Vänligen följ våra [riktlinjer](#pull-requests) men var inte orolig för att göra fel. Vi hjälps åt :)
+Webbraket drivs av dig och mig. Hittat nÃ¥got som inte verkar stÃ¤mma? Eller bara vill hjÃ¤lpa till? Skicka mer Ã¤n gÃ¤rna en pull-request. VÃ¤nligen fÃ¶lj vÃ¥ra [riktlinjer](#pull-requests) men var inte orolig fÃ¶r att gÃ¶ra fel. Vi hjÃ¤lps Ã¥t :)
 
-Om du undrar mer om någonting som står i denna readme eller känner att du behöver lära dig mer så finns det mycket matnyttig information i vår [wiki]. Kolla först där och om du inte hittar vad du letar efter, tveka inte, utan [kontakta någon av oss](#kontakt).
+Om du undrar mer om nÃ¥gonting som stÃ¥r i denna readme eller kÃ¤nner att du behÃ¶ver lÃ¤ra dig mer sÃ¥ finns det mycket matnyttig information i vÃ¥r [wiki]. Kolla fÃ¶rst dÃ¤r och om du inte hittar vad du letar efter, tveka inte, utan [kontakta nÃ¥gon av oss](#kontakt).
 
 ## Pull requests
-Starta en ny topic-branch ifrån `development`. Vänligen följ våra [namngivningskonventioner](#branches) för branches. Du behöver inte squash:a dina commits innan du skickar en PR. Ifall ändringar har skett i `development` efter att du började arbeta på din branch så får du pluspoäng ifall du rebase:ar.
+Starta en ny topic-branch ifrÃ¥n `development`. VÃ¤nligen fÃ¶lj vÃ¥ra [namngivningskonventioner](#branches) fÃ¶r branches. Du behÃ¶ver inte squash:a dina commits innan du skickar en PR. Ifall Ã¤ndringar har skett i `development` efter att du bÃ¶rjade arbeta pÃ¥ din branch sÃ¥ fÃ¥r du pluspoÃ¤ng ifall du rebase:ar.
 
 Vi merge:ar alltid med `--no-ff` p.g.a. [denna artikel](http://nvie.com/posts/a-successful-git-branching-model/).
 
-Vi code-review:ar alla pull-requests för att vi ska kunna hjälpa varandra att utvecklas och bli bättre utvecklare. Kom ihåg att hålla god ton och vara trevliga mot varandra :)
+Vi code-review:ar alla pull-requests fÃ¶r att vi ska kunna hjÃ¤lpa varandra att utvecklas och bli bÃ¤ttre utvecklare. Kom ihÃ¥g att hÃ¥lla god ton och vara trevliga mot varandra :)
 
 ## Branches
-Vi följer i stort sett [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) men istället för separata release branches så återanvänder vi branchen `development`.
+Vi fÃ¶ljer i stort sett [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) men istÃ¤llet fÃ¶r separata release branches sÃ¥ Ã¥teranvÃ¤nder vi branchen `development`.
 
 ### `master`
 
-Detta är vår "production branch" som alltid innehåller [produktionsredo](https://agilewarrior.wordpress.com/2011/01/04/production-readiness/) kod. Commits i denna branch skapas genom att core team merge:ar `development` in i `master`. Varje commit i denna branch kan ses som en ny "version". Arbeta aldrig direkt i denna branch.
+Detta Ã¤r vÃ¥r "production branch" som alltid innehÃ¥ller [produktionsredo](https://agilewarrior.wordpress.com/2011/01/04/production-readiness/) kod. Commits i denna branch skapas genom att core team merge:ar `development` in i `master`. Varje commit i denna branch kan ses som en ny "version". Arbeta aldrig direkt i denna branch.
 
 ### `development`
 
-Detta är vår "development branch" som alltid innehåller de uppdateringar som kommer att bli en del av nästa "version". Topic-branches merge:as in i denna branch av core-team. Arbeta aldrig direkt i denna branch.
+Detta Ã¤r vÃ¥r "development branch" som alltid innehÃ¥ller de uppdateringar som kommer att bli en del av nÃ¤sta "version". Topic-branches merge:as in i denna branch av core-team. Arbeta aldrig direkt i denna branch.
 
 ### `gh-pages`
 
-Denna branch är vår "production server" och förändringar i den reflekteras omgående på [webbraket.se](www.webbraket.se). Inget arbeta ska därmed ske direkt i denna branch. Denna branch uppdateras när core team kör publiceringsskriptet ifrån `master`.
+Denna branch Ã¤r vÃ¥r "production server" och fÃ¶rÃ¤ndringar i den reflekteras omgÃ¥ende pÃ¥ [webbraket.se](www.webbraket.se). Inget arbeta ska dÃ¤rmed ske direkt i denna branch. Denna branch uppdateras nÃ¤r core team kÃ¶r publiceringsskriptet ifrÃ¥n `master`.
 
 ### `topic branches`
-Topic branches används för allt arbete. Vi följer nedan namngivningskonvention.
+Topic branches anvÃ¤nds fÃ¶r allt arbete. Vi fÃ¶ljer nedan namngivningskonvention.
 
-- `new/zzz` Nya features där zzz är ett kort namn på featuren.
-- `fix/111` Bug-fix där 111 antingen är ett namn eller [issue][repo-issues]-numret.
-- `big/zzz` Branch som förväntas leva längre (såsom e.g. ramverksmigrering).
-- `test/zzz` Används om du introducerar tester.
+- `new/zzz` Nya features dÃ¤r zzz Ã¤r ett kort namn pÃ¥ featuren.
+- `fix/i111` Bug-fix dÃ¤r 111 antingen Ã¤r ett namn eller [issue][repo-issues]-numret.
+- `big/zzz` Branch som fÃ¶rvÃ¤ntas leva lÃ¤ngre (sÃ¥som e.g. ramverksmigrering).
+- `test/zzz` AnvÃ¤nds om du introducerar tester.
 
-Notera att även dessa konventioner gäller för text-uppdateringar. Om du uppdaterar text är det en `fix` och om du skriver ny text är det en `new`.
+Notera att Ã¤ven dessa konventioner gÃ¤ller fÃ¶r text-uppdateringar. Om du uppdaterar text Ã¤r det en `fix` och om du skriver ny text Ã¤r det en `new`.
+
+Notera att issue-nummer prefixas med ett `i`. Detta gÃ¶r vi fÃ¶r att undvika risker associerade med "bare numbers" i branch-namn. LÃ¤s mer [hÃ¤r][branch-naming].
 
 [repo-issues]: http://github.com/webbraket/webbraket.se/issues
 [repo-issue-new]: https://github.com/webbraket/webbraket.se/issues/new
+[branch-naming]: http://stackoverflow.com/questions/273695/git-branch-naming-best-practices
 
 
 ### Issues
-Hittat en bugg? Vi använder [issues](repo-issues), så om du upptäcker något som verkar vara galet, vill föreslå en ändring, eller någonting helt nytt, [skapa gärna en ny issue](repo-issue-new). Om du kan så får du förstås gärna fixa problemet själv och då istället skicka en [pull request](#pull-requests).
+Hittat en bugg? Vi anvÃ¤nder [issues](repo-issues), sÃ¥ om du upptÃ¤cker nÃ¥got som verkar vara galet, vill fÃ¶reslÃ¥ en Ã¤ndring, eller nÃ¥gonting helt nytt, [skapa gÃ¤rna en ny issue](repo-issue-new). Om du kan sÃ¥ fÃ¥r du fÃ¶rstÃ¥s gÃ¤rna fixa problemet sjÃ¤lv och dÃ¥ istÃ¤llet skicka en [pull request](#pull-requests).
 
 
 
 
 ## Dependencies
-Detta projekt kräver att `node`, `npm` och `gulp` alla finns tillgängliga i din PATH. Övriga dependencies installeras genom `npm` och finns alltså specificerade i `package.json`.
+Detta projekt krÃ¤ver att `node`, `npm` och `gulp` alla finns tillgÃ¤ngliga i din PATH. Ã–vriga dependencies installeras genom `npm` och finns alltsÃ¥ specificerade i `package.json`.
 
 
 
 ## Style guide
-Använd [Markdown](http://daringfireball.net/projects/markdown/)-syntax i största möjliga mån och undvik ad-hoc-HTML. Eftersom Markdown är väldigt limiterat kommer vi ju tyvärr inte undan. Försök isåfall hålla dig till följande undantag. Om du introducerar nya undantag, vänligen skriv om de här i README:n.
+AnvÃ¤nd [Markdown](http://daringfireball.net/projects/markdown/)-syntax i stÃ¶rsta mÃ¶jliga mÃ¥n och undvik ad-hoc-HTML. Eftersom Markdown Ã¤r vÃ¤ldigt limiterat kommer vi ju tyvÃ¤rr inte undan. FÃ¶rsÃ¶k isÃ¥fall hÃ¥lla dig till fÃ¶ljande undantag. Om du introducerar nya undantag, vÃ¤nligen skriv om de hÃ¤r i README:n.
 
 #### Block quotes with attribution
-Läs mer om varför vi använder denna stil för blockquotes [här](http://alistapart.com/blog/post/more-thoughts-about-blockquotes-than-are-strictly-required).
+LÃ¤s mer om varfÃ¶r vi anvÃ¤nder denna stil fÃ¶r blockquotes [hÃ¤r](http://alistapart.com/blog/post/more-thoughts-about-blockquotes-than-are-strictly-required).
 ```markup
 <figure>
   <blockquote>Our universe in the space of possible universes.</blockquote>
@@ -105,7 +108,7 @@ Läs mer om varför vi använder denna stil för blockquotes [här](http://alistapart
 ```
 
 #### Boxes
-För att skapa den där klassiska lärobokskänslan :) Info-boxen används för by-the-way information, och warning-boxen används för se-upp-notiser.
+FÃ¶r att skapa den dÃ¤r klassiska lÃ¤robokskÃ¤nslan :) Info-boxen anvÃ¤nds fÃ¶r by-the-way information, och warning-boxen anvÃ¤nds fÃ¶r se-upp-notiser.
 ```markup
 <div class="box-info"> ... </div>
 <div class="box-warning"> ... </div>
@@ -115,7 +118,7 @@ För att skapa den där klassiska lärobokskänslan :) Info-boxen används för by-the
 
 
 # Quickstart
-Här följer en extremt koncis quickstart för att ge en överblick över vad som krävs för att komma igång med projektet. Men livet är ju sällan så här enkelt :) Så kom ihåg att om du undrar något så konsultera [wiki] för mer information och/eller [kontakta](#kontakt) oss.
+HÃ¤r fÃ¶ljer en extremt koncis quickstart fÃ¶r att ge en Ã¶verblick Ã¶ver vad som krÃ¤vs fÃ¶r att komma igÃ¥ng med projektet. Men livet Ã¤r ju sÃ¤llan sÃ¥ hÃ¤r enkelt :) SÃ¥ kom ihÃ¥g att om du undrar nÃ¥got sÃ¥ konsultera [wiki] fÃ¶r mer information och/eller [kontakta](#kontakt) oss.
 
 [git]: https://git-scm.com
 [node]: https://nodejs.org
@@ -125,28 +128,28 @@ Här följer en extremt koncis quickstart för att ge en överblick över vad som krä
 1. Installera [node].
 1. Installera [gulp] globalt genom `npm intall -g gulp`.
 1. Klona repo:t: `$ git clone git@github.com:webbraket/webbraket.se.git`.
-1. Öppna mappen: `$ cd webbraket.se`.
-1. Hämta dependecies: `$ npm install`.
+1. Ã–ppna mappen: `$ cd webbraket.se`.
+1. HÃ¤mta dependecies: `$ npm install`.
 1. Starta servern: `$ gulp`.
-1. Gå till `http://localhost:8080`.
+1. GÃ¥ till `http://localhost:8080`.
 1. Yay, drink beers :)
 
 
 ## Struktur
-Källkod finns i mappen `src`. Genererad build finns i mappen `build` (om mappen inte finns så skapas den första gången du bygger projektet genom `gulp`).
+KÃ¤llkod finns i mappen `src`. Genererad build finns i mappen `build` (om mappen inte finns sÃ¥ skapas den fÃ¶rsta gÃ¥ngen du bygger projektet genom `gulp`).
 
 ## Tasks
-När alla dependencies är installerade är det bara att börja köra tasks. Du kan kolla i `gulpfile.js` för att närmare undersöka vilka tasks som finns och vad de gör. De mest grundläggande tasks:en finns beskrivna här:
+NÃ¤r alla dependencies Ã¤r installerade Ã¤r det bara att bÃ¶rja kÃ¶ra tasks. Du kan kolla i `gulpfile.js` fÃ¶r att nÃ¤rmare undersÃ¶ka vilka tasks som finns och vad de gÃ¶r. De mest grundlÃ¤ggande tasks:en finns beskrivna hÃ¤r:
 
 ```bash
 $ gulp
-# Alias för `gulp watch:development`
+# Alias fÃ¶r `gulp watch:development`
 
 $ gulp watch:development
-# Webbserver på http://localhost:8080, bygger till 'build', livereload.
+# Webbserver pÃ¥ http://localhost:8080, bygger till 'build', livereload.
 
 $ gulp watch:production
-# Som ovan fast för `production`.
+# Som ovan fast fÃ¶r `production`.
 
 $ gulp build:development
 # Bygger till mappen `build` utan att minifiera.
@@ -155,7 +158,7 @@ $ gulp build:production
 # Bygger till mappen `build` med minifiering.
 
 $ gulp publish
-# Publicerar till Github Pages (dvs live). Publicera alltid ifrån master-branch.
+# Publicerar till Github Pages (dvs live). Publicera alltid ifrÃ¥n master-branch.
 ```
 
 
@@ -165,7 +168,7 @@ $ gulp publish
 
 
 ## Workflow
-Arbeta i din egen topic-branch. När du är klar med ditt arbeta, pusha din branch och skicka en pull request emot branchen `development`. Nedan följer ett exempel på en dag i en Webbraket-utvecklares liv :)
+Arbeta i din egen topic-branch. NÃ¤r du Ã¤r klar med ditt arbeta, pusha din branch och skicka en pull request emot branchen `development`. Nedan fÃ¶ljer ett exempel pÃ¥ en dag i en Webbraket-utvecklares liv :)
 
 ```
 $ git clone git@github.com:webbraket/webbraket.se
@@ -181,78 +184,78 @@ $ git push --set-upstream origin new/cat-stories
 
 
 # Om projektet
-Vi är ett projekt som drivs av ett gäng glada studenter, adjunkter och forskare under Institutionen för informatik och media vid Uppsala universitet.
+Vi Ã¤r ett projekt som drivs av ett gÃ¤ng glada studenter, adjunkter och forskare under Institutionen fÃ¶r informatik och media vid Uppsala universitet.
 
 
 ## Core contributors
-Vi arbetar för nuvarande i nedan team:
+Vi arbetar fÃ¶r nuvarande i nedan team:
 
 **Developers**
 Arbetar med webbraketens back-end. Repositories, static site generation, deployment etc. Bash, node, ssh, git etc.
 
 **Designers**
-Arbetar med webbraketens front-end. UX såväl som design. Genom HTML, CSS, JavaScript etc. Underhåller Webbraketens style guide.
+Arbetar med webbraketens front-end. UX sÃ¥vÃ¤l som design. Genom HTML, CSS, JavaScript etc. UnderhÃ¥ller Webbraketens style guide.
 
 **Curators**
 Arbetar med webbraketens content. Text, kodexempel, bilder, struktur etc.
 
 **Marketing**
-Arbetar med strategisk positionering. Närvaro i social media, kontakt med universitet och näringsliv, etc.
+Arbetar med strategisk positionering. NÃ¤rvaro i social media, kontakt med universitet och nÃ¤ringsliv, etc.
 
 **Styrelse**
-Detta är ett fåtal personer som är anställda vid Uppsala universitet och som har full commit access. Denna grupp har rätt att utöva veto i alla frågor. Detta veto ska ej behöva utövas men finns av säkerhetsskäl då Institutionen för informatik och media vid Uppsala universitet stödjer detta projekt.
+Detta Ã¤r ett fÃ¥tal personer som Ã¤r anstÃ¤llda vid Uppsala universitet och som har full commit access. Denna grupp har rÃ¤tt att utÃ¶va veto i alla frÃ¥gor. Detta veto ska ej behÃ¶va utÃ¶vas men finns av sÃ¤kerhetsskÃ¤l dÃ¥ Institutionen fÃ¶r informatik och media vid Uppsala universitet stÃ¶djer detta projekt.
 
 
 
 # Uppsatser och forskning
-Om du ska skriva en kandidat-, masteruppsats eller är forskare så är du varmt välkommen att kontakta oss. Vi är en självorganiserad grupp av studenter som producerar öppen källkod, så det finns utrymme för många intressanta möjligheter för forskningsarbeten. Vänligen [kontakta](#kontakt) i första hand någon i gruppen Styrelsen.
+Om du ska skriva en kandidat-, masteruppsats eller Ã¤r forskare sÃ¥ Ã¤r du varmt vÃ¤lkommen att kontakta oss. Vi Ã¤r en sjÃ¤lvorganiserad grupp av studenter som producerar Ã¶ppen kÃ¤llkod, sÃ¥ det finns utrymme fÃ¶r mÃ¥nga intressanta mÃ¶jligheter fÃ¶r forskningsarbeten. VÃ¤nligen [kontakta](#kontakt) i fÃ¶rsta hand nÃ¥gon i gruppen Styrelsen.
 
 
 
 # Historia
 - __2013 HT__
-htmlhunden.se registreras och byggs upp utav Christopher Okhravi och Madelen Hermelin med stöd ifrån Owen Eriksson och Anneli Edman. Målet är att ersätta den tekniska kurslitteraturen i kursen _E-tjänster och webbprogrammering_.
+htmlhunden.se registreras och byggs upp utav Christopher Okhravi och Madelen Hermelin med stÃ¶d ifrÃ¥n Owen Eriksson och Anneli Edman. MÃ¥let Ã¤r att ersÃ¤tta den tekniska kurslitteraturen i kursen _E-tjÃ¤nster och webbprogrammering_.
 
 - __2014 VT__
-htmlhunden.se används bl.a. i kurserna _E-tjänster och webbprogrammering_ samt _Multimedia_.
+htmlhunden.se anvÃ¤nds bl.a. i kurserna _E-tjÃ¤nster och webbprogrammering_ samt _Multimedia_.
 
 - __2014 HT__
-htmlhunden.se används bl.a. i kursen _Grundläggande Multimedia_.
+htmlhunden.se anvÃ¤nds bl.a. i kursen _GrundlÃ¤ggande Multimedia_.
 
 - __2015 VT__
-htmlhunden.se används bl.a. i kurserna _E-tjänster och webbprogrammering_ samt _Multimedia_.
+htmlhunden.se anvÃ¤nds bl.a. i kurserna _E-tjÃ¤nster och webbprogrammering_ samt _Multimedia_.
 
 - __2015 sommar__
-htmlhunden.se doneras av Christopher och Madelen till det, av samma personer, nystartade projektet Webbraket. Namnbyte sker för att undestryka att detta (1) är ett studentdrivet projekt, samt (2) är ett projekt med holistisk syn på webbutveckling.
+htmlhunden.se doneras av Christopher och Madelen till det, av samma personer, nystartade projektet Webbraket. Namnbyte sker fÃ¶r att undestryka att detta (1) Ã¤r ett studentdrivet projekt, samt (2) Ã¤r ett projekt med holistisk syn pÃ¥ webbutveckling.
 
 
 # Kontakt
-Vid tekniska frågor vänligen kontakta någon i Developers. Vid övriga frågor vänligen kontakta [Styrelsen](#medlemmar). Förslagsvis Christopher.
+Vid tekniska frÃ¥gor vÃ¤nligen kontakta nÃ¥gon i Developers. Vid Ã¶vriga frÃ¥gor vÃ¤nligen kontakta [Styrelsen](#medlemmar). FÃ¶rslagsvis Christopher.
 
 
 # Styrelsen
-Nedan följer kort information om Webbraketens styrelse.
+Nedan fÃ¶ljer kort information om Webbraketens styrelse.
 
 ## Stadgar
-1. Styrelsen skall alltid bestå av ett ojämnt antal personer, och minst tre.
-1. Majoriteten av styrelsen skall vara fast anställd vid Uppsala Universitet.
-1. Förändringar i stadgarna måste godkännas av en majoritet i styrelsen.
-1. En styrelsemedlem kan endast röstas ut av en majoritet i styrelsen.
-1. En ny styrelsemedlem måste godkännas av en majoritet av styrelsen.
-1. Ordförande sitter ett år och väljs på eller nära efterföljande den 1:a Februari.
-1. Om inga nomineringar eller självnomineringar till ny ordförande har inkommit till den 1:a Februari fortsätter sittande ordförande som ordförande.
-1. Styrelsemedlemmarnas uppgift är att strategiskt styra, och operationellt möjliggöra organisationens fortlevnad och expansion.
+1. Styrelsen skall alltid bestÃ¥ av ett ojÃ¤mnt antal personer, och minst tre.
+1. Majoriteten av styrelsen skall vara fast anstÃ¤lld vid Uppsala Universitet.
+1. FÃ¶rÃ¤ndringar i stadgarna mÃ¥ste godkÃ¤nnas av en majoritet i styrelsen.
+1. En styrelsemedlem kan endast rÃ¶stas ut av en majoritet i styrelsen.
+1. En ny styrelsemedlem mÃ¥ste godkÃ¤nnas av en majoritet av styrelsen.
+1. OrdfÃ¶rande sitter ett Ã¥r och vÃ¤ljs pÃ¥ eller nÃ¤ra efterfÃ¶ljande den 1:a Februari.
+1. Om inga nomineringar eller sjÃ¤lvnomineringar till ny ordfÃ¶rande har inkommit till den 1:a Februari fortsÃ¤tter sittande ordfÃ¶rande som ordfÃ¶rande.
+1. Styrelsemedlemmarnas uppgift Ã¤r att strategiskt styra, och operationellt mÃ¶jliggÃ¶ra organisationens fortlevnad och expansion.
 
 ## Medlemmar
-- Christopher Okhravi <christopher.okhravi@im.uu.se> (ordförande)
+- Christopher Okhravi <christopher.okhravi@im.uu.se> (ordfÃ¶rande)
 - Madelen Hermelin <madelen.hermelin@im.uu.se>
 - John Larsson <john.larsson@im.uu.se>
 
 
 # Disclaimer
-Detta projekt är för nuvarande ej vinstdrivet och kostnader täcks av individer i projektet. Slutprodukten kommer alltid vara gratis för slutkonsumenten.
+Detta projekt Ã¤r fÃ¶r nuvarande ej vinstdrivet och kostnader tÃ¤cks av individer i projektet. Slutprodukten kommer alltid vara gratis fÃ¶r slutkonsumenten.
 
-Webbraket representerar inte Uppsala universitets åsikter i någon fråga. Projektet drivs ej av Uppsala universitet, utan av studenter antagna på systemvetenskapliga program vid Uppsala universitet och Campus Gotland. Styrelsen består av anställda på Uppsala universitet. Projektet är startat av lärare vid Uppsala universitet och används som utbildningsmaterial i utvalda kurser men bör ses som extern resurs utifrån Uppsala universitets perspektiv.
+Webbraket representerar inte Uppsala universitets Ã¥sikter i nÃ¥gon frÃ¥ga. Projektet drivs ej av Uppsala universitet, utan av studenter antagna pÃ¥ systemvetenskapliga program vid Uppsala universitet och Campus Gotland. Styrelsen bestÃ¥r av anstÃ¤llda pÃ¥ Uppsala universitet. Projektet Ã¤r startat av lÃ¤rare vid Uppsala universitet och anvÃ¤nds som utbildningsmaterial i utvalda kurser men bÃ¶r ses som extern resurs utifrÃ¥n Uppsala universitets perspektiv.
 
 # License
 TODO

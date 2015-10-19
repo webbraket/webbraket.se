@@ -66,7 +66,7 @@ Den blåa boxen i detta exempel har fixed positionering.
 
 Även med absolut positionering så säger vi åt ett element att ignorera sitt "normala" dokumentsflöde och istället placera sig på precis de koordinater vi specificierar.
 
-Frågan är då bara --- precis på de koordinaterna i relation till vad? I det normala fallet så betyder det i relation till fönstret. Men om någonting absolut positionerat befinner sig i någonting annat som är absolut eller relativt positionerat så räknar vi då i relation till den föräldern.
+Frågan är då bara &mdash; precis på de koordinaterna i relation till vad? I det normala fallet så betyder det i relation till fönstret. Men om någonting absolut positionerat befinner sig i någonting annat som är absolut eller relativt positionerat så räknar vi då i relation till den föräldern.
 
 Ovan blir nog enklare att förstå om vi ser till ett par exempel.
 

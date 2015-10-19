@@ -4,11 +4,11 @@
 
 Innan vi ser till ett exempel behöver vi kort diskutera vad HTML är för någonting. Låt oss utföra en tankelek. Ponera att du, på datorn, skrivit ett dokument i _Microsoft Word_, _Pages_, _Open Office_ eller dylik ordbehandlare. Fundera kort över vad detta dokument består av. Vad innehåller det? Text? Jo, onekligen. Men mer exakt än så då? De flesta dokument innehåller någon kombination av rubriker, underrubriker och paragrafer. Men gräver vi djupare än så så hittar vi saker som citat, listor, understrykningar, fetstilsmarkeringar, kursivitet o.s.v.
 
-För att förstå hur HTML fungerar behöver vi egentligen bara förstå att vår ordbehandlare omöjligen kan komma ihåg vilka delar vi anser vara rubriker eller fetstilsmarkeringar om den inte någonstans sparar den informationen när vi först berättar det. Låt oss uttrycka oss på generellare form. Nästan alla dokument --- ovavsett typ --- består inte bara av text. De består av text som är tätt bunden till semantik. Varje del av texten spelar någon roll i helheten som inte nödvändigtvis behöver vara samma roll som någon annan del av samma text. En term som ofta används för att referera till detta förhållande mellan text och meta-information är [semantik][1]. Vi kommer framöver på många sätt prata om begreppet semantisk signifikans för att diskutera vad saker har för signifikans i en kontext.
+För att förstå hur HTML fungerar behöver vi egentligen bara förstå att vår ordbehandlare omöjligen kan komma ihåg vilka delar vi anser vara rubriker eller fetstilsmarkeringar om den inte någonstans sparar den informationen när vi först berättar det. Låt oss uttrycka oss på generellare form. Nästan alla dokument &mdash; ovavsett typ &mdash; består inte bara av text. De består av text som är tätt bunden till semantik. Varje del av texten spelar någon roll i helheten som inte nödvändigtvis behöver vara samma roll som någon annan del av samma text. En term som ofta används för att referera till detta förhållande mellan text och meta-information är [semantik][1]. Vi kommer framöver på många sätt prata om begreppet semantisk signifikans för att diskutera vad saker har för signifikans i en kontext.
 
 > Dokument består inte bara av rå text, utan rå text tätt med olika semantik.
 
-En paragraf är inte en paragraf om inte den som läser paragrafen kan urskilja och förstå att det är en paragraf den läser. Det är detta vi talar om när vi talar om semantisk signifikans. Utöver att vi som människor läser texten som paragrafen består av så "läser vi in" faktumet att det är ett avgränsatt område text --- i.e. en paragraf.
+En paragraf är inte en paragraf om inte den som läser paragrafen kan urskilja och förstå att det är en paragraf den läser. Det är detta vi talar om när vi talar om semantisk signifikans. Utöver att vi som människor läser texten som paragrafen består av så "läser vi in" faktumet att det är ett avgränsatt område text &mdash; i.e. en paragraf.
 
 Om information saknade semantisk signifikans hade vi likväl kunnat representera dokument i ett enda långt flöde. All text på en enda lång rad. Men vi människor verkar gilla semantisk indelning för att t.ex. underlätta inlärning. Således har vi lärt oss att (t.ex.) extra vertikalt mellanrum (whitespace) emellan rader denoterar en paragrafindelning och således ett avslut och en påbörjan på en ny tanke/poäng. En paragrafindelning denoterar alltså slutet på en idé och antagligen början på nästa.
 
@@ -53,7 +53,7 @@ Paragraf-elementet vi såg tidigare är ett ypperligt exempel på den första fo
 
 Elementet `<hr>` denoterar en horisontell linje (avdelare) som ritas ut rakt över sidan. En s.k. "horizontal ruler". Om vi funderar lite på det en stund så inser vi snabbt varför ensamma element existerar. En avdelare är en avdelare och det finns ingenting intelligent vi kan denotera innuti en avdelare. Andra element av denna typ är t.ex. bilder. Här ser vi också en tydlig anledning. En bild är ju alltid en bild. Det är ologiskt att anta att vi skulle vilja denotera existensen av någonting i bilden. Bilden själv beskriver vad som finns i bilden.
 
-Om detta låter lite "lurvigt", oroa dig inte. Vi kommer att diskutera detta närmare och förhoppningsvis blir det klarare när du får se några exempel. Men för nu --- kom ihåg att det finns två typer av element. De som inte behöver stängas (eftersom vi kan placera element eller content i dem), och de som behöver stängas.
+Om detta låter lite "lurvigt", oroa dig inte. Vi kommer att diskutera detta närmare och förhoppningsvis blir det klarare när du får se några exempel. Men för nu &mdash; kom ihåg att det finns två typer av element. De som inte behöver stängas (eftersom vi kan placera element eller content i dem), och de som behöver stängas.
 
 ### Element i element
 
@@ -116,11 +116,11 @@ Resultat
 
 Attribut kommer i två former där den vanligaste är nyckel-värde-par (key-value-pairs). Vi specificerar en nyckel och tilldelar den ett värde. Enligt syntaxen `nyckel="värde"`. Där ordet "nyckel" alltså ersätts med en nyckel som är tillåten för ett givet element. Och ordet "värde" ersätts med ett värde som är tillåtet för den givna nyckeln.
 
-Alla attribut (nycklar) är inte tillåtna på alla element. Alla värden är inte heller tillåtna på alla nycklar. Anledningen till detta är helt enkelt att attribut denoterar saker som ofta är specifika för just en given typ av element. I exemplet ovan använder vi t.ex. attributet `href` --- "hyper reference". En hyperreferens är logisk vid användandet av en länk eftersom en länk måste ha en målplats. En länk är inte en länk om den inte har någonstans att länka. Om vi däremot diskuterar en paragraf (`<p>`) så blir användandet av en hyperreferens helt meningslös. En paragraf är en paragraf av text, inte en länk. En paragraf ska inte hyperreferera någonstans. Det är inte logiskt.
+Alla attribut (nycklar) är inte tillåtna på alla element. Alla värden är inte heller tillåtna på alla nycklar. Anledningen till detta är helt enkelt att attribut denoterar saker som ofta är specifika för just en given typ av element. I exemplet ovan använder vi t.ex. attributet `href` &mdash; "hyper reference". En hyperreferens är logisk vid användandet av en länk eftersom en länk måste ha en målplats. En länk är inte en länk om den inte har någonstans att länka. Om vi däremot diskuterar en paragraf (`<p>`) så blir användandet av en hyperreferens helt meningslös. En paragraf är en paragraf av text, inte en länk. En paragraf ska inte hyperreferera någonstans. Det är inte logiskt.
 
 > Olika element tillåter olika attribut.
 
-Nu kanske du tänker att en paragraf ju måste gå att göra klickbar. Och det är helt sant. Men inte genom att klistra på ett hyperreferens-attribut på paragraf-taggen. Istället kan vi omsluta en del av paragrafens text i ett `<a>`-element. Kom ihåg --- vi kan nästla element i element!
+Nu kanske du tänker att en paragraf ju måste gå att göra klickbar. Och det är helt sant. Men inte genom att klistra på ett hyperreferens-attribut på paragraf-taggen. Istället kan vi omsluta en del av paragrafens text i ett `<a>`-element. Kom ihåg &mdash; vi kan nästla element i element!
 
 Det finns dock några attribut som vi kan slänga på på precis vilket element som helst. Dessa är `id` och `class`. Detta är attribut som kommer att visa sig mycket användbara. Vi kommer att prata mer om dessa när vi börjar diskutera CSS och JavaScript.
 
@@ -267,13 +267,13 @@ Inkorrekt indentering
     </p>
 ```
 
-Ett enkelt sätt att veta när man ska indentera --- alltså flytta en rad inåt, är följande minnesregel. Om vi öppnar ett element, ska allt som efterföljer indenteras, ända tills vi stängt elementet.
+Ett enkelt sätt att veta när man ska indentera &mdash; alltså flytta en rad inåt, är följande minnesregel. Om vi öppnar ett element, ska allt som efterföljer indenteras, ända tills vi stängt elementet.
 
 > Alla barn till ett element ska indenteras ett "steg".
 
 Öppningstaggar och stängningstaggar ska alltså vara indenterade in till samma nivå. Om vi indenterar korrekt kommer det vara busenkelt att snabbt identifiera vilka element som är barn till vilka element. Vilka element som är syskon. Vart ett element stängs. Och så vidare, och så vidare.
 
-Att ta med sig ifrån det här stycket är alltså --- indentera! Du kommer snabbt märka att de flesta programmerare är allergiska emot dålig indentering. Så skippa bara indenteringen om du vill skapa dig fiender :)
+Att ta med sig ifrån det här stycket är alltså &mdash; indentera! Du kommer snabbt märka att de flesta programmerare är allergiska emot dålig indentering. Så skippa bara indenteringen om du vill skapa dig fiender :)
 
 ### Ett komplett dokument
 
@@ -320,7 +320,7 @@ Låt oss diskutera ovan kod rad för rad. RadFörklaring
 
 #### Body (Sidans faktiska innehåll)
 
-Om `<head>` beskrivs som sidans meta-content --- alltså content om content. Då skulle vi kunna säga att `<body>` är sidans faktiska content.
+Om `<head>` beskrivs som sidans meta-content &mdash; alltså content om content. Då skulle vi kunna säga att `<body>` är sidans faktiska content.
 
 Ett exempel på innehåll i BODY
 

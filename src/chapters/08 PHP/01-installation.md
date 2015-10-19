@@ -1,12 +1,12 @@
 ## Kom igång med PHP
 
-Låt oss innan vi går vidare iterera på poängen att `php` självklart inte är det enda server-side-språket. Det finns otaliga andra ---[Ruby][0], [Python][1], [ASP.NET][2], o.s.v. Här på htmlhunden så har vi valt att använda `php` som språk för att exemplifiera och diskutera. Men försök komma ihåg att server-side-språk i grund och botten har många likheter och gör ungefär samma sak. Så om du väl har lärt dig ett, så kommer du ha lättare att komma "up to speed" med ett annat.
+Låt oss innan vi går vidare iterera på poängen att `php` självklart inte är det enda server-side-språket. Det finns otaliga andra ---[Ruby][0], [Python][1], [ASP.NET][2], o.s.v. Här på Webbraket så har vi valt att använda `php` som språk för att exemplifiera och diskutera. Men försök komma ihåg att server-side-språk i grund och botten har många likheter och gör ungefär samma sak. Så om du väl har lärt dig ett, så kommer du ha lättare att komma "up to speed" med ett annat.
 
 Anledningen till att vi har valt just `php` är att det är ett språk som är [dynamiskt typat][3] och inte syntantiskt fullkomligt olika ifrån språk som [Java][4] och [C\#][5]. De två sistnämda är ju förstås statiskt typade språk och alltså inte dynamiskt typade språk som `php`. Men om du kommer ifrån ett språk såsom `Java` eller `C#` så kommer du iallafall känna igen många saker såsom måsvingar, parantesanvändning, nyckelord såsom `static`, `final`, `public`, `private` och så vidare. Detta kan tyckas som trivialiteter men faktum är att språk som t.ex. `Ruby` bl.a. känns markant annorlunda p.g.a. andra sätt att hantera dessa nämnda trivialiteter. Så därför har vi valt att lära ut och diskutera `php`. Lita på oss, du kommer inte ha några problem att lära dig ett annat språk på egen hand senare! :)
 
 ### LAMP, MAMP & WAMP
 
-En tidigare (och faktiskt fortfarande) populär akronym var termen [LAMP][6]. Eller --- LAMP-stacken som den ofta refereras till som. Denna akronym står (bl.a.) för [Linux][7], [Apache][8], [MySQL][9], och [PHP][10]. Vi säger "bl.a." eftersom det finns versioner av denna stack där `php` t.ex. byts ut emot `perl` o.s.v. Denna stack har blivit mycket populär för webbutveckling.
+En tidigare (och faktiskt fortfarande) populär akronym var termen [LAMP][6]. Eller &mdash; LAMP-stacken som den ofta refereras till som. Denna akronym står (bl.a.) för [Linux][7], [Apache][8], [MySQL][9], och [PHP][10]. Vi säger "bl.a." eftersom det finns versioner av denna stack där `php` t.ex. byts ut emot `perl` o.s.v. Denna stack har blivit mycket populär för webbutveckling.
 
 `Apache` används som webbserver, `php` som server-side-språk, `MySQL` som databas, och slutligen `Linux` som operativsystem där alla nämnda körs.
 

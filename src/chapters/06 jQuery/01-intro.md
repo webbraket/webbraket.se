@@ -6,7 +6,7 @@
 
 jQuery är ju alltså ett JavaScript-bibliotek. Ett bibliotek kan, oavsett språk, ses som någonting som utökar det språk vi skriver i för att underlätta vissa aktiviteter.
 
-Säg att vi t.ex. ofta utför aktivitet `A`, `B` och `C` i följd. Någonting ett bibliotek ofta gör är då att t.ex. ge oss ett nytt namn --- säg `Z`, vilket vi kan använda för att utföra alla tre aktiviteter samtidigt.
+Säg att vi t.ex. ofta utför aktivitet `A`, `B` och `C` i följd. Någonting ett bibliotek ofta gör är då att t.ex. ge oss ett nytt namn &mdash; säg `Z`, vilket vi kan använda för att utföra alla tre aktiviteter samtidigt.
 
 Ett bibliotek består då alltså av kod, i detta fall kod skriven i JavaScript. Så, för att kunna använda jQuery behöver vi "koppla in" jQuery i våra egna dokument. Låt oss uttrycka oss mer specifikt. Hela jQuery-biblioteket behöver laddas in på varje .html-sida som ska använda jQuery, innan vi försöker använda det.
 
