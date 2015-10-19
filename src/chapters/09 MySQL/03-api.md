@@ -14,7 +14,7 @@ Men vi nämnde ju att det fanns tre, och t.o.m. fyra olika API:er. Låt oss för
 
 Det äldre api:et, alltså `mysql`, är helt procedurellt, och stödjer ingen objektorienterad syntax. Det nyare `mysqli` stödjer däremot två olika syntaxer. Först en procedurell syntax (som påminner otroligt mycket om det gamla api:et). Men sedan stödjer det även en objektorienterad syntax.
 
-Eftersom vi på htmlhunden subjektivt tror på objektorientering skulle vi vilja slå ett starkt slag för att du redan ifrån början vänjer dig vid att använda den objektorienterade syntaxen. Men vi kommer att redogöra för båda två i detta kapitel.
+Eftersom vi på Webbraket subjektivt tror på objektorientering skulle vi vilja slå ett starkt slag för att du redan ifrån början vänjer dig vid att använda den objektorienterade syntaxen. Men vi kommer att redogöra för båda två i detta kapitel.
 
 Men vad hände med den fjärde syntaxen då? Jo, det finns ett sätt till. Med `php 5` så introducerades även någonging som heter [PDO (PHP Data Objects)][4] som i essens är ett abstraktionslager emellan databasen och applikationskoden. För att hålla det så enkelt som möjligt så kommer vi inte att kika någonting på `PDO` i detta kapitel, men däremot kommer vi att titta lite på att bygga vårt eget abstraktionslager för en databas, i ett kommande kapitel :)
 
@@ -27,11 +27,11 @@ Så, låt oss se till ett faktiskt exempel. Viktigt att notera är alltså att v
 Öppna koppling till mysql-databas.
 
 OOP syntax.
-    
+
     $mysqli = new mysqli('host', 'user', 'password', 'database');
 
 Procedurell syntax.
-    
+
     $mysqli = mysqli_connect('host', 'user', 'password', 'database');
 
 Låt oss även snabbt se till hur vi skulle kunna hantera eventuella fel som kan uppstå när vi försöker koppla upp oss till databasen. Om vi t.ex. råkat ange fel lösenord, eller inte har läsrättigheter till den databas vi försöker koppla till med den användaren vi angett, eller om datbasen helt enkelt inte existerar (o.s.v.).
@@ -39,7 +39,7 @@ Låt oss även snabbt se till hur vi skulle kunna hantera eventuella fel som kan
 Felhantering vid öppning av koppling till mysql-databas.
 
 OOP syntax.
-    
+
     $error = $mysqli->connect_error;
     if ($error) {
       $code  = $mysqli->connect_errno;
@@ -47,7 +47,7 @@ OOP syntax.
     }
 
 Procedurell syntax.
-    
+
     $error = mysqli_connect_error();
     if ($error) {
       $code  = mysqli_connect_errno();
@@ -65,17 +65,17 @@ När vi väl har en koppling uppe kan vi använda vår variabel som innehåller 
 Köra queries emot en existerande databaskoppling.
 
 OOP syntax.
-    
+
     $result = $mysqli->query("SELECT *  FROM posts");
-     
+
     if ($result) {
       echo "Number of rows: " . $result->num_rows;
     }
 
 Procedurell syntax.
-    
+
     $result = $mysqli->query("SELECT * FROM posts")
-     
+
     if ($result) {
       echo "Number of rows: " . mysqli_num_rows($result);
     }
@@ -91,24 +91,24 @@ Om du skrivit och exekverat en query som returnerar ett `mysqli_result` så kan 
 Iterera över data ifrån ett resultat-set och hämta varje rad som en numrerad array.
 
 OOP syntax.
-    
+
     // Iterates over each row (into $row) as a numeric array
     while($row = $result->fetch_row()){
       var_dump($row);
     }
-     
+
     // But we could also iterate over each row as an associative array
     while($row = $result->fetch_assoc()){
       var_dump($row);
     }
 
 Procedurell syntax.
-    
+
     // Iterates over each row (into $row) as a numeric array
     while($row = mysqli_fetch_row($result)){
       var_dump($row);
     }
-     
+
     // But we could also iterate over each row as an associative array
     while($row = mysqli_fetch_assoc($result)){
       var_dump($row);
@@ -121,18 +121,18 @@ Men som sagt, vi kan ju, som tidigare nämnt, även hämta alla rader på en gå
 Hämta data ifrån ett resultat-set som array direkt.
 
 OOP syntax.
-    
+
     // As numbered array
     $arr = $result->fetch_all();
-     
+
     // Or as an associative array
     $arr = $result->fetch_all(MYSQLI_ASSOC);
 
 Procedurell syntax.
-    
+
     // As numbered array
     $arr = mysqli_fetch_all($result);
-     
+
     // Or as an associative array
     $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
 

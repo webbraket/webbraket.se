@@ -35,7 +35,7 @@ E står i detta fall att man använder elementets typ som selektor.
 
 Exempel på ett element som är en länk som inte besökts än.
 
-    <a href="http://htmlhunden.se">Värsta grymma grejen!</a>
+    <a href="http://webbraket.se">Värsta grymma grejen!</a>
 
     a:link{
       color:pink;
@@ -45,7 +45,7 @@ Exempel på ett element som är en länk som inte besökts än.
 
 Exempel på ett element som har blivit besökt.
 
-    <a href="http://htmlhunden.se">Värsta grymma grejen!</p>
+    <a href="http://webbraket.se">Värsta grymma grejen!</p>
 
     a:visited{
       color:blue;
@@ -55,7 +55,7 @@ Exempel på ett element som har blivit besökt.
 
 Exempel på element som har muspekaren över sig.
 
-    <a href="http://htmlhunden.se">Värsta grymma grejen!</p>
+    <a href="http://webbraket.se">Värsta grymma grejen!</p>
 
     a:hover{
       color:green;
@@ -65,7 +65,7 @@ Exempel på element som har muspekaren över sig.
 
 Exempel på länk som är aktivt (exempelvis när användaren trycker ner knappen)
 
-    <a href="http://htmlhunden.se">Värsta grymma grejen!</p>
+    <a href="http://webbraket.se">Värsta grymma grejen!</p>
 
     a:active{
       color:purple;

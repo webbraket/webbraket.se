@@ -2,7 +2,7 @@
 
 Den huvudsakliga frågan vi ska försöka besvara i detta kapitel är &mdash; hur fungerar en webbsida? Alltså, hur kan det komma sig att när vi knattrar in www.google.com i en webbläsare och trycker enter, så kommer en interaktiv webbsida tillbaka.
 
-För att kunna svara på den frågan behöver vi bena ut ett par olika begrepp och lära oss lite mer om den arkitktur som vårt kära internet bygger på. Vi behöver bl.a. prata om klienter, servrar, nätverk, requests och responses. 
+För att kunna svara på den frågan behöver vi bena ut ett par olika begrepp och lära oss lite mer om den arkitktur som vårt kära internet bygger på. Vi behöver bl.a. prata om klienter, servrar, nätverk, requests och responses.
 
 ### Webbläsaren som program
 
@@ -23,7 +23,6 @@ När vi talar om språk för webbutveckling talar vi oftast antingen om server-s
 Notera att ovan paragraf inte använder facktermer utan bör istället betraktas som en tolkning.
 
 Innan vi kan gå över till att diskutera statiska, dynamiska och skillnaden emellan de &mdash; låt oss återigen påminna oss själva om hur språket HTML ser ut.
-    
     Ett ord i <b>fetstil</b> och ett <u>understruket</u>.
 
 <figure>
@@ -51,7 +50,7 @@ Vi behöver skapa dynamiska webbapplikationer när vi behöver...
 * ... spara/hämta data till/ifrån en databas (ex. användare)
 * ... utföra beräkningar som inte får riskera exponeras för användaren (ex. login)
 * ... utföra "tunga" beräkningar som klientens dator kanske inte orkar med (ex. videokonvertering)
-* ... utföra aktiviteter med beroenden av 3e-parts-applikationer (ex. zip) 
+* ... utföra aktiviteter med beroenden av 3e-parts-applikationer (ex. zip)
 * ... utföra aktiviteter som klienten inte har möjlighet/rättighet att utföra per automatik (ex. skicka mail)
 
 Det finns (som alltid) ett par undantag i relation till ovan lista. Men de undantagen är av för hög överkurs för att vi ska gå in på dem. I stora drag är ovan lista sann.
@@ -64,7 +63,7 @@ Kommer snart...
 
 Innan vi kan gå djupare in på varför vi **inte** kan utföra komplex logik i html så behöver vi lära oss lite om ansvarsområden för [klienter och servrar][0]. Vi har tidigare i detta kapitel uttryckt oss i bemärkelsen att en "server serverar en fil". Om vi är ännu mer explicita skulle vi kunna säga att en server severar en fil som en klient konsumerar.
 
-> En server _servererar_ resurser som _konsumeras_ av klienter. 
+> En server _servererar_ resurser som _konsumeras_ av klienter.
 
 Vad i hela friden menar vi med det? Vem är servern? Vem är klienten? Vad är en resurs? Detta är förstås generella termer som kan anta många skepnader. Men i de flesta av fall är din webbläsare klienten. Klienten är den som konsumerar. Klienten är den som blir serverad en HTML-sida. Klienten ansvarar själv för att rendera sidan. Såsom vi tidigare diskuterat. Webbläsaren (klienten) är ett program som är expert HTML-konventionen. Så när webbläsaren tar emot ett dokument som följer konventionen HTML så kan den utan problem rendera den visuella representationen av det dokumentet. Oavsett om du använder din webbläsare för att öppna www.google.com eller en HTML-fil på din egen dator så är webbläsaren en klient.
 
@@ -90,18 +89,18 @@ Det här låter kanske komplext men är egentligen väldigt enkelt. Låt oss se 
 2. En server (t.ex. någon annans dator)
 
 En konversation mellan de två parterna skulle alltså kunna låta så här:
-    
+
     client request
     "Hörru servern, jag skulle vilja titta på filen index.html."
-     
+
     server response
     "Okidokes, här kommer den!"
-     
+
     Klienten läser filen och upptäcker att filen refererade till en bild som den också behöver
-     
+
     client request
     "Du din gamle server, du berättade inte att jag behövde logo.png också, langar du över den är du snäll!"
-     
+
     server response
     "Sorry, eftersom jag bygger på den gamla request-response-modellen kunde jag inte berätta det för dig på en gång, här har du!"
 

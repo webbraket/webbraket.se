@@ -8,7 +8,7 @@ Vi förväntar oss egentligen inte att du har några förkunskaper som helst fö
 
 ### Ett levande dokument
 
-HTMLHunden är ett levande dokument. Vi skriver om, skriver nytt, och skriver om konstant. Såldes kan många delar fotfarande kännas inkompletta. Men vi lovar, vi skriver för fulla muggar och det är på väg.
+Webbraket är ett levande dokument. Vi skriver om, skriver nytt, och skriver om konstant. Såldes kan många delar fotfarande kännas inkompletta. Men vi lovar, vi skriver för fulla muggar och det är på väg.
 
 ### Feedback
 
