@@ -1,8 +1,8 @@
 ## Document Object Model
 
-Document Object Model(DOM) är ett API för HTML och XML dokument. Den definierar den logiska strukturen och hur man kommer åt ett dokument och manipulerar det. 
+Document Object Model(DOM) är ett API för HTML och XML dokument. Den definierar den logiska strukturen och hur man kommer åt ett dokument och manipulerar det.
 
-### Javascript och DOM 
+### Javascript och DOM
 
 Med denna modell kan vi nu med hjälp av Javascript kunna modifiera trädet och skapa dynamiska hemsidor. Det handlar alltså om att vi kan ta bort, komma åt, modifiera och lägga till element.
 
@@ -12,9 +12,9 @@ Document är ett objekt som "Äger" alla andra objekt, med det menas att utifall
 
 Hitta element
 
-`document.getElementById()`Hämtar ett element med hjälp av dess ID 
+`document.getElementById()`Hämtar ett element med hjälp av dess ID
 
-`document.getElementsByTagName()`Hämtar alla element med hjälp av dess tagnamn 
+`document.getElementsByTagName()`Hämtar alla element med hjälp av dess tagnamn
 
 `document.getElementsByClassName()`Hämtar ett element med hjälp av dess klassnamn
 
@@ -36,12 +36,16 @@ Exempel på att gömma ett element.
 
 HTML
 
-    <p id="secret"> LYSSNA PÅ MIG! </p> 
+```html
+    <p id="secret"> LYSSNA PÅ MIG! </p>
+```
 
 JavaScript
 
+```javascript
     var p = document.getElementById("secret");
     p.style.display = "none";
+```
 
 Vad vi gör ovan är alltså helt enkelt att vi först hämtar elementet med hjälp av dess ID. Sedan hämtar vi `style`-objektet på elementet. På `style`-elementet sätter vi egenskapen `display` till värdet `none`. JavaScriptkoden skulle kunna komprimeras till att skrivas på en enda rad, vet du hur?
 
@@ -49,17 +53,21 @@ Exempel på att hämta med tagnamn.
 
 HTML
 
+```html
     <p> A </p>
     <p> B </p>
     <p> C </p>
     <p> D </p>
+```
 
 JavaScript
 
+```javascript
      var as = menu.getElementsByTagName('p');  
      as[0].innerHTML = "Ett";
      as[1].innerHTML = "Två";
      as[3].innerHTML = as[1].innerHTML;
+```
 
 Resultat
 
@@ -83,9 +91,11 @@ När vi skriver JavaScript som på något sätt interagerar med DOM:en, är det 
 
 Exempel på hur vi använder onload.
 
+```javascript
     window.onload = function(){
       // do all fancy work here
     }
+```
 
 Varför gör vi alltså detta? Jo, om vi inte skulle göra det så finns alltså risken för att de element vi försöker komma åt inom funktionskroppen i ovan exempel ännu inte finns.
 
@@ -93,11 +103,13 @@ Ovan kan förstås lika gärna göras i två steg, genom att registrera en redan
 
 Exempel på hur vi använder onload.
 
+```javascript
     // Declare the init function
     var init = function(){
     }
-     
+
     // Register it as a listener to the onload event
     window.onload = init;
+```
 
 Vad vi har gjort nu kallas mer generellt för att registrera en funktion (en `event handler`) till ett `event`. Mer om detta i avsnittet om events.

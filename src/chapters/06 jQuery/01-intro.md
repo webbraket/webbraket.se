@@ -21,7 +21,9 @@ För enkelhetens skull kommer vi att arbeta med det senare alternativet. Detta g
 
 index.html
 
+```html
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+```
 
 ### Ladda in en fil som använder jQuery
 
@@ -29,7 +31,9 @@ Så, nu har vi jQuery tillgängligt i vårt dokument. Men efter detta behöver v
 
 index.html
 
+```html
     <script src="main.js"></script>
+```
 
 ### Använda jQuery
 
@@ -37,25 +41,28 @@ Låt oss nu faktiskt använda jQuery till att göra någonting. Vi fortsätter a
 
 main.js
 
+```javascript
     $(function(){
       alert("Hello from jQuery");
     });
+```
 
 Tada!! Vi har nu använt oss av biblioteket jQuery. Låt oss prova någonting annat. Följande kod identifierar alla länkar (`<a>`-taggar) på din html-sida. Inaktiverar deras vanliga funktionalitet, och gör istället så att de klistrar in bilder på en massa fantastiska katter varje gång du klickar. Tänk på att du alltså behöver lägga in länkar i din html-sida för att nedan kod ska ha någon effekt. Annars har vi ju inga länkar att klicka på.
 
 main.js
 
+```javascript
     $(function(){
       var randomNum = function(){
         return Math.floor(Math.random()*101);
       }
-     
+
       $('a').click(function(e){
         e.preventDefault();
         var size = 75 + randomNum(),
         x = randomNum() + '%',
         y = randomNum() + '%',
-     
+
         $img = $('<img/>');
         $img.attr('src', 'http://placekitten.com/'+size+'/'+size);
         $img.css({
@@ -63,10 +70,11 @@ main.js
           'left'    : x,
           'top'     : y
         });
-     
+
         $('body').append($img);
       });
     });
+```
 
 Om du inte själv har valt att implementera den fantastiska jQuery-koden ovan så kan du få en sneak-peak på vilken underbar värld som väntar genom att prova exemplet nedan!
 
@@ -85,16 +93,20 @@ Sedan är det bara att tuta och köra!
 Tips!
 
 Ett kortare sätt att skriva..
-    
+
+```javascript
     $(document).ready(function(){
       /* din kod här */
     });
+```
 
 ...är att skriva så här...
-    
+
+```javascript
     $(function(){
-      // din kod här... 
+      // din kod här...
     });
+```
 
 Båda sätten ger samma resultat.
 

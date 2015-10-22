@@ -3,12 +3,16 @@
 Dags för objektorienterad `php`! Äntligen! Språket [anses inte av alla vara objektorienterat][0]. Ifrån början gick det inte ens att skriva objektorienterad kod överhuvudtaget. Men, sedan en tid tillbaka har `php` börjat stödja klassisk `oop` i den bemärkelsen att vi själva kan skriva objektorienterade program (med klasser, arv, instansmetoder etc.). Men det finns som sagt en [debatt kring huruvida språket verkligen kan anses objektorienterat ändå][1]. En anledning till denna skepticism grundar sig i faktumet att, eftersom `php` inte alltid varit objektorienterat, så finns det många gamla kvarlevor i form av "fria" metoder. Allt är inte objekt i `php`.
 
 Låt oss exemplifiera vad vi menar med att det finns en massa icke-objektorienterade kvarlevor kvar i språket. För att hämta en substräng av en sträng i `php` skulle vi kunna skriva följande:
-    
+
+```php
     substr($mystring, $n);
+```
 
 Om språket hade varit mer uppenbart objektorienterat hade vi rimligen skrivit följande:
-    
+
+```php
     $mystring->substring($n);
+```
 
 Men, allt detta hindrar oss inte ifrån erövra världen med allsmäktig och objektorienterad `php`. Bara för att många befintliga metoder inte är objektorienterade, så betyder det inte att den kod vi själva skriver inte kan vara objektorienterad.
 
@@ -20,17 +24,21 @@ En klass deklareras i `php` rätt och slätt genom keyword:et `class`. Låt oss 
 
 Deklarera en klass i `php`
 
+```php
     class Animal{ ... }
+```
 
 Om vi har en klass, så kan vi förstås instantiera den. Och när vi instantierar ett objekt så anropas förstås dess [konstruktor][2]. En klass som inte har en konstruktur kan förstås konstrueras i vilket fall, och klassen har då en implicit konstruktor som inte tar några argument. Om vi däremot vill deklarera en konstruktor själva så använder vi det "magiska" namnet `__construct`.
 
 Konstruktor i `php`
 
+```php
     class Animal{
       function __construct($name){
         echo "Hello, my name is $name.";
       }
     }
+```
 
 Vi använde termen "magisk" tidigare eftersom dokumentationen för `php` själv kallar de metoder som börjar med två underscore-tecken (i.e. `__someMethodName`) för "magiska" metoder. Det är inte förbjudet i språket att deklarera egna metoder som börjar med två understreck, men det är rekommenderat att undvika det. Av den enkla anledning att språket har en del [inbyggda metoder som är namngivna på just detta sätt][3].
 
@@ -38,22 +46,26 @@ Låt oss nu se på hur vi [instantierar en en klass][4], alltså skapar ett obje
 
 Instantiering av en klass i `php`
 
+```php
     $dog = new Animal('Whiskey');
+```
 
 När vi instantierar en klass så körs ju, som nämnt och bekant, konstruktorn. Låt oss då kombinera dessa två (ovan) exempel för att se vad som händer när vi kör programmet.
 
 Att deklarera en klass med konstruktor, och sedan instantiera klassen.
 
+```php
     // Assume we have a class with a constructor...
     class Animal{
       function __construct($name){
         echo "Hello, my name is $name.";
       }
     }
-     
+
     // And then instantiate it...
     $dog = new Animal('Whiskey');
     $cat = new Animal('Socks');
+```
 
 Resultat
 
@@ -79,15 +91,17 @@ Låt oss snabbt kika på hur syntaxen ser ut för att deklarera klass- och insta
 
 Deklarera klass- och instansvariabler
 
+```php
     class Animal{
       // class variables are declared
       // by using the keyword 'static'
       private static $foo;
-     
+
       // instance variables are declared
       // by not using the keyword 'static'
       private $bar;
     }
+```
 
 Notera alltså att skillnaden emellan att deklarera en statisk (klass-) variabel och en instansvariabel helt enkelt är existensen eller avsaknaden av nyckelordet `static`. Skriver vi `static` blir variabeln statisk (alltså en klassvariabel). Om vi inte skriver någonting så implicerar det att det är en instansvariabel.
 
@@ -107,17 +121,19 @@ Att deklarera klass- och instansmetoder påminner väldigt mycket om att deklare
 
 Deklarera klass- och instansmetoder
 
+```php
     class Animal{
       private static function foo(){
         // Not accessible from the outside since it's private.
         // Lives on the class because it's static.
       }
-     
+
       private function bar(){
         // Accessible from the outside since it's private.
         // Lives on the instance beacuse it's not static.
       }
     }
+```
 
 #### Att anropa medlemmar
 
@@ -125,45 +141,49 @@ Nu har vi bara pratat om hur vi deklarerar medlemmar. Vi har inte pratat om hur 
 
 Anropa medlemmar av en instans eller klass utifrån
 
+```php
     // Assuming we have a class called Dog...
     $dog = new Dog("Brian");
-     
+
     // accessing a public instance variable
     $dog->someVariable;
-     
+
     // accessing a public static/class variable
     Dog::$someVariable;
-     
+
     // accessing a public instance method
     $dog->someMethod();
-     
+
     // accessing a public static/class method
     Dog::someMethod();
+```
 
 Ovan exempel visar endast hur vi anropar publika medlemmar utifrån. Det vill säga inte ifrån instansen eller klassen själv. Om vi istället vill anropa medlemmar tillhörande klassen eller instansen själv ifrån klassen eller instansen själv så kan vi använda nästan samma syntax. Högersidan om kolon-kolon- eller pil-syntaxen förblir densamma, eftersom metoden/variabeln vi vill anropa är densamma. Däremot förändras vänstersidan. Eftersom kontexten vi försöker anropa medlemmen ifrån har förändrats. Låt oss se till ett exempel.
 
 Anropa medlemmar av en instans eller klass utifrån
 
+```php
     class Dog{
       function __construct(){
         /* We're making our calls from the constructor
            for the sole reason of illustrating that we're
            calling the members from inside an instance. */
-        
+
         // accessing a private instance variable
         $this->someVariable;
-        
+
         // accessing a private static/class variable
         self::$someVariable;
-        
+
         // accessing a private instance method
         $this->someMethod();
-        
+
         // accessing a private static/class method
         self::someMethod();
       }
      ...
     }
+```
 
 Det viktigaste att notera med ovan exempel är användandet av `$this` och `self`. Förstnämnda refererar alltså till den instans som anropet görs i. Om vi befinner oss i en instansmetod i en instans av en animal och använder nyckelordet `$this` så refererar det ordet alltså till den egna instansen. Om vi å andra sidan använder uttrycket `self` så refererar vi till klassen. Inte instansen utan klassen. Om vi befinner oss i en instans av (eller en klassmetod för) klassen `Animal`, så refererar `self` alltså till själva klassen `Animal`. Inte till någon unik instans utan den generella klassen. Där vi förstås även kan ha statiska medlemmar definerade.
 
@@ -173,33 +193,35 @@ Ok, låt oss nu se till en full implementation av klassen `Animal` som den tidig
 
 Exempel på användande av klass- och instansmedlemmar
 
+```php
     class Animal{
       private static $count = 0;
       private $name = "Unnamed";
-     
+
       function __construct($name){
         $this->name = $name;
         self::$count++;
       }
-     
+
       public function speak(){
         echo "Hi, I am $this->name.<br>";
       }
-     
+
       public static function count(){
         $num = self::$count;
         echo "There's $num animal(s) in the world.<br>";
       }
     }
-     
-     
+
+
     $cat = new Animal("Whiskers");
-    $cat->speak(); 
+    $cat->speak();
     Animal::count();
-     
+
     $dog = new Animal("Frolic");
-    $dog->speak(); 
+    $dog->speak();
     Animal::count();
+```
 
 Resultat
 

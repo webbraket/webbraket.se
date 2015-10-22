@@ -21,11 +21,14 @@ Eftersom det finns olika HTML-standarder så finns det alltså olika sätt att u
 FÖr att berätta för webbläsaren vilken standard dokumentet bör läsas med behöver vi på den absolut första raden i dokumentet ange en doctype. Vi definerar doctypes med syntaxen `<!DOCTYPE x>`. Där `x` ersätts med den faktiska doctype:en. Nedan följer ett par exempel för hur man deklarerar doctypes.
 
 För att deklarera att ett dokument följer standarden HTML5 skriver vi helt enkelt följande...
-    
+
+```html
     <!DOCTYPE html>
+```
 
 Och i kontexten av ett HTML-dokument skulle det se ut som följande...
-    
+
+```html
     <!DOCTYPE html>
     <html>
       <head>
@@ -36,6 +39,7 @@ Och i kontexten av ett HTML-dokument skulle det se ut som följande...
         ...
       </body>
     </html>
+```
 
 Om du inte har en medveten anledning till att använda någonting annat än HTML5, så hävdar vi att det inte finns någon anledning att göra det. Med andra ord, så skulle vi uppmana dig till att antingen hålla dig till HTML5 eller läsa på mer om doctypes om du vill använda någon annan.
 
@@ -49,13 +53,17 @@ Men det finns ju onekligen ett antal äldre doctypes som motsvarar äldre standa
 
 Doctype för HTML 4.01 Strict
 
+```html
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+```
 
 Även `HTML 4.01 Transitional` tillåter alla element och attribut som är tillåtna i HTML 4.01, _inklusive_ de som rör presentation (se förklaring i ovan paragraf).
 
 Doctype för HTML 4.01 Transitional
 
+```html
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+```
 
 Det finns som sagt markant fler doctypes än dessa. Men vi rekommenderar alltså att du helt enkelt håller dig till `HTML5`. Genom att således deklarera dokumenttypen `<!DOCTYPE html>`. Vill du läsa mer om doctypes kan du t.ex. göra det hos [W3 Schools][2] eller på [Wikipedia][3].
 
