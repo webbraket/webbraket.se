@@ -13,70 +13,79 @@ Låt oss återgå till idéen om att inkludera innehållet av en fil i en annan 
 Exempel på hur vi skulle kunna använda `include` i `php`.
 
 Anta att vi har byggt en blogg. Anta att vi har två sidor. Där den ena listar alla inlägg och den visar ett specifikt inlägg. Så i filen som listar alla inlägg har vi någonting i stil med nedan:
-    
+
+```php
     /* list_all_posts.php */
-     
+
     $link   = mysqli_connect("host","user","pwd","db") or die("Error " . mysqli_error($link));
     $query  = "SELECT * FROM posts";
     $result = $link->query($query) or die("Query error: " . mysqli_error($link));
     ...
+```
 
 Och i filen som visar ett specifikt inlägg har vi någonting typ nedan:
-    
+
+```php
     /* show_single_post.php */
-     
+
     $link   = mysqli_connect("host","user","pwd","db") or die("Error " . mysqli_error($link));
     $query  = "SELECT * FROM posts WHERE id='.$post_id.'";
     $result = $link->query($query) or die("Query error: " . mysqli_error($link));
     ...
+```
 
 Jämför de två kodexemplena med varandra en stund. Uppenbart har vi en hel del duplikation. Låt oss naivt flytta över själva databaskopplingen.
-    
+
+```php
     /* db_connect.php */
     $link   = mysqli_connect("host","user","pwd","db") or die("Error " . mysqli_error($link));
 
     /* list_all_posts.php */
-     
+
     include 'db_connect.php';
     $query  = "SELECT * FROM posts";
     $result = $link->query($query) or die("Query error: " . mysqli_error($link));
 
     /* show_single_post.php */
-     
+
     include 'db_connect.php';
     $query  = "SELECT * FROM posts WHERE id='.$post_id.'";
     $result = $link->query($query) or die("Query error: " . mysqli_error($link));
+```
 
 Lite bättre. Men om vi kombinerar inkluderingsstrategin tillsammans med att bryta ut metoder kan vi förstås göra det ännu bättre.
-    
+
+```php
     /* db_functions.php */
-     
+
     function db_connect(){
       $link = mysqli_connect("host","user","pwd","db") or die("Error " . mysqli_error($link));
       return $link;
     }
-     
+
     function db_query($query){
       $link = db_connect();
       return $link->query($query) or die("Query error: " . mysqli_error($link));
     }
 
     /* list_all_posts.php */
-     
+
     include 'db_connect.php';
     $result = db_query("SELECT * FROM posts");
 
     /* show_single_post.php */
-     
+
     include 'db_connect.php';
     $result = db_query("SELECT * FROM posts WHERE id='.$post_id.'");
+```
 
 Mycket bättre :) Poängen här är alltså att vi har generaliserat och brytit ut vanligt förekommande kod till metoder.
 
 Om vi även skulle introducera objektorienterad programmering så skulle vi kunna snygga upp kod ännu ytterligare. Då skulle vi kunna låta `db_connect`-filen innehålla en klass istället för ett gäng globalt exponerade funktioner. Låt oss kika på ett exempel på hur vi skulle kunna gå tillväga:
-    
+
+```php
     /* db.php */
-     
+
     class Database{
       function __construct(){
         $this->db = mysqli_connect("host","user","pwd","db");
@@ -85,7 +94,7 @@ Om vi även skulle introducera objektorienterad programmering så skulle vi kunn
           die("Error: ($code) $this->conncetion->connect_error");
         }
       }
-      
+
       public function query($sql){
         return $this->db->query($sql)
           or die("Query error: " . $this->db->error;
@@ -93,16 +102,17 @@ Om vi även skulle introducera objektorienterad programmering så skulle vi kunn
     }
 
     /* list_all_posts.php */
-     
+
     include 'db.php';
     $db = new Database();
     $result = $db->query("SELECT * FROM posts");
 
     /* show_single_post.php */
-     
+
     include 'db.php';
     $db = new Database();
     $result = $db->query("SELECT * FROM posts WHERE id='.$post_id.'");
+```
 
 I detta sista exempel får vi även en "win" genom att det nu blir omöjligt att exekvera den metod vi skrivit som kör queries emot databasen, utan att vi först upprättat en koppling till databasen. Hur? Jo eftersom vår `query`-metod nu är en instansmetod på `Database`-objektet. Och eftersom klassens konstruktor upprättar en koppling till databasen, och eftersom det är omöjligt att instantiera objektet utan att konstruktorn körs så kan vi helt enkelt vara säkra på att det redan finns en databaskoppling när vi anropar `query`-metoden.
 
@@ -112,7 +122,7 @@ Det kan tyckas konstigt att ovan exempel skulle vara någonting smart. Vi gick i
 
 Låt oss istället, i relation till ovan exempel, kontemplera hur redo vi är på att reagera på inkommande förändringskrav. Om vi nu t.ex. skulle vilja döpa om databasen behöver vi bara göra det på en plats, oavsett hur många filer vi har som kopplar till databasen. Om vi skulle vilja förändra felhanteringen om en query misslyckas behöver vi bara göra det på ett ställe. Eller felhanteringen för om själva databaskopplingen misslyckas.
 
-Om vi skulle hamna i en situation då vi skulle vilja byta databas, till någonting annat än `mysql` så är vi _mer_ beredda än tidigare &mdash; men vi har fortfarande en lång väg att gå. För att hantera den typen av scenarion måste vi gå längre. Ett mycket vanligt tillvägagångssätt är att skriva egna eller använda sig av befintliga ORM:er ([Object Relational Mapping][5]). En ORM är helt enkelt kod som skapar ett abstraktionslager emellan databasen och vår kod. Så när vi vill ställa frågor (queries) till databasen gör vi det helt i vårt programspråk och aldrig i vårt databasspråk. Det betyder att om vi i framtiden vill byta databas, behöver vi bara förändra vår ORM och inte all vår applikationskod. 
+Om vi skulle hamna i en situation då vi skulle vilja byta databas, till någonting annat än `mysql` så är vi _mer_ beredda än tidigare &mdash; men vi har fortfarande en lång väg att gå. För att hantera den typen av scenarion måste vi gå längre. Ett mycket vanligt tillvägagångssätt är att skriva egna eller använda sig av befintliga ORM:er ([Object Relational Mapping][5]). En ORM är helt enkelt kod som skapar ett abstraktionslager emellan databasen och vår kod. Så när vi vill ställa frågor (queries) till databasen gör vi det helt i vårt programspråk och aldrig i vårt databasspråk. Det betyder att om vi i framtiden vill byta databas, behöver vi bara förändra vår ORM och inte all vår applikationskod.
 
 #### Inkludera filer med `include`
 
@@ -120,15 +130,17 @@ Det finns olika sätt att inkludera filer med `php`. I ovan exempel använde vi 
 
 Att inkludera en annan fil med `include`
 
+```php
     include 'some_file.php';
-     
+
     // Or using a variable..
-     
+
     $filename = 'another_file.php';
     include $filename;
+```
 
 Om den fil vi försöker inkludera av någon anledning inte går att hitta, kommer `php` att spotta ur sig en `warning` såsom nedan.
-    
+
     Warning: include(non_existent_file.php): failed to open stream: No such file or directory in /www/syntax.php on line 5
     Warning: include(): Failed opening 'non_existent_file.php' for inclusion (include_path='.:') in /www/syntax.php on line 5
 
@@ -144,15 +156,17 @@ Syntaxmässigt så används `require` på samma sätt som `include`. Alltså:
 
 Att inkludera en annan fil med `require`
 
+```php
     require 'some_file.php';
-     
+
     // Or using a variable..
-     
+
     $filename = 'another_file.php';
     require $filename;
 
     Warning: require(non_existent_file.php): failed to open stream: No such file or directory in /www/syntax.php on line 5
     Fatal error: require(): Failed opening required 'non_existent_file.php' (include_path='.:') in /www/syntax.php on line 5
+```
 
 #### Inkludera filer med `require_once`
 
@@ -161,13 +175,17 @@ Det sista alternativet för att inkludera filer i filer som vi ska kika på är 
 Exempel på skillnaden emellan `require` och `require_once`.
 
 Anta att vi har följande fil.
-    
+
+```php
     /* hello.php */
     echo 'hello ';
+```
 
 Låt oss använda en `for`-loop för att inkludera samma fil tre gånger. Om vi använder oss av `require` eller `include` får vi följande resultat:
-    
+
+```php
     for($i=0; $i
+```
 
 Resultat
 
@@ -176,13 +194,15 @@ hello hello hello
 </figure>
 
 Men om vi kör samma `for`-loop men istället använder oss av `require_once` så får vi följande resultat:
-    
+
+```php
     for($i=0; $i
+```
 
 Resultat
 
 <figure>
-hello 
+hello
 </figure>
 
 ### Strategier för att bädda in `html`
@@ -199,13 +219,15 @@ Utan att gräva ned oss i det här för mycket så kan vi säga att det finns en
 Exempel på de två huvudsakliga strategierna för att blanda `php` och `html`.
 
 Om vi hela tiden `echo`/`print`:ar ut `html` blir det lätt att få sig en uppfattning om det "logiska" flödet i programmet, men mycket svårt med det visuella. Vid första anblick skulle vi argumentera att det inte är solklart vad nedan program gör.
-    
+
+```php
     <?php
       $name   = "John";
       $number = "070 123 45 67";
       echo "<h1>Hello, $name ($number).</h1>";
       echo "<ul>";
       for($i=0; $i
+```
 
 Resultat
 
@@ -217,15 +239,17 @@ Resultat
 </figure>
 
 Således är det ofta bättre att försöka hålla de filer som arbetar med `html` fokuserade på just det &mdash; `html`. Och istället se det som att `php` kommer in i små korta svängar &mdash; antingen för att kontrollera programflödet eller hålla variabel data. Låt oss se hur det skulle kunna se ut.
-    
+
+```php
     <?
       $name   = "John";
       $number = "070 123 45 67";
     ?>
-     
+
     <p>Hello, <?=$name?> (<?=$number?>)</p>
-     
+
     <? for($i=0; $i
+```
 
 Denna andra strategi har den mycket positiva effekten att vi även kan indentera vår `html`. Och vi skulle argumentera för att just denna indentering verkligen hjälper till att öka kodens läsbarhet.
 
@@ -242,7 +266,7 @@ Med hjälp av dessa kolon-varianter kan vi istället skriva våra dokument som o
   </tr>
   <tr>
     <td>
-      <pre>
+      <pre class="language-php">
         <code>
 for(..){
   ..
@@ -251,7 +275,7 @@ for(..){
       </pre>
     </td>
     <td>
-      <pre>
+      <pre class="language-php">
         <code>
 for(..):
   ..
@@ -262,7 +286,7 @@ endfor;
 
   <tr>
     <td>
-      <pre>
+      <pre class="language-php">
         <code>
 foreach(..){
   ..
@@ -271,7 +295,7 @@ foreach(..){
       </pre>
     </td>
     <td>
-      <pre>
+      <pre class="language-php">
         <code>
 foreach(..):
   ..
@@ -283,7 +307,7 @@ endforeach;
 
   <tr>
     <td>
-      <pre>
+      <pre class="language-php">
         <code>
 while(..){
   ..
@@ -292,7 +316,7 @@ while(..){
       </pre>
     </td>
     <td>
-      <pre>
+      <pre class="language-php">
         <code>
 while(..):
   ..
@@ -304,7 +328,7 @@ endwhile;
 
   <tr>
     <td>
-      <pre>
+      <pre class="language-php">
         <code>
 if(..){
   ..
@@ -317,7 +341,7 @@ if(..){
       </pre>
     </td>
     <td>
-      <pre>
+      <pre class="language-php">
         <code>
 if(..):
   ..
@@ -334,31 +358,37 @@ endif;
 </table>
 
 
-    
 
-    
+
+
 Dessa "kolon-motsvarigheter" är alltså mycket användbara när vi vill blanda `html` och `php` eftersom vi kan "bryta upp" våra `php`-block. Beakta följande exempel.
 
 Exempel på varför vi behöver kolon-motsvarigheterna i `php`
 
 Om vi vill "bryta" ett php-block efter en kontrollstruktur såsom t.ex. `if` kan vi absolut göra det så här...
-    
+
+```php
     <? if(someCondition){ ?>
       <p>Then display this text</p>
     <? } ?>
+```
 
 Men det är förstås inte lika tydligt som att använda kolon-motsvarigheterna så här...
-    
+
+```php
     <? if(someCondition): ?>
       <p>Then display this text</p>
     <? endif; ?>
+```
 
 Fundera t.ex. över hur förvirrande det skulle vara att försöka avgöra vilken "stängande måsvinge" som hör till vilken "öppnande" när vi börjar hantera komplexare fall såsom det nedan...
-    
+
+```php
     <!-- TODO: This example is probably broken -->
     <? if(someCondition){ ?>
-      <p>Then display 
+      <p>Then display
       <? for($i=0; $i<10; $i++){="" ?>="" this="" <?="" if($i%2="=0){" text<="" p>="" }="" for($i="0;" $i<10;="" many="" times="" ?><="" code="">
+```
 
 Nu säger vi förstås inte att alla måste prioritera att använda "kolon-versionerna". Inte heller säger vi att det i alla fallet är det bästa sättet att designa sina `php`-filer. Men om du inte har en annan medveten strategi du tror på, så skulle vi rösta för att du följer ovan.
 

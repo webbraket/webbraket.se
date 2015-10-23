@@ -66,13 +66,15 @@ Låt oss analysera ett scenario du själv eller någon du känner kanske redan s
 
 Låt oss nu prata om HTML. Webben drivs i stor del av ett märkesspråk ([markup language][4]) vid namn HTML. Innan vi kan börja förstå vad HTML är behöver vi förstå vad ett märkesspråk är.
 
-Ett märkesspråk (oavsett vilket) kan ses som ett textfilsformat vi använder för att "markera upp" olika delar av en text. T.ex. kan det användas för att tilldela ett dokuments olika delar olika semantisk betydelse. Men vad menar vi då med att "markera upp"? 
+Ett märkesspråk (oavsett vilket) kan ses som ett textfilsformat vi använder för att "markera upp" olika delar av en text. T.ex. kan det användas för att tilldela ett dokuments olika delar olika semantisk betydelse. Men vad menar vi då med att "markera upp"?
 
 Reflektera över denna sida. Över denna text. Du ser att vissa delar är paragrafer och att vissa delar är rubriker. Du ser att denna paragraf inte är samma som den föregående. Hur? T.ex. är du ju en människa som vet att du ska tolka upprepade radbrytningar som paragrafskiften. Men hur visste datorn det? Eller mer specifikt. Hur vet din webbläsare (eller det program du använder för att läsa texten) vad som är vad? Hur vet webbläsaren vad som är en rubrik, vad som är en paragraf, vad som är en länk och vart länkarna pekar? Som du antagligen gissat är svaret märkesspråk &mdash; markup languages.
 
 Vi använder alltså märkesspråk för att delimitera olika sektioner i en flödestext. Om du tänker tillbaka på vad vi tidigare diskuterat om att allting är rå text, så kan denna text i teorin representera vad som helst.Text, video, bild etc. I vilket fall så använder vi märkesspråk för att delimitera olika delar av dokumentet i olika sektioner. Låt oss se till ett snabbt exempel på hur detta fungerar i märkesspråket HTML.
-    
+
+```html
     Endast ett ord i denna text, nämnligen <b>detta</b> kommer att visas i fetstil.
+```
 
 Om vi kör ovan genom en webbläsare så kommer webbläsaren att rendera följande resultat:
 

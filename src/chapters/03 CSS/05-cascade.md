@@ -8,16 +8,19 @@ Låt oss se till exempel för att bättre förstå vad vi pratar om.
 
 Ett exempel på hur en regel kaskadar igenom ifrån föräldern till barnen
 
+```html
     <body>
       <p>First paragraph</p>
       <div>
         <p>Second paragraph</p>
       <div>
     </body>
-
+```
+```css
     body {
       color: green;
     }
+```
 
 Resultat
 
@@ -31,7 +34,7 @@ Att mer specifika regler skriver över mindre specifika regler innebär att vi k
 
 Ett exempel på hur en mer specifik regel _skriver över_ en mindre specifik (kaskadad) regel
 
-```markup
+```html
 <body>
   <p>First paragraph</p>
   <div>
@@ -40,7 +43,7 @@ Ett exempel på hur en mer specifik regel _skriver över_ en mindre specifik (ka
 </body>
 ```
 
-```csss
+```css
 body { color: green; }
 div p { color: blue; }
 ```
@@ -53,7 +56,7 @@ Låt oss se till ett till exempel där vi använder ett elements ID för att kun
 
 Ett exempel på hur en mer specifik regel _skriver över_ en mindre specifik (kaskadad) regel
 
-```markup
+```html
 <p>First paragraph</p>
 <p id="selected">Second paragraph</p>
 <p>Third paragraph</p>

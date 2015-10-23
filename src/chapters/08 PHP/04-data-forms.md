@@ -5,24 +5,26 @@ När vi pratade om formulär i `html` så fokuserade vi endast på hur vi får w
 Faktum är att detta kapitels rubrik egentligen är ganska missvisande. Vi pratar inte bara om hur du kan läsa data ifrån ett formulär ifyllt av en användare. De tekniker vi kommer att prata om här har mycket bredare användning. Och borde kanske snarare kalla detta kapitel för &mdash; "Att genom php och html läsa och skicka ifrån och till ett http request". Men den titeln var inte lika "catchy" :)
 
 Låt oss börja med att repetera hur ett vanligt `html`-formulär ser ut. Beakta nedan exempel, och fundera över faktumet att attributet `method` är tillskrivet värdet `GET`. Fundera även över faktumet att attributet `action` är tillskrivet värdet `process.php`.
-    
+
+```html
     <form action="process.php" method="GET">
       <label for="field-name">Ditt namn</label>
       <input type="text" id="field-name" name="name" placeholder="Ditt namn" required>
-     
+
       <label>Vad vill du äta till frukost?</label>
-     
+
       <label for="field-pancakes">Pannkakor</label>
       <input type="radio" id="field-pancakes" name="breakfast" value="pancakes">
-     
+
       <label for="field-scrambled">Äggröra</label>
       <input type="radio" id="field-scrambled" name="breakfast" value="scrambled">
-     
+
       <label for="field-toast">Övrigt</label>
       <input type="radio" id="field-toast" name="breakfast" value="toast">
-     
+
       <input type="submit" value="Skicka!">
     </form>
+```
 
 <figure class="example">
 <iframe src="examples/php-forms"></iframe>
@@ -44,7 +46,7 @@ Det kanske **viktigaste** med allt detta &mdash; är ju förstås inte att vi sk
 
 Så vad gör då attributet `method="[HTTP METHOD]"`? Egentligen är det inte särskilt konstigt. Vi har redan klargjort att när användaren klickar på formulärets "submit"-knapp så kommer användarens webbläsare att utföra ett nytt `http request`. Alltså omdirigeras till en ny `url`. Samt att den data som användaren matat in i formuläret faktiskt **skickas med i samma request**. Notera ordvalet "i samma request". Den uppenbara frågan är ju förstås &mdash; hur? Hur kan en massa data som användaren har fyllt i skickas med ett `http request`. Det kan ju vara precis viiiilken data som helst. Det är alltså just här attributet `method="[HTTP METHOD]"` kommer in i bilden.
 
-Det går alltså att bädda in en massa data i ett `http request`. Gärna på [nyckel-värde-par][3]-form. Men eftersom det finns [olika typer av http requests][4] så kan data alltså skickas på olika sätt. Eller snarare olika "form" (no pun intended). Detta är vad attributet `method` styr över. Attributet avgör alltså vilken typ av `http request` vi ber användarens webbläsare att göra. 
+Det går alltså att bädda in en massa data i ett `http request`. Gärna på [nyckel-värde-par][3]-form. Men eftersom det finns [olika typer av http requests][4] så kan data alltså skickas på olika sätt. Eller snarare olika "form" (no pun intended). Detta är vad attributet `method` styr över. Attributet avgör alltså vilken typ av `http request` vi ber användarens webbläsare att göra.
 
 De två vanligaste typerna av `http request` är [GET][5] och [POST][6]. Det finns ett par andra typer, men eftersom [formulär i `html` endast tillåter dessa två][7] så är det endast dessa vi kommer att fokusera på här. Du kan [läsa om fler metoder hos standardsorganet W3C][8].
 
@@ -58,7 +60,7 @@ När du knappar in en `url` i din webbläsare och trycker enter så är det allt
 
 Det är även rimligt att anta att vi i exempelrutan ovan med frukosten har brutit emot regeln om att använda `GET` för sidoeffektsfria anrop. Men eftersom vi ännu inte berättat vad vi ska göra med datat som användaren skickar så är det förstås svårt att säga :)
 
-Ett lättare sätt att belysa distinktionen lär vara detta. Vi skulle hävda att ett sökformulär bör skicka sin data via `GET`. Medan ett registreringsformulär rimligen bör skickas över `POST`. Även ett inloggningsformulär skulle vi nog skicka över `POST`. De två senare förändrar ju faktiskt "state" på servern. I första fallet genom att lagra en till användare i databasen. I andra fallet genom att skapa en session för användaren (alltså markera den som inloggad). Medan i det allra första fallet &mdash; sökfallet &mdash; så vill vi ju faktiskt bara filtrera information. Ingenting förändras på servern. Vi vill, till användaren, returnera information som rimligen är ett subset av någonting annat. 
+Ett lättare sätt att belysa distinktionen lär vara detta. Vi skulle hävda att ett sökformulär bör skicka sin data via `GET`. Medan ett registreringsformulär rimligen bör skickas över `POST`. Även ett inloggningsformulär skulle vi nog skicka över `POST`. De två senare förändrar ju faktiskt "state" på servern. I första fallet genom att lagra en till användare i databasen. I andra fallet genom att skapa en session för användaren (alltså markera den som inloggad). Medan i det allra första fallet &mdash; sökfallet &mdash; så vill vi ju faktiskt bara filtrera information. Ingenting förändras på servern. Vi vill, till användaren, returnera information som rimligen är ett subset av någonting annat.
 
 Det är fullt förståeligt om du tycker att det här är förvirrande. Det blir mycket på en gång. Men låt oss se det ifrån en annan vinkel. Låt oss fundera på hur data (exempelvis alltså formulärdata) skickas med de olika anropstyperna. Nedan följer två exempel på hur ett request till en sida skulle kunna se ut. Den ena varianten användet `GET` och den andra använder `POST`. Det viktiga är att du fokuserar på hur datat skickas.
 
@@ -67,19 +69,23 @@ Exempel på HTTP requests genom GET och POST
 Låt oss kika på hur dessa requests faktiskt ser ut. Vi gör anrop till adressen `example.com`. Och vi vill skicka med följande data: `color = red` och `shape = circle`. Fokusera framförallt på hur denna data i de två exemplena skickas olika.
 
 Ett request genom `HTTP GET` skulle då kunna se ut som så...
-    
+
+```http
     GET https://example.com/?shape=circle&color=red
     Accept: */*
     User-Agent: runscope/0.1
+```
 
 Och ett request genom `HTTP POST` skulle istället kunna se ut som så...
-    
+
+```http
     POST https://example.com/
     Accept: */*
     Content-Length: 22
     Content-Type: application/x-www-form-urlencoded
     User-Agent: runscope/0.1
     shape=circle&color=red
+```
 
 Båda dessa requests skickades tjänsten [hurl.it][10]. Prova gärna och utförska själv!
 
@@ -109,13 +115,15 @@ Låt oss nu då faktiskt se till ett konkret exempel på hur vi kommer åt infor
 
 Att läsa värden ifrån $\_GET
 
+```php
     // Assuming an incoming GET request for the following url:
     // http://example.com/?name=Johnny&breakfast=pancakes
-     
+
     $name   = $_GET["name"]
     $choice = $_GET["breakfast"]
-     
+
     echo "Dear $name, I'll certainly make you some $choice!";
+```
 
 Resultat
 
@@ -128,10 +136,12 @@ Dear Johnny, I'll certainly make you some pancakes.
 Som tidigare nämnt så kan _querystring_-variabler förekomma även utan att vi använder ett formulär. Som tidigare nämnt så är ju de flesta requests faktiskt `GET` requests, och således uppenbara kandidater för att innehålla _querystring_-variabler.
 
 Vi skulle t.ex. kunna skicka data med en helt vanlig länk.
-    
+
+```html
     <a href="http://example.com/?name=Johnny&breakfast=pancakes">
       Johnny likes pancakes
     </a>
+```
 
 Vilket skulle ge:
 
@@ -140,13 +150,16 @@ Vilket skulle ge:
 </figure>
 
 Vi skulle förstås även kunna använda `php` för att göra precis samma sak men istället byta ut de konkreta värdena emot variabler.
-    
+
+```php
     <a href="http://example.com/?name=<?= $name; ?> &breakfast=<?= $choice; ?>">
       Johnny likes pancakes
     </a>
+```
 
 Men eftersom det ändå är så pass vanligt att konstruera en _querystring_ så erbjuder `php` oss en fantastisk metod som hjälper oss genom att automatiskt transformera en _associativ array_ till en _querystring_. Med andra ord så här:
-    
+
+```php
     <?php
       $data = array(
         'name'      => $name,
@@ -154,13 +167,15 @@ Men eftersom det ändå är så pass vanligt att konstruera en _querystring_ så
       );
       $querystring = http_build_query($data);
     ?>
-     
+
     <a href="http://example.com/?<?= $querystring; ?>">
       Johnny likes pancakes
     </a>
+```
 
 Om vi ifrån en `php`-sida skulle vilja automatiskt omdirigera (_redirect_) användaren till en annan sida så kan vi använda `php`-metoden `header('Location: [url]')`. Och om vi vill även vill passa på att skicka med parametrar, så kan vi förstås göra det genom att som vanligt lägga till en _querystring_ i slutet av `url`:en. Alltså som så:
-    
+
+```php
     <?php
       $data = array(
         'name'      => $name,
@@ -168,13 +183,14 @@ Om vi ifrån en `php`-sida skulle vilja automatiskt omdirigera (_redirect_) anv�
       );
       $querystring = http_build_query($data);
     ?>
-     
+
     // And then redirect
     header("Location: http://example.com/?$querystring");
+```
 
 Om du inte redan märkt det, så är alltså syntaxen för att bygga upp en querystring följande:
 `nyckel=värde` där varje nyckel-värde-par separeras genom ett och-tecken (`&`). Sedan är det förstås viktigt att komma ihåg att om vi ska lägga till en _querystring_ till en `url` så måste vi avgränsa slutet på `url`:en och början på _querystring_:en med ett frågetecken (`?`). Så sammantaget blir det alltså:
-    
+
     http://example.com/?key1=value1&key2=value2&keyN=valueN
 
 

@@ -24,6 +24,7 @@ Ett dokuments teckenkodning sätter vi genom att skapa en `<meta>`-tag med attri
 
 Ett dokument som definierar character set:et utf-8
 
+```html
     <!DOCTYPE html>
     <html>
       <head>
@@ -31,7 +32,7 @@ Ett dokument som definierar character set:et utf-8
         <title>The utf-8, I speak!</title>
       </head>
     </html>
-
+```
 
 
 [0]: http://sv.wikipedia.org/wiki/ASCII

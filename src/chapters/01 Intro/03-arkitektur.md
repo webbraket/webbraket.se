@@ -23,7 +23,10 @@ När vi talar om språk för webbutveckling talar vi oftast antingen om server-s
 Notera att ovan paragraf inte använder facktermer utan bör istället betraktas som en tolkning.
 
 Innan vi kan gå över till att diskutera statiska, dynamiska och skillnaden emellan de &mdash; låt oss återigen påminna oss själva om hur språket HTML ser ut.
+
+```html
     Ett ord i <b>fetstil</b> och ett <u>understruket</u>.
+```
 
 <figure>
 Ett ord i **fetstil** och ett _understruket_.
