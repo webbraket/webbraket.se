@@ -26,7 +26,7 @@ I vissa fall innebär denna transformation att vi går ifrån ett filformat till
 
 I andra fall innebär denna transformation att vi går ifrån ett format som endast en dator kan förstå till ett format som en människa kan tolka genom något av sina sinnen. En rå videofil är t.ex. allt för komplex för att vi som människor ska kunna läsa dess "binära" data och förstå vad filmen handlar om. Istället måste datorn successivt "koda om" detta format till en ström av bilder som visas upp på vår skärm.
 
-Ett videouppspelningsprogram såsom VLC, Media Player Classic, Quick Time, eller Windows Media Player fungerar alltså detta fall som en slags "tolk" av information. Återigen, är programvarans uppgift alltså att transformera någonting ifrån ett format till annat.
+Ett videouppspelningsprogram såsom VLC, Media Player Classic, Quick Time, eller Windows Media Player fungerar alltså i detta fall som en slags "tolk" av information. Återigen, är programvarans uppgift alltså att transformera någonting ifrån ett format till annat.
 
 Men vad har detta med webbläsare att göra? Fundera på vad vi nyss ha sagt, och fundera sedan på att alla webbläsare också är program. Webbläsare transformerar input till output. Nothing more, nothing less.
 
@@ -48,7 +48,7 @@ Svaret på den första frågan är egentligen tätt bundet till svaret på den a
 
 En fil är bara en mängd arbiträr men strukturerad data. Program följer olika konventioner, och när man läser en fil med hjälp av en viss konvention kan man extrahera den information som faktiskt finns inbäddad i filen. D.v.s visa bilden, spela upp ljudet, representera dokumentet.
 
-Så hur vet operativsystemet vilken konvention den ska applicera? Tänk tillbaka på tidigare diskussion om att ett programs enda uppgift är att transformera input till output. Om ett program är specialiserat på att transformera en viss typ av input till en viss typ av output &mdash; då är det en utmärkt kandidat för att vara en explicit konvention. Innehållet i en fil är alltså input (texten) och ett given program är alltså transformationsprocessen (konventionen).
+Så hur vet operativsystemet vilken konvention den ska applicera? Tänk tillbaka på tidigare diskussion om att ett programs enda uppgift är att transformera input till output. Om ett program är specialiserat på att transformera en viss typ av input till en viss typ av output &mdash; då är det en utmärkt kandidat för att vara en explicit konvention. Innehållet i en fil är alltså input (texten) och ett givet program är alltså transformationsprocessen (konventionen).
 
 Låt oss formulera det i andra ord. En fil innehåller egentligen bara strukturerad råtext (egentligen: data). När denna fil med strukturerad råtext sedan öppnas med det program den var ämnad att öppnas i, kommer denna till synes mumbo jumbo av text helt plötsligt spela sin roll.
 
@@ -58,7 +58,7 @@ Egentligen kan vi slänga på vilken filändelse (alltså t.ex. .tex, .doc, .pdf
 
 Faktum är att UNIX-baserade operativsystem i grund och botten [inte bryr sig om filändelser][3]. Istället för att filändelsen specificerar vilket program som bör användas för att öppna filen, så specificerar filen själv vilket program som bör användas.
 
-Medan det konkreta beteendet skiljer sig ifrån operativssytem till operativssystem, så är dagens läxa alltså att alla program i teorin egentligen kan läsa alla filer. Det går bara mer eller mindre bra. Det gäller alltså bara att det att programmet applicerar rätt _konvention_ för hur filen ska läsas. Texteditorer (t.ex.) kan öppna ljudfiler, de kan visa upp det råa innehållet i textuell representation. Men de har ingen aning om hur man faktiskt får ljudet att spelas upp.
+Medan det konkreta beteendet skiljer sig ifrån operativssytem till operativssystem, så är dagens läxa alltså att alla program i teorin egentligen kan läsa alla filer. Det går bara mer eller mindre bra. Det gäller alltså bara att det programmet applicerar rätt _konvention_ för hur filen ska läsas. Texteditorer (t.ex.) kan öppna ljudfiler, de kan visa upp det råa innehållet i textuell representation. Men de har ingen aning om hur man faktiskt får ljudet att spelas upp.
 
 Låt oss analysera ett scenario du själv eller någon du känner kanske redan stött på. Anta att vi har en fil: `bild.jpg`. Anta sedan att vi döper om den till `bild.png`. Har filen nu konverterats ifrån formatet JPEG till PNG? Fundera... Självklart inte! Filändelsen är ju bara en del av filnamnet. Inte en del av innehållet. Innehållet är fortfarande detsamma. JPEG är en konvention, PNG en annan. Om filens innehåll följde konventionen JPEG tidigare, och vi endast förändrade filändelsen (alltså filens namn) så innehåller den ju fortfarande data som följer JPEG-konventionen. Alltså har filen inte konverterats. Däremot kommer vi sannolikt ha det svårare att öppna filen i vissa program och/eller operativsystem. Programmet kan komma att anta att filen följer konventionen PNG (i.o.m. att filen har en filändelse som är .png) men när filen sedan faktiskt följer konventionen JPEG (eftersom innehållet i filen följer JPEG-konventionen) så blir programmet superförvirrat och ger upp. En fil med innehåll som följer JPEG-konventionen är inte en fil som följer PNG-konventionen &mdash; oavsett vilken filändelse vi slänger på. En JPEG-fil är inte en PNG-fil &mdash; oavsett vilken filändelse vi slänger på.
 

@@ -135,9 +135,9 @@ Innanför elementet `table` kan vi sedan placera ett valfritt antal element av t
 
 > I tabeller specificerar vi först raderna &mdash; sedan kolumnerna. Aldrig tvärtom.
 
-Innanför elementet `tr` kan vi sedan placera ett valfritt antal element av typen `<td>` (_table data_. För att underlätta den mentala modellen kan du alltså tänka att elementet `td` skapar kolumner. Om vi använder `tr` för att skapa rader i tabellen så använder vi `td` för att skapa kolumner i en rad.
+Innanför elementet `tr` kan vi sedan placera ett valfritt antal element av typen `<td>` (_table data_). För att underlätta den mentala modellen kan du alltså tänka att elementet `td` skapar kolumner. Om vi använder `tr` för att skapa rader i tabellen så använder vi `td` för att skapa kolumner i en rad.
 
-Det sista elementet vi kan använda när vi arbetar med tabeller är `>th<` (_table header_). Detta element kan ersätta vilket `<td>` som helst. Vi använder alltså elementet för att denotera att en viss cell inte innehåller vanlig celldata. Utan snarare bör behandlas som en rubrik.
+Det sista elementet vi kan använda när vi arbetar med tabeller är `<th>` (_table header_). Detta element kan ersätta vilket `<td>` som helst. Vi använder alltså elementet för att denotera att en viss cell inte innehåller vanlig celldata. Utan snarare bör behandlas som en rubrik.
 
 Låt oss se till ett komplett exempel.
 

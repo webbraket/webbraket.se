@@ -329,11 +329,11 @@ Urlencoding är alltså anledning till att mellanslag ersätts med `%20` i url:e
 
 #### HTTP POST vs HTTP GET
 
-Vi nämnde tidigare att det finns två sätt att skicka formulärdata över HTTP. `POST` och `GET`. Vi har även kort nämnt att de olika metoderna är olika passande för olika situationer. Detta reflekteras även av deras namn. Tänk på det. Post och get. Förstnämnda är designad för att posta data. Sistnämnda är designad för att hämta data. Distinktionen mellan dessa är förstås varken solkar eller svartvit. Men om vi ser det som en tumregel kan det bli lättare att välja vilken teknik (POST eller GET) vi ska använda.
+Vi nämnde tidigare att det finns två sätt att skicka formulärdata över HTTP. `POST` och `GET`. Vi har även kort nämnt att de olika metoderna är olika passande för olika situationer. Detta reflekteras även av deras namn. Tänk på det. Post och get. Förstnämnda är designad för att posta data. Sistnämnda är designad för att hämta data. Distinktionen mellan dessa är förstås varken solklar eller svartvitt. Men om vi ser det som en tumregel kan det bli lättare att välja vilken teknik (POST eller GET) vi ska använda.
 
 `POST` bör vi alltså huvudsakligen använda när vi på något sätt vill skicka data till servern. Föreställ dig till exempel ett registreringsformulär. Vi vill skicka data till servern. Vi vill säga "det här är mina uppgifter, vänligen skapa ett konto åt mig". Eller föreställ dig ett kommentarsfält. Vad säger vi till servern? "Här har du min kommentar! Vänligen posta den."
 
-Den mer formella tumregeln är att requests som riskerar att ha [sidoeffekter][5] bör utföras över POST. Vi kommer att prata mer om vad sidoeffekter när vi pratar om programmering. Men med requests som riskerar sidoeffekter, så menar vi här requests som riskerar att förändra state på servern. T.ex. förändra något i en databas. Därav t.ex. registrering.
+Den mer formella tumregeln är att requests som riskerar att ha [sidoeffekter][5] bör utföras över POST. Vi kommer att prata mer om sidoeffekter när vi pratar om programmering. Men med requests som riskerar sidoeffekter, så menar vi här requests som riskerar att förändra state på servern. T.ex. förändra något i en databas. Därav t.ex. registrering.
 
 `GET` å andra sidan bör vi alltså huvudsakligen använda när vi på något sätt vill hämta data. Exempel på detta kan t.ex. vara [paginering][6]. Med paginering menar vi alltså när en stor mängd content delas upp på flera sidor. Det är då vanligt förekommande att man använder sig av `GET`-tekniken för i request:et skicka med vilket sidnummer vi vill se.
 

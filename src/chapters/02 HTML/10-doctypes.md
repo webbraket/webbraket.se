@@ -18,7 +18,7 @@ Om du har svårt att förstå varför vi behöver dessa standarder, stanna upp o
 
 Eftersom det finns olika HTML-standarder så finns det alltså olika sätt att uttrycka HTML. Således betyder samma sak olika saker beroende på vilken standard vi använder när vi läser dokumentet.
 
-FÖr att berätta för webbläsaren vilken standard dokumentet bör läsas med behöver vi på den absolut första raden i dokumentet ange en doctype. Vi definerar doctypes med syntaxen `<!DOCTYPE x>`. Där `x` ersätts med den faktiska doctype:en. Nedan följer ett par exempel för hur man deklarerar doctypes.
+För att berätta för webbläsaren vilken standard dokumentet bör läsas med behöver vi på den absolut första raden i dokumentet ange en doctype. Vi definerar doctypes med syntaxen `<!DOCTYPE x>`. Där `x` ersätts med den faktiska doctype:en. Nedan följer ett par exempel för hur man deklarerar doctypes.
 
 För att deklarera att ett dokument följer standarden HTML5 skriver vi helt enkelt följande...
 

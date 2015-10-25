@@ -12,7 +12,7 @@ Vilket skulle rendera följande resultat:
 [Klicka på mig][0]
 </figure>
 
-Notera alltså användandet av attributet `href` i ovan exempel. Attributets namn är en förkortning av "hyper reference". Det kan vara bra att fundera över vad de olika förkortningarna du kommer i kontakt med faktiskt éxpanderar till. Då blir det lättare att komma ihåg/på vad attributen faktiskt gör.
+Notera alltså användandet av attributet `href` i ovan exempel. Attributets namn är en förkortning av "hyper reference". Det kan vara bra att fundera över vad de olika förkortningarna du kommer i kontakt med faktiskt expanderar till. Då blir det lättare att komma ihåg/på vad attributen faktiskt gör.
 
 ### Sökvägar
 
@@ -27,12 +27,12 @@ Under _Microsoft Windows_ så skulle ett exempel på en absolut sökväg t.ex. v
 
 Det lättaste sättet att förstå sökvägar är att reflektera över hur vi själva navigerar igenom filsystemet i våra operativsystem. Tänk på det. När vi letar efter en fil på hårddisken så öppnar vi först någon mapp. Sedan finns det två saker vi kan göra:
 
-1. Öppna en ny mapp i den befintliga mappen,
-2. Gå ett steg uppåt/bakåt, eller
+1. Öppna en ny mapp i den befintliga mappen, eller
+2. Gå ett steg uppåt/bakåt.
 
 Det är även dessa tre verktyg vi har att arbeta med när vi specificerar sökvägar. Varje ord motsvarar en mapp eller en fil. Varje slash-tecken (`/`) motsvarar idéen om att klicka sig in i en ny mapp. Där ordet efter slash-tecknet denoterar namnet på mappen. Notationen punkt-punkt (`..`) motsvarar idéen om att gå upp/bakåt en mapp i hierarkin.
 
-Vi pratade tidigare lite om absoluta och relative sökvägar i relation till _Microsoft Windows_. Låt oss även prata om absoluta och relativa sökvägar i [\*nix-baserade system][1]. I nästan alla operativsystem fungerar idéen om sökvägar på samma sätt. Punkt refererar relativt till den nuvarande mappen. Punkt-punkt till en mapp uppåt. Ett ord till en fil eller mapp i nuvarande mapp. Och slash används för att koppla ihop dessa. Varje slash denoterar alltså i någon bemärkelse "nästa steg".Slash-tecknet denoterar "nästa steg" i en sökväg.
+Vi pratade tidigare lite om absoluta och relativa sökvägar i relation till _Microsoft Windows_. Låt oss även prata om absoluta och relativa sökvägar i [\*nix-baserade system][1]. I nästan alla operativsystem fungerar idéen om sökvägar på samma sätt. Punkt refererar relativt till den nuvarande mappen. Punkt-punkt till en mapp uppåt. Ett ord till en fil eller mapp i nuvarande mapp. Och slash används för att koppla ihop dessa. Varje slash denoterar alltså i någon bemärkelse "nästa steg". Slash-tecknet denoterar "nästa steg" i en sökväg.
 
 I t.ex. _Mac OS_ och _Linux_ så fungerar alltså sökvägar på samma sätt som ovan nämnt, med en skillnad. För att specificera absoluta sökvägar i \*nix-baserade system så anger vi inte namnet på en enhet (ex: `C:`) såsom i Windows. Isället börjar vi helt enkelt med tecknet slash (`/`). Följande är alltså en absolut sökväg:
 
@@ -64,7 +64,7 @@ Nu när vi vet vad ett protokoll är &mdash; vad är då en URL (Uniform Resourc
 
 > En URL är en webbadress till en resurs på internet.
 
-När vi skriver in en webbadress i vår webbläsare så skriver vi alltså in en URL. Som tidigare nämnt så hjälper de flesta moderna webbläsare oss att skriva korrekta URL:er. En URL måste nämligen bl.a. innehålla ett protokoll. Var sig det är HTTP, HTTPS, FTP, SFTP o.s.v.
+När vi skriver in en webbadress i vår webbläsare så skriver vi alltså in en URL. Som tidigare nämnt så hjälper de flesta moderna webbläsare oss att skriva korrekta URL:er. En URL måste nämligen bl.a. innehålla ett protokoll. Vare sig det är HTTP, HTTPS, FTP, SFTP o.s.v.
 
 ### Webbadresser i HTML
 
@@ -89,7 +89,7 @@ Ovan gäller alltså om vi antar att användaren befinner sig på sidan `http://
 
 > Om vi inte anger ett protokoll kommer webbläsaren att tolka vår URL som intern! Även om vi börjar URL:en med www.
 
-Notera alltså att om vi inte anger ett protokoll så kommer webbläsaren att tolka våra URL:er som interna till vår domän. Ett vanligt misstag är således att glömma att ange protokollet när vi försöker ange en extern adress. Anta att vibefinner oss på `http://example.com` och skriver följande:
+Notera alltså att om vi inte anger ett protokoll så kommer webbläsaren att tolka våra URL:er som interna till vår domän. Ett vanligt misstag är således att glömma att ange protokollet när vi försöker ange en extern adress. Anta att vi befinner oss på `http://example.com` och skriver följande:
 
 ```html
     <a href="www.google.com">Klicka här</a>

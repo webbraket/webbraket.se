@@ -1,6 +1,6 @@
 ## Kom igång med CSS
 
-CSS &mdash; (Cascading StyleSheets) är stilmallar i praktiken används till att formge dokument. Formge färg, teckensnitt, positionering, justering, backgrunder, scroll, o.s.v. En enda CSS-mall kan styra tusentals dokument och det är då enkelt att ändra formateringen genom att det bara i CSS-mallen.
+CSS &mdash; (Cascading StyleSheets) är stilmallar som i praktiken används till att formge dokument. Formge färg, teckensnitt, positionering, justering, backgrunder, scroll, o.s.v. En enda CSS-mall kan styra tusentals dokument och det är då enkelt att ändra formateringen genom att bara justera i CSS-mallen.
 
 CSS har tagit HTML ett steg längre och möjliggjort formateringar och effekter som inte fanns i HTML standarden. En av fördelarna med CSS är att flera mallar kan användas och de har då företräde inbördes så att en "huvudmall" med de övergripande formateringarna kan ersättas på en lägre nivå av en "lokal mall" som då gäller före huvudmallen. Det är detta som åsyftas när man säger att css är `cascading`.
 
@@ -16,7 +16,7 @@ CSS är ett initiativ till att separera **innehåll** och **presentation**. Att 
 
 En målsättning och effekt av att presentation separeras ifrån innehåll -- är adaptivitet. Om innehållet är helt "befriat ifrån" presentation så skulle man i teorin kunna visa innehållet med vilken typ av presentation som som helst.
 
-För att göra det mer uppenbart, låt oss fundera över hur situationen såg ut tidigare. Om vi beblandar presentation (css) med vårt innehåll (html) så kommer det vara svårt för en maskin att avgöra vad som hör till presentationen och vad som hör till innehållet. Tänk t.ex. på radbrytningar. Används en radbrytning för att understryka att två paragrafer är skilda ifrån varandra, eller används den för att skapa ett bekvämt visuellt avstånd? Både fallen kan vara sanna. Detta är svårt för en maskin att avgöra.
+För att göra det mer uppenbart, låt oss fundera över hur situationen såg ut tidigare. Om vi beblandar presentation (css) med vårt innehåll (html) så kommer det vara svårt för en maskin att avgöra vad som hör till presentationen och vad som hör till innehållet. Tänk t.ex. på radbrytningar. Används en radbrytning för att understryka att två paragrafer är skilda ifrån varandra, eller används den för att skapa ett bekvämt visuellt avstånd? Båda fallen kan vara sanna. Detta är svårt för en maskin att avgöra.
 
 I praktiken har detta t.ex. varit ett problem för syn- och hörselskadade. Tänk på [screen readers][0] t.ex. som genom text-to-speech försöker läsa upp en sidas innehåll för en användare. Hur skulle det vara om den började läsa saker som "blå bakgrund". 
 

@@ -111,7 +111,7 @@ Ovan figur är alltså en visualisering av hur ett request-response-scenario sku
 
 ### Server-side-språk
 
-Låt oss nu istället prata om server-side språk. Ett server-side-språk är ett lös term som refererar till ett programmeringsspråk som kan användas för att leverera ett response när ett request kommer in. Tänk så här. Vi skulle kunna ha en klient-server-arkitektur helt utan ett server-side-språk. Hur? Jo, klienten ber om en sida genom ett request som vandrar över internet och når rätt server som rakt av svarar med ett response som är en html-sida.
+Låt oss nu istället prata om server-side språk. Ett server-side-språk är en lös term som refererar till ett programmeringsspråk som kan användas för att leverera ett response när ett request kommer in. Tänk så här. Vi skulle kunna ha en klient-server-arkitektur helt utan ett server-side-språk. Hur? Jo, klienten ber om en sida genom ett request som vandrar över internet och når rätt server som rakt av svarar med ett response som är en html-sida.
 
 Men nu är det ju så att det moderna internet består av mycket mer komplexitet än statiska sidor. Den enda skillnaden vi introducerar i ovanstående process handlar då om att vi introducerar ett språk som ansvarar för att konstruera html-sidor beroende på response.
 
@@ -119,6 +119,6 @@ Vi omformulerar ovan paragraf. Ett server-side-språks huvudsakliga uppgift är 
 
 Exempel på server-side-språk är t.ex. PHP, Ruby, Python, ASP.NET etc.
 
-Så om server-side-språket "genererar" HTML-filer &mdash; varför måste vi då lära oss att skriva det själva? Enkelt svarat &mdash; eftersom det är vi som skriver server-side-koden, och därmed även vi som definierar hur HTML-sidorna ska genereras. Det finns alltså inte någon magisk HTML-generator utan någonstans måste vi definera exakt hur HTML-sidorna ska genereras beroende på de request vi får in. Vi återkommer alltså till den gamla tanken mdash; eftersom datorer är korkade, så måste vi berätta för dem exakt vad vi vill ha.
+Så om server-side-språket "genererar" HTML-filer &mdash; varför måste vi då lära oss att skriva det själva? Enkelt svarat &mdash; eftersom det är vi som skriver server-side-koden, och därmed även vi som definierar hur HTML-sidorna ska genereras. Det finns alltså inte någon magisk HTML-generator utan någonstans måste vi definera exakt hur HTML-sidorna ska genereras beroende på de request vi får in. Vi återkommer alltså till den gamla tanken &mdash; eftersom datorer är korkade, så måste vi berätta för dem exakt vad vi vill ha.
 
 [0]: http://sv.wikipedia.org/wiki/Klient%E2%80%93server
