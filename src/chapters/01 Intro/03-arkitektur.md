@@ -117,8 +117,12 @@ Men nu är det ju så att det moderna internet består av mycket mer komplexitet
 
 Vi omformulerar ovan paragraf. Ett server-side-språks huvudsakliga uppgift är alltså att "hitta på" ett html-dokument. Ett statiskt response skulle vara att bara svara med en existerande html-fil. Men ett dynamiskt response skulle innebära att server-side-språket först utför en del logik, och sen "on the fly" skapar den html-fil som servern svarar med.
 
-Exempel på server-side-språk är t.ex. PHP, Ruby, Python, ASP.NET etc.
+Exempel på server-side-språk är t.ex. [PHP][1], [Ruby][2], [Python][3], [ASP.NET][4] etc.
 
 Så om server-side-språket "genererar" HTML-filer &mdash; varför måste vi då lära oss att skriva det själva? Enkelt svarat &mdash; eftersom det är vi som skriver server-side-koden, och därmed även vi som definierar hur HTML-sidorna ska genereras. Det finns alltså inte någon magisk HTML-generator utan någonstans måste vi definera exakt hur HTML-sidorna ska genereras beroende på de request vi får in. Vi återkommer alltså till den gamla tanken mdash; eftersom datorer är korkade, så måste vi berätta för dem exakt vad vi vill ha.
 
 [0]: http://sv.wikipedia.org/wiki/Klient%E2%80%93server
+[1]: http://php.net
+[2]: https://www.ruby-lang.org/en/
+[3]: https://www.python.org
+[4]: http://www.asp.net
