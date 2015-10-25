@@ -68,7 +68,7 @@ Så, låt oss uttrycka syntaxen för `deklarationer` i ord: En css-`deklaration`
 
 Utöver att skriva css-selectors som träffar html-element så kan vi även skriva selectors för `ID`:n och `klasser`.
 
-Vi använder ID:n för att defineira "unika" element. Vad menar vi med unika? Jo att om någonting har id:et `container` så får det endast finnas ett enda element på sidan som har just det ID:et. Vi kan självklart skriva flera css-regler som använder just den selectorn. Men i html-dokumentet får ID:t alltså endast förekomma en enda gång.
+Vi använder ID:n för att definiera "unika" element. Vad menar vi med unika? Jo att om någonting har id:et `container` så får det endast finnas ett enda element på sidan som har just det ID:et. Vi kan självklart skriva flera css-regler som använder just den selectorn. Men i html-dokumentet får ID:t alltså endast förekomma en enda gång.
 
 Behöver vi kunna referera till flera element så använder vi oss av klasser. Klasser fungerar på exakt samma sätt som ID:n förutom just det att det är tillåtet att flera element använder samma klass.
 

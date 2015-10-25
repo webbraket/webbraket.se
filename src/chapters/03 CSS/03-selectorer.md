@@ -2,7 +2,7 @@
 
 ### Vanliga selektorer och atttribut
 
-Man kan ju tycka att det borde räcka med att kunna hänvisa till element bara via deras typ, klass eller typer. Detta är dock inte sant, suck! Det går att använda att komma åt element på andra sätt och detta gör det lättare man slipper sätta klass eller id på allt. Nedanför finner ni olika selektorer och exempel. Observera att det finns flera....Never ending story!
+Man kan ju tycka att det borde räcka med att kunna hänvisa till element bara via deras typ, klass eller typer. Detta är dock inte sant, suck! Det går att komma åt element på andra sätt och detta gör det lättare för oss då man slipper sätta klass eller id på allt. Nedanför finner ni olika selektorer och exempel. Observera att det finns flera....Never ending story!
 
 #### Selektor: \*
 

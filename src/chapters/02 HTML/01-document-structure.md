@@ -14,13 +14,13 @@ Om information saknade semantisk signifikans hade vi likväl kunnat representera
 
 Men maskiner (e.g. webbläsare) har idag inte den förståelse som ovan beskrivs. En webbläsare kan inte förstå vad den ska representera som en egen paragraf genom att processa texten. Maskinen läser inte texten och börjar tänka att "hmm.. här ska vi nog ha en radbrytning". Därför behöver vi berätta för maskinen vad som är vad.
 
-Maskiner behöver inte bara veta vad som är vad för att vi ska kunna närma oss [artificiell intelligens][2]. Utan i fallet av webben behöver webbläsaren helt enkelt veta vad som är vad för att kunna presentera informationen för oss på ett rimligt sätt. Kom ihåg. Annars är vi tillbaka i den svårhantereliga värld där paragrafindelningar inte existerar och all text kommer i ett enda långt stycke ifrån början till slut rakt av. Vilken pers det hade varit.
+Maskiner behöver inte bara veta vad som är vad för att vi ska kunna närma oss [artificiell intelligens][2]. Utan i fallet av webben behöver webbläsaren helt enkelt veta vad som är vad för att kunna presentera informationen för oss på ett rimligt sätt. Kom ihåg. Annars är vi tillbaka i den svårhanterliga värld där paragrafindelningar inte existerar och all text kommer i ett enda långt stycke ifrån början till slut rakt av. Vilken pers det hade varit.
 
 Självklart handlar alltså inte detta om endast paragrafer. Den abstraktare poängen är alltså att vi måste denotera olika delar för att en maskin ska kunna resonera kring dem. Om vi inte berättar för maskinen vad som är rubriker, vad som är paragrafer, vad som är listor o.s.v. o.s.v.
 
 ### Dokument som hierarkier
 
-HTML-dokument bygger på en metafor om att alla dokument går att beskriva som hierarkiska trädstrukturer. Fundera på det. I stort sett alla dokument går att beskriva som en hierarkisk trädstruktur. Ta en bok till exempel. Högst upp i abstraktionskedjan hittar vi av ett antal delar. Boken börjar med ett förord, sen kommer första delen, sedan andra delen, och avslutningsvis efterordet. Böcker ser ju förstås olika ut men detta är ett exempel på hur en bok skulle kunna se ut. Men indelningen tar ju inte slut när vi har delat upp boken i olika delar. Under varje del hittar vi kapitel. Nu kan vi se boken som att den består av ett antal delar under vilka det finns ett antal kapitel. Letar vi vidare så upptäcker vi att varje kapitel innehåller paragrafer. Och letar vi ännu vidare så upptäcker vi att vissa paragrafer innehåller bilder. Om vi skulle försöka representera ovan bok som en linjär trädstruktur skulle den rimligen se ut så här: `Del > Kapitel > Paragraf > Bilder`.
+HTML-dokument bygger på en metafor om att alla dokument går att beskriva som hierarkiska trädstrukturer. Fundera på det. I stort sett alla dokument går att beskriva som en hierarkisk trädstruktur. Ta en bok till exempel. Högst upp i abstraktionskedjan hittar vi ett antal delar. Boken börjar med ett förord, sen kommer första delen, sedan andra delen, och avslutningsvis efterordet. Böcker ser ju förstås olika ut men detta är ett exempel på hur en bok skulle kunna se ut. Men indelningen tar ju inte slut när vi har delat upp boken i olika delar. Under varje del hittar vi kapitel. Nu kan vi se boken som att den består av ett antal delar under vilka det finns ett antal kapitel. Letar vi vidare så upptäcker vi att varje kapitel innehåller paragrafer. Och letar vi ännu vidare så upptäcker vi att vissa paragrafer innehåller bilder. Om vi skulle försöka representera ovan bok som en linjär trädstruktur skulle den rimligen se ut så här: `Del > Kapitel > Paragraf > Bilder`.
 
 Vad vi nu har beskrivit är (i en trädstruktur) relationen mellan föräldrar och barn. Ett förälder kan innehålla barn, och barn kan höra till föräldrar. Ett kapitel kan innehålla paragrafer och en paragraf kan tillhöra ett kapitel. Därav användandet av notationen med större-än-tecknet (`>`). Det till vänster om större-än-tecknet är alltså föräldern. Men om trädstruktur bara kunde ha barn och föräldrar så skulle de vara helt linjära. Istället behöver vi inse att barn kan ha syskon. En förälder kan alltså ha flera barn. Eller uttryckt i termer av ett träd. En gren kan ha flera förgreningar. Vi kommer att prata mer om detta när vi ser till ett par dokumenstruktursexempel.
 
@@ -57,7 +57,7 @@ Paragraf-elementet vi såg tidigare är ett ypperligt exempel på den första fo
 
 Elementet `<hr>` denoterar en horisontell linje (avdelare) som ritas ut rakt över sidan. En s.k. "horizontal ruler". Om vi funderar lite på det en stund så inser vi snabbt varför ensamma element existerar. En avdelare är en avdelare och det finns ingenting intelligent vi kan denotera innuti en avdelare. Andra element av denna typ är t.ex. bilder. Här ser vi också en tydlig anledning. En bild är ju alltid en bild. Det är ologiskt att anta att vi skulle vilja denotera existensen av någonting i bilden. Bilden själv beskriver vad som finns i bilden.
 
-Om detta låter lite "lurvigt", oroa dig inte. Vi kommer att diskutera detta närmare och förhoppningsvis blir det klarare när du får se några exempel. Men för nu &mdash; kom ihåg att det finns två typer av element. De som inte behöver stängas (eftersom vi kan placera element eller content i dem), och de som behöver stängas.
+Om detta låter lite "lurvigt", oroa dig inte. Vi kommer att diskutera detta närmare och förhoppningsvis blir det klarare när du får se några exempel. Men för nu &mdash; kom ihåg att det finns två typer av element. De som inte behöver stängas (eftersom vi inte kan placera element eller content i dem), och de som behöver stängas.
 
 ### Element i element
 
@@ -81,7 +81,7 @@ Det är när vi börjar förstå att element kan innehålla andra element som vi
 
 ### Plain-text om inte annat anges
 
-En viktig poäng om relationen mellan text och element är att webbläsaren tolkar allt som inte denoterats som någonting annat som text. Oavsett hur många radbrytningar eller mellanslag vi slänger in i ett stycke text så kommer webbläsaren ändå att trunkera all text. Med andra ord hamnar all text på samma rad. Och upprepade mellanslag ersättsm ed ett enda.
+En viktig poäng om relationen mellan text och element är att webbläsaren tolkar allt som inte denoterats som någonting annat som text. Oavsett hur många radbrytningar eller mellanslag vi slänger in i ett stycke text så kommer webbläsaren ändå att trunkera all text. Med andra ord hamnar all text på samma rad. Och upprepade mellanslag ersätts med ett enda.
 
 Man skulle alltså kunna säga att HTML i någon bemärkelse är _addativt_. Vi har en mängd text, och omsluter sedan olika delar av texten med element för att skapa en semantisk indelning. Utan element, har vi ingenting annat än en enda lång sträng av text.
 
@@ -169,7 +169,7 @@ Men kommentaren i ovan exempel kommer alltså fortfarande att synas i källkoden
 
 ### Dokumenstruktur
 
-Vi har nu lärt oss att HTML-dokument modellerar trädstrukturer. Men hur ska då en trädstruktur för ett HTML-dokument se ut? Ett HTML-dokument behöver vara valit ("valid"), enligt standarden, för att kunna renderas korrekt av en webbläsare. Eftersom webbläsare har lite varierande implementationer av HTML-standarden så betyder det att dokumen egentligen inte måste följa standarden till hundra procent. Men det är bra att sträva efter det.
+Vi har nu lärt oss att HTML-dokument modellerar trädstrukturer. Men hur ska då en trädstruktur för ett HTML-dokument se ut? Ett HTML-dokument behöver vara valit ("valid"), enligt standarden, för att kunna renderas korrekt av en webbläsare. Eftersom webbläsare har lite varierande implementationer av HTML-standarden så betyder det att dokument egentligen inte måste följa standarden till hundra procent. Men det är bra att sträva efter det.
 
 Men för att återgå till ämnet. Det finns några saker ett HTML-dokument alltid måste innehålla. En dokumenttypsdeklaration (doctype), ett html-rot-element, ett huvud med en titel, och en kropp. Det minsta html-dokumentet vi kan konstruera som fortfarande uppfyller standarden (html5) är följande:
 
@@ -298,7 +298,7 @@ Att ta med sig ifrån det här stycket är alltså &mdash; indentera! Du kommer 
 
 ### Ett komplett dokument
 
-Ett validerande HTML-dokument måste alltså innehålla ett par saker. En dokumenttypsdeklaration, ett huvud, en titel och en kropp. Nyssnämnt direktäversättningar av de korrekta termerna `DOCTYPE`, `HEAD`, `BODY` och `TITLE`. Låt oss återgå till tidigare nämnt kod-exempel (se nedan), och fundera över hur dessa element ska nästlas i varandra. Med andra ord, låt oss diskutera vilka element som är barn/föräldrar till vilka.
+Ett validerande HTML-dokument måste alltså innehålla ett par saker. En dokumenttypsdeklaration, ett huvud, en titel och en kropp. Nyssnämnt direktöversättningar av de korrekta termerna `DOCTYPE`, `HEAD`, `BODY` och `TITLE`. Låt oss återgå till tidigare nämnt kod-exempel (se nedan), och fundera över hur dessa element ska nästlas i varandra. Med andra ord, låt oss diskutera vilka element som är barn/föräldrar till vilka.
 
 ```html
     <!DOCTYPE html>

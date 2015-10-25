@@ -1,6 +1,6 @@
 ## Doctypes
 
-HTML har funnits i fler än ett par år, och med de åren på nacken kommer en mer än brokig historia. Det har länge funnits fler än en enda browser. Och eftersom de flesta browsers (självklarligen) vill äga majoriteten av marknaden har gett upphov till uttrycket [The Browser Wars][0]. Webbläsare slåss om att vinna den stora majoriteten av användare.
+HTML har funnits i mer än ett par år, och med de åren på nacken kommer en mer än brokig historia. Det har länge funnits fler än en enda browser. Och eftersom de flesta browsers (självklarligen) vill äga majoriteten av marknaden har gett upphov till uttrycket [The Browser Wars][0]. Webbläsare slåss om att vinna den stora majoriteten av användare.
 
 Detta har (bland andra anledningar) gett upphov till att webbläsare i olika skeden implementerat olika delar av HTML-, CSS- och JavaScript-specifikationerna. Med andra ord, att olika "dialekter" av samma språk varit tillåtet i olika webbläsare. Med andra ord att vi kan skriva vissa saker i vissa webbläsare och andra i andra, vilket gör att webbläsare A kanske inte förstår uttryck B, som webbläsare C förstår.
 
@@ -18,7 +18,7 @@ Om du har svårt att förstå varför vi behöver dessa standarder, stanna upp o
 
 Eftersom det finns olika HTML-standarder så finns det alltså olika sätt att uttrycka HTML. Således betyder samma sak olika saker beroende på vilken standard vi använder när vi läser dokumentet.
 
-FÖr att berätta för webbläsaren vilken standard dokumentet bör läsas med behöver vi på den absolut första raden i dokumentet ange en doctype. Vi definerar doctypes med syntaxen `<!DOCTYPE x>`. Där `x` ersätts med den faktiska doctype:en. Nedan följer ett par exempel för hur man deklarerar doctypes.
+För att berätta för webbläsaren vilken standard dokumentet bör läsas med behöver vi på den absolut första raden i dokumentet ange en doctype. Vi definerar doctypes med syntaxen `<!DOCTYPE x>`. Där `x` ersätts med den faktiska doctype:en. Nedan följer ett par exempel för hur man deklarerar doctypes.
 
 För att deklarera att ett dokument följer standarden HTML5 skriver vi helt enkelt följande...
 

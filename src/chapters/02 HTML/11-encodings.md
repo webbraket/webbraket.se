@@ -18,7 +18,7 @@ ASCII-tabellen använde sig av 7 bitar, vilket resulterade i 128 olika tecken (e
 
 Ovan citat understryker faktumet att datorer egentligen är väldigt korkade och bara gör det vi säger åt dem. Utan att berätta för en dokumentläsare på vilket sätt vi sparat ett visst tecken så har den ingen chans att veta vad det är för tecken, hur det ska visas, eller ens vart tecknet slutar.
 
-In kommer [utf-8][2] och räddar dagen! Detta är kort sagt är ett sätt att representera [Unicode][3]-tecken. Och kort sagt möjliggör användning av världens alla tecken. Och som kort sagt blivit den vanligaste teckenkodningen för webbsidor.
+In kommer [utf-8][2] och räddar dagen! Detta är kort sagt ett sätt att representera [Unicode][3]-tecken. Och kort sagt möjliggör användning av världens alla tecken. Och som kort sagt blivit den vanligaste teckenkodningen för webbsidor.
 
 Ett dokuments teckenkodning sätter vi genom att skapa en `<meta>`-tag med attributet `charset` satt till valfritt charset (såsom just utf-8). Eftersom detta tillhör meta-information om dokumentet skall vi placera taggen under `<head>`. Vidare bör vi även specificera vårt `charset` så [tidigt som möjligt][4] i `<head>` eftersom webbläsaren behöver veta vilken teckenkodning vi använt för att ordentligt kunna läsa det dokument den redan läser.
 

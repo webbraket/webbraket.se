@@ -6,7 +6,7 @@ När du använder CSS för att formatera en sida kan du infoga CSS-formateringen
 en extern CSS-mall som kopplas till dokumentet
 2. I dokumentet  
 i dokumentets huvud head-taggen
-3. Direkt i element)  
+3. Direkt i element  
 i elementet där CSS-formateringen ska utföras
 
 ### Extern CSS-mall
@@ -80,7 +80,7 @@ Exempel på ett html-dokument med css definierad direkt i HEAD
 ### Direkt i elementet som ska formateras
 
 Den här metoden är minst effektiv och här uppfylls inte målet med att separera innehåll och
-struktur i dokumenten. CSS-formateringen anges i anslutning till de elementsom ska formateras.
+struktur i dokumenten. CSS-formateringen anges i anslutning till de element som ska formateras.
 När formatet ska användas i ett nytt elememnt måste CSS-koden anges på nytt och det innebär att sidorna
 innehåller mycket kod och tar längre tid att laddas i webbläsaren.
 Så här kan koden se ut när rubriken formateras direkt i elementet:
