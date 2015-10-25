@@ -27,8 +27,8 @@ Under _Microsoft Windows_ så skulle ett exempel på en absolut sökväg t.ex. v
 
 Det lättaste sättet att förstå sökvägar är att reflektera över hur vi själva navigerar igenom filsystemet i våra operativsystem. Tänk på det. När vi letar efter en fil på hårddisken så öppnar vi först någon mapp. Sedan finns det två saker vi kan göra:
 
-1. Öppna en ny mapp i den befintliga mappen,
-2. Gå ett steg uppåt/bakåt, eller nedåt/framåt
+1. Öppna en ny mapp i den befintliga mappen, eller
+2. Gå ett steg uppåt/bakåt.
 
 Det är även dessa tre verktyg vi har att arbeta med när vi specificerar sökvägar. Varje ord motsvarar en mapp eller en fil. Varje slash-tecken (`/`) motsvarar idéen om att klicka sig in i en ny mapp. Där ordet efter slash-tecknet denoterar namnet på mappen. Notationen punkt-punkt (`..`) motsvarar idéen om att gå upp/bakåt en mapp i hierarkin.
 
