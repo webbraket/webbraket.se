@@ -7,12 +7,12 @@ De tekniker som i huvudsak används i samband med AJAX är...
 * `XMLHttpRequest` är ett API för att kunna överföra och ta emot XML mellan server och klienten.
 * `DOM` (Document Object Model) är ett API som tillåter oss att interagera med ett dokument (HTML/XML/XHTML). Det är språk- och plattformsoberoende men vi kommer använda JavaScript-implementationen.
 * `HTML` & `CSS` är ett märkesspråk och stylesheet-språk som vi använder för att först "märka upp" ett dokument och sedan definera hur det ska presenteras.
-* `XML` är ett märkesspråk där dokumentkreatören själv kan välja (i stort sett) vilka element- och attributnamn som helst. Om HTML är mer dokumentfokuserat så är XML mer datafokuserat. Det används ofta för att transportera data. 
+* `XML` är ett märkesspråk där dokumentkreatören själv kan välja (i stort sett) vilka element- och attributnamn som helst. Om HTML är mer dokumentfokuserat så är XML mer datafokuserat. Det används ofta för att transportera data.
 * `Javascript` är det programmeringspråk vi använder för att kunna interagera med DOM:en, alltså den nuvarande webbsidan.
 
 AJAX är som sagt en teknikfamilj. Notera att denna familj inte inkluderar något server-side-språk. Detta betyder att vi självklart kan använda AJAX-tekniker i kombination med i stort sett vilket server-side-språk som helst. `ASP.NET` eller `Ruby` till exempel. Men eftersom vi i denna guide använt oss av `php` så är det just det vi kommer att fokusera på här.
 
-Vi kommer även använda oss av `jQuery` istället för att skriva "ren" `JavaScript`. Detta av den enkla anledningen att det är krångligare att arbeta med AJAX direkt i `JavaScript`. Vi föreslår dock att du för eller senare absolut undersöker provar på att arbeta med AJAX i ren JavaScript. Det är alltid bra att veta vad som händer "under huven". 
+Vi kommer även använda oss av `jQuery` istället för att skriva "ren" `JavaScript`. Detta av den enkla anledningen att det är krångligare att arbeta med AJAX direkt i `JavaScript`. Vi föreslår dock att du för eller senare absolut undersöker provar på att arbeta med AJAX i ren JavaScript. Det är alltid bra att veta vad som händer "under huven".
 
 Så, låt oss då utan om och men sluta jiddra och börja trolla!
 
@@ -22,27 +22,31 @@ Denna metod kan vi använda för att göra ett asynkront `GET request`. Alltså 
 
 Ändra innehåll med utan att ladda om sidan med jQuery.
 
+```javascript
     $('button').click(function(){
       $.get('test.php',function(data, status){
         // the argument 'data' now contains the response
         $('.result').html(data);
       });
     });
+```
 
 Som ni ser har vi på en knapp som vid ett knapptryck gör ett `HTTP GET` request till servern. Innan vi tittar lite närmare på vad som faktiskt kommer att hända. Låt oss först undersöka vad sidan vi skickar ett request till (alltså `test.php`) innehåller.
 
 Sidan som efterfrågas (i.e. `test.php`)
 
+```php
     <?php
       echo "Hello from AJAX!";
     ?>
+```
 
 jQuery-metoden get tar emot två argument. Först en (1) URL som motsvarar den sida vi vill request:a. Vidare en (2) callback-funktion. Alltså en funktion som kommer att anropas när request:et är avslutat och vi får ett response tillbaka.
 
 ### jQuery get() med parametrar
 
 Tänk på hur ett `HTTP GET request` fungerar. Kanske kommer du ihåg att vi alltid kan skicka parametrar. Alltså såsom nedan:
-    
+
     http://example.com?name=Tarzan&breed=manape
 
 Självklart tillåter även jQuery-metoden GET att vi skickar parametrar. För att vi ska slippa konstruera denna url med url-enkodade parametrar själva, så är jQuery-metoden get konstruerad så att vi istället kan skicka ett javascript-objekt med nycklar och värden som motsvarar den data vi vill skicka.
@@ -51,6 +55,7 @@ Parametrarna skickar vi som andra argument. Och eftersom vårt callback ska vara
 
 Att göra ett anrop via jQuery get() med parametrar
 
+```javascript
     $('button').click(function(){
       $.get('test.php',
         {
@@ -62,19 +67,22 @@ Att göra ett anrop via jQuery get() med parametrar
         }
       );
     });
+```
 
 Anta då att vår php-sida (`test.php`) istället ser ut så här:
 
-Sidan som efterfrågas 
+Sidan som efterfrågas
 
+```php
     <?php
       $name  = $_GET["name"]
       $breed = $_GET["breed"]
       echo "$name is a $breed";
     ?>
+```
 
 Om vi har ovan server-side-sida, och kör klientkoden &mdash; så kommer callbacket som avfyras att öppna en `alert`-ruta. I den rutan kommer det att stå:
-    
+
     Tarzan is a manape  
 
 ### jQuery load()
@@ -84,21 +92,27 @@ Denna metod är mycket lik `get()`. Men den är till för att snabbare kunna lö
 Göra ett asynkront request och ersätta innehållet i ett element med det response som kommer tillbaka &mdash; load()
 
 Anta att vi uttrycker följande med hjälp av `load()`...
-    
+
+```javascript
     $('.result').load('test.php', function() {
       alert('Success! The contents of .result are now updated.');
     });
+```
 
 ..då ger det alltså samma effekt som om vi hade uttryckt följande med hjälp av `get()`...
-    
+
+```javascript
     $.get('test.php', function(data, status){
       alert('Success! The contents of .result are now updated.');
       $('.result').html(data);
     });
+```
 
 Vi slipper alltså explicit uppdatera html-elementet genom `html()`. Så om vi skippar callback:et helt så skulle vi t.o.m. kunna kondensera vår kod ner till följande...
-    
+
+```javascript
     $('.result').load('test.php');
+```
 
 ### jQuery post()
 

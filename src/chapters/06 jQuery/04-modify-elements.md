@@ -11,24 +11,32 @@ Metoden `html()` kan ses som jQuery's motsvarighet till JavaScript's `innerHTML`
 jQuery-metoden html()
 
 Om vi har följande html..
-    
+
+```html
     <p>
       <span>En katt</span>
     </p>
     <p>satt i en hatt</p>
+```
 
 Kan vi läsa första paragrafen genom att säga...
-    
+
+```javascript
     $('p').html();         // => "<span>En katt</span>"
+```
 
 Men vi kan även modifiera den genom att säga...
-    
+
+```javascript
     $('p').html('En hund') // => Ändrar ALLA p-elements inre html till "En hund"
+```
 
 Vilket förändrar vår html så att vi nu har...
-    
+
+```html
     <p>En hund</p>
     <p>En hund</p>
+```
 
 Notera alltså att vi "blev av" med `<span>`-elementet. Samt att **båda** `<p>`-elementens inre html rensades.
 
@@ -51,25 +59,29 @@ Metoden `text()` påminner mycket om metoden `html()` förutom att den fantastis
 jQuery-metoden html()
 
 Om vi har följande html..
-    
+
+```html
     <p>
-      En liten men 
+      En liten men
       <span>mästerlig</span>
-      katt, satt en 
+      katt, satt en
       <span>solig dag </span>
       och beundrade en hatt.
     </p>
+```
 
 Och sedan hämtar `<p>`-elementets text så här...
-    
+
+```javascript
     $('p').text();   // Hämtar all text i elementet fritt ifrån alla html-element
+```
 
 Så får vi...
-    
+
     "En liten men mästerlig katt, satt en solig dag och beundrade en hatt."
 
 Vilket ju är fantastiskt, för om vi istället hade använt metoden `html()` eller JavaScript's egna `innerHTML` hade vi istället fått...
-    
+
     "En liten men <span>mästerlig</span> katt, satt en <span>solig dag </span> och beundrade en hatt."
 
 Vilket förstås skulle vara mycket jobbigt att arbeta med om det skulle vara så att vi faktiskt bara vill åt texten, oavsett dess inre elementstruktur.
@@ -85,23 +97,29 @@ När vi pratar om attribut så pratar vi attribut på html-element. Exempel på 
 Att läsa ett elements attribut
 
 Om vi har ett element med ett antal attribut...
-    
+
+```html
     <p class="quote" id="welcome">
       What a wonderful world
     </p>
+```
 
 Så kan vi förstås läsa attributen med JavaScript som så...
-    
+
+```javascript
     document.getElementsByTagName('p')[0].getAttribute('class');
     // => "quote"
-     
+
     document.getElementsByTagName('p')[0].getAttribute('id');
     // => "welcome"
+```
 
 Och förstås med jQuery som så...
-    
+
+```javascript
     $('p').attr('class');  // => "quote"
     $('p').attr('id');     // => "welcome"
+```
 
 #### Egenskaper
 
@@ -110,17 +128,21 @@ Egenskaper å andra sidan, refererar till egenskaper på ett `HTMLElement`-objek
 Att läsa ett elements egenskaper
 
 Anta att vi har ett `<p>`-element på sidan..
-    
+
+```javascript
     var p = document.getElementsByTagName('p')[0];
     var i = document.getElementsByTagName('input')[0];
-     
+
     p.tagName;  // => "P"
     i.tagName;  // => "INPUT"
+```
 
 Således kan vi förstås göra samma sak genom jQuery...
-    
+
+```javascript
     $('p').prop('tagName');       // => "P"
     $('input').prop('tagName');   // => "INPUT"
+```
 
 #### Undantag
 

@@ -12,22 +12,26 @@ Så hur deklarerar vi då en variabel? Låt oss se till ett exempel.
 
 Variabeldeklaration och tilldelning
 
+```javascript
     var name = "Dr. Zaius";
+```
 
 I ovan exempel deklarerar ("skapar") vi alltså en variabel och tilldelar den värdet av texten "Dr. Zaius". Således finns det alltså två saker vi gör här. Vi (1) deklarerar, och vi (2) tilldelar. Låt oss se till ett nytt exempel där vi gör dessa steg för steg.
 
 Deklarering och tilldelning
 
+```javascript
     // Deklaration
     var name;     // name => undefined
     var age;      // age  => undefined
-     
+
      // Tilldelning
     name = "Dr. Zaius";   // name => "Dr. Zaius"
     age = 42;             // age  => 42
-     
+
     // Deklaration och tilldelning samtidigt
     var species = "Orangutang";
+```
 
 Notera alltså att ovan exempel illustrerar att det är fullt möjligt att först deklarera en variabel och sedan tilldela den ett värde, i två steg. Detta kommer sig av den enkla anledningen att tilldelning och deklaration är två olika saker.
 
@@ -90,10 +94,12 @@ Kanske hade det varit lättare att förstå tilldelning om syntaxen (notationen)
 
 Tilldelning i programmering
 
+```javascript
     var a = 1;            // a => 1
     var b = a + 3;        // b => 4
     var c = a + b;        // c => 5
     var d = a + b + c;    // d => 10
+```
 
 Läs ovan, rad för rad, och fundera över varför det resultat som sparas i variabeln blir det som visas i kommentaren till höger.
 

@@ -50,11 +50,13 @@ Relative ignorerar hur användaren scrollar i ett dokument. En tänkt koordinat,
 
 Följande exempel använder sig av nedan css
 
+```css
     #blue {
       position: fixed;
       top:  20px;
       left: 30px;
     }
+```
 
 Den blåa boxen i detta exempel har fixed positionering.
 
@@ -72,6 +74,7 @@ Ovan blir nog enklare att förstå om vi ser till ett par exempel.
 
 Följande exempel använder sig av nedan css
 
+```css
     #red {
       position: absolute;
       top:   0;
@@ -82,6 +85,7 @@ Följande exempel använder sig av nedan css
       bottom: 0px;
       left:   0px;
     }
+```
 
 Exempel på absolut positionering för två `<div>`:ar
 
@@ -99,10 +103,11 @@ Exempel på absolut positionering för en `<div>` i en absolut positionerad `<di
 
 När vi positionerar ett element relativt så är det som om vi kombinerar metoderna statisk och absolut. Vi positionerar ett element relativt till dess statiska position.
 
-Med andra ord, elementet antar först den position den bör få i det statiska flödet, och vi ser nu den platsen som "nollpunkten" (origo). Sedan tas elementet ut ur dokumentflödet och vi placerar det absolut (enligt de koordinater vi angett) i relation till sin statiska placering. 
+Med andra ord, elementet antar först den position den bör få i det statiska flödet, och vi ser nu den platsen som "nollpunkten" (origo). Sedan tas elementet ut ur dokumentflödet och vi placerar det absolut (enligt de koordinater vi angett) i relation till sin statiska placering.
 
 Följande exempel använder sig av nedan css
 
+```css
     #red {
       position: relative;
       top:  0;
@@ -113,6 +118,7 @@ Följande exempel använder sig av nedan css
       top: -10px;
       left: 10px;
     }
+```
 
 Exempel på relativ positionering för två `<div>`:ar
 

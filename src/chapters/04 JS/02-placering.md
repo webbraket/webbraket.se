@@ -8,7 +8,9 @@ Om det enkla skriptet i nästföljande figur körs på en webbsida så tar den h
 
 Exempelskriptet
 
+```javascript
     document.write("Evil rabbits are taking over our servers! Must find carrots!");
+```
 
 Hursomhelst, låt oss nu istället diskutera lite olika platser vi skulle kunna lägga in detta skript på.
 
@@ -18,10 +20,11 @@ Ett ställe vi kan placera vår JavaScript på är rakt upp och ner i `<HEAD>`-t
 
 JavaScript i `<HEAD>`-taggen
 
+```html
     <!DOCTYPE html>
     <html>
       <head>
-        <title>Exempel</title> 
+        <title>Exempel</title>
         <script>
           document.write("Evil rabbits...");
         </script>
@@ -30,6 +33,7 @@ JavaScript i `<HEAD>`-taggen
         <p>Denna text kommer inte att synas eftersom JavaScriptet skriver över den.</p>
       </body>
     </html>
+```
 
 Resultat
 
@@ -38,8 +42,10 @@ Evil rabbits...
 </figure>
 
 För att illustrera att detta är någonting som verkligen skapas av JavaScript, så tar vi och _kommenterar ut_ rad 6 såsom nedan. Att kommentera ut en rad gör att den ignoreras av webbläsaren och således inte exekveras.
-    
+
+```javascript
     // document.write("Evil rabbits...");
+```
 
 ...så får vi istället nedan resultat.
 
@@ -57,15 +63,17 @@ Låt oss se till ett exempel, som använder sig av samma kod.
 
 Anonym funktion vid onClick
 
+```html
     <!DOCTYPE html>
     <html>
       <head>
-        <title>Exempel</title> 
+        <title>Exempel</title>
       </head>
       <body>
         <a onClick="document.write('Evil rabbits...');">Click to destruct!</a>
       </body>
     </html>
+```
 
 Resultat
 
@@ -79,7 +87,9 @@ Den andra viktiga skillnaden vi bör inse är att vi inte längre kör vårt Jav
 
 Anonym funktion vid onClick
 
+```javascript
     <a onClick="alert('Hello...'); alert('...you!');">Click for welcome message!</a>
+```
 
 Resultat
 
@@ -98,20 +108,22 @@ Om du inte har en medveten anledning till varför du inte ska göra det så är 
 Ladda in en extern javascript-fil
 
 index.html
-
+```html
     <!DOCTYPE html>
     <html>
       <head>
-        <title>Exempel</title> 
+        <title>Exempel</title>
         <script src="main.js"></script>
       </head>
       <body>
       </body>
     </html>
-
+```
 main.js
 
+```javascript
     document.write("Oh noes evil rabbits...");
+```
 
 Resultat
 
@@ -136,11 +148,11 @@ Faktum är att det t.o.m. är [tillåtet enligt specifikation][4] att placera `<
 
 Ladda in JavaScript-filer i slutet av `<body>`
 
-```markup
+```html
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Exempel</title> 
+    <title>Exempel</title>
   </head>
   <body>
     <p>Först lägger vi allt vårt content</p>

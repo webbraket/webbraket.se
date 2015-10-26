@@ -8,9 +8,11 @@ För att skriva ut information till användaren genom att använda någon av de 
 
 Skriva till skärmen i php
 
+```php
     <?php
       echo "Hello worldizzle";
     ?>
+```
 
 Resultat
 
@@ -19,11 +21,13 @@ Hello woldizzle
 </figure>
 
 Självklart kan vi ju inte bara ge `echo` strängar. Vi kan ge den vilket uttryck som helst som evaluerar till en sträng, eller implicit kan omvandlas till en sträng. Det senare är sant för nedan uyttryck:
-    
+
+```php
     <?php
       echo 100 + 20 + 33;
       // Skriver ut 153
     ?>
+```
 
 `echo` tar alltså antingen ett literal-värde, ett uttryck eller en variabel.
 
@@ -33,10 +37,12 @@ Eftersom vi använder `php` för att bygga webbsidor så är ju alltså målet a
 
 Blanda `php` och `html`
 
-    Mixing 
+```php
+    Mixing
     <b>
       <?php echo "languages"; ?>
     </b>
+```
 
 Resultat
 
@@ -45,11 +51,13 @@ Mixing <b>languages</b>
 </figure>
 
 Vi kan förstås även vända på steken och låta `php` själv `echo`:a ut `html`. Som så:
-    
-    Mixing 
+
+```php
+    Mixing
     <?php
       echo "<b>languages</b>";
     ?>
+```
 
 Det finns även en kortnotation som motsvarar notationen `<?php .. ?>`. Den notationen saknar ordet "php" och ser helt enkelt ut som så: `<? .. ?>`. Dock [avråder php-manualen ifrån att använda den korta syntaxen][3] då den är beronde av en konfigurationsinställning för att fungera. Närmare bestämt så måste [short\_open\_tag][4] vara påslaget i konfigurationsfilen [php.ini][5].
 
@@ -62,8 +70,10 @@ Men, för att sammanfatta så behöver du alltså komma ihåg att all `php`-kod 
 ### Variabler
 
 Låt oss nu istället prata om variabler. En variabel deklareras i `php` genom att placera ett dollartecken (`$`) före ett ord. Ordet blir då vår identifierare för variabeln.
-    
+
+```php
     $my_variable_name;
+```
 
 Ett par regler gäller när vi namnger våra variabler.
 
@@ -76,16 +86,18 @@ Men nu har vi ju bara deklarerat en variabel. Vi har inte diskuterat hur man til
 
 Deklarering och tilldelning av variabler i `php`
 
+```php
     // Assigning literals
     $age    = 22;
     $name   = "Snow"
-     
+
     // Assigning variables
     $anos   = $age;
     $nombre = $name;
-     
+
     // Assigning an evaluated expression
     $born   = $current_year - $age;
+```
 
 ### Selektion
 
@@ -93,16 +105,19 @@ I `php` kan vi, precis som i de flesta andra språk, förändra ett programs exe
 
 If-else i `php`
 
+```php
     if (3 > 5){
       echo "The world has gone mad!";
     }else{
       echo "Puh.. sanity remains..";
     }
+```
 
 Självklart kan vi ju som vanligt "kedja" hur många `else if`'s vi vill. Såsom nedan:
 
 If-else i `php`
 
+```php
     if (timeOfDay() == "morning"){
       echo "Good morning.";
     }else if(timeOfDay() == "day"){
@@ -112,14 +127,16 @@ If-else i `php`
     }else{
       echo "Good night... sleep well."
     }
-     
+
     // The above assumes we have a function called timeOfDay()
     // that returns the time of day as a nice string :)
+```
 
 Men eftersom `php` även stödjer `switch case`-satser så kan vi likväl använda en sådan om vi skulle vilja lösa ovan problem.
 
 Switch case i `php`
 
+```php
     switch( timeOfDay() ){
       "morning":
         echo "Good morning.";
@@ -133,13 +150,14 @@ Switch case i `php`
       default:
         echo "Good night... sleep well."
     }
+```
 
 När vi använder `if-else` konstruktionen så behöver vi ju förstås göra jämförelser. En `if`-sats förväntar sig ett boolskt värde. Och eftersom alla värden kan ersättas med uttryck så kan vi ju (precis som i nästan alla programmeringsspråk) ge ett uttryck istället för ett värde. Detta uttryck skulle kunna vara en jämförelse emellan två ting. Och om vi ska göra jämförelser så behöver vi förstås som vanligt jämförelseoperatorer. Även i `php` hittar vi då de vanligaste jämförelseoperatorer.
 
 | Operator        | Namn                 | Förklaring
 |-----------------|----------------------|-----------
 |`==`             |Equality              | Sant om $A och $B är exakt ekvivalenta.
-|`===`            |Identical             | Sant om $A och $B är exakt ekvivalenta, och de är av samma datatyp. 
+|`===`            |Identical             | Sant om $A och $B är exakt ekvivalenta, och de är av samma datatyp.
 |`!=`             |Not                   | Sant om $A och $B inte är lika.
 |`<>`             |                      | Som ovan.
 |`!==`            |Not identical         | Sant om $A och $B inte är lika, eller om de inte är av samma datatyp.
@@ -154,41 +172,47 @@ Ok, låt oss nu prata om iteration. Vi börjar med att kika på den gamla gode `
 
 `while`-loop i `php`
 
+```php
     $x = 0;
     $y = 10;
-     
+
     while($x < $y){
       echo $x . ", ";
       $x++;
     }
+```
 
 Result
 
 <figure>
-0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 </figure>
 
 Men om det hade varit det ovanstående problemet vi ville lösa så hade vi förstås lika väl kunnat använda en gammal hederlig `for`-loop.
 
 `for`-loop i `php`
 
+```php
     for($i=0; $i
+```
 
 Result
 
 <figure>
-0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
 </figure>
 
 Och när vi ändå talar om `for`-loopen, så har ju även `php` en implementation av den välanvända `foreach`-loopen. Anta att vi har en kollektion av något slag, och att vi sedan vill iterera över hela kollektionen. Låt oss kika på ett exempel där kollektionen består av en array.
 
 `foreach`-loop i `php`
 
+```php
     $apples = ["red", "green", "blue"];
-     
+
     foreach($apples as $a){
       echo $a . "<br>";
     }
+```
 
 Result
 
@@ -206,19 +230,21 @@ Funktioner i `php` beter sig väldigt mycket som funktioner i de flesta andra st
 
 Funktioner i `php`
 
+```php
     function add($x, $y){
       return $x + $y;
     }
-     
+
     function show_points($person, $points){
       echo $person . " has " . $points . " points<br>";
     }
-     
+
     $john = add(2, 5);
     $jane = add(10, 3);
-     
+
     show_points("John", $john);
     show_points("Jane", $jane);
+```
 
 Result
 
@@ -238,30 +264,34 @@ En intressant idé som finns implementerad i många språk är idéen om default
 Valfria funktionsargument i `php`
 
 Om vi deklarerar en funktion med valfria argument...
-    
+
+```php
     function get_ticket($name, $pickup=false, $discount=0){
       $price = 100 - $discount;
-        
+
       if($pickup){
         $price += 25;
         $pickup_message = "Pickup included.";
       }else{
         $pickup_message = "No pickup.";
       }
-        
+
       return $name . ": " . $price. " kr. " . $pickup_message;
     }
+```
 
 ...Så kan vi sedan anropa den utan att ange värden för de valfria argumenten. Och de fördefinerade värdena för de avsaknade argumenten kommer istället att användas.
-    
+
+```php
     get_ticket("John", true);
     //=> "John: 125kr. Pickup included."
-     
+
     get_ticket("Jane", false, 100);
     //=> "Jane: 0kr. No pickup."
-     
+
     get_ticket("Carl");
     //=> "Carl: 125kr. No pickup."
+```
 
 Något att tänka på är att vi i ovan exempel inte kan ange ett värde för det sista argumentet utan att ange ett värde för det andra. Med andra ord: om vi vill ange ett värde för ett valfri argument, så måste vi ange värden för alla argument före. Med andra ord gäller det att välja sin argumentordning noga.
 

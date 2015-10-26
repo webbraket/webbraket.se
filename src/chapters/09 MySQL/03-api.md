@@ -28,11 +28,15 @@ Så, låt oss se till ett faktiskt exempel. Viktigt att notera är alltså att v
 
 OOP syntax.
 
+```php
     $mysqli = new mysqli('host', 'user', 'password', 'database');
+```
 
 Procedurell syntax.
 
+```php
     $mysqli = mysqli_connect('host', 'user', 'password', 'database');
+```
 
 Låt oss även snabbt se till hur vi skulle kunna hantera eventuella fel som kan uppstå när vi försöker koppla upp oss till databasen. Om vi t.ex. råkat ange fel lösenord, eller inte har läsrättigheter till den databas vi försöker koppla till med den användaren vi angett, eller om datbasen helt enkelt inte existerar (o.s.v.).
 
@@ -40,20 +44,22 @@ Felhantering vid öppning av koppling till mysql-databas.
 
 OOP syntax.
 
+```php
     $error = $mysqli->connect_error;
     if ($error) {
       $code  = $mysqli->connect_errno;
       die("Error: ($code) $error");
     }
+```
 
 Procedurell syntax.
-
+```php
     $error = mysqli_connect_error();
     if ($error) {
       $code  = mysqli_connect_errno();
       die("Error: ($code) $error");
     }
-
+```
 Notera i ovan exempel att vi alltid har tillgång till både själva felmeddelandet som sträng ([conect\_error][8]), men även dess felkod ([connect\_errno][9]).
 
 Notera också att den jämförelse vi gör för att upptäcka om ett fel har inträffat eller inte sker genom att vi helt enkelt slänger in den sträng som potentiellt innehåller ett felmeddelande. Om vi läser [dokumentationen för metoden][8] så ser vi att den returnerar `null` om inget fel har inträffat och en sträng innehållandes ett felmeddelande om ett fel har inträffat. Detta är en av styrkorna med dynamiska språk. Vi kan returnera helt olika saker utan att i förväg bestämma oss. Men det finns en anledning till att detta fungerar &mdash; nämligen att jämförelsen `(null == true)` evaluerar till `false` i `php`. En sträng däremot, evaluerar till `true` så länge den inte är tom eller endast innehåller en nolla (`0`). Vi behöver alltså inte ens uttrycka vårt boolska uttryck som `($error != null)`. Återigen, eftersom `null` i sig evaluerar till `false`. Och eftersom om vi har fått ett fel så kommer vi ha fått en sträng, och alla strängar utom tom sträng och noll evaluerar till `true`. Du kan [läsa mer om vilka värden som ger `true` och vilka som ger `false` här][10].
@@ -65,21 +71,21 @@ När vi väl har en koppling uppe kan vi använda vår variabel som innehåller 
 Köra queries emot en existerande databaskoppling.
 
 OOP syntax.
-
+```php
     $result = $mysqli->query("SELECT *  FROM posts");
 
     if ($result) {
       echo "Number of rows: " . $result->num_rows;
     }
-
+```
 Procedurell syntax.
-
+```php
     $result = $mysqli->query("SELECT * FROM posts")
 
     if ($result) {
       echo "Number of rows: " . mysqli_num_rows($result);
     }
-
+```
 Det mest intressanta med denna `php`-metod är att den returnerar olika typer av saker beroende på vad vi kör för query. [Detta denoteras genom returtypen `mixed` i dokumentationen][11]. Om vi t.ex. skulle köra en `INSERT INTO` får vi en bool tillbaka som innehåller `true` om query:n lyckades och `false` om den ej gjorde det. Faktum är att vi i alla fall får tillbaka en bool som säger `false` om en query misslyckas p.g.a. t.ex. fel syntax eller en icke-existerande kolumn.
 
 Om vi däremot t.ex. skulle köra query:n `SELECT * FROM users`. Så får vi tillbaka ett objekt av typen `mysqli_result`. Så länge vår query är en valid query får vi den typen av resultat tillbaka. Även om det skulle vara så att den inte hittade några rader alls. I ovan kodexempel är det just den typen av ett objekt vi får tillbaka, och det är således därför vi kan fråga objektet om dess antal rader.
@@ -91,7 +97,7 @@ Om du skrivit och exekverat en query som returnerar ett `mysqli_result` så kan 
 Iterera över data ifrån ett resultat-set och hämta varje rad som en numrerad array.
 
 OOP syntax.
-
+```php
     // Iterates over each row (into $row) as a numeric array
     while($row = $result->fetch_row()){
       var_dump($row);
@@ -101,9 +107,9 @@ OOP syntax.
     while($row = $result->fetch_assoc()){
       var_dump($row);
     }
-
+```
 Procedurell syntax.
-
+```php
     // Iterates over each row (into $row) as a numeric array
     while($row = mysqli_fetch_row($result)){
       var_dump($row);
@@ -113,7 +119,7 @@ Procedurell syntax.
     while($row = mysqli_fetch_assoc($result)){
       var_dump($row);
     }
-
+```
 I de fall där vi hämtar varje rad som en associativ array så innebär det att varje rads nycklar motsvarar namnet på databasens kolumner. I de numeriska fallen så når vi helt enkelt argumenten i samma ordning som de är definierade i datbasen.
 
 Men som sagt, vi kan ju, som tidigare nämnt, även hämta alla rader på en gång och slänga in de i en array. Vilket ju kan vara smidigt om vi inte vill iterera över resultatet än. Detta kan vi göra genom att använda oss av [$result-fetch\_all()][14]. Denna metod tar även ytterligare en valfri parameter. Denna parameter ska vara en konstant som berättar om vi vill ha resultatet som en numrerad array (`MYSQLI_NUM`), eller en associativ array (`MYSQLI_ASSOC`). Om inget värde anges så är "default" numerisk. Låt oss kika på några exempel.
@@ -121,21 +127,21 @@ Men som sagt, vi kan ju, som tidigare nämnt, även hämta alla rader på en gå
 Hämta data ifrån ett resultat-set som array direkt.
 
 OOP syntax.
-
+```php
     // As numbered array
     $arr = $result->fetch_all();
 
     // Or as an associative array
     $arr = $result->fetch_all(MYSQLI_ASSOC);
-
+```
 Procedurell syntax.
-
+```php
     // As numbered array
     $arr = mysqli_fetch_all($result);
 
     // Or as an associative array
     $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
+```
 
 
 [0]: http://en.wikipedia.org/wiki/Application_programming_interface

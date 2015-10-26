@@ -9,7 +9,7 @@ All felsökning som inte är strategisk är idiotisk. Inga undantag. Om du någo
 Så, vad innebär det att strategiskt felsöka? Det finns förstås många olika sätt att se på det. Men vi föreslår följande övervy.
 
 1. Identifiera
-2. Isolera 
+2. Isolera
 3. Åtgärda
 
 Du kanske tycker att detta låter som självklarheter. Men vi lovar dig. Det är inte självklart inte självklarheter. Vi har jobbat med tillräckligt mycket pedagogisk verksamhet för att lova dig att människor gång på gång efter gång på gång kan sitta i timmar och banka på samma TV-apparat och ändå inte acceptera att de behöver angripa problemet ifrån en mer strategisk vinkel.
@@ -34,7 +34,7 @@ När vi väl har identifierat ett problem så behöver vi förstås lösa det. D
 
 Att isolera felet handlar inte om att lösa problemet. Att isolera felet handlar om att hitta det. Innan vi kan lösa någonting så behöver vi hitta vad som orsakar felet. Vi behöver inte alltid förstå varför det händer. Men vi behöver absolut hitta var det händer.
 
-Vi ska nu prata om några olika högnivåstrategier vi kan använda för att isolera fel. 
+Vi ska nu prata om några olika högnivåstrategier vi kan använda för att isolera fel.
 
 #### Börja i den dummaste änden
 
@@ -46,11 +46,11 @@ Börja alltid med att snabbt gå igenom alla självklara grejer som skulle kunna
 
 Ett bra sätt att testa huruvida någon av dessa grundläggande antaganden är orsaken till felet är att göra en snabb "sanity check" för varje antagande. Tänk så här &mdash; "om servern fungerar så borde jag kunna göra X". Eller &mdash; "om databasen är påslagen så borde jag kunna göra Y". Välj scenarion som är så triviala som möjligt och kräver så lite arbete ifrån dig som möjligt. Om jag t.ex. skulle vilja avgöra ifall den fil jag arbetar med faktiskt processas av `php` så skulle jag klippa ut allt i filen jag arbetar med och sedan skriva `echo "hello";`. Om jag inte får meddelandet "hello" när jag sedan kör filen så vet jag med säkerhet att det är det som är felet (eller en del av). Om jag faktiskt fick "hello" så kan jag utesluta att det var det som var felet. Istället fortsätter jag till nästa triviala antagande.
 
-Kom ihåg att alltid verifiera att en applikations "boundries" är fungerande. Vi skriver sällan mjukvara i isolation. Verifiera att vi gör korrekta antaganden om tredjepartsbibliotek. 
+Kom ihåg att alltid verifiera att en applikations "boundries" är fungerande. Vi skriver sällan mjukvara i isolation. Verifiera att vi gör korrekta antaganden om tredjepartsbibliotek.
 
-#### Följ exekvering 
+#### Följ exekvering
 
-Det säkraste sättet att hitta felet är oftast att följa exekvering. Ifrån absolut början till absolut slut. Utan undantag. Tyvärr blir den ofta också ofta den mest kostsamma eftersom vi måste gå igenom så ruskigt mycket kod. Självklart är det dock mycket bättre än att banka på måfå. Det är mycket mer troligt att vi faktiskt kommer att hitta felet med denna metod. 
+Det säkraste sättet att hitta felet är oftast att följa exekvering. Ifrån absolut början till absolut slut. Utan undantag. Tyvärr blir den ofta också ofta den mest kostsamma eftersom vi måste gå igenom så ruskigt mycket kod. Självklart är det dock mycket bättre än att banka på måfå. Det är mycket mer troligt att vi faktiskt kommer att hitta felet med denna metod.
 
 Börja i applikations "entry-point". Den första filen, den första metoden, den första raden. Läs koden och följ flödet. När du anropar en metod. Läs varje rad i den metoden. Följ flödet precis såsom det kommer att göras när koden exekveras. I varje steg där det finns en potentiell risk att du gjort ett inkorrekt antagande av något slag behöver du verifiera att du gjort rätt antagande. Inspektera variabelvärden och returnerade värden om funktioner i alla relevanta steg. Med IDE:en som Visual Studio blir vi förstås bortskämda och har möjligheten att genom debugging hela tiden undersöka variablers värden. När vi kodar i språk som t.ex. `php` har vi oftast inte den lyxen. Vi kan då undersöka "state" genom att output:a variablers värden. Det viktiga är helt enkelt att säkerställa att vi går in i varje metod med de värden vi antagit, och att vi lämnar varje metod med de värden vi antagit.
 
@@ -81,12 +81,16 @@ Vi skulle vilja ge ett par konkreta felsökningstips för dig som arbetar i `php
 Det första är att se till att du har konfigurerat din `php`-installation så att felmeddelande faktiskt visas. Med andra ord behöver du sätta [display\_errors till On][1] i filen [php.ini][2]. I samma fil behöver du i samma veva även se till att inte bara kritiska fel, utan alla fel, rapporteras. Detta genom att [sätta error\_reporting till E\_ALL][3]. Notera att detta förslag inte alls är en bra idé för en "produktionskonfiguration". Med andra ord. När du väl ska konfigurera `php` på en maskin som ska servera webbsidor publikt på internet, så är dessa direktiv direkt farliga. Alla felmeddelanden bör absolut inte visas för obehöriga användare. Det är en annan historia men vi vill att du ska vara medveten om att det förstås är jättesvårt att isolera fel om vår utvecklingsmiljö inte rapporterar fel.
 
 Det andra tipset vi har är en liten men ofantligt trevlig metod som heter `var_dump`. Denna metod används som så: `var_dump(expression)`. Denna metod printar precis som `echo` ut strängrepresentationen av en variabel till skärmen. Men utöver det så printar den också en massa annan matnyttig information. Om vi t.ex. har en array som innehåller de två elementen "apples" och "pears". Så skulle vi få följande resultat av `var_dump`
-    
-    array(2) { [0]=> string(6) "apples" [1]=> string(5) "pears" } 
+
+```php
+    array(2) { [0]=> string(6) "apples" [1]=> string(5) "pears" }
+```
 
 Medan vi endast skulle få följande om vi använde `echo`.
-    
+
+```php
     Array
+```
 
 Med andra ord kan vi snabbt vad en array innehåller och t.o.m. om den är tom. Men den verkliga styrkan kommer i att vi lätt kan upptäcka om en variabel innehåller `null`. Om vi t.ex. använder `echo` med en variabel som råkar innehålla `null` &mdash; så printas helt enkelt ingenting till skärmen. Om vi däremot gör samma sak med `var_dump` så printas istället texten `NULL`. Mycket, mycket användbart.
 

@@ -1,8 +1,10 @@
 ## Sökvägar & Hyperlänkar
 
 Det, för HTML, kanske mest representativa elementet måste ju vara länken. En klickbar yta på skärmen som navigerar oss ifrån en webbsida till en annan. Den tagg vi använder för att denotera en länk är `<a>`. Ett komplett exempel på användandet av en länk skulle kunna se ut som följande.
-    
+
+```html
     <a href="http://www.example.com">Klicka på mig</a>
+```
 
 Vilket skulle rendera följande resultat:
 
@@ -10,7 +12,7 @@ Vilket skulle rendera följande resultat:
 [Klicka på mig][0]
 </figure>
 
-Notera alltså användandet av attributet `href` i ovan exempel. Attributets namn är en förkortning av "hyper reference". Det kan vara bra att fundera över vad de olika förkortningarna du kommer i kontakt med faktiskt éxpanderar till. Då blir det lättare att komma ihåg/på vad attributen faktiskt gör.
+Notera alltså användandet av attributet `href` i ovan exempel. Attributets namn är en förkortning av "hyper reference". Det kan vara bra att fundera över vad de olika förkortningarna du kommer i kontakt med faktiskt expanderar till. Då blir det lättare att komma ihåg/på vad attributen faktiskt gör.
 
 ### Sökvägar
 
@@ -25,19 +27,19 @@ Under _Microsoft Windows_ så skulle ett exempel på en absolut sökväg t.ex. v
 
 Det lättaste sättet att förstå sökvägar är att reflektera över hur vi själva navigerar igenom filsystemet i våra operativsystem. Tänk på det. När vi letar efter en fil på hårddisken så öppnar vi först någon mapp. Sedan finns det två saker vi kan göra:
 
-1. Öppna en ny mapp i den befintliga mappen,
-2. Gå ett steg uppåt/bakåt, eller
+1. Öppna en ny mapp i den befintliga mappen, eller
+2. Gå ett steg uppåt/bakåt.
 
 Det är även dessa tre verktyg vi har att arbeta med när vi specificerar sökvägar. Varje ord motsvarar en mapp eller en fil. Varje slash-tecken (`/`) motsvarar idéen om att klicka sig in i en ny mapp. Där ordet efter slash-tecknet denoterar namnet på mappen. Notationen punkt-punkt (`..`) motsvarar idéen om att gå upp/bakåt en mapp i hierarkin.
 
-Vi pratade tidigare lite om absoluta och relative sökvägar i relation till _Microsoft Windows_. Låt oss även prata om absoluta och relativa sökvägar i [\*nix-baserade system][1]. I nästan alla operativsystem fungerar idéen om sökvägar på samma sätt. Punkt refererar relativt till den nuvarande mappen. Punkt-punkt till en mapp uppåt. Ett ord till en fil eller mapp i nuvarande mapp. Och slash används för att koppla ihop dessa. Varje slash denoterar alltså i någon bemärkelse "nästa steg".Slash-tecknet denoterar "nästa steg" i en sökväg.
+Vi pratade tidigare lite om absoluta och relativa sökvägar i relation till _Microsoft Windows_. Låt oss även prata om absoluta och relativa sökvägar i [\*nix-baserade system][1]. I nästan alla operativsystem fungerar idéen om sökvägar på samma sätt. Punkt refererar relativt till den nuvarande mappen. Punkt-punkt till en mapp uppåt. Ett ord till en fil eller mapp i nuvarande mapp. Och slash används för att koppla ihop dessa. Varje slash denoterar alltså i någon bemärkelse "nästa steg". Slash-tecknet denoterar "nästa steg" i en sökväg.
 
 I t.ex. _Mac OS_ och _Linux_ så fungerar alltså sökvägar på samma sätt som ovan nämnt, med en skillnad. För att specificera absoluta sökvägar i \*nix-baserade system så anger vi inte namnet på en enhet (ex: `C:`) såsom i Windows. Isället börjar vi helt enkelt med tecknet slash (`/`). Följande är alltså en absolut sökväg:
-    
+
     /Users/jon-snow/pictures/me.jpg
 
 Om vi i ett \*nix-baserat system vill nå en annan enhet, på samma sätt som vi i Windows kan nå ex. D: så fungerar det ofta som så:
-    
+
     /Volumes/MyOtherDisk
 
 För att sammanfatta absoluta och relativa sökvägar så vill vi understryka att det egentligen alltså är mycket enkelt. En relativ sökväg utgår ifrån den mapp där den som använder sökvägen befinner sig. En absolut sökväg utgår ifrån "roten" av den nuvarande enheten.
@@ -62,7 +64,7 @@ Nu när vi vet vad ett protokoll är &mdash; vad är då en URL (Uniform Resourc
 
 > En URL är en webbadress till en resurs på internet.
 
-När vi skriver in en webbadress i vår webbläsare så skriver vi alltså in en URL. Som tidigare nämnt så hjälper de flesta moderna webbläsare oss att skriva korrekta URL:er. En URL måste nämligen bl.a. innehålla ett protokoll. Var sig det är HTTP, HTTPS, FTP, SFTP o.s.v.
+När vi skriver in en webbadress i vår webbläsare så skriver vi alltså in en URL. Som tidigare nämnt så hjälper de flesta moderna webbläsare oss att skriva korrekta URL:er. En URL måste nämligen bl.a. innehålla ett protokoll. Vare sig det är HTTP, HTTPS, FTP, SFTP o.s.v.
 
 ### Webbadresser i HTML
 
@@ -87,17 +89,21 @@ Ovan gäller alltså om vi antar att användaren befinner sig på sidan `http://
 
 > Om vi inte anger ett protokoll kommer webbläsaren att tolka vår URL som intern! Även om vi börjar URL:en med www.
 
-Notera alltså att om vi inte anger ett protokoll så kommer webbläsaren att tolka våra URL:er som interna till vår domän. Ett vanligt misstag är således att glömma att ange protokollet när vi försöker ange en extern adress. Anta att vibefinner oss på `http://example.com` och skriver följande:
-    
+Notera alltså att om vi inte anger ett protokoll så kommer webbläsaren att tolka våra URL:er som interna till vår domän. Ett vanligt misstag är således att glömma att ange protokollet när vi försöker ange en extern adress. Anta att vi befinner oss på `http://example.com` och skriver följande:
+
+```html
     <a href="www.google.com">Klicka här</a>
+```
 
 Vi antar att länken ska ta användaren till google.com. Fallet är dock inte så. Eftersom vi inte angett protokoll tolkar webbläsaren adressen som intern. Webbläsaren översätter således adressen till följande:
-    
+
     http://example.com/www.google.com
 
 Inte riktigt vad vi menade förstås. Det korrekta sättet att skapa ovan URL är alltså genom att även ange protokollet.
-    
+
+```html
     <a href="http://www.google.com">Klicka här</a>
+```
 
 ### Ankare
 
@@ -106,28 +112,34 @@ En typ av länkar vi ännu inte pratat om är ankare. Ankare är ett sätt att l
 > Ett ankare kan appliceras i slutet av vilken URL som helst.
 
 Ett ankare börjar med fyrkants-tecknet (hashtag) (`#`) och sedan vilken sträng som helst.
-    
+
+```html
     #my_anchor
+```
 
 Vi applicerar alltså ett ankare i slutet av en vanlig URL.
-    
-    http://example.com/index.html#my_anchor 
+
+    http://example.com/index.html#my_anchor
 
 Vi kan alltså använda oss av ankare för att ge användaren en möjlighet att navigera inom samma sida. När vi klickar på en länk med ett ankare så kommer alltså webbläsaren inte bara att ladda den sida vi angett &mdash; utan även scrolla ned till ankarets målposition. Vi kan med andra ord se ankare som en form av "bokmärken" för långa sidor.
 
-Ankaren har även fler, mer avancerade tillämpningsområdet men det kommer vi in på mycket senare. 
+Ankaren har även fler, mer avancerade tillämpningsområdet men det kommer vi in på mycket senare.
 
 Eftersom ankare är en del av URL:er så är det så att vi inte bara kan använda ankare när vi vill ge användaren en möjlighet att navigera inom samma sida. Vi kan även använda oss av dem när vi vill skicka användaren till ett visst ankare på en annan sida.
 
 Låt oss exemplifiera för att göra det tydligare. Ponera att vi har en HTML-sida med följande länk i sig.
-    
+
+```html
     <a href="#images">Bildgalleriet</a>
+```
 
 Ovan länk kommer alltså inte att byta sida. Ovan länk är en relativ URL som i browsern kommer att översättas till samma URL som vi är vid, fast med ankaret "\#images" pålagt i slutet.
 
 Ponera om vi istället hade skapat en länk som pekade på en full URL med ett ankare i slutet, såsom nedan...
-    
+
+```html
     <a href="http://example.com/index.html#images">Bildgalleriet</a>
+```
 
 Om vi hade specificerat en URL såsom ovan, hade vi skickat användaren till index.html under domänen example.com. Oavsett vilken sida vi råkade vara på vid tillfället. Det viktiga att förstå är dock att ankaret kommer att fungera i vilket fall. När webbläsaren har nått den sida vi skickat användaren till så kommer den automatiskt att scrolla ned till den plats där ankaret är specificerat.
 
@@ -138,12 +150,14 @@ Egentligen är det ganska enkelt. En länk till ett ankare specificeras där vi 
 > Ankare pekar på egenskapen `id` i element.
 
 Låt oss se till ett exempel.
-    
+
+```html
     <!-- Om vi har någonting med ett ID -->
     <h1 id="images">Bildgalleriet</h1>
-     
+
     <!-- Så kan vi sedan länka till det som ett ankare -->
     <a href="#images">Gå till bildgalleriet</a>
+```
 
 Med andra ord så kan vi skapa "bokmärken" på våra sidor genom att ge olika element ID:n. När vi sedan vill att en användare snabbt ska kunna navigera till en viss del av sidan (ett "bokmärke") så skapar vi en länk som pekar på just det ID:t, som ett ankare.
 
