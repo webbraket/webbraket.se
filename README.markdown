@@ -208,9 +208,10 @@ Varje vecka kör vi ett video-call. För att stärka känslan av gemenskap, men 
 Dessa möten sker på en regelbunden basis, men listas även i vår gemensamma kalender.
 
 Varje möte börjar som en SCRUM-inspirerad standup. D.v.s. vi tar ett "varv" där alla svarar på de tre frågorna:
+
 1. Vad har jag gjort sen senast?
-1. Vad ska jag göra framöver?
-1. Vad har jag stött på för problem?
+2. Vad ska jag göra framöver?
+3. Vad har jag stött på för problem?
 
 Efter att alla fått svara på de tre frågorna övergår vi till att diskutera övriga agendapunkter som ofta är av en mer strategisk och/eller planerande karaktär.
 
