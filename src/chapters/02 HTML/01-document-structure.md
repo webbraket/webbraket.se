@@ -371,7 +371,7 @@ Ett exempel på innehåll i BODY
 [5]: http://en.wikipedia.org/wiki/Web_development_tools
 [6]: http://sv.wikipedia.org/wiki/Indentering
 [7]: http://en.wikipedia.org/wiki/Python_(programming_language)
-[8]: #stylesheets
+[8]: #css
 [9]: #javascript
 [10]: http://www.joelonsoftware.com/articles/Unicode.html
 [11]: http://www.w3schools.com/tags/tag_meta.asp
