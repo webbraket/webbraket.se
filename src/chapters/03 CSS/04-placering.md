@@ -2,11 +2,11 @@
 
 När du använder CSS för att formatera en sida kan du infoga CSS-formateringen på tre sätt:
 
-1. Extern CSS-mall  
+1. Extern CSS-mall
 en extern CSS-mall som kopplas till dokumentet
-2. I dokumentet  
+2. I dokumentet
 i dokumentets huvud head-taggen
-3. Direkt i element  
+3. Direkt i element
 i elementet där CSS-formateringen ska utföras
 
 ### Extern CSS-mall

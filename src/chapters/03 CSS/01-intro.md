@@ -18,7 +18,7 @@ En målsättning och effekt av att presentation separeras ifrån innehåll -- ä
 
 För att göra det mer uppenbart, låt oss fundera över hur situationen såg ut tidigare. Om vi beblandar presentation (css) med vårt innehåll (html) så kommer det vara svårt för en maskin att avgöra vad som hör till presentationen och vad som hör till innehållet. Tänk t.ex. på radbrytningar. Används en radbrytning för att understryka att två paragrafer är skilda ifrån varandra, eller används den för att skapa ett bekvämt visuellt avstånd? Båda fallen kan vara sanna. Detta är svårt för en maskin att avgöra.
 
-I praktiken har detta t.ex. varit ett problem för syn- och hörselskadade. Tänk på [screen readers][0] t.ex. som genom text-to-speech försöker läsa upp en sidas innehåll för en användare. Hur skulle det vara om den började läsa saker som "blå bakgrund". 
+I praktiken har detta t.ex. varit ett problem för syn- och hörselskadade. Tänk på [screen readers][0] t.ex. som genom text-to-speech försöker läsa upp en sidas innehåll för en användare. Hur skulle det vara om den började läsa saker som "blå bakgrund".
 
 Ett av målen för W3C (standardsorganisationen för bl.a. css) är att underlätta för konumptionen av webbaserat innehåll på plattformar än just en dator. Det kan handla om allt ifrån Smartphones till enheter för talsyntes och punktskrift (Braille). Genom att separera innehåll ifrån presentation är det alltså markant lättare, eftersom maskinen inte behöver bry sig om att filtrera ut presentationen ifrån innehållet.
 

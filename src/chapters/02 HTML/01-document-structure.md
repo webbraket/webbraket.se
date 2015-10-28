@@ -89,12 +89,12 @@ Anta t.ex. att vi vill lägga in ett antal radbrytningar i en paragraf. Anta att
 
 ```html
 <p>
-  Oavsett  
-  hur många       mellanslag, eller  
+  Oavsett
+  hur många   mellanslag, eller
 
-  radbrytningar   vi lägger in,  
+  radbrytningar   vi lägger in,
   så har det ingen effekt.
-</p>  
+</p>
 ```
 
 Trots alla radbrytningar och mellanslag blir ändå resultatet följande...

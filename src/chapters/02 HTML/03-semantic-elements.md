@@ -34,7 +34,7 @@ Men vad är det screen readern behöver veta? Rimligen behöver den t.ex. veta v
 
 Detta är alltså varför det är viktigt att vi har element såsom t.ex. `<em>` som gör att vi kan denotera emfas. Eller `<nav>` för att kunna denotera meny-navigation. Detta är förstås inte ens en bråkdel av alla element med semantisk signifikans som existerar i HTML. Men vi återkommer till dessa strax.
 
-### Bortom accessibility 
+### Bortom accessibility
 
 Låt oss bara understryka att den som tror att idéen om att separera content ifrån presentation endast är en tillgänglighetsfråga (accessibility) &mdash; är naiv. Vi diskuterar den blinde användaren för att ha ett exempel att utgå ifrån men både problemet och fördelarna gömmer sig mycket djupare än så. Vi är på väg mot en webb där [information är fri ifrån presentation][3]. Där en multitud av maskiner kan läsa informationen på olika sätt. Allt ifrån TV-apparater till [glasögon][4].
 

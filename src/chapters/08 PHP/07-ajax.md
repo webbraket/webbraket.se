@@ -83,7 +83,7 @@ Sidan som efterfrågas
 
 Om vi har ovan server-side-sida, och kör klientkoden &mdash; så kommer callbacket som avfyras att öppna en `alert`-ruta. I den rutan kommer det att stå:
 
-Tarzan is a manape  
+Tarzan is a manape
 
 ### jQuery load()
 

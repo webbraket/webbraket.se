@@ -217,8 +217,8 @@ foreach($apples as $a){
 Result
 
 <figure>
-red  
-green  
+red
+green
 blue
 </figure>
 
@@ -249,7 +249,7 @@ show_points("Jane", $jane);
 Result
 
 <figure>
-John has 7 points  
+John has 7 points
 Jane has 13 points
 </figure>
 

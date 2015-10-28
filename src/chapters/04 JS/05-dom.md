@@ -63,7 +63,7 @@ HTML
 JavaScript
 
 ```javascript
- var as = menu.getElementsByTagName('p');  
+ var as = menu.getElementsByTagName('p');
  as[0].innerHTML = "Ett";
  as[1].innerHTML = "Två";
  as[3].innerHTML = as[1].innerHTML;
