@@ -9,8 +9,8 @@ Låt oss börja genom att diskutera de två kanske vanligaste elementen. Paragra
 Ett exempel på användande av paragrafer följer nedan.
 
 ```html
-    <p>En paragraf denoterar alltså ett stycke text.</p>
-    <p>Varje ny paragraf börjar, om inte annat anges, på en ny rad.</p>
+<p>En paragraf denoterar alltså ett stycke text.</p>
+<p>Varje ny paragraf börjar, om inte annat anges, på en ny rad.</p>
 ```
 
 Resultat
@@ -24,10 +24,10 @@ Varje ny paragraf börjar, om inte annat anges, på en ny rad.
 De flesta dokument består ju inte bara av paragrafer utan även av rubriker. Vi skapar rubriker i HTML genom att använda oss av `<hX>`, där X ersätts med en siffra ifrån `1-6`. Alltså:
 
 ```html
-    <h1>En rubrik</h1>
-    <p>Följd av en paragraf.</p>
-    <h2>En underrubrik</h2>
-    <p>Ytterligare en paragraf.</p>
+<h1>En rubrik</h1>
+<p>Följd av en paragraf.</p>
+<h2>En underrubrik</h2>
+<p>Ytterligare en paragraf.</p>
 ```
 
 Och så kan vi fortsätta hela vägen ned till `h6`. Rubriken `h1` är alltså den viktigaste rubriken (den högsta nivån av rubriker) och `h6` den minst viktiga. Resten följer förstås i inbördes ordning däremellan.
@@ -39,9 +39,9 @@ Om vi skulle exemplifera användandet av rubriker på den här sidan, löper vi 
 Låt oss nu diskutera de vanligaste textformatteringselementen. Fetstil och kursivitet. För att uppnå fetstilt text, kan vi välja att använda någon av elementen `<b>` (bold) eller `<strong>`.
 
 ```html
-    All text <b>inom ett b-element</b>
-    eller ett <strong>strong-element</strong>
-    renderas i fetstil.
+All text <b>inom ett b-element</b>
+eller ett <strong>strong-element</strong>
+renderas i fetstil.
 ```
 
 Resultat
@@ -53,9 +53,9 @@ All text **inom ett b-element** eller ett **strong-element** renderas i fetstil.
 Om vi istället skulle vilja ha kursiv text, även kallad _italics_, så kan vi välja att använda något utav elementen `<i>` (italics) eller `<em>` (emphasis).
 
 ```html
-    All text <i>inom ett i-element</i>
-    eller ett <em>em-element</em>
-    renderas som kursiv text.
+All text <i>inom ett i-element</i>
+eller ett <em>em-element</em>
+renderas som kursiv text.
 ```
 
 Resultat
@@ -79,20 +79,20 @@ Låt oss se till ett exempel på en onumrerad lista.
 Exempel på onumrerad lista
 
 ```html
-    <ul>
-      <li>Katt</li>
-      <li>Hund</li>
-      <li>Sköldpadda</li>
-    </ul>
+<ul>
+  <li>Katt</li>
+  <li>Hund</li>
+  <li>Sköldpadda</li>
+</ul>
 ```
 
 Resultat
 
 <figure>
   <ul>
-    <li>Katt</li>
-    <li>Hund</li>
-    <li>Sköldpadda</li>
+<li>Katt</li>
+<li>Hund</li>
+<li>Sköldpadda</li>
   </ul>
 </figure>
 
@@ -102,20 +102,20 @@ Lagom intuitivt så är alltså skillnaden mellan en numrerad och en onumrerad l
 Exempel på numrerad lista
 
 ```html
-    <ol>
-      <li>Katt  </li>
-      <li>Hund</li>
-      <li>Sköldpadda</li>
-    </ol>
+<ol>
+  <li>Katt  </li>
+  <li>Hund</li>
+  <li>Sköldpadda</li>
+</ol>
 ```
 
 Resultat
 
 <figure>
   <ol>
-    <li>Katt</li>
-    <li>Hund</li>
-    <li>Sköldpadda</li>
+<li>Katt</li>
+<li>Hund</li>
+<li>Sköldpadda</li>
   </ol>
 </figure>
 
@@ -144,38 +144,38 @@ Låt oss se till ett komplett exempel.
 Exempel på tabell
 
 ```html
-    <table>
-      <tr>
-        <th>Djur</th>
-        <th>Storlek</th>
-      </tr>
-      <tr>
-        <td>Golden Retriever</td>
-        <td>Stor</td>
-      </tr>
-      <tr>
-        <td>Norsk Skogskatt</td>
-        <td>Liten</td>
-      </tr>
-    </table>
+<table>
+  <tr>
+    <th>Djur</th>
+    <th>Storlek</th>
+  </tr>
+  <tr>
+    <td>Golden Retriever</td>
+    <td>Stor</td>
+  </tr>
+  <tr>
+    <td>Norsk Skogskatt</td>
+    <td>Liten</td>
+  </tr>
+</table>
 ```
 
 Resultat
 
 <figure>
   <table>
-    <tr>
-      <th>Djur</th>
-      <th>Storlek</th>
-    </tr>
-    <tr>
-      <td>Golden Retriever</td>
-      <td>Stor</td>
-    </tr>
-    <tr>
-      <td>Norsk Skogskatt</td>
-      <td>Liten</td>
-    </tr>
+<tr>
+  <th>Djur</th>
+  <th>Storlek</th>
+</tr>
+<tr>
+  <td>Golden Retriever</td>
+  <td>Stor</td>
+</tr>
+<tr>
+  <td>Norsk Skogskatt</td>
+  <td>Liten</td>
+</tr>
   </table>
 </figure>
 
@@ -190,7 +190,7 @@ Kommer snart...
 Dags att bli visuella och diskutera hur vi får in bilder i våra HTML-dokument. Som vanligt när det kommer till HTML är det egentligen ganska enkelt. Genom att använda `<img>`-taggen tillsammans med attributet `src` kan vi infoga bilder i våra dokument. Låt oss se till ett exempel.
 
 ```html
-    <img src="http://placekitten.com/g/80/80">
+<img src="http://placekitten.com/g/80/80">
 ```
 
 Resultat
@@ -211,7 +211,7 @@ Men vad händer om en bild inte kan renderas? Och vad händer när en [screen re
 Exempel på användning av alt-attributet
 
 ```html
-    <img src="http://placekitten.com/g/60/60" alt="En mästerkatt utan stövlar">
+<img src="http://placekitten.com/g/60/60" alt="En mästerkatt utan stövlar">
 ```
 
 Om vi nu försöker nå ovan bild genom någon form av läsare som inte kan rendera bilder så kommer vi istället få texten _En mästerkatt utan stövlar_. I annat fall kommer bilden att visas som vanligt och texten inte synas. Tänk på att attributet `alt` krävs för att en `<img>`-tagg ska vara [valid][3].
@@ -231,12 +231,12 @@ Elementen `figure` och `figcaption` är båda _semantiska_ element snarare än d
 Exempel på figurannotation med figcaption
 
 ```html
-    <figure>
-      <img src="http://placekitten.com/g/130/130">
-      <figcaption>
-        En mästerkatt utan stövlar.
-      </figcaption>
-    </figure>
+<figure>
+  <img src="http://placekitten.com/g/130/130">
+  <figcaption>
+    En mästerkatt utan stövlar.
+  </figcaption>
+</figure>
 ```
 
 Resultat

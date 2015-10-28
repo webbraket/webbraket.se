@@ -35,7 +35,7 @@ Men när vi nu börjar diskutera element så är det alltså viktigt att du komm
 Vi har nu alltså klargjort att HTML bygger på en metfor om att alla dokument går att modellera som hierarkiska trädstrukturer. Men hur gör vi då detta rent konkret? Svaret i HTML är något som benämns _element_. Element skapar vi genom att använda oss av `<`, och `>`-tecken. Följande är ett exempel på ett element som denoterar en paragraf.
 
 ```html
-    <p>Paragraftexten här...</p>
+<p>Paragraftexten här...</p>
 ```
 
 Ovan illustrerar alltså användandet av `p`-elementet, eller paragraf-elementet. Låt oss bena ut vad syntaxen är. Kom ihåg att ordet syntax handlar om _hur_ vi uttrycker någonting i ett visst språk. I fallet av HTML så är de tre första tecknena i ovan exempel, samt de fyra sista del av syntaxen i HTML. Övrigt är rå text.
@@ -50,9 +50,9 @@ HTML-element består helt enkelt av någonting som vi referar till som taggar (t
 Paragraf-elementet vi såg tidigare är ett ypperligt exempel på den första formen där vi har ett tag-par som tillsammans bildar ett element. Vi öppnar en paragraf, skriver en text, och stänger sedan paragrafen. Notera alltså att vi använde slash-tecknet (`/`) och det återupprepade tagg-namnet (`p`) för att denotera stängningstaggen (`</p>`). Men låt oss se till ett exempel på ett element som inte kräver en stängningstagg.
 
 ```html
-    Plötsligt...
-    <hr>
-    ...dök en horisontell linje upp
+Plötsligt...
+<hr>
+...dök en horisontell linje upp
 ```
 
 Elementet `<hr>` denoterar en horisontell linje (avdelare) som ritas ut rakt över sidan. En s.k. "horizontal ruler". Om vi funderar lite på det en stund så inser vi snabbt varför ensamma element existerar. En avdelare är en avdelare och det finns ingenting intelligent vi kan denotera innuti en avdelare. Andra element av denna typ är t.ex. bilder. Här ser vi också en tydlig anledning. En bild är ju alltid en bild. Det är ologiskt att anta att vi skulle vilja denotera existensen av någonting i bilden. Bilden själv beskriver vad som finns i bilden.
@@ -73,10 +73,10 @@ När vi säger text så menar vi förstås även avsaknaden av text. Den tomma s
 Det är när vi börjar förstå att element kan innehålla andra element som vi verkligen börjar närma oss idéen om hierarkisk informationsrepresentation. Vi kan nu alltså börja uttrycka saker såsom:
 
 ```html
-    <section>
-      <p>En första paragraf.</p>
-      <p>Följd av en annan.</p>
-    </section>
+<section>
+  <p>En första paragraf.</p>
+  <p>Följd av en annan.</p>
+</section>
 ```
 
 ### Plain-text om inte annat anges
@@ -88,13 +88,13 @@ Man skulle alltså kunna säga att HTML i någon bemärkelse är _addativt_. Vi 
 Anta t.ex. att vi vill lägga in ett antal radbrytningar i en paragraf. Anta att vi försöker göra det genom att helt enkelt skapa radbrytningar med hjälp av ENTER-tangenten vid de platser vi vill. Beakta nedan kod:
 
 ```html
-    <p>
-      Oavsett  
-      hur många       mellanslag, eller  
+<p>
+  Oavsett  
+  hur många       mellanslag, eller  
 
-      radbrytningar   vi lägger in,  
-      så har det ingen effekt.
-    </p>  
+  radbrytningar   vi lägger in,  
+  så har det ingen effekt.
+</p>  
 ```
 
 Trots alla radbrytningar och mellanslag blir ändå resultatet följande...
@@ -114,7 +114,7 @@ Ett elements öppnande tag kan även innehålla attribut med värden. Attribut �
 För att t.ex. skapa länkar använder vi elementet `<a>`. För att sedan denotera vart länken ska peka ger vi attributet `href` ett värde. Detta värde tar formen av en URL. Beakta nedan exempel och fundera över användandet av attributet `href`.
 
 ```html
-    <a href="http://uu.se">Klicka på mig</a>
+<a href="http://uu.se">Klicka på mig</a>
 ```
 
 Resultat
@@ -142,7 +142,7 @@ I de flesta märkes- och programmeringsspråk så finns faciliteter för vad som
 I HTML ser en kommentar ut som följande.
 
 ```html
-    <!-- Åh, en sån kommentar! -->
+<!-- Åh, en sån kommentar! -->
 ```
 
 Kommentarer kan vi skriva i HTML-dokument av olika anledningar men t.ex. skulle vi kunna använda de till att skriva förklarande kommentarer, för att logiskt gruppera olika delar av HTML-dokumentet (för utvecklaren), eller kanske för att skriva en TODO-notis om någonting som måste bättras på senare.
@@ -154,8 +154,8 @@ Beakta nedan exempel som understryker faktumet att kommentarer inte syns när en
 Följande HTML...
 
 ```html
-    <p>Detta syns</p>
-    <!-- Detta syns inte -->
+<p>Detta syns</p>
+<!-- Detta syns inte -->
 ```
 
 ...renderar följande resultat...
@@ -174,27 +174,27 @@ Vi har nu lärt oss att HTML-dokument modellerar trädstrukturer. Men hur ska d�
 Men för att återgå till ämnet. Det finns några saker ett HTML-dokument alltid måste innehålla. En dokumenttypsdeklaration (doctype), ett html-rot-element, ett huvud med en titel, och en kropp. Det minsta html-dokumentet vi kan konstruera som fortfarande uppfyller standarden (html5) är följande:
 
 ```html
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title> Stora hundhemsidan </title>
-      </head>
-      <body>
-      </body>
-    </html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Stora hundhemsidan </title>
+  </head>
+  <body>
+  </body>
+</html>
 ```
 
 Låt oss försöka visualisera samma dokument som ovan i en hierarkisk struktur av "lådor i lådor". En låda "i" en låda representerar alltså en barn-förälderrelation, medan en låda "bredvid" en annan låde representerar en syskonrelation.
 
-     ------------------------
-    |         <html>         |
-    |   -----------------    |
-    |   |     <head>     |   |
-    |    ----------------    |
-    |    ----------------    |
-    |   |     <body>     |   |
-    |    ----------------    |
-     ------------------------
+ ------------------------
+|         <html>         |
+|   -----------------    |
+|   |     <head>     |   |
+|    ----------------    |
+|    ----------------    |
+|   |     <body>     |   |
+|    ----------------    |
+ ------------------------
 
 
 Jämför ovan bilder av "boxar i boxar" med den faktiska HTML-koden i bilden högre upp. Försök förstå varför vi har ritat bilden på det sätt vi har ritat den. Notera att `DOCTYPE`-deklarationen inte är med i ovan exempel.
@@ -202,13 +202,13 @@ Jämför ovan bilder av "boxar i boxar" med den faktiska HTML-koden i bilden hö
 När vi ändå är i farten med att försöka visualisera dokumenthierarkier. Låt oss även visualisera ovan som en indenterad lista.
 
 ```html
-    DOCTYPE
-    html
-      head
-        title
-          [text]
-      body
-        [empty]
+DOCTYPE
+html
+  head
+    title
+      [text]
+  body
+    [empty]
 ```
 
 Detta med indentering leder oss även in på en meningsfull vana html-utvecklare respekterar.
@@ -226,21 +226,21 @@ Detta leder oss in på en viktig poäng som du kanske redan förstått. När vi 
 Icke-välformatterad HTML
 
 ```html
-    <article>
-        <p>
-            Hello world...
-        </article>
-    </p>
+<article>
+    <p>
+        Hello world...
+    </article>
+</p>
 ```
 
 Välformatterad HTML
 
 ```html
-    <article>
-        <p>
-            Hello world...
-        </p>
-    </article>
+<article>
+    <p>
+        Hello world...
+    </p>
+</article>
 ```
 
 ### Indentering
@@ -255,15 +255,15 @@ Korrekt indentering
 
 ```html
 <p>
-    <span>Detta är ok!</span>
+<span>Detta är ok!</span>
 </p>
 ```
 
 ```html
 <p>
-    <span>
-        Också ok!
-    </span>
+<span>
+    Också ok!
+</span>
 </p>
 ```
 
@@ -281,11 +281,11 @@ Inkorrekt indentering
 
 ```html
 <p>
-    Indentera barn...
+Indentera barn...
 </p>
-    <p>
-        ...men inte syskon!
-    </p>
+<p>
+    ...men inte syskon!
+</p>
 ```
 
 Ett enkelt sätt att veta när man ska indentera &mdash; alltså flytta en rad inåt, är följande minnesregel. Om vi öppnar ett element, ska allt som efterföljer indenteras, ända tills vi stängt elementet.
@@ -301,14 +301,14 @@ Att ta med sig ifrån det här stycket är alltså &mdash; indentera! Du kommer 
 Ett validerande HTML-dokument måste alltså innehålla ett par saker. En dokumenttypsdeklaration, ett huvud, en titel och en kropp. Nyssnämnt direktöversättningar av de korrekta termerna `DOCTYPE`, `HEAD`, `BODY` och `TITLE`. Låt oss återgå till tidigare nämnt kod-exempel (se nedan), och fundera över hur dessa element ska nästlas i varandra. Med andra ord, låt oss diskutera vilka element som är barn/föräldrar till vilka.
 
 ```html
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Page about kittenz!</title>
-      </head>
-      <body>
-      </body>
-    </html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page about kittenz!</title>
+  </head>
+  <body>
+  </body>
+</html>
 ```
 
 Notera även att det absolut yttersta elementet är `<html>`. Ett HTML-dokument måste innehålla ett och endast ett `<html>`-element. I detta element måste det finnas ett och endast ett `<head>`- och respektive `<body>`-element. I huvudet måste vi även ange en sidtitel med hjälp av `<title>`. Detta är det minsta dokumentet vi kan skapa som validerar, och det är även så här _alla_ html-dokument är strukturerade i botten.
@@ -322,15 +322,15 @@ Det längre svaret är att vi även laddar in externa referenser i huvudet. Föl
 Ett exempel på HEAD
 
 ```html
-    ...
-    <head>
-      <title> Hover cat </title>
-      <link rel="stylesheet" href="stylesheets/main.css">
-      <script src="javascripts/main.js">
-      <meta charset="utf-8">
-      <meta name="keywords" content="Kittens,Hovercrafts">
-    </head>
-    ...
+...
+<head>
+  <title> Hover cat </title>
+  <link rel="stylesheet" href="stylesheets/main.css">
+  <script src="javascripts/main.js">
+  <meta charset="utf-8">
+  <meta name="keywords" content="Kittens,Hovercrafts">
+</head>
+...
 ```
 
 Låt oss diskutera ovan kod rad för rad. RadFörklaring
@@ -350,16 +350,16 @@ Om `<head>` beskrivs som sidans meta-content &mdash; alltså content om content.
 Ett exempel på innehåll i BODY
 
 ```html
-    ...
-    <body>
-      <h2> Sidans titel </h2>
-      <p> Det här är en paragraf med text. <p>
-      <p>
-          Och det här är en till, som innehåller en
-          <a href="http://uu.se">länk</a> till UU.
-      <p>
-    </body>
-    ...
+...
+<body>
+  <h2> Sidans titel </h2>
+  <p> Det här är en paragraf med text. <p>
+  <p>
+      Och det här är en till, som innehåller en
+      <a href="http://uu.se">länk</a> till UU.
+  <p>
+</body>
+...
 ```
 
 

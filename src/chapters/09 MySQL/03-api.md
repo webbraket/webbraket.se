@@ -29,13 +29,13 @@ Så, låt oss se till ett faktiskt exempel. Viktigt att notera är alltså att v
 OOP syntax.
 
 ```php
-    $mysqli = new mysqli('host', 'user', 'password', 'database');
+$mysqli = new mysqli('host', 'user', 'password', 'database');
 ```
 
 Procedurell syntax.
 
 ```php
-    $mysqli = mysqli_connect('host', 'user', 'password', 'database');
+$mysqli = mysqli_connect('host', 'user', 'password', 'database');
 ```
 
 Låt oss även snabbt se till hur vi skulle kunna hantera eventuella fel som kan uppstå när vi försöker koppla upp oss till databasen. Om vi t.ex. råkat ange fel lösenord, eller inte har läsrättigheter till den databas vi försöker koppla till med den användaren vi angett, eller om datbasen helt enkelt inte existerar (o.s.v.).
@@ -45,20 +45,20 @@ Felhantering vid öppning av koppling till mysql-databas.
 OOP syntax.
 
 ```php
-    $error = $mysqli->connect_error;
-    if ($error) {
-      $code  = $mysqli->connect_errno;
-      die("Error: ($code) $error");
-    }
+$error = $mysqli->connect_error;
+if ($error) {
+  $code  = $mysqli->connect_errno;
+  die("Error: ($code) $error");
+}
 ```
 
 Procedurell syntax.
 ```php
-    $error = mysqli_connect_error();
-    if ($error) {
-      $code  = mysqli_connect_errno();
-      die("Error: ($code) $error");
-    }
+$error = mysqli_connect_error();
+if ($error) {
+  $code  = mysqli_connect_errno();
+  die("Error: ($code) $error");
+}
 ```
 Notera i ovan exempel att vi alltid har tillgång till både själva felmeddelandet som sträng ([conect\_error][8]), men även dess felkod ([connect\_errno][9]).
 
@@ -72,19 +72,19 @@ Köra queries emot en existerande databaskoppling.
 
 OOP syntax.
 ```php
-    $result = $mysqli->query("SELECT *  FROM posts");
+$result = $mysqli->query("SELECT *  FROM posts");
 
-    if ($result) {
-      echo "Number of rows: " . $result->num_rows;
-    }
+if ($result) {
+  echo "Number of rows: " . $result->num_rows;
+}
 ```
 Procedurell syntax.
 ```php
-    $result = $mysqli->query("SELECT * FROM posts")
+$result = $mysqli->query("SELECT * FROM posts")
 
-    if ($result) {
-      echo "Number of rows: " . mysqli_num_rows($result);
-    }
+if ($result) {
+  echo "Number of rows: " . mysqli_num_rows($result);
+}
 ```
 Det mest intressanta med denna `php`-metod är att den returnerar olika typer av saker beroende på vad vi kör för query. [Detta denoteras genom returtypen `mixed` i dokumentationen][11]. Om vi t.ex. skulle köra en `INSERT INTO` får vi en bool tillbaka som innehåller `true` om query:n lyckades och `false` om den ej gjorde det. Faktum är att vi i alla fall får tillbaka en bool som säger `false` om en query misslyckas p.g.a. t.ex. fel syntax eller en icke-existerande kolumn.
 
@@ -98,27 +98,27 @@ Iterera över data ifrån ett resultat-set och hämta varje rad som en numrerad 
 
 OOP syntax.
 ```php
-    // Iterates over each row (into $row) as a numeric array
-    while($row = $result->fetch_row()){
-      var_dump($row);
-    }
+// Iterates over each row (into $row) as a numeric array
+while($row = $result->fetch_row()){
+  var_dump($row);
+}
 
-    // But we could also iterate over each row as an associative array
-    while($row = $result->fetch_assoc()){
-      var_dump($row);
-    }
+// But we could also iterate over each row as an associative array
+while($row = $result->fetch_assoc()){
+  var_dump($row);
+}
 ```
 Procedurell syntax.
 ```php
-    // Iterates over each row (into $row) as a numeric array
-    while($row = mysqli_fetch_row($result)){
-      var_dump($row);
-    }
+// Iterates over each row (into $row) as a numeric array
+while($row = mysqli_fetch_row($result)){
+  var_dump($row);
+}
 
-    // But we could also iterate over each row as an associative array
-    while($row = mysqli_fetch_assoc($result)){
-      var_dump($row);
-    }
+// But we could also iterate over each row as an associative array
+while($row = mysqli_fetch_assoc($result)){
+  var_dump($row);
+}
 ```
 I de fall där vi hämtar varje rad som en associativ array så innebär det att varje rads nycklar motsvarar namnet på databasens kolumner. I de numeriska fallen så når vi helt enkelt argumenten i samma ordning som de är definierade i datbasen.
 
@@ -128,19 +128,19 @@ Hämta data ifrån ett resultat-set som array direkt.
 
 OOP syntax.
 ```php
-    // As numbered array
-    $arr = $result->fetch_all();
+// As numbered array
+$arr = $result->fetch_all();
 
-    // Or as an associative array
-    $arr = $result->fetch_all(MYSQLI_ASSOC);
+// Or as an associative array
+$arr = $result->fetch_all(MYSQLI_ASSOC);
 ```
 Procedurell syntax.
 ```php
-    // As numbered array
-    $arr = mysqli_fetch_all($result);
+// As numbered array
+$arr = mysqli_fetch_all($result);
 
-    // Or as an associative array
-    $arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
+// Or as an associative array
+$arr = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ```
 
 

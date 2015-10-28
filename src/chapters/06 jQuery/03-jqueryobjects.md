@@ -11,13 +11,13 @@ Hämta elementet `<body>`
 Med JavaScript
 
 ```javascript
-    document.getElementsByTagName('body');
+document.getElementsByTagName('body');
 ```
 
 Med jQuery
 
 ```javascript
-    $('body')[0];
+$('body')[0];
 ```
 
 Uppenbart kräver jQuery-exempelet ovan att vi skriver markant mindre kod. Onödigt, kanske du tänker nu. Visst, vinsten i ovan exempel är inte massiv. Men låt oss istället se till ett mer avancerat exempel. Anta att vi skulle vilja ta bort alla `<p>`-element ur ett dokument. Nedan ser du hur vi först skulle kunna lösa det med JavaScript och sedan med jQuery.
@@ -27,16 +27,16 @@ Ta bort alla `<p>`-element
 Med JavaScript
 
 ```javascript
-    var all = document.getElementsByTagName('p');
-    for(i=all.length-1; i>=0; i--){
-      all[i].parentNode.removeChild(all[i]);
-    }
+var all = document.getElementsByTagName('p');
+for(i=all.length-1; i>=0; i--){
+  all[i].parentNode.removeChild(all[i]);
+}
 ```
 
 Med jQuery
 
 ```javascript
-    $('p').remove();
+$('p').remove();
 ```
 
 Förhoppningsvis ser du nu styrkan! jQuery försökt att ta hand om den del vanligt återkommande problem och således försökt erbjuda oss utvecklare lite mindre huvudvärk. Nu kanske du redan fått huvudvärk flera gånger och känner den komma igen av att du behöver lära dig någonting nytt &mdash; men lugn! När du väl fått kläm på syntaxen kommer jQuery hjälpa dig ofantligt, och förhoppningsvis kommer du vara arg på att vi försökte lära dig JavaScript först.
@@ -52,7 +52,7 @@ jQuery-objekt kan göra mycket fler saker än att hämta och manipulera element 
 Ta bort alla <p\>-element med jQuery
 
 ```javascript
-    $('p').remove();
+$('p').remove();
 ```
 
 Det viktigaste vi måste förstå med ovan exempel, är att jQuery opererar på kollektioner av element och inte på enstaka element. Nu är det ju förstås så att det är fullt möjligt att vår kollektion endast innehåller ett element, men det är ändock en kollektion. För att dra en parallell så kan du tänka på hur JavaScript-metoden `document.getElementsByTagName()` fungerar. Namnet på metoden är pluraliserad eftersom även den returnerar en kollektion av `HTMLElement`. Detta alltså till skillnad ifrån `document.getElementById` som i alla fall returnerar max ett `HTMLElement`.
@@ -66,16 +66,16 @@ Tänk på att jQuery alltid arbetar på kollektioner av element
 HTML
 
 ```html
-    <p> hello </p>
-    <p> world </p>
+<p> hello </p>
+<p> world </p>
 ```
 
 jQuery
 
 ```javascript
-    $('p')[0].innerHTML;    // => "hello"
-    $('p')[1].innerHTML;    // => "world"
-    $('p').text();          // => "hello world"
+$('p')[0].innerHTML;    // => "hello"
+$('p')[1].innerHTML;    // => "world"
+$('p').text();          // => "hello world"
 ```
 
 Vi kan hantera jQuery-objektet som en array. På rad 1 och 2 i ovan exempel gör vi just det. När vi använder klammerparantesnotationen (`[i]`) och ger ett index, så hämtar vi alltså det `HTMLElement` som gömmer sig under det indexet. När vi sedan anropar `innerHTML` får vi ut den text som finns i just det `HTMLElementet`. När vi däremot på rad 3 anropar `text()`-metoden (som alltså är en jQuery-specifik metod) så opererar vi alltså på kollektionen av alla träffade element. Anledningen till att vi inte använder `text()`-metoden på rad 1 och 2 är alltså för att den metoden är specifik för jQuery. Eftersom vi på rad 1 och 2 redan plockat ut ett `HTMLElement` ur jQuery-objektet så har vi alltså inte längre tillgång till jQuery's metoder. Vice versa gäller alltså på rad 3\. Eftersom vi inte plockat ut något `HTMLElement` ur jQuery-kollektionen kan vi inte använda "vanliga" `HTMLElement`-metoder (eftersom det är ett `jQuery object`) utan måste istället använda jQuery-specifika metoder. Vill vi använda de vanliga `HTMLElement`-metoderna behöver vi plocka ut ett specifikt element ur kollektionen.
@@ -105,13 +105,13 @@ Ok, men nu var det ett väldigt generellt prat här. Låt oss istället se till 
 Hämta element av typ x
 
 ```html
-    <div> Anta </div>
-    <div> att vi har </div>
-    <div> ett par div:ar </div>
+<div> Anta </div>
+<div> att vi har </div>
+<div> ett par div:ar </div>
 ```
 ```javascript
-    // Då väljer vi alla så här:
-    var allaDivar = $('div');
+// Då väljer vi alla så här:
+var allaDivar = $('div');
 ```
 
 Ovan hämtade vi alltså element baserat på deras `tagName`. Låt oss nu istället hämta alla element, oavsett typ, som har en viss `class`.
@@ -119,16 +119,16 @@ Ovan hämtade vi alltså element baserat på deras `tagName`. Låt oss nu istäl
 Hämta element med klassnamn
 
 ```html
-    <div class="dog"> Woof! </div>
-    <div class="cat"> Mjau! </div>
-    <div class="dog"> Bark! </div>
+<div class="dog"> Woof! </div>
+<div class="cat"> Mjau! </div>
+<div class="dog"> Bark! </div>
 ```
 ```javascript
-     // Använd klass-selektorn för att hämta alla element med en viss klass
-     var dogs = $(".dog");
+ // Använd klass-selektorn för att hämta alla element med en viss klass
+ var dogs = $(".dog");
 
-     // För att illustrara att det verkligen fungerar
-     dogs.text();    // => "Woof! Bark!"
+ // För att illustrara att det verkligen fungerar
+ dogs.text();    // => "Woof! Bark!"
 ```
 
 Busenkelt! Du börjar se mönstret? Låt oss nu istället prova en sista gång genom att hämta alla element med ett visst `ID`.
@@ -136,13 +136,13 @@ Busenkelt! Du börjar se mönstret? Låt oss nu istället prova en sista gång g
 Hämta element med ID
 
 ```javascript
-    <p id="super-woman">Kryptonite!</p>
-    <p id="cat-woman">In your house eating your cat food!</p>
-    <p id="modesty-blaise">Secret agent</p>
+<p id="super-woman">Kryptonite!</p>
+<p id="cat-woman">In your house eating your cat food!</p>
+<p id="modesty-blaise">Secret agent</p>
 
-    // Vi använder css-selektorn för ID
-    var hero = $('#super-woman');
+// Vi använder css-selektorn för ID
+var hero = $('#super-woman');
 
-    // Och har nu valt rätt element
-    hero.text();   // => "Kryptonite!"
+// Och har nu valt rätt element
+hero.text();   // => "Kryptonite!"
 ```

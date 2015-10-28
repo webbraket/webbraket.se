@@ -9,17 +9,17 @@ Låt oss se till exempel för att bättre förstå vad vi pratar om.
 Ett exempel på hur en regel kaskadar igenom ifrån föräldern till barnen
 
 ```html
-    <body>
-      <p>First paragraph</p>
-      <div>
-        <p>Second paragraph</p>
-      <div>
-    </body>
+<body>
+  <p>First paragraph</p>
+  <div>
+    <p>Second paragraph</p>
+  <div>
+</body>
 ```
 ```css
-    body {
-      color: green;
-    }
+body {
+  color: green;
+}
 ```
 
 Resultat
@@ -38,7 +38,7 @@ Ett exempel på hur en mer specifik regel _skriver över_ en mindre specifik (ka
 <body>
   <p>First paragraph</p>
   <div>
-    <p>Second paragraph</p>
+<p>Second paragraph</p>
   <div>
 </body>
 ```

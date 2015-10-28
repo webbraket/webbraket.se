@@ -25,7 +25,7 @@ Notera att ovan paragraf inte använder facktermer utan bör istället betraktas
 Innan vi kan gå över till att diskutera statiska, dynamiska och skillnaden emellan de &mdash; låt oss återigen påminna oss själva om hur språket HTML ser ut.
 
 ```html
-    Ett ord i <b>fetstil</b> och ett <u>understruket</u>.
+Ett ord i <b>fetstil</b> och ett <u>understruket</u>.
 ```
 
 <figure>
@@ -93,19 +93,19 @@ Det här låter kanske komplext men är egentligen väldigt enkelt. Låt oss se 
 
 En konversation mellan de två parterna skulle alltså kunna låta så här:
 
-    client request
-    "Hörru servern, jag skulle vilja titta på filen index.html."
+client request
+"Hörru servern, jag skulle vilja titta på filen index.html."
 
-    server response
-    "Okidokes, här kommer den!"
+server response
+"Okidokes, här kommer den!"
 
-    Klienten läser filen och upptäcker att filen refererade till en bild som den också behöver
+Klienten läser filen och upptäcker att filen refererade till en bild som den också behöver
 
-    client request
-    "Du din gamle server, du berättade inte att jag behövde logo.png också, langar du över den är du snäll!"
+client request
+"Du din gamle server, du berättade inte att jag behövde logo.png också, langar du över den är du snäll!"
 
-    server response
-    "Sorry, eftersom jag bygger på den gamla request-response-modellen kunde jag inte berätta det för dig på en gång, här har du!"
+server response
+"Sorry, eftersom jag bygger på den gamla request-response-modellen kunde jag inte berätta det för dig på en gång, här har du!"
 
 Ovan figur är alltså en visualisering av hur ett request-response-scenario skulle kunna spela ut sig, när en klient ber om en webbsida. Och i essens är det ungefär det här som händer _varje gång_ vi öppnar vår webbläsare och skriver in en adress såsom exempelvis www.google.com.
 

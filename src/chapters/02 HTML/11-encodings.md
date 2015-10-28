@@ -10,9 +10,9 @@ ASCII-tabellen använde sig av 7 bitar, vilket resulterade i 128 olika tecken (e
 <figure>
   There is no such thing as plain text.
   <figcaption>
-    <cite>
-      [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)][1]
-    </cite>
+<cite>
+  [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)][1]
+</cite>
   </figcaption>
 </figure>
 
@@ -25,13 +25,13 @@ Ett dokuments teckenkodning sätter vi genom att skapa en `<meta>`-tag med attri
 Ett dokument som definierar character set:et utf-8
 
 ```html
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <title>The utf-8, I speak!</title>
-      </head>
-    </html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The utf-8, I speak!</title>
+  </head>
+</html>
 ```
 
 

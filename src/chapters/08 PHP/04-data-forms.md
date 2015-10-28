@@ -7,23 +7,23 @@ Faktum är att detta kapitels rubrik egentligen är ganska missvisande. Vi prata
 Låt oss börja med att repetera hur ett vanligt `html`-formulär ser ut. Beakta nedan exempel, och fundera över faktumet att attributet `method` är tillskrivet värdet `GET`. Fundera även över faktumet att attributet `action` är tillskrivet värdet `process.php`.
 
 ```html
-    <form action="process.php" method="GET">
-      <label for="field-name">Ditt namn</label>
-      <input type="text" id="field-name" name="name" placeholder="Ditt namn" required>
+<form action="process.php" method="GET">
+  <label for="field-name">Ditt namn</label>
+  <input type="text" id="field-name" name="name" placeholder="Ditt namn" required>
 
-      <label>Vad vill du äta till frukost?</label>
+  <label>Vad vill du äta till frukost?</label>
 
-      <label for="field-pancakes">Pannkakor</label>
-      <input type="radio" id="field-pancakes" name="breakfast" value="pancakes">
+  <label for="field-pancakes">Pannkakor</label>
+  <input type="radio" id="field-pancakes" name="breakfast" value="pancakes">
 
-      <label for="field-scrambled">Äggröra</label>
-      <input type="radio" id="field-scrambled" name="breakfast" value="scrambled">
+  <label for="field-scrambled">Äggröra</label>
+  <input type="radio" id="field-scrambled" name="breakfast" value="scrambled">
 
-      <label for="field-toast">Övrigt</label>
-      <input type="radio" id="field-toast" name="breakfast" value="toast">
+  <label for="field-toast">Övrigt</label>
+  <input type="radio" id="field-toast" name="breakfast" value="toast">
 
-      <input type="submit" value="Skicka!">
-    </form>
+  <input type="submit" value="Skicka!">
+</form>
 ```
 
 <figure class="example">
@@ -71,20 +71,20 @@ Låt oss kika på hur dessa requests faktiskt ser ut. Vi gör anrop till adresse
 Ett request genom `HTTP GET` skulle då kunna se ut som så...
 
 ```http
-    GET https://example.com/?shape=circle&color=red
-    Accept: */*
-    User-Agent: runscope/0.1
+GET https://example.com/?shape=circle&color=red
+Accept: */*
+User-Agent: runscope/0.1
 ```
 
 Och ett request genom `HTTP POST` skulle istället kunna se ut som så...
 
 ```http
-    POST https://example.com/
-    Accept: */*
-    Content-Length: 22
-    Content-Type: application/x-www-form-urlencoded
-    User-Agent: runscope/0.1
-    shape=circle&color=red
+POST https://example.com/
+Accept: */*
+Content-Length: 22
+Content-Type: application/x-www-form-urlencoded
+User-Agent: runscope/0.1
+shape=circle&color=red
 ```
 
 Båda dessa requests skickades tjänsten [hurl.it][10]. Prova gärna och utförska själv!
@@ -116,13 +116,13 @@ Låt oss nu då faktiskt se till ett konkret exempel på hur vi kommer åt infor
 Att läsa värden ifrån $\_GET
 
 ```php
-    // Assuming an incoming GET request for the following url:
-    // http://example.com/?name=Johnny&breakfast=pancakes
+// Assuming an incoming GET request for the following url:
+// http://example.com/?name=Johnny&breakfast=pancakes
 
-    $name   = $_GET["name"]
-    $choice = $_GET["breakfast"]
+$name   = $_GET["name"]
+$choice = $_GET["breakfast"]
 
-    echo "Dear $name, I'll certainly make you some $choice!";
+echo "Dear $name, I'll certainly make you some $choice!";
 ```
 
 Resultat
@@ -138,9 +138,9 @@ Som tidigare nämnt så kan _querystring_-variabler förekomma även utan att vi
 Vi skulle t.ex. kunna skicka data med en helt vanlig länk.
 
 ```html
-    <a href="http://example.com/?name=Johnny&breakfast=pancakes">
-      Johnny likes pancakes
-    </a>
+<a href="http://example.com/?name=Johnny&breakfast=pancakes">
+  Johnny likes pancakes
+</a>
 ```
 
 Vilket skulle ge:
@@ -152,46 +152,46 @@ Vilket skulle ge:
 Vi skulle förstås även kunna använda `php` för att göra precis samma sak men istället byta ut de konkreta värdena emot variabler.
 
 ```php
-    <a href="http://example.com/?name=<?= $name; ?> &breakfast=<?= $choice; ?>">
-      Johnny likes pancakes
-    </a>
+<a href="http://example.com/?name=<?= $name; ?> &breakfast=<?= $choice; ?>">
+  Johnny likes pancakes
+</a>
 ```
 
 Men eftersom det ändå är så pass vanligt att konstruera en _querystring_ så erbjuder `php` oss en fantastisk metod som hjälper oss genom att automatiskt transformera en _associativ array_ till en _querystring_. Med andra ord så här:
 
 ```php
-    <?php
-      $data = array(
-        'name'      => $name,
-        'breakfast' => $choice
-      );
-      $querystring = http_build_query($data);
-    ?>
+<?php
+  $data = array(
+    'name'      => $name,
+    'breakfast' => $choice
+  );
+  $querystring = http_build_query($data);
+?>
 
-    <a href="http://example.com/?<?= $querystring; ?>">
-      Johnny likes pancakes
-    </a>
+<a href="http://example.com/?<?= $querystring; ?>">
+  Johnny likes pancakes
+</a>
 ```
 
 Om vi ifrån en `php`-sida skulle vilja automatiskt omdirigera (_redirect_) användaren till en annan sida så kan vi använda `php`-metoden `header('Location: [url]')`. Och om vi vill även vill passa på att skicka med parametrar, så kan vi förstås göra det genom att som vanligt lägga till en _querystring_ i slutet av `url`:en. Alltså som så:
 
 ```php
-    <?php
-      $data = array(
-        'name'      => $name,
-        'breakfast' => $choice
-      );
-      $querystring = http_build_query($data);
-    ?>
+<?php
+  $data = array(
+    'name'      => $name,
+    'breakfast' => $choice
+  );
+  $querystring = http_build_query($data);
+?>
 
-    // And then redirect
-    header("Location: http://example.com/?$querystring");
+// And then redirect
+header("Location: http://example.com/?$querystring");
 ```
 
 Om du inte redan märkt det, så är alltså syntaxen för att bygga upp en querystring följande:
 `nyckel=värde` där varje nyckel-värde-par separeras genom ett och-tecken (`&`). Sedan är det förstås viktigt att komma ihåg att om vi ska lägga till en _querystring_ till en `url` så måste vi avgränsa slutet på `url`:en och början på _querystring_:en med ett frågetecken (`?`). Så sammantaget blir det alltså:
 
-    http://example.com/?key1=value1&key2=value2&keyN=valueN
+http://example.com/?key1=value1&key2=value2&keyN=valueN
 
 
 

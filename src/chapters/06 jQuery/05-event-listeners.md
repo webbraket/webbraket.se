@@ -9,17 +9,17 @@ Exempel att applicera lyssnare på alla divar samtidigt
 HTML
 
 ```html
-    <div>Oh no no no...</div>
-    <div>Please do not click me, oh no no, please...</div>
-    <div>I don't want to fade, please...</div>
+<div>Oh no no no...</div>
+<div>Please do not click me, oh no no, please...</div>
+<div>I don't want to fade, please...</div>
 ```
 
 jQuery
 
 ```javascript
-    $('div').click(function(){
-      $(this).fadeOut();
-    });
+$('div').click(function(){
+  $(this).fadeOut();
+});
 ```
 
 Resultat
@@ -37,14 +37,14 @@ Som du kanske märkte i senaste exemplet, så använde vi oss av följande synta
 Wrappa ett HTMLElement i jQuery
 
 ```javascript
-    // First grab the first <p>-element using regular JavaScript
-    var paragraph = document.getElementsByTagName('p')[0];
+// First grab the first <p>-element using regular JavaScript
+var paragraph = document.getElementsByTagName('p')[0];
 
-    // Then wrap it as a jQuery object
-    var $paragraph = $(paragrah);
+// Then wrap it as a jQuery object
+var $paragraph = $(paragrah);
 
-    // And now we can do all the regular cool jQuery stuff
-    $paragraph.fadeOut();
+// And now we can do all the regular cool jQuery stuff
+$paragraph.fadeOut();
 ```
 
 Men vänta nu, i det tidigare diskuterade exemplet så skickade vi ju faktiskt inte ett html-element, utan vi skickade nyckelordet `this`. Löst uttryckt så refererar nyckelordet `this` i JavaScript alltid till den nuvarande kontexten. Det intressanta är alltså att om vi skickar den nuvarande kontexten till jQuery-metoden så kommer den försöka skapa ett jQuery-objekt av det. Om vi då befinner oss i en `event handler` (t.ex. den kod som exekveras när en knapp klickas på) så kommer det element som avfyrade elementet bli det objekt som hamnar i jQuery-objektet. Låt oss se till ett exempel.
@@ -54,22 +54,22 @@ Att identifiera den som avfyrade ett event med jQuery
 Om vi har följande html...
 
 ```html
-    <p>Hello world</p>
+<p>Hello world</p>
 ```
 
 Kan vi göra följande i jQuery...
 
 ```javascript
-    // First define a click function, that we want to
-    // execute whenever something is clicked.
-    var onClick = function(){
-      var sender = $(this);  // Creates a jQuery object of the element that was clicked
-      alert(sender.text());  // Sends a message with the contents of the clicked element
-    }
+// First define a click function, that we want to
+// execute whenever something is clicked.
+var onClick = function(){
+  var sender = $(this);  // Creates a jQuery object of the element that was clicked
+  alert(sender.text());  // Sends a message with the contents of the clicked element
+}
 
-    // Then we need to attach our click function to the <p>-element,
-    // so that it will be fired when the element is clicked.
-    $('p').click(onClick);
+// Then we need to attach our click function to the <p>-element,
+// so that it will be fired when the element is clicked.
+$('p').click(onClick);
 ```
 
 Detta kommer nu alltså att ge oss följande...

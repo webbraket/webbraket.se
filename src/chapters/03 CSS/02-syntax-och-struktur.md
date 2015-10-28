@@ -13,27 +13,27 @@ CSS-selector för HTML-element
 index.html
 
 ```html
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>The morning</title>
-        <link rel="stylesheet" href="main.css">
-      </head>
-      <body>
-        <p>As Gregor Samsa awoke one morning from uneasy dreams [..]</p>
-      </body>
-    </html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The morning</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <p>As Gregor Samsa awoke one morning from uneasy dreams [..]</p>
+  </body>
+</html>
 ```
 
 main.css
 
 ```css
-    body{
-      background-color: lightblue;
-    }
-    p{
-      color: #ffffff;
-    }
+body{
+  background-color: lightblue;
+}
+p{
+  color: #ffffff;
+}
 ```
 
 Resultat
@@ -55,9 +55,9 @@ Låt oss se det rent generellt. Syntaxen är alltså som följande.
 CSS-syntax uttryckt generellt
 
 ```css
-    css-selector{
-      declaration-property: declaration-value;
-    }
+css-selector{
+  declaration-property: declaration-value;
+}
 ```
 
 Så, låt oss uttrycka syntaxen för `deklarationer` i ord: En css-`deklaration` består av en `egenskap` (även kallat: property, nyckel, key), följt av ett kolon (`:`) som fungerar som en avgränsare mellan nyckeln och värdet. Vidare följt av det faktiska `värdet` (som kan ges i en mängd olika format, såsom exempelvis `left`, `-32px`, `233%` eller `light`, beroende på vilken egenskap vi sätter värdet för). Slutligen anger vi ett semikolon (`;`) för att terminera raden. Det sistnämnda gör det möjligt att skriva flera deklarationer på samma rad (vilket dock oftast gör filen väldigt svårläslig).
@@ -79,26 +79,26 @@ Klasser och ID:n
 index.html
 
 ```html
-    ...
-    <p class="redish">As Gregor Samsa awoke one morning</p>
-    <p id="blueish">from uneasy dreams</p>
-    <p>he found himself transformed in his bed</p>
-    <p class="redish">into a monstrous vermin.</p>
-    ...
+...
+<p class="redish">As Gregor Samsa awoke one morning</p>
+<p id="blueish">from uneasy dreams</p>
+<p>he found himself transformed in his bed</p>
+<p class="redish">into a monstrous vermin.</p>
+...
 ```
 
 main.css
 
 ```css
-    p{
-      color: orange;
-    }
-    .redish{
-      color: red;
-    }
-    #blueish{
-      color: blue;
-    }
+p{
+  color: orange;
+}
+.redish{
+  color: red;
+}
+#blueish{
+  color: blue;
+}
 ```
 
 Resultat

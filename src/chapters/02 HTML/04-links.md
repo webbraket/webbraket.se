@@ -3,7 +3,7 @@
 Det, för HTML, kanske mest representativa elementet måste ju vara länken. En klickbar yta på skärmen som navigerar oss ifrån en webbsida till en annan. Den tagg vi använder för att denotera en länk är `<a>`. Ett komplett exempel på användandet av en länk skulle kunna se ut som följande.
 
 ```html
-    <a href="http://www.example.com">Klicka på mig</a>
+<a href="http://www.example.com">Klicka på mig</a>
 ```
 
 Vilket skulle rendera följande resultat:
@@ -36,11 +36,11 @@ Vi pratade tidigare lite om absoluta och relativa sökvägar i relation till _Mi
 
 I t.ex. _Mac OS_ och _Linux_ så fungerar alltså sökvägar på samma sätt som ovan nämnt, med en skillnad. För att specificera absoluta sökvägar i \*nix-baserade system så anger vi inte namnet på en enhet (ex: `C:`) såsom i Windows. Isället börjar vi helt enkelt med tecknet slash (`/`). Följande är alltså en absolut sökväg:
 
-    /Users/jon-snow/pictures/me.jpg
+/Users/jon-snow/pictures/me.jpg
 
 Om vi i ett \*nix-baserat system vill nå en annan enhet, på samma sätt som vi i Windows kan nå ex. D: så fungerar det ofta som så:
 
-    /Volumes/MyOtherDisk
+/Volumes/MyOtherDisk
 
 För att sammanfatta absoluta och relativa sökvägar så vill vi understryka att det egentligen alltså är mycket enkelt. En relativ sökväg utgår ifrån den mapp där den som använder sökvägen befinner sig. En absolut sökväg utgår ifrån "roten" av den nuvarande enheten.
 
@@ -92,17 +92,17 @@ Ovan gäller alltså om vi antar att användaren befinner sig på sidan `http://
 Notera alltså att om vi inte anger ett protokoll så kommer webbläsaren att tolka våra URL:er som interna till vår domän. Ett vanligt misstag är således att glömma att ange protokollet när vi försöker ange en extern adress. Anta att vi befinner oss på `http://example.com` och skriver följande:
 
 ```html
-    <a href="www.google.com">Klicka här</a>
+<a href="www.google.com">Klicka här</a>
 ```
 
 Vi antar att länken ska ta användaren till google.com. Fallet är dock inte så. Eftersom vi inte angett protokoll tolkar webbläsaren adressen som intern. Webbläsaren översätter således adressen till följande:
 
-    http://example.com/www.google.com
+http://example.com/www.google.com
 
 Inte riktigt vad vi menade förstås. Det korrekta sättet att skapa ovan URL är alltså genom att även ange protokollet.
 
 ```html
-    <a href="http://www.google.com">Klicka här</a>
+<a href="http://www.google.com">Klicka här</a>
 ```
 
 ### Ankare
@@ -114,12 +114,12 @@ En typ av länkar vi ännu inte pratat om är ankare. Ankare är ett sätt att l
 Ett ankare börjar med fyrkants-tecknet (hashtag) (`#`) och sedan vilken sträng som helst.
 
 ```html
-    #my_anchor
+#my_anchor
 ```
 
 Vi applicerar alltså ett ankare i slutet av en vanlig URL.
 
-    http://example.com/index.html#my_anchor
+http://example.com/index.html#my_anchor
 
 Vi kan alltså använda oss av ankare för att ge användaren en möjlighet att navigera inom samma sida. När vi klickar på en länk med ett ankare så kommer alltså webbläsaren inte bara att ladda den sida vi angett &mdash; utan även scrolla ned till ankarets målposition. Vi kan med andra ord se ankare som en form av "bokmärken" för långa sidor.
 
@@ -130,7 +130,7 @@ Eftersom ankare är en del av URL:er så är det så att vi inte bara kan använ
 Låt oss exemplifiera för att göra det tydligare. Ponera att vi har en HTML-sida med följande länk i sig.
 
 ```html
-    <a href="#images">Bildgalleriet</a>
+<a href="#images">Bildgalleriet</a>
 ```
 
 Ovan länk kommer alltså inte att byta sida. Ovan länk är en relativ URL som i browsern kommer att översättas till samma URL som vi är vid, fast med ankaret "\#images" pålagt i slutet.
@@ -138,7 +138,7 @@ Ovan länk kommer alltså inte att byta sida. Ovan länk är en relativ URL som 
 Ponera om vi istället hade skapat en länk som pekade på en full URL med ett ankare i slutet, såsom nedan...
 
 ```html
-    <a href="http://example.com/index.html#images">Bildgalleriet</a>
+<a href="http://example.com/index.html#images">Bildgalleriet</a>
 ```
 
 Om vi hade specificerat en URL såsom ovan, hade vi skickat användaren till index.html under domänen example.com. Oavsett vilken sida vi råkade vara på vid tillfället. Det viktiga att förstå är dock att ankaret kommer att fungera i vilket fall. När webbläsaren har nått den sida vi skickat användaren till så kommer den automatiskt att scrolla ned till den plats där ankaret är specificerat.
@@ -152,11 +152,11 @@ Egentligen är det ganska enkelt. En länk till ett ankare specificeras där vi 
 Låt oss se till ett exempel.
 
 ```html
-    <!-- Om vi har någonting med ett ID -->
-    <h1 id="images">Bildgalleriet</h1>
+<!-- Om vi har någonting med ett ID -->
+<h1 id="images">Bildgalleriet</h1>
 
-    <!-- Så kan vi sedan länka till det som ett ankare -->
-    <a href="#images">Gå till bildgalleriet</a>
+<!-- Så kan vi sedan länka till det som ett ankare -->
+<a href="#images">Gå till bildgalleriet</a>
 ```
 
 Med andra ord så kan vi skapa "bokmärken" på våra sidor genom att ge olika element ID:n. När vi sedan vill att en användare snabbt ska kunna navigera till en viss del av sidan (ett "bokmärke") så skapar vi en länk som pekar på just det ID:t, som ett ankare.
