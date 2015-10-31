@@ -183,7 +183,49 @@ Var inte rädd för att använda tabeller! Men kom alltså ihåg att tabeller en
 
 ### Definitionslistor
 
-Kommer snart...
+En definitionslista kan användas för att visa olika kategorier, eller termer, och beskrivningar som är underordnade den specificerade termen. För att skapa en definitionslista används tre olika element: `<dl>` för definiera listan, `<dt>` används för att definiera en term, och `<dd>` för en beskrining.
+
+Exempel på hur en definitionslista kan se ut:
+```html
+    <dl>
+      <dt>Hund</dt>
+      <dd>En domesticerad underart av varg</dd>
+    </dl>
+```
+Resultat
+
+<figure>
+  <dl>
+    <dt>Hund</dt>
+    <dd>En domesticerad underart av varg</dd>
+  </dl>  
+</figure>
+
+Definitionslistor kan så klart användas för termer och definitioner, men även för att visa saker som har en direkt relation till varandra. Det är också möjligt att använda multipla termer och beskrivningar innanför `<dl></dl>` :
+
+```html
+    <dl>
+      <dt>Brädspel</dt>
+      <dd>Risk</dd>
+      <dd>Schack</dd>
+      <dt>Kortspel</dt>
+      <dd>Poker</dd>
+      <dd>Trumf</dd>
+    </dl>
+```
+
+Resultat
+
+<figure>
+  <dl>
+    <dt>Brädspel</dt>
+    <dd>Risk</dd>
+    <dd>Schack</dd>
+    <dt>Kortspel</dt>
+    <dd>Poker</dd>
+    <dd>Trumf</dd>
+  </dl> 
+</figure>
 
 ### Bilder
 
