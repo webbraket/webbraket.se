@@ -183,7 +183,7 @@ Var inte rädd för att använda tabeller! Men kom alltså ihåg att tabeller en
 
 ### Definitionslistor
 
-En definitionslista kan användas för att visa olika kategorier, eller termer, och beskrivningar som är underordnade den specificerade termen. För att skapa en definitionslista används tre olika element: `<dl>` för definiera listan, `<dt>` används för att definiera en term, och `<dd>` för en beskrining.
+En definitionslista kan användas för att visa olika kategorier, eller termer, och beskrivningar som är underordnade den specificerade termen. För att skapa en definitionslista används tre olika element: `<dl>` för definiera listan, `<dt>` för att definiera en term, och `<dd>` för en beskrining.
 
 Exempel på hur en definitionslista kan se ut:
 ```html
