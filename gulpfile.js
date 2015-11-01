@@ -141,7 +141,7 @@ gulp.task('root', function(){
 
 gulp.task('img', function(){
   return gulp.src('src/assets/img/**/*.*')
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('build/img'))
     .pipe(connect.reload());
 });
 

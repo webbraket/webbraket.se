@@ -37,3 +37,13 @@ h1{
   border-top:  1px dashed #dedede;
   padding-top: 30px;
 }
+.logo-container h1{
+  border: 0;
+}
+
+.logo-container{
+  margin:         50px auto 80px auto;
+  width:          250px;
+  text-align:     center;
+  text-transform: uppercase;
+}
