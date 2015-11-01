@@ -22,7 +22,6 @@ Att bidra till Webbraket är inte bara nyttigt för din egen utveckling och ditt
     1. [Kalender](#kalender)
     1. [Meetups](#meetups)
 1. [Om projektet](#om-projektet)
-    1. [Core contributors](#core-contributors)
     1. [Uppsatser och forskning](#uppsatser-och-forskning)
     1. [Historia](#historia)
     1. [Kontakt](#kontakt)
@@ -235,26 +234,6 @@ Ibland kör vi informella och formella fysiska meetups för att främja gemenska
 Vi är ett projekt som drivs av ett gäng glada studenter, adjunkter och forskare under Institutionen för informatik och media vid Uppsala universitet.
 
 
-## Core contributors
-Vi arbetar för nuvarande i nedan team:
-
-**Developers**
-Arbetar med webbraketens back-end. Repositories, static site generation, deployment etc. Bash, node, ssh, git etc.
-
-**Designers**
-Arbetar med webbraketens front-end. UX såväl som design. Genom HTML, CSS, JavaScript etc. Underhåller Webbraketens style guide.
-
-**Curators**
-Arbetar med webbraketens content. Text, kodexempel, bilder, struktur etc.
-
-**Marketing**
-Arbetar med strategisk positionering. Närvaro i social media, kontakt med universitet och näringsliv, etc.
-
-**Styrelse**
-Detta är ett fåtal personer som är anställda vid Uppsala universitet och som har full commit access. Denna grupp har rätt att utöva veto i alla frågor. Detta veto ska ej behöva utövas men finns av säkerhetsskäl då Institutionen för informatik och media vid Uppsala universitet stödjer detta projekt.
-
-
-
 # Uppsatser och forskning
 Om du ska skriva en kandidat-, masteruppsats eller är forskare så är du varmt välkommen att kontakta oss. Vi är en självorganiserad grupp av studenter som producerar öppen källkod, så det finns utrymme för många intressanta möjligheter för forskningsarbeten. Vänligen [kontakta](#kontakt) i första hand någon i gruppen Styrelsen.
 
@@ -282,7 +261,7 @@ Vid tekniska frågor vänligen kontakta någon i Developers. Vid övriga frågor
 
 
 # Styrelsen
-Nedan följer kort information om Webbraketens styrelse.
+Nedan följer kort information om Webbraketens styrelse. Styrelsen har rätt att utäva veto i alla frågor. Detta veto ska ej behöva utövas men finns av säkerhetsskäl då Institutionen för informatik och media vid Uppsala universitet stödjer projektet.
 
 ## Stadgar
 1. Styrelsen skall alltid bestå av ett ojämnt antal personer, och minst tre.
