@@ -43,22 +43,22 @@ Webbraket drivs av dig och mig. Hittat något som inte verkar stämma? Eller bar
 Om du undrar mer om någonting som står i denna readme eller känner att du behöver lära dig mer så finns det mycket matnyttig information i vår [wiki]. Kolla först där och om du inte hittar vad du letar efter, tveka inte, utan [kontakta någon av oss](#kontakt).
 
 ## Pull requests
-Starta en ny topic-branch ifrån `development`. Vänligen följ våra [namngivningskonventioner](#branches) för branches. Du behöver inte squash:a dina commits innan du skickar en PR. Ifall ändringar har skett i `development` efter att du började arbeta på din branch så får du pluspoäng ifall du rebase:ar.
+Starta en ny topic-branch ifrån `master`. Vänligen följ våra [namngivningskonventioner](#branches) för branches. Du behöver inte squash:a dina commits innan du skickar en PR. Ifall ändringar har skett i `master` efter att du började arbeta på din branch så får du pluspoäng ifall du rebase:ar.
 
 Vi merge:ar alltid med `--no-ff` p.g.a. [denna artikel](http://nvie.com/posts/a-successful-git-branching-model/).
 
 Vi code-review:ar alla pull-requests för att vi ska kunna hjälpa varandra att utvecklas och bli bättre utvecklare. Kom ihåg att hålla god ton och vara trevliga mot varandra :)
 
 ## Branches
-Vi följer i stort sett [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) men istället för separata release branches så återanvänder vi branchen `development`.
+Vi följer i stort sett [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) men istället för att använda en separat `development`-branch eller separata release-branch:es så skickar vi pull requests direkt emot `master`. Detta gör vi eftersom vi ännu inte upplevt behovet av detta ytterligare steg. Vårt arbetssätt liknar [Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration) men det är [varje utvecklares ansvar](http://www.yegor256.com/2014/07/21/read-only-master-branch.html) att inte skicka pull requests med "broken code".
 
 ### `master`
 
-Detta är vår "production branch" som alltid innehåller [produktionsredo](https://agilewarrior.wordpress.com/2011/01/04/production-readiness/) kod. Commits i denna branch skapas genom att core team merge:ar `development` in i `master`. Varje commit i denna branch kan ses som en ny "version". Arbeta aldrig direkt i denna branch.
+Detta är vår "production branch" som alltid innehåller [produktionsredo](https://agilewarrior.wordpress.com/2011/01/04/production-readiness/) kod. Topic-branches merge:as in i denna branch av core-team. Arbeta aldrig direkt i denna branch.
 
-### `development`
+### ~~`development`~~
 
-Detta är vår "development branch" som alltid innehåller de uppdateringar som kommer att bli en del av nästa "version". Topic-branches merge:as in i denna branch av core-team. Arbeta aldrig direkt i denna branch.
+~~Denna branch är ["deprecated"](https://en.wikipedia.org/wiki/Deprecation) och bör för nuvarande inte användas. Arbeta således aldrig i denna branch och merge:a aldrig till eller ifrån denna branch.~~
 
 ### `gh-pages`
 
@@ -172,11 +172,11 @@ $ gulp publish
 
 
 ## Workflow
-Arbeta i din egen topic-branch. När du är klar med ditt arbeta, pusha din branch och skicka en pull request emot branchen `development`. Nedan följer ett exempel på en dag i en Webbraket-utvecklares liv :)
+Arbeta i din egen topic-branch. När du är klar med ditt arbeta, pusha din branch och skicka en pull request emot branchen `master`. Nedan följer ett exempel på en dag i en Webbraket-utvecklares liv :)
 
 ```
 $ git clone git@github.com:webbraket/webbraket.se
-$ git checkout development
+$ git checkout master
 $ git checkout -b new/cat-stories
 ... do some work ...
 $ git add -A
