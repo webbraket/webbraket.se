@@ -55,7 +55,7 @@ Vi följer i stort sett [A successful Git branching model](http://nvie.com/posts
 
 ### `master`
 
-Detta är vår "production branch" som alltid innehåller [produktionsredo](https://agilewarrior.wordpress.com/2011/01/04/production-readiness/) kod. Commits i denna branch skapas genom att core team merge:ar `development` in i `master`. Varje commit i denna branch kan ses som en ny "version". Topic-branches merge:as in i denna branch av core-team. Arbeta aldrig direkt i denna branch.
+Detta är vår "production branch" som alltid innehåller [produktionsredo](https://agilewarrior.wordpress.com/2011/01/04/production-readiness/) kod. Topic-branches merge:as in i denna branch av core-team. Arbeta aldrig direkt i denna branch.
 
 ### ~~`development`~~
 
