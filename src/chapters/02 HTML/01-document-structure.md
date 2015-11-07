@@ -255,15 +255,15 @@ Korrekt indentering
 
 ```html
 <p>
-<span>Detta är ok!</span>
+  <span>Detta är ok!</span>
 </p>
 ```
 
 ```html
 <p>
-<span>
-    Också ok!
-</span>
+  <span>
+      Också ok!
+  </span>
 </p>
 ```
 
@@ -281,11 +281,11 @@ Inkorrekt indentering
 
 ```html
 <p>
-Indentera barn...
+  Indentera barn...
 </p>
-<p>
+  <p>
     ...men inte syskon!
-</p>
+  </p>
 ```
 
 Ett enkelt sätt att veta när man ska indentera &mdash; alltså flytta en rad inåt, är följande minnesregel. Om vi öppnar ett element, ska allt som efterföljer indenteras, ända tills vi stängt elementet.

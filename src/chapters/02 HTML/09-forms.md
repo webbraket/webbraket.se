@@ -5,23 +5,23 @@ För att användare ska kunna interagera med våra webbsidor har vi flera tillg�
 Låt oss, innan vi går vidare se till ett exempel för hur ett formulär skulle kunna se ut.
 
 <figure>
-<form action="#" method="GET">
-    <div>
-        <label for="field-email">E-post</label>
-        <input type="text" id="field-email" name="email" placeholder="Din e-post" required="required">
-    </div>
-    <div>
-        <label for="field-current-name">Lösenord</label>
-        <input type="password" id="field-current-name" name="password" placeholder="Ditt lösenord" required="required">
-    </div>
-    <div class="form-group">
-        <input id="field-gender-man" type="checkbox" name="remember">
-        <label for="field-gender-man">Kom ihåg mig?</label>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Skicka!" class="btn btn-default">
-    </div>
-</form>
+    <form action="#" method="GET">
+        <div>
+            <label for="field-email">E-post</label>
+            <input type="text" id="field-email" name="email" placeholder="Din e-post" required="required">
+        </div>
+        <div>
+            <label for="field-current-name">Lösenord</label>
+            <input type="password" id="field-current-name" name="password" placeholder="Ditt lösenord" required="required">
+        </div>
+        <div class="form-group">
+            <input id="field-gender-man" type="checkbox" name="remember">
+            <label for="field-gender-man">Kom ihåg mig?</label>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Skicka!" class="btn btn-default">
+        </div>
+    </form>
 </figure>
 
 Vanliga scenarion där vi använder formulär är t.ex. användarregistrering, inloggning, kontaktformulär, undersökningar, chat, forum, kommentarsfält, sökfält, etc. Listan är lång. Tänk på sidor som du vanligen brukar besöka. Varje gång du skriver in någon form av fritext på sidan, kryssar i en checkbox, radioknapp eller dyl. så interagerar du nästan alltid med ett formulär. Tänk
@@ -161,31 +161,31 @@ Låt oss se till ett exempel.
 Resultat
 
 <figure>
-<label>Ja eller nej?</label>
+    <label>Ja eller nej?</label>
 
-<div>
-    <label for="4307904643-alt-yes">Ja</label>
-    <input type="radio" name="yes-or-no" id="4307904643-alt-yes">
-</div>
+    <div>
+        <label for="4307904643-alt-yes">Ja</label>
+        <input type="radio" name="yes-or-no" id="4307904643-alt-yes">
+    </div>
 
-<div>
-    <label for="4307904643-alt-no">Nej</label>
-    <input type="radio" name="yes-or-no" id="4307904643-alt-no">
-</div>
+    <div>
+        <label for="4307904643-alt-no">Nej</label>
+        <input type="radio" name="yes-or-no" id="4307904643-alt-no">
+    </div>
 
-<div>
-    <label>Vilken frukt?</label>
+    <div>
+        <label>Vilken frukt?</label>
 
- </div>
-<div>
-    <label for="4307904643-alt-apple">Äpple</label>
-    <input type="radio" name="fruit" id="4307904643-alt-apple">
-</div>
+     </div>
+    <div>
+        <label for="4307904643-alt-apple">Äpple</label>
+        <input type="radio" name="fruit" id="4307904643-alt-apple">
+    </div>
 
-<div>
-    <label for="4307904643-alt-banana">Banan</label>
-    <input type="radio" name="fruit" id="4307904643-alt-banana">
-</div>
+    <div>
+        <label for="4307904643-alt-banana">Banan</label>
+        <input type="radio" name="fruit" id="4307904643-alt-banana">
+    </div>
 </figure>
 
 #### Checkboxes
@@ -204,12 +204,12 @@ Checkboxes använder vi till skillnad ifrån radio buttons när vi vill ge anvä
 Resultat
 
 <figure>
-<input type="checkbox" name="fruit" value="apple" id="alt-apple">
-<label for="alt-apple">Apple</label>
-<input type="checkbox" name="fruit" value="banana" id="alt-banana">
-<label for="alt-banana">Banan</label>
-<input type="checkbox" name="fruit" value="grapes" id="alt-grapes">
-<label for="alt-grapes">Vindruvor</label>
+  <input type="checkbox" name="fruit" value="apple" id="alt-apple">
+  <label for="alt-apple">Apple</label>
+  <input type="checkbox" name="fruit" value="banana" id="alt-banana">
+  <label for="alt-banana">Banan</label>
+  <input type="checkbox" name="fruit" value="grapes" id="alt-grapes">
+  <label for="alt-grapes">Vindruvor</label>
 </figure>
 
 Attributet `value` specificerar alltså vilket värde som kommer att associeras med respektive nyckel (alltså checkboxgruppen "fruit"). Vi återkommer till detta när vi pratar om vad som händer när man skickar ett formulär.
@@ -275,7 +275,7 @@ Easy as pancakes! Låt oss se till ett exempel.
 Resultat
 
 <figure>
-<input type="submit" value="Skicka!">
+  <input type="submit" value="Skicka!">
 </figure>
 
 ### Att skicka formuläret

@@ -90,9 +90,9 @@ Resultat
 
 <figure>
   <ul>
-<li>Katt</li>
-<li>Hund</li>
-<li>Sköldpadda</li>
+    <li>Katt</li>
+    <li>Hund</li>
+    <li>Sköldpadda</li>
   </ul>
 </figure>
 

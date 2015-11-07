@@ -152,12 +152,12 @@ Ladda in JavaScript-filer i slutet av `<body>`
 <!DOCTYPE html>
 <html>
   <head>
-<title>Exempel</title>
+    <title>Exempel</title>
   </head>
   <body>
-<p>Först lägger vi allt vårt content</p>
-<p>Och sen sist, laddar vi in js:</p>
-<script src="main.js"></script>
+    <p>Först lägger vi allt vårt content</p>
+    <p>Och sen sist, laddar vi in js:</p>
+    <script src="main.js"></script>
   </body>
 </html>
 ```

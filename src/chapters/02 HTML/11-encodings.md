@@ -10,9 +10,9 @@ ASCII-tabellen använde sig av 7 bitar, vilket resulterade i 128 olika tecken (e
 <figure>
   There is no such thing as plain text.
   <figcaption>
-<cite>
-  [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)][1]
-</cite>
+    <cite>
+      [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)][1]
+    </cite>
   </figcaption>
 </figure>
 

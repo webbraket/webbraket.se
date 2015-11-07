@@ -261,98 +261,98 @@ Med hjälp av dessa kolon-varianter kan vi istället skriva våra dokument som o
 
 <table>
   <tr>
-<th>Konstruktion</th>
-<th>Kolon-motsvarighet</th>
+    <th>Konstruktion</th>
+    <th>Kolon-motsvarighet</th>
   </tr>
   <tr>
-<td>
-  <pre class="language-php">
-    <code>
-for(..){
-  ..
-}
-    </code>
-  </pre>
-</td>
-<td>
-  <pre class="language-php">
-    <code>
-for(..):
-  ..
-endfor;
-    </code>
-</td>
-  </tr>
-
-  <tr>
-<td>
-  <pre class="language-php">
-    <code>
-foreach(..){
-  ..
-}
-    </code>
-  </pre>
-</td>
-<td>
-  <pre class="language-php">
-    <code>
-foreach(..):
-  ..
-endforeach;
-    </code>
-  </pre>
-</td>
+    <td>
+      <pre class="language-php">
+        <code>
+    for(..){
+      ..
+    }
+        </code>
+      </pre>
+    </td>
+    <td>
+      <pre class="language-php">
+        <code>
+    for(..):
+      ..
+    endfor;
+        </code>
+    </td>
   </tr>
 
   <tr>
-<td>
-  <pre class="language-php">
-    <code>
-while(..){
-  ..
-}
-    </code>
-  </pre>
-</td>
-<td>
-  <pre class="language-php">
-    <code>
-while(..):
-  ..
-endwhile;
-    </code>
-  </pre>
-</td>
+    <td>
+      <pre class="language-php">
+        <code>
+    foreach(..){
+      ..
+    }
+        </code>
+      </pre>
+    </td>
+    <td>
+      <pre class="language-php">
+        <code>
+    foreach(..):
+      ..
+    endforeach;
+        </code>
+      </pre>
+    </td>
   </tr>
 
   <tr>
-<td>
-  <pre class="language-php">
-    <code>
-if(..){
-  ..
-}else if(..){
-  ..
-}else{
-  ..
-}
-    </code>
-  </pre>
-</td>
-<td>
-  <pre class="language-php">
-    <code>
-if(..):
-  ..
-elseif(..):
-  ..
-else:
-  ..
-endif;
-    </code>
-  </pre>
-</td>
+    <td>
+      <pre class="language-php">
+        <code>
+    while(..){
+      ..
+    }
+        </code>
+      </pre>
+    </td>
+    <td>
+      <pre class="language-php">
+        <code>
+    while(..):
+      ..
+    endwhile;
+        </code>
+      </pre>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <pre class="language-php">
+        <code>
+    if(..){
+      ..
+    }else if(..){
+      ..
+    }else{
+      ..
+    }
+        </code>
+      </pre>
+    </td>
+    <td>
+      <pre class="language-php">
+        <code>
+    if(..):
+      ..
+    elseif(..):
+      ..
+    else:
+      ..
+    endif;
+        </code>
+      </pre>
+    </td>
   </tr>
 
 </table>
