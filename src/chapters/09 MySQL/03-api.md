@@ -80,7 +80,7 @@ OOP syntax.
 ```
 Procedurell syntax.
 ```php
-    $result = $mysqli->query("SELECT * FROM posts")
+    $result = $mysqli->query("SELECT * FROM posts");
 
     if ($result) {
       echo "Number of rows: " . mysqli_num_rows($result);

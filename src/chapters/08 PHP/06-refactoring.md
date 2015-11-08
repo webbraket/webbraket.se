@@ -184,7 +184,9 @@ Anta att vi har följande fil.
 Låt oss använda en `for`-loop för att inkludera samma fil tre gånger. Om vi använder oss av `require` eller `include` får vi följande resultat:
 
 ```php
-    for($i=0; $i
+    for($i=0; $i < 3; $i++){
+        require('hello.php');
+    }
 ```
 
 Resultat
@@ -196,7 +198,9 @@ hello hello hello
 Men om vi kör samma `for`-loop men istället använder oss av `require_once` så får vi följande resultat:
 
 ```php
-    for($i=0; $i
+    for($i=0; $i < 3; $i++){
+        require_once('hello.php');
+    }
 ```
 
 Resultat
