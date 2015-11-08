@@ -89,7 +89,7 @@ Deklarering och tilldelning av variabler i `php`
 ```php
     // Assigning literals
     $age    = 22;
-    $name   = "Snow"
+    $name   = "Snow";
 
     // Assigning variables
     $anos   = $age;
@@ -145,10 +145,10 @@ Switch case i `php`
         echo "Good day.";
         break;
       "evening":
-        echo "Good evening."
+        echo "Good evening.";
         break;
       default:
-        echo "Good night... sleep well."
+        echo "Good night... sleep well.";
     }
 ```
 
@@ -193,7 +193,9 @@ Men om det hade varit det ovanstående problemet vi ville lösa så hade vi för
 `for`-loop i `php`
 
 ```php
-    for($i=0; $i
+    for($i=0; $i < 10; $i++){
+        echo $i . ", ";
+    }
 ```
 
 Result

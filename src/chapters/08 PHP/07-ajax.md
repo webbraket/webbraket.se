@@ -75,8 +75,8 @@ Sidan som efterfrågas
 
 ```php
     <?php
-      $name  = $_GET["name"]
-      $breed = $_GET["breed"]
+      $name  = $_GET["name"];
+      $breed = $_GET["breed"];
       echo "$name is a $breed";
     ?>
 ```

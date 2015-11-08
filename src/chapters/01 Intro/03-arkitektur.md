@@ -29,7 +29,7 @@ Innan vi kan gå över till att diskutera statiska, dynamiska och skillnaden eme
 ```
 
 <figure>
-Ett ord i **fetstil** och ett _understruket_.
+Ett ord i **fetstil** och ett <u>understruket</u>.
 </figure>
 
 HTML är alltså det märkesspråk vi använder för att "märka upp" ett stycke media. Vi använder termen media eftersom HTML-dokument inte endast behöver bestå av text. De kan även innehålla bilder, ljud och video.
