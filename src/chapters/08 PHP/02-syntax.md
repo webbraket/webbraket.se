@@ -193,7 +193,9 @@ Men om det hade varit det ovanstående problemet vi ville lösa så hade vi för
 `for`-loop i `php`
 
 ```php
-for($i=0; $i
+for($i=0; $i < 10; $i++){
+    echo $i . ", ";
+}
 ```
 
 Result

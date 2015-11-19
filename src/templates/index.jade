@@ -4,7 +4,11 @@ html(lang="sv")
     meta(charset="utf-8")
     title WebbRaket
     link(rel="stylesheet", href="css/main.css")
+    link(rel="shortcut icon", href="/img/favicon.ico", type="image/x-icon")
   body
+    .logo-container
+      img(src="/img/logo.png")
+      h1 Webbraket
     h1 Innehållsförteckning
     ol
       each h1 in toc

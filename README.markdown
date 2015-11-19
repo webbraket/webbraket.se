@@ -22,7 +22,6 @@ Att bidra till Webbraket är inte bara nyttigt för din egen utveckling och ditt
     1. [Kalender](#kalender)
     1. [Meetups](#meetups)
 1. [Om projektet](#om-projektet)
-    1. [Core contributors](#core-contributors)
     1. [Uppsatser och forskning](#uppsatser-och-forskning)
     1. [Historia](#historia)
     1. [Kontakt](#kontakt)
@@ -44,22 +43,22 @@ Webbraket drivs av dig och mig. Hittat något som inte verkar stämma? Eller bar
 Om du undrar mer om någonting som står i denna readme eller känner att du behöver lära dig mer så finns det mycket matnyttig information i vår [wiki]. Kolla först där och om du inte hittar vad du letar efter, tveka inte, utan [kontakta någon av oss](#kontakt).
 
 ## Pull requests
-Starta en ny topic-branch ifrån `development`. Vänligen följ våra [namngivningskonventioner](#branches) för branches. Du behöver inte squash:a dina commits innan du skickar en PR. Ifall ändringar har skett i `development` efter att du började arbeta på din branch så får du pluspoäng ifall du rebase:ar.
+Starta en ny topic-branch ifrån `master`. Vänligen följ våra [namngivningskonventioner](#branches) för branches. Du behöver inte squash:a dina commits innan du skickar en PR. Ifall ändringar har skett i `master` efter att du började arbeta på din branch så får du pluspoäng ifall du rebase:ar.
 
 Vi merge:ar alltid med `--no-ff` p.g.a. [denna artikel](http://nvie.com/posts/a-successful-git-branching-model/).
 
 Vi code-review:ar alla pull-requests för att vi ska kunna hjälpa varandra att utvecklas och bli bättre utvecklare. Kom ihåg att hålla god ton och vara trevliga mot varandra :)
 
 ## Branches
-Vi följer i stort sett [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) men istället för separata release branches så återanvänder vi branchen `development`.
+Vi följer i stort sett [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) men istället för att använda en separat `development`-branch eller separata release-branch:es så skickar vi pull requests direkt emot `master`. Detta gör vi eftersom vi ännu inte upplevt behovet av detta ytterligare steg. Vårt arbetssätt liknar [Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration) men det är [varje utvecklares ansvar](http://www.yegor256.com/2014/07/21/read-only-master-branch.html) att inte skicka pull requests med "broken code".
 
 ### `master`
 
-Detta är vår "production branch" som alltid innehåller [produktionsredo](https://agilewarrior.wordpress.com/2011/01/04/production-readiness/) kod. Commits i denna branch skapas genom att core team merge:ar `development` in i `master`. Varje commit i denna branch kan ses som en ny "version". Arbeta aldrig direkt i denna branch.
+Detta är vår "production branch" som alltid innehåller [produktionsredo](https://agilewarrior.wordpress.com/2011/01/04/production-readiness/) kod. Topic-branches merge:as in i denna branch av core-team. Arbeta aldrig direkt i denna branch.
 
-### `development`
+### ~~`development`~~
 
-Detta är vår "development branch" som alltid innehåller de uppdateringar som kommer att bli en del av nästa "version". Topic-branches merge:as in i denna branch av core-team. Arbeta aldrig direkt i denna branch.
+~~Denna branch är ["deprecated"](https://en.wikipedia.org/wiki/Deprecation) och bör för nuvarande inte användas. Arbeta således aldrig i denna branch och merge:a aldrig till eller ifrån denna branch.~~
 
 ### `gh-pages`
 
@@ -173,11 +172,11 @@ $ gulp publish
 
 
 ## Workflow
-Arbeta i din egen topic-branch. När du är klar med ditt arbeta, pusha din branch och skicka en pull request emot branchen `development`. Nedan följer ett exempel på en dag i en Webbraket-utvecklares liv :)
+Arbeta i din egen topic-branch. När du är klar med ditt arbeta, pusha din branch och skicka en pull request emot branchen `master`. Nedan följer ett exempel på en dag i en Webbraket-utvecklares liv :)
 
 ```
 $ git clone git@github.com:webbraket/webbraket.se
-$ git checkout development
+$ git checkout master
 $ git checkout -b new/cat-stories
 ... do some work ...
 $ git add -A
@@ -208,9 +207,10 @@ Varje vecka kör vi ett video-call. För att stärka känslan av gemenskap, men 
 Dessa möten sker på en regelbunden basis, men listas även i vår gemensamma kalender.
 
 Varje möte börjar som en SCRUM-inspirerad standup. D.v.s. vi tar ett "varv" där alla svarar på de tre frågorna:
+
 1. Vad har jag gjort sen senast?
-1. Vad ska jag göra framöver?
-1. Vad har jag stött på för problem?
+2. Vad ska jag göra framöver?
+3. Vad har jag stött på för problem?
 
 Efter att alla fått svara på de tre frågorna övergår vi till att diskutera övriga agendapunkter som ofta är av en mer strategisk och/eller planerande karaktär.
 
@@ -233,26 +233,6 @@ Ibland kör vi informella och formella fysiska meetups för att främja gemenska
 
 # Om projektet
 Vi är ett projekt som drivs av ett gäng glada studenter, adjunkter och forskare under Institutionen för informatik och media vid Uppsala universitet.
-
-
-## Core contributors
-Vi arbetar för nuvarande i nedan team:
-
-**Developers**
-Arbetar med webbraketens back-end. Repositories, static site generation, deployment etc. Bash, node, ssh, git etc.
-
-**Designers**
-Arbetar med webbraketens front-end. UX såväl som design. Genom HTML, CSS, JavaScript etc. Underhåller Webbraketens style guide.
-
-**Curators**
-Arbetar med webbraketens content. Text, kodexempel, bilder, struktur etc.
-
-**Marketing**
-Arbetar med strategisk positionering. Närvaro i social media, kontakt med universitet och näringsliv, etc.
-
-**Styrelse**
-Detta är ett fåtal personer som är anställda vid Uppsala universitet och som har full commit access. Denna grupp har rätt att utöva veto i alla frågor. Detta veto ska ej behöva utövas men finns av säkerhetsskäl då Institutionen för informatik och media vid Uppsala universitet stödjer detta projekt.
-
 
 
 # Uppsatser och forskning
@@ -282,7 +262,7 @@ Vid tekniska frågor vänligen kontakta någon i Developers. Vid övriga frågor
 
 
 # Styrelsen
-Nedan följer kort information om Webbraketens styrelse.
+Nedan följer kort information om Webbraketens styrelse. Styrelsen har rätt att utäva veto i alla frågor. Detta veto ska ej behöva utövas men finns av säkerhetsskäl då Institutionen för informatik och media vid Uppsala universitet stödjer projektet.
 
 ## Stadgar
 1. Styrelsen skall alltid bestå av ett ojämnt antal personer, och minst tre.
