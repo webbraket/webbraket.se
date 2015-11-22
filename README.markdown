@@ -280,7 +280,7 @@ Nedan följer kort information om Webbraketens styrelse. Styrelsen har rätt att
 - John Larsson <john.larsson@im.uu.se>
 
 # Disclaimer
-Detta projekt är för nuvarande ej vinstdrivet och kostnader täcks av individer i projektet. Slutprodukten kommer alltid vara gratis för slutkonsumenten.
+Detta projekt är för nuvarande ej vinstdrivet och kostnader täcks av individer i projektet.
 
 Webbraket representerar inte Uppsala universitets åsikter i någon fråga. Projektet drivs ej av Uppsala universitet, utan av studenter antagna på systemvetenskapliga program vid Uppsala universitet och Campus Gotland. Styrelsen består av anställda på Uppsala universitet. Projektet är startat av lärare vid Uppsala universitet och används som utbildningsmaterial i utvalda kurser men bör ses som extern resurs utifrån Uppsala universitets perspektiv.
 
