@@ -37,9 +37,9 @@ Låt oss skapa formulär. Vi tar det del för del och steg för steg.
 Vi börjar helt enkelt med att använda `<form>`-element. På samma sätt som `table` enkapsulerar allt innehåll av en tabell &mdash; så enkapsulerar `form` allt innehåll av ett formulär. Vi skapar alltså "skalet" för ett formulär som så...
 
 ```html
-    <form method="POST" action="process-data.php">
-       ...
-    </form>
+<form method="POST" action="process-data.php">
+   ...
+</form>
 ```
 
 Ovan kod resulterar rent visuellt inte i någonting alls. På den renderade sidan syns inget formulär. Däremot kommer sidan förstås onekligen innehålla markupen för formuläret. Men eftersom vi ännu inte placerat några formulärkomponenter i vårt formulär så syns ju ingenting.
@@ -58,13 +58,13 @@ Låt oss börja med att kika på ett exempel på användande av `input`. Element
 Så om vi med andra ord skriver...
 
 ```html
-    <input type="text" placeholder="Vänligen skriv förnamn här...">
+<input type="text" placeholder="Vänligen skriv förnamn här...">
 ```
 
 Så renderar webbläsaren följande resultat...
 
 <figure>
-    <input type="text" placeholder="Vänligen skriv förnamn här...">
+<input type="text" placeholder="Vänligen skriv förnamn här...">
 </figure>
 
 Som du kanske märkte är alltså `placeholder` ett annat attribut vi kan använda på `input`-element. Detta attribut anger vi för att helt enkelt specificiera en platshållare för kontrollen. Undersök hur detta fungerar genom att skriva någonting i exempelfältet ovan. En platshållartext är helt enkelt en text som visas när kontrollen är "tom". Det vill säga både innan användaren har skrivit någonting i textfältet, men även så fort som användaren rensar nuvarande text i fältet. Notera att detta attribut _inte_ stöds av alla äldre webbläsare.
@@ -76,16 +76,16 @@ Tänk på att `input`-elementet endast består av en tagg. Vi behöver alltså i
 Om vi behöver ge användaren en möjlighet att skriva mer än endast en rad text så passar elementet `textarea` utmärkt. Detta element består, till skillnad ifrån `input`, utav ett taggpar. Med andra ord en öppningstagg och en stängningstagg. Allt däremellan är text som kommer att visas i textfältet. Låt oss se till ett exempel.
 
 ```html
-    <textarea placeholder="Textarea stödjer placeholders">
-      Denna text renderas i textarean
-    </textarea>
+<textarea placeholder="Textarea stödjer placeholders">
+  Denna text renderas i textarean
+</textarea>
 ```
 
 Resultat
 
 <figure>
-    <textarea placeholder="Textarea stödjer placeholders">Denna text renderas i textarean
-    </textarea>
+<textarea placeholder="Textarea stödjer placeholders">Denna text renderas i textarean
+</textarea>
 </figure>
 
 #### Labels
@@ -101,15 +101,15 @@ Det som huvudsak skiljer labels ifrån helt vanlig text är att vi kan associera
 Så låt oss associera en etikett med den fritextkontroll vi såg i tidigare exempel. Kom ihåg att prova klicka på etiketten.
 
 ```html
-    <label for="firstname">Förnamn</label>
-    <input type="text" placeholder="Vänligen skriv förnamn här..." id="firstname">
+<label for="firstname">Förnamn</label>
+<input type="text" placeholder="Vänligen skriv förnamn här..." id="firstname">
 ```
 
 Resultat
 
 <figure>
-    <label for="firstname">Förnamn</label>
-    <input type="text" placeholder="Vänligen skriv förnamn här..." id="firstname">
+<label for="firstname">Förnamn</label>
+<input type="text" placeholder="Vänligen skriv förnamn här..." id="firstname">
 </figure>
 
 #### Radio buttons
@@ -117,19 +117,19 @@ Resultat
 Radioknappar ger oss möjligheten att låta användaren välja ett och endast ett alternativ, givet flera. Låt oss se till ett exempel. Kom ihåg hur vi (som tidigare diskuterat) använder attributet `for` för att associera en ettikett med en formkontroll.
 
 ```html
-    <label for="alt-yes">Ja</label>
-    <input type="radio" id="alt-yes" name="yes-or-no" value="yes">
-    <label for="alt-no">Nej</label>
-    <input type="radio" id="alt-no" name="yes-or-no" value="no">
+<label for="alt-yes">Ja</label>
+<input type="radio" id="alt-yes" name="yes-or-no" value="yes">
+<label for="alt-no">Nej</label>
+<input type="radio" id="alt-no" name="yes-or-no" value="no">
 ```
 
 Resultat
 
 <figure>
-    <label for="alt-yes">Ja</label>
-    <input type="radio" id="alt-yes" name="yes-or-no" value="yes">
-    <label for="alt-no">Nej</label>
-    <input type="radio" id="alt-no" name="yes-or-no" value="no">
+<label for="alt-yes">Ja</label>
+<input type="radio" id="alt-yes" name="yes-or-no" value="yes">
+<label for="alt-no">Nej</label>
+<input type="radio" id="alt-no" name="yes-or-no" value="no">
 </figure>
 
 Prova knapparna! Både genom att klicka på själva radioknapparna, men även genom att klicka på dess etiketter.
@@ -141,21 +141,21 @@ De två radioknapparna i ovan exempel har ju alltså samma värde för attribute
 Låt oss se till ett exempel.
 
 ```html
-    <label>Ja eller nej?</label>
+<label>Ja eller nej?</label>
 
-    <label for="4307904643-alt-yes">Ja</label>
-    <input type="radio" name="yes-or-no" id="4307904643-alt-yes">
+<label for="4307904643-alt-yes">Ja</label>
+<input type="radio" name="yes-or-no" id="4307904643-alt-yes">
 
-    <label for="4307904643-alt-no">Nej</label>
-    <input type="radio" name="yes-or-no" id="4307904643-alt-no">
+<label for="4307904643-alt-no">Nej</label>
+<input type="radio" name="yes-or-no" id="4307904643-alt-no">
 
-    <label>Vilken frukt?</label>
+<label>Vilken frukt?</label>
 
-    <label for="4307904643-alt-apple">Äpple</label>
-    <input type="radio" name="fruit" id="4307904643-alt-apple">
+<label for="4307904643-alt-apple">Äpple</label>
+<input type="radio" name="fruit" id="4307904643-alt-apple">
 
-    <label for="4307904643-alt-banana">Banan</label>
-    <input type="radio" name="fruit" id="4307904643-alt-banana">
+<label for="4307904643-alt-banana">Banan</label>
+<input type="radio" name="fruit" id="4307904643-alt-banana">
 ```
 
 Resultat
@@ -193,23 +193,23 @@ Resultat
 Checkboxes använder vi till skillnad ifrån radio buttons när vi vill ge användaren möjligheten att välja ett, eller flera alternativ av många. Mycket användbart när det kommer till frukt! I övrigt fungerar de i stort sett som radioknappar.
 
 ```html
-    <input type="checkbox" name="fruit" value="apple" id="alt-apple">
-    <label for="alt-apple">Apple</label>
-    <input type="checkbox" name="fruit" value="banana" id="alt-banana">
-    <label for="alt-banana">Banan</label>
-    <input type="checkbox" name="fruit" value="grapes" id="alt-grapes">
-    <label for="alt-grapes">Vindruvor</label>
+<input type="checkbox" name="fruit" value="apple" id="alt-apple">
+<label for="alt-apple">Apple</label>
+<input type="checkbox" name="fruit" value="banana" id="alt-banana">
+<label for="alt-banana">Banan</label>
+<input type="checkbox" name="fruit" value="grapes" id="alt-grapes">
+<label for="alt-grapes">Vindruvor</label>
 ```
 
 Resultat
 
 <figure>
-    <input type="checkbox" name="fruit" value="apple" id="alt-apple">
-    <label for="alt-apple">Apple</label>
-    <input type="checkbox" name="fruit" value="banana" id="alt-banana">
-    <label for="alt-banana">Banan</label>
-    <input type="checkbox" name="fruit" value="grapes" id="alt-grapes">
-    <label for="alt-grapes">Vindruvor</label>
+  <input type="checkbox" name="fruit" value="apple" id="alt-apple">
+  <label for="alt-apple">Apple</label>
+  <input type="checkbox" name="fruit" value="banana" id="alt-banana">
+  <label for="alt-banana">Banan</label>
+  <input type="checkbox" name="fruit" value="grapes" id="alt-grapes">
+  <label for="alt-grapes">Vindruvor</label>
 </figure>
 
 Attributet `value` specificerar alltså vilket värde som kommer att associeras med respektive nyckel (alltså checkboxgruppen "fruit"). Vi återkommer till detta när vi pratar om vad som händer när man skickar ett formulär.
@@ -219,23 +219,23 @@ Attributet `value` specificerar alltså vilket värde som kommer att associeras 
 Ibland har vi så många alternativ vi vill erbjuda en användare, att det skulle bli absurt att försöka presentera alla som t.ex. radioknappar. Ett vanligt use-case är t.ex. att välja land. Det finns så många länder i världen att sidan skulle bli jättelång om vi skulle presentera alla. In kommer `<select>`-listor och räddar dagen.
 
 ```html
-    <select name="fruit">
-      <option value="banana">Banan</option>
-      <option value="apple">Äpple</option>
-      <option value="grapes">Vindruvor</option>
-      <option value="orange">Apelsin</option>
-    </select>
+<select name="fruit">
+  <option value="banana">Banan</option>
+  <option value="apple">Äpple</option>
+  <option value="grapes">Vindruvor</option>
+  <option value="orange">Apelsin</option>
+</select>
 ```
 
 Resultat
 
 <figure>
-    <select name="fruit">
-      <option value="banana">Banan</option>
-      <option value="apple">Äpple</option>
-      <option value="grapes">Vindruvor</option>
-      <option value="orange">Apelsin</option>
-    </select>
+<select name="fruit">
+  <option value="banana">Banan</option>
+  <option value="apple">Äpple</option>
+  <option value="grapes">Vindruvor</option>
+  <option value="orange">Apelsin</option>
+</select>
 </figure>
 
 Återigen så använder vi alltså attributet `value` för att denotera vad som kommer att skickas om användaren har valt just det valet (`option`).
@@ -245,20 +245,20 @@ I vanliga `select`-listor kan användaren bara välja ett alternativ i listan. M
 Att implementationen av denna `select`-kontroll skiljer sig ifrån webbläsare till webbläsare understryker en viktig poäng. Webbläsare väljer själva hur de ska implementera standarden. Detta betyder att vissa element (du kommer t.ex. att märka detta när vi pratar om elementet `<video>`) renderas på helt olika sätt i olika webbläsare. Detta av naturliga skäl. En webbläsare för mobiltelefoner måste rimligen hantera en (t.ex.) `select`-lista annorlunda. Det senare eftersom mobilanvändare ju interagerar med (t.ex.) touch, och inte mus + tangentbord.
 
 ```html
-    <select name="fruit" multiple>
-     ...
-    </select>
+<select name="fruit" multiple>
+ ...
+</select>
 ```
 
 Resultat
 
 <figure>
-    <select name="fruit" multiple>
-      <option value="banana">Banan</option>
-      <option value="apple">Äpple</option>
-      <option value="grapes">Vindruvor</option>
-      <option value="orange">Apelsin</option>
-    </select>
+<select name="fruit" multiple>
+  <option value="banana">Banan</option>
+  <option value="apple">Äpple</option>
+  <option value="grapes">Vindruvor</option>
+  <option value="orange">Apelsin</option>
+</select>
 </figure>
 
 
@@ -269,13 +269,13 @@ Så när vi har komponterat ihop det formulär vi vill ha så måste vi ju ge an
 Easy as pancakes! Låt oss se till ett exempel.
 
 ```html
-    <input type="submit" value="Skicka!">
+<input type="submit" value="Skicka!">
 ```
 
 Resultat
 
 <figure>
-    <input type="submit" value="Skicka!">
+  <input type="submit" value="Skicka!">
 </figure>
 
 ### Att skicka formuläret
@@ -291,7 +291,7 @@ Men vart skickas datat mer specifikt? Jo, det request som kommer göras är allt
 Action-attributet används alltså som så:
 
 ```html
-    <form action="put/target/url/here"> </form>
+<form action="put/target/url/here"> </form>
 ```
 
 #### HTTP Methods
@@ -303,17 +303,17 @@ När användaren klickar på en submit-knapp i ett formulär så skickas alltså
 
 Anta att vi skapar ett formulär på sidan `http://example.com/login.php`. Anta att formulärets action pekar på `http://example.com/process_login.php`. Om vi använder oss av HTTP-metoden `GET` så skulle det request som konstrueras se ut något sånt här:
 
-    http://example.com/process_login.php?username=snow&password=supersecret&remember=1
+http://example.com/process_login.php?username=snow&password=supersecret&remember=1
 
 Formulärdatat skickas alltså direkt i URL:en. Allting efter frågetecknet (`?`) är en urlkodad sträng av formulärdatat. Datat är kodat enligt principen nyckel/värde. Om vi analyserar strängen lite närmare upptäcker vi att den följer följande konvention.
 
-    key=value
+key=value
 
 Där `key` ersätts med det värde vi gett `name`-attribuet för respektive formkontroll. Ordet `value` ersätts i sin tur av det faktiska värdet för den formkontrollen.
 
 Sedan märker vi även att varje nyckel-värde-par avdelas med hjälp av ett och-tecken (`&`). Som så...
 
-    key1=value1&key2=value2&key3=value3...
+key1=value1&key2=value2&key3=value3...
 
 <div class="box-warning">
 Viss formulärdata (såsom t.ex. login) bör **inte** skickas i `GET`. Du kommer att få förklaringar till varför när vi pratar om den andra metoden &mdash; `POST`.
@@ -352,54 +352,54 @@ POST..som en HTTP-headerNär vi vill använda formulärdatat för att förändra
 Låt oss, innan vi snurrar ihop detta kapitels säck, kolla in ett komplett formulärexempel.
 
 ```html
-    <form action="#" method="GET">
-      <label for="field-name">Ditt namn</label>
-      <input type="text" id="field-name" name="name" placeholder="Ditt namn" required>
+<form action="#" method="GET">
+  <label for="field-name">Ditt namn</label>
+  <input type="text" id="field-name" name="name" placeholder="Ditt namn" required>
 
-      <label>Vad vill du äta till frukost?</label>
+  <label>Vad vill du äta till frukost?</label>
 
-      <label for="field-pancakes">Pannkakor</label>
-      <input type="radio" id="field-pancakes" name="breakfast" value="pancakes">
+  <label for="field-pancakes">Pannkakor</label>
+  <input type="radio" id="field-pancakes" name="breakfast" value="pancakes">
 
-      <label for="field-scrambled">Äggröra</label>
-      <input type="radio" id="field-scrambled" name="breakfast" value="scrambled">
+  <label for="field-scrambled">Äggröra</label>
+  <input type="radio" id="field-scrambled" name="breakfast" value="scrambled">
 
-      <label for="field-toast">Övrigt</label>
-      <input type="radio" id="field-toast" name="breakfast" value="toast">
+  <label for="field-toast">Övrigt</label>
+  <input type="radio" id="field-toast" name="breakfast" value="toast">
 
-      <input type="submit" value="Skicka!">
-    </form>
+  <input type="submit" value="Skicka!">
+</form>
 ```
 
 Resultat
 
 <figure>
-    <form action="#" method="GET">
-        <div>
-          <label for="field-name">Ditt namn</label>
-          <input type="text" id="field-name" name="name" placeholder="Ditt namn" required>
-      </div>
+<form action="#" method="GET">
+    <div>
+      <label for="field-name">Ditt namn</label>
+      <input type="text" id="field-name" name="name" placeholder="Ditt namn" required>
+  </div>
 
-      <label>Vad vill du äta till frukost?</label>
+  <label>Vad vill du äta till frukost?</label>
+
+  <div>
+      <div>
+          <label for="field-pancakes">Pannkakor</label>
+          <input type="radio" id="field-pancakes" name="breakfast" value="pancakes">
+      </div>
 
       <div>
-          <div>
-              <label for="field-pancakes">Pannkakor</label>
-              <input type="radio" id="field-pancakes" name="breakfast" value="pancakes">
-          </div>
-
-          <div>
-              <label for="field-scrambled">Äggröra</label>
-              <input type="radio" id="field-scrambled" name="breakfast" value="scrambled">
-          </div>
-
-          <div>
-              <label for="field-toast">Övrigt</label>
-              <input type="radio" id="field-toast" name="breakfast" value="toast">
-          </div>
-
-          <input type="submit" value="Skicka!">
+          <label for="field-scrambled">Äggröra</label>
+          <input type="radio" id="field-scrambled" name="breakfast" value="scrambled">
       </div>
+
+      <div>
+          <label for="field-toast">Övrigt</label>
+          <input type="radio" id="field-toast" name="breakfast" value="toast">
+      </div>
+
+      <input type="submit" value="Skicka!">
+  </div>
   </form>
 </figure>
 

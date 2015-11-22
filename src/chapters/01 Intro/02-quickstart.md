@@ -73,7 +73,7 @@ Reflektera över denna sida. Över denna text. Du ser att vissa delar är paragr
 Vi använder alltså märkesspråk för att delimitera olika sektioner i en flödestext. Om du tänker tillbaka på vad vi tidigare diskuterat om att allting är rå text, så kan denna text i teorin representera vad som helst.Text, video, bild etc. I vilket fall så använder vi märkesspråk för att delimitera olika delar av dokumentet i olika sektioner. Låt oss se till ett snabbt exempel på hur detta fungerar i märkesspråket HTML.
 
 ```html
-    Endast ett ord i denna text, nämnligen <b>detta</b> kommer att visas i fetstil.
+Endast ett ord i denna text, nämnligen <b>detta</b> kommer att visas i fetstil.
 ```
 
 Om vi kör ovan genom en webbläsare så kommer webbläsaren att rendera följande resultat:

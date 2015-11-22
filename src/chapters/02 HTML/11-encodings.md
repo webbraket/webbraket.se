@@ -25,13 +25,13 @@ Ett dokuments teckenkodning sätter vi genom att skapa en `<meta>`-tag med attri
 Ett dokument som definierar character set:et utf-8
 
 ```html
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <title>The utf-8, I speak!</title>
-      </head>
-    </html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The utf-8, I speak!</title>
+  </head>
+</html>
 ```
 
 

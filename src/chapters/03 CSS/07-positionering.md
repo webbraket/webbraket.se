@@ -51,11 +51,11 @@ Relative ignorerar hur användaren scrollar i ett dokument. En tänkt koordinat,
 Följande exempel använder sig av nedan css
 
 ```css
-    #blue {
-      position: fixed;
-      top:  20px;
-      left: 30px;
-    }
+#blue {
+  position: fixed;
+  top:  20px;
+  left: 30px;
+}
 ```
 
 Den blåa boxen i detta exempel har fixed positionering.
@@ -75,16 +75,16 @@ Ovan blir nog enklare att förstå om vi ser till ett par exempel.
 Följande exempel använder sig av nedan css
 
 ```css
-    #red {
-      position: absolute;
-      top:   0;
-      right: 0;
-    }
-    #blue {
-      position: absolute;
-      bottom: 0px;
-      left:   0px;
-    }
+#red {
+  position: absolute;
+  top:   0;
+  right: 0;
+}
+#blue {
+  position: absolute;
+  bottom: 0px;
+  left:   0px;
+}
 ```
 
 Exempel på absolut positionering för två `<div>`:ar
@@ -108,16 +108,16 @@ Med andra ord, elementet antar först den position den bör få i det statiska f
 Följande exempel använder sig av nedan css
 
 ```css
-    #red {
-      position: relative;
-      top:  0;
-      left: 0;
-    }
-    #blue {
-      position: relative;
-      top: -10px;
-      left: 10px;
-    }
+#red {
+  position: relative;
+  top:  0;
+  left: 0;
+}
+#blue {
+  position: relative;
+  top: -10px;
+  left: 10px;
+}
 ```
 
 Exempel på relativ positionering för två `<div>`:ar

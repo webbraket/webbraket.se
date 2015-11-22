@@ -83,13 +83,13 @@ Det första är att se till att du har konfigurerat din `php`-installation så a
 Det andra tipset vi har är en liten men ofantligt trevlig metod som heter `var_dump`. Denna metod används som så: `var_dump(expression)`. Denna metod printar precis som `echo` ut strängrepresentationen av en variabel till skärmen. Men utöver det så printar den också en massa annan matnyttig information. Om vi t.ex. har en array som innehåller de två elementen "apples" och "pears". Så skulle vi få följande resultat av `var_dump`
 
 ```php
-    array(2) { [0]=> string(6) "apples" [1]=> string(5) "pears" }
+array(2) { [0]=> string(6) "apples" [1]=> string(5) "pears" }
 ```
 
 Medan vi endast skulle få följande om vi använde `echo`.
 
 ```php
-    Array
+Array
 ```
 
 Med andra ord kan vi snabbt vad en array innehåller och t.o.m. om den är tom. Men den verkliga styrkan kommer i att vi lätt kan upptäcka om en variabel innehåller `null`. Om vi t.ex. använder `echo` med en variabel som råkar innehålla `null` &mdash; så printas helt enkelt ingenting till skärmen. Om vi däremot gör samma sak med `var_dump` så printas istället texten `NULL`. Mycket, mycket användbart.

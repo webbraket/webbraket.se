@@ -9,9 +9,9 @@ Denna mystiska ovan nämnda metod vid namn `.ready()` är en metod vi använder 
 Att säga åt jQuery att vänta tills DOM:en är inläst
 
 ```javascript
-    $(document).ready(function(){
-      alert("Hello world from jQuery");
-    });
+$(document).ready(function(){
+  alert("Hello world from jQuery");
+});
 ```
 
 Ovan exempel använder jQuery för att avvakta tills webbläsaren har laddat in hela sidan. Sedan använder vi helt vanlig JavaScript för att poppa up en alert-ruta med meddelandet "Hello world...". Låt oss dissekera ovan kod, rad för rad och del för del, för att faktiskt förstå vad det är som händer.
@@ -29,27 +29,27 @@ Först ut är detta mystiska dollartecken. Förklaringen till vad detta _är_, �
 Nu vet vi alltså att `$()` är en korthandssyntax, och således samma sak som att anropa `jQuery()`. Men vad gör då denna metod? Jo, metoden returnerar ett jQuery-objekt som innehåller det vi har skickat in till den. Vi kan alltså se det som att jQuery _dekorerar_ det vi har skickat in med alla dessa fantastiska jQuery-metoder. Låt oss exemplifiera.
 
 ```javascript
-    // Dekorerar alla länkar med jquery
-    // Sparar referensen i variabeln link
-    var link = $('a');
+// Dekorerar alla länkar med jquery
+// Sparar referensen i variabeln link
+var link = $('a');
 ```
 
 Vi använder alltså denna "jquery-dekorerade version" av ett html-element för att anropa de fantastiska metoder jquery utökar våra element med. Låt oss exemplifiera.
 
 ```javascript
-    // Fade:a ut alla länkar
-    $('a').fadeOut();
+// Fade:a ut alla länkar
+$('a').fadeOut();
 
-    // Samma sak i två steg
-    var link = $('a');
-    link.fadeOut();
+// Samma sak i två steg
+var link = $('a');
+link.fadeOut();
 ```
 
 Det kan snabbt bli virrigt gällande vilka variabler som är jquery-dekorerade och vilka som inte är det. [Konventionen][3] brukar således vara döpa sina variabler med ett initial `$`-tecken. Som så:
 
 ```javascript
-    // Konventionen är att döpa jquery variabler med ett intialt $-tecken
-    var $link = $('a');
+// Konventionen är att döpa jquery variabler med ett intialt $-tecken
+var $link = $('a');
 ```
 
 För att återgå till det här med `$(document)`. Vad betyder det då alltså att skicka in dokumentet till jquerys dekorationsmetod? Jo att vi nu kan anropa alla de fantastiska metoderna jquery erbjuder på vår rotnod. Det vill säga hela dokumentet. Att dekorera dokumentet med jquery har egentligen exakt samma effekt som att dekorera ett enskilt element (t.ex. en länk).
@@ -71,9 +71,9 @@ Tänk dig.. vi anropar jquery ready-metoden, och säger "Hej, nu vill jag att du
 Så, låt oss repetera den kod vi pratar om i helhet.
 
 ```javascript
-    $(document).ready(function(){
-      alert("Hello world from jQuery");
-    });
+$(document).ready(function(){
+  alert("Hello world from jQuery");
+});
 ```
 
 Låt oss beskriva koden i ord, rad för rad.

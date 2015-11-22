@@ -2,11 +2,11 @@
 
 När du använder CSS för att formatera en sida kan du infoga CSS-formateringen på tre sätt:
 
-1. Extern CSS-mall  
+1. Extern CSS-mall
 en extern CSS-mall som kopplas till dokumentet
-2. I dokumentet  
+2. I dokumentet
 i dokumentets huvud head-taggen
-3. Direkt i element  
+3. Direkt i element
 i elementet där CSS-formateringen ska utföras
 
 ### Extern CSS-mall
@@ -21,16 +21,16 @@ Så här kan koden för sidorna som kopplas till mallen se ut:
 Exempel på referens till extern stilmall
 
 ```html
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title> Sidans namn </title>
-        <link href="mall.css" rel="stylesheet">
-      </head>
-      <body>
-        <h2>En rubrik, yay!</h2>
-      </body>
-    </html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Sidans namn </title>
+    <link href="mall.css" rel="stylesheet">
+  </head>
+  <body>
+    <h2>En rubrik, yay!</h2>
+  </body>
+</html>
 ```
 
 Du kan koppla flera externa CSS-mallar till samma dokument. Om samma selektorer förekommer i båda
@@ -40,17 +40,17 @@ gäller alltså "mall2.css" före "mall.css":
 Exempel på ett html-dokument med referenser till flera stilmallar
 
 ```html
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title> Sidans namn </title>
-        <link href="mall.css" rel="stylesheet">
-        <link href="en_till_mall.css" rel="stylesheet">
-      </head>
-      <body>
-        <h2>En rubrik, yay!</h2>
-      </body>
-    </html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Sidans namn </title>
+    <link href="mall.css" rel="stylesheet">
+    <link href="en_till_mall.css" rel="stylesheet">
+  </head>
+  <body>
+    <h2>En rubrik, yay!</h2>
+  </body>
+</html>
 ```
 
 ### I dokumentet
@@ -63,18 +63,18 @@ Här formateras rubriken direkt i dokumentet:
 Exempel på ett html-dokument med css definierad direkt i HEAD
 
 ```html
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title> Sidans namn </title>
-        <style type="text/css">
-          h2 { font-size: 24px; }
-        </style>
-      </head>
-      <body>
-        <h2>En rubrik, yay!</h2>
-      </body>
-    </html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Sidans namn </title>
+    <style type="text/css">
+      h2 { font-size: 24px; }
+    </style>
+  </head>
+  <body>
+    <h2>En rubrik, yay!</h2>
+  </body>
+</html>
 ```
 
 ### Direkt i elementet som ska formateras
@@ -88,15 +88,15 @@ Så här kan koden se ut när rubriken formateras direkt i elementet:
 Exempel på ett html-dokument med css definierad i ett element (även kallat: inline)
 
 ```html
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title> Sidans namn </title>
-      </head>
-      <body>
-        <h2 style="font-size:24px;">En rubrik, yay!</h2>
-      </body>
-    </html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Sidans namn </title>
+  </head>
+  <body>
+    <h2 style="font-size:24px;">En rubrik, yay!</h2>
+  </body>
+</html>
 ```
 
 Prioriteringsordningen av formateringen är följande:

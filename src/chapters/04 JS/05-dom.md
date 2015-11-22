@@ -37,14 +37,14 @@ Exempel på att gömma ett element.
 HTML
 
 ```html
-    <p id="secret"> LYSSNA PÅ MIG! </p>
+<p id="secret"> LYSSNA PÅ MIG! </p>
 ```
 
 JavaScript
 
 ```javascript
-    var p = document.getElementById("secret");
-    p.style.display = "none";
+var p = document.getElementById("secret");
+p.style.display = "none";
 ```
 
 Vad vi gör ovan är alltså helt enkelt att vi först hämtar elementet med hjälp av dess ID. Sedan hämtar vi `style`-objektet på elementet. På `style`-elementet sätter vi egenskapen `display` till värdet `none`. JavaScriptkoden skulle kunna komprimeras till att skrivas på en enda rad, vet du hur?
@@ -54,19 +54,19 @@ Exempel på att hämta med tagnamn.
 HTML
 
 ```html
-    <p> A </p>
-    <p> B </p>
-    <p> C </p>
-    <p> D </p>
+<p> A </p>
+<p> B </p>
+<p> C </p>
+<p> D </p>
 ```
 
 JavaScript
 
 ```javascript
-     var as = menu.getElementsByTagName('p');  
-     as[0].innerHTML = "Ett";
-     as[1].innerHTML = "Två";
-     as[3].innerHTML = as[1].innerHTML;
+ var as = menu.getElementsByTagName('p');
+ as[0].innerHTML = "Ett";
+ as[1].innerHTML = "Två";
+ as[3].innerHTML = as[1].innerHTML;
 ```
 
 Resultat
@@ -92,9 +92,9 @@ När vi skriver JavaScript som på något sätt interagerar med DOM:en, är det 
 Exempel på hur vi använder onload.
 
 ```javascript
-    window.onload = function(){
-      // do all fancy work here
-    }
+window.onload = function(){
+  // do all fancy work here
+}
 ```
 
 Varför gör vi alltså detta? Jo, om vi inte skulle göra det så finns alltså risken för att de element vi försöker komma åt inom funktionskroppen i ovan exempel ännu inte finns.
@@ -104,12 +104,12 @@ Ovan kan förstås lika gärna göras i två steg, genom att registrera en redan
 Exempel på hur vi använder onload.
 
 ```javascript
-    // Declare the init function
-    var init = function(){
-    }
+// Declare the init function
+var init = function(){
+}
 
-    // Register it as a listener to the onload event
-    window.onload = init;
+// Register it as a listener to the onload event
+window.onload = init;
 ```
 
 Vad vi har gjort nu kallas mer generellt för att registrera en funktion (en `event handler`) till ett `event`. Mer om detta i avsnittet om events.

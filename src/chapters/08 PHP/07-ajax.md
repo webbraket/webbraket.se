@@ -23,12 +23,12 @@ Denna metod kan vi använda för att göra ett asynkront `GET request`. Alltså 
 Ändra innehåll med utan att ladda om sidan med jQuery.
 
 ```javascript
-    $('button').click(function(){
-      $.get('test.php',function(data, status){
-        // the argument 'data' now contains the response
-        $('.result').html(data);
-      });
-    });
+$('button').click(function(){
+  $.get('test.php',function(data, status){
+    // the argument 'data' now contains the response
+    $('.result').html(data);
+  });
+});
 ```
 
 Som ni ser har vi på en knapp som vid ett knapptryck gör ett `HTTP GET` request till servern. Innan vi tittar lite närmare på vad som faktiskt kommer att hända. Låt oss först undersöka vad sidan vi skickar ett request till (alltså `test.php`) innehåller.
@@ -36,9 +36,9 @@ Som ni ser har vi på en knapp som vid ett knapptryck gör ett `HTTP GET` reques
 Sidan som efterfrågas (i.e. `test.php`)
 
 ```php
-    <?php
-      echo "Hello from AJAX!";
-    ?>
+<?php
+  echo "Hello from AJAX!";
+?>
 ```
 
 jQuery-metoden get tar emot två argument. Först en (1) URL som motsvarar den sida vi vill request:a. Vidare en (2) callback-funktion. Alltså en funktion som kommer att anropas när request:et är avslutat och vi får ett response tillbaka.
@@ -47,7 +47,7 @@ jQuery-metoden get tar emot två argument. Först en (1) URL som motsvarar den s
 
 Tänk på hur ett `HTTP GET request` fungerar. Kanske kommer du ihåg att vi alltid kan skicka parametrar. Alltså såsom nedan:
 
-    http://example.com?name=Tarzan&breed=manape
+http://example.com?name=Tarzan&breed=manape
 
 Självklart tillåter även jQuery-metoden GET att vi skickar parametrar. För att vi ska slippa konstruera denna url med url-enkodade parametrar själva, så är jQuery-metoden get konstruerad så att vi istället kan skicka ett javascript-objekt med nycklar och värden som motsvarar den data vi vill skicka.
 
@@ -56,17 +56,17 @@ Parametrarna skickar vi som andra argument. Och eftersom vårt callback ska vara
 Att göra ett anrop via jQuery get() med parametrar
 
 ```javascript
-    $('button').click(function(){
-      $.get('test.php',
-        {
-          name:  'Tarzan',
-          breed: 'manape'
-        },
-        function(data, status){
-          alert(data);
-        }
-      );
-    });
+$('button').click(function(){
+  $.get('test.php',
+    {
+      name:  'Tarzan',
+      breed: 'manape'
+    },
+    function(data, status){
+      alert(data);
+    }
+  );
+});
 ```
 
 Anta då att vår php-sida (`test.php`) istället ser ut så här:
@@ -74,16 +74,16 @@ Anta då att vår php-sida (`test.php`) istället ser ut så här:
 Sidan som efterfrågas
 
 ```php
-    <?php
-      $name  = $_GET["name"];
-      $breed = $_GET["breed"];
-      echo "$name is a $breed";
-    ?>
+<?php
+  $name  = $_GET["name"];
+  $breed = $_GET["breed"];
+  echo "$name is a $breed";
+?>
 ```
 
 Om vi har ovan server-side-sida, och kör klientkoden &mdash; så kommer callbacket som avfyras att öppna en `alert`-ruta. I den rutan kommer det att stå:
 
-    Tarzan is a manape  
+Tarzan is a manape
 
 ### jQuery load()
 
@@ -94,24 +94,24 @@ Göra ett asynkront request och ersätta innehållet i ett element med det respo
 Anta att vi uttrycker följande med hjälp av `load()`...
 
 ```javascript
-    $('.result').load('test.php', function() {
-      alert('Success! The contents of .result are now updated.');
-    });
+$('.result').load('test.php', function() {
+  alert('Success! The contents of .result are now updated.');
+});
 ```
 
 ..då ger det alltså samma effekt som om vi hade uttryckt följande med hjälp av `get()`...
 
 ```javascript
-    $.get('test.php', function(data, status){
-      alert('Success! The contents of .result are now updated.');
-      $('.result').html(data);
-    });
+$.get('test.php', function(data, status){
+  alert('Success! The contents of .result are now updated.');
+  $('.result').html(data);
+});
 ```
 
 Vi slipper alltså explicit uppdatera html-elementet genom `html()`. Så om vi skippar callback:et helt så skulle vi t.o.m. kunna kondensera vår kod ner till följande...
 
 ```javascript
-    $('.result').load('test.php');
+$('.result').load('test.php');
 ```
 
 ### jQuery post()

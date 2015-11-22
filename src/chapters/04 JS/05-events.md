@@ -9,18 +9,18 @@ Vi ska i det här kapitlet prata om metoden `addEventListener()`, men för att e
 Exempel på asynkron exekvering i JavaScript
 
 ```javascript
-    console.log("a");
+console.log("a");
 
 
-    // setTimeout är en funktion som kör en annan
-    // funktion efter en given väntetid i millisekunder
+// setTimeout är en funktion som kör en annan
+// funktion efter en given väntetid i millisekunder
 
-    setTimeout(function(){
-      console.log("b");
-    }, 1000)
+setTimeout(function(){
+  console.log("b");
+}, 1000)
 
 
-    console.log("c");
+console.log("c");
 ```
 
 Resultat
@@ -53,19 +53,19 @@ Exempel på asynkron exekvering i JavaScript
 
 HTML
 ```html
-    <p id="welcome">
-      hello
-    </p>
+<p id="welcome">
+  hello
+</p>
 ```
 JavaScript
 ```javascript
-    var tag = document.getElementById('welcome');
-    tag.addEventListener("click", function(){
-      if(tag.innerHTML == "hello")
-        tag.innerHTML = "world";
-      else
-        tag.innerHTML = "hello";
-    });
+var tag = document.getElementById('welcome');
+tag.addEventListener("click", function(){
+  if(tag.innerHTML == "hello")
+    tag.innerHTML = "world";
+  else
+    tag.innerHTML = "hello";
+});
 ```
 Resultat (prova att klicka på texten!)
 
@@ -85,22 +85,22 @@ Exempel på användning av addEventListener
 
 HTML
 ```html
-    <p id="text1">hello</p>
-    <p id="text2">world</p>
-    <p id="text3">world</p>
+<p id="text1">hello</p>
+<p id="text2">world</p>
+<p id="text3">world</p>
 ```
 JavaScript
 ```javascript
-    var onClick = function(element){
-      if(element.target.innerHTML == "hello")
-        element.target.innerHTML = "world";
-      else
-        element.target.innerHTML = "hello";
-    }
+var onClick = function(element){
+  if(element.target.innerHTML == "hello")
+    element.target.innerHTML = "world";
+  else
+    element.target.innerHTML = "hello";
+}
 
-    document.getElementById('text1').addEventListener('click', onClick);
-    document.getElementById('text2').addEventListener('click', onClick);
-    document.getElementById('text3').addEventListener('click', onClick);
+document.getElementById('text1').addEventListener('click', onClick);
+document.getElementById('text2').addEventListener('click', onClick);
+document.getElementById('text3').addEventListener('click', onClick);
 ```
 Resultat (prova att klicka på olika texterna!)
 
